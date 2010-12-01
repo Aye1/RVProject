@@ -1,4614 +1,0 @@
-TRV
-v7
-r0
-t312041498.131828
-cCheck dependencies
-cProcessInfoPlistFile /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/Info.plist Info.plist
-cPhaseScriptExecution "Qt Qmake" /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-D7BA7D76DAB5DD13389D6332.sh
-cPhaseScriptExecution "Qt Preprocessors" /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-A0A52A2ADF7A1E2A99738674.sh
-cCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/AGHFile.o /Users/aye1/Dev/RV/Aye1/AGHFile.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/AGHMainWindow.o /Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/main.o /Users/aye1/Dev/RV/Aye1/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cLd /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV normal i386
-cTouch /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app
-cPBXCp RV.app build/Debug/RV.app
-
-N/Library/Frameworks/QGLViewer.framework/QGLViewer
-c000000004CE8FF8E0000000000098A00
-t1290338190
-s625152
-
-N/Library/Frameworks/Qt3Support.framework/Headers/q3cstring.h
-c000000004B72D6B20000000000002795
-t1265817266
-s10133
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/Qt3Support.framework/Headers/q3valuelist.h
-c000000004B72D6B30000000000002081
-t1265817267
-s8321
-i<QtCore/qalgorithms.h>
-i<QtCore/qdatastream.h>
-i<QtCore/qlinkedlist.h>
-i<QtCore/qlist.h>
-i<iterator>
-i<list>
-
-N/Library/Frameworks/QtCore.framework/Headers/QDate
-c000000004B72D6B20000000000000017
-t1265817266
-s23
-i"qdatetime.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/QList
-c000000004B72D6B20000000000000013
-t1265817266
-s19
-i"qlist.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/QObject
-c000000004B72D6B20000000000000015
-t1265817266
-s21
-i"qobject.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/QPoint
-c000000004B72D6B20000000000000014
-t1265817266
-s20
-i"qpoint.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/QPointF
-c000000004B72D6B20000000000000014
-t1265817266
-s20
-i"qpoint.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/QtCore
-c000000004B72D6B20000000000000E00
-t1265817266
-s3584
-i"qxmlstream.h"
-i"qabstractfileengine.h"
-i"qbuffer.h"
-i"qdatastream.h"
-i"qdebug.h"
-i"qdir.h"
-i"qdiriterator.h"
-i"qfile.h"
-i"qfileinfo.h"
-i"qfilesystemwatcher.h"
-i"qfsfileengine.h"
-i"qiodevice.h"
-i"qprocess.h"
-i"qresource.h"
-i"qsettings.h"
-i"qtemporaryfile.h"
-i"qtextstream.h"
-i"qurl.h"
-i"qtextcodec.h"
-i"qtextcodecplugin.h"
-i"qalgorithms.h"
-i"qbitarray.h"
-i"qbytearray.h"
-i"qbytearraymatcher.h"
-i"qcache.h"
-i"qchar.h"
-i"qcontainerfwd.h"
-i"qcontiguouscache.h"
-i"qcryptographichash.h"
-i"qdatetime.h"
-i"qeasingcurve.h"
-i"qhash.h"
-i"qiterator.h"
-i"qline.h"
-i"qlinkedlist.h"
-i"qlist.h"
-i"qlocale.h"
-i"qmap.h"
-i"qmargins.h"
-i"qpair.h"
-i"qpoint.h"
-i"qqueue.h"
-i"qrect.h"
-i"qregexp.h"
-i"qscopedpointer.h"
-i"qset.h"
-i"qshareddata.h"
-i"qsharedpointer.h"
-i"qsize.h"
-i"qstack.h"
-i"qstring.h"
-i"qstringbuilder.h"
-i"qstringlist.h"
-i"qstringmatcher.h"
-i"qtextboundaryfinder.h"
-i"qtimeline.h"
-i"qvarlengtharray.h"
-i"qvector.h"
-i"qendian.h"
-i"qfeatures.h"
-i"qglobal.h"
-i"qlibraryinfo.h"
-i"qnamespace.h"
-i"qnumeric.h"
-i"qabstracteventdispatcher.h"
-i"qabstractitemmodel.h"
-i"qbasictimer.h"
-i"qcoreapplication.h"
-i"qcoreevent.h"
-i"qeventloop.h"
-i"qmath.h"
-i"qmetaobject.h"
-i"qmetatype.h"
-i"qmimedata.h"
-i"qobject.h"
-i"qobjectcleanuphandler.h"
-i"qobjectdefs.h"
-i"qpointer.h"
-i"qsharedmemory.h"
-i"qsignalmapper.h"
-i"qsocketnotifier.h"
-i"qsystemsemaphore.h"
-i"qtimer.h"
-i"qtranslator.h"
-i"qvariant.h"
-i"qfuture.h"
-i"qfutureinterface.h"
-i"qfuturesynchronizer.h"
-i"qfuturewatcher.h"
-i"qrunnable.h"
-i"qtconcurrentcompilertest.h"
-i"qtconcurrentexception.h"
-i"qtconcurrentfilter.h"
-i"qtconcurrentfilterkernel.h"
-i"qtconcurrentfunctionwrappers.h"
-i"qtconcurrentiteratekernel.h"
-i"qtconcurrentmap.h"
-i"qtconcurrentmapkernel.h"
-i"qtconcurrentmedian.h"
-i"qtconcurrentreducekernel.h"
-i"qtconcurrentresultstore.h"
-i"qtconcurrentrun.h"
-i"qtconcurrentrunbase.h"
-i"qtconcurrentstoredfunctioncall.h"
-i"qtconcurrentthreadengine.h"
-i"qthreadpool.h"
-i"qfactoryinterface.h"
-i"qlibrary.h"
-i"qplugin.h"
-i"qpluginloader.h"
-i"quuid.h"
-i"qatomic.h"
-i"qbasicatomic.h"
-i"qmutex.h"
-i"qreadwritelock.h"
-i"qsemaphore.h"
-i"qthread.h"
-i"qthreadstorage.h"
-i"qwaitcondition.h"
-i"qabstractstate.h"
-i"qabstracttransition.h"
-i"qeventtransition.h"
-i"qfinalstate.h"
-i"qhistorystate.h"
-i"qsignaltransition.h"
-i"qstate.h"
-i"qstatemachine.h"
-i"qabstractanimation.h"
-i"qanimationgroup.h"
-i"qparallelanimationgroup.h"
-i"qpauseanimation.h"
-i"qpropertyanimation.h"
-i"qsequentialanimationgroup.h"
-i"qvariantanimation.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstractanimation.h
-c000000004B72D6B20000000000001120
-t1265817266
-s4384
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstracteventdispatcher.h
-c000000004B72D6B20000000000000E7A
-t1265817266
-s3706
-i<QtCore/qobject.h>
-i<QtCore/qeventloop.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstractfileengine.h
-c000000004B72D6B20000000000001EA4
-t1265817266
-s7844
-i<QtCore/qdir.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstractitemmodel.h
-c000000004B72D6B20000000000004075
-t1265817266
-s16501
-i<QtCore/qvariant.h>
-i<QtCore/qobject.h>
-i<QtCore/qhash.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstractstate.h
-c000000004B72D6B20000000000000B4A
-t1265817266
-s2890
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qabstracttransition.h
-c000000004B72D6B20000000000000E70
-t1265817266
-s3696
-i<QtCore/qobject.h>
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qalgorithms.h
-c000000004B72D6B20000000000004026
-t1265817266
-s16422
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qanimationgroup.h
-c000000004B72D6B20000000000000BA5
-t1265817266
-s2981
-i<QtCore/qabstractanimation.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic.h
-c000000004B72D6B20000000000001AB4
-t1265817266
-s6836
-i<QtCore/qglobal.h>
-i<QtCore/qbasicatomic.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_alpha.h
-c000000004B72D6B200000000000065C3
-t1265817266
-s26051
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_arch.h
-c000000004B72D6B20000000000000DC1
-t1265817266
-s3521
-i"QtCore/qglobal.h"
-i"QtCore/qatomic_vxworks.h"
-i"QtCore/qatomic_alpha.h"
-i"QtCore/qatomic_arm.h"
-i"QtCore/qatomic_armv6.h"
-i"QtCore/qatomic_avr32.h"
-i"QtCore/qatomic_bfin.h"
-i"QtCore/qatomic_generic.h"
-i"QtCore/qatomic_i386.h"
-i"QtCore/qatomic_ia64.h"
-i"QtCore/qatomic_macosx.h"
-i"QtCore/qatomic_mips.h"
-i"QtCore/qatomic_parisc.h"
-i"QtCore/qatomic_powerpc.h"
-i"QtCore/qatomic_s390.h"
-i"QtCore/qatomic_sparc.h"
-i"QtCore/qatomic_windows.h"
-i"QtCore/qatomic_windowsce.h"
-i"QtCore/qatomic_x86_64.h"
-i"QtCore/qatomic_symbian.h"
-i"QtCore/qatomic_sh.h"
-i"QtCore/qatomic_sh4a.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_arm.h
-c000000004B72D6B20000000000002ED9
-t1265817266
-s11993
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_armv6.h
-c000000004B72D6B20000000000003ABC
-t1265817266
-s15036
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_avr32.h
-c000000004B72D6B20000000000001D39
-t1265817266
-s7481
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_bfin.h
-c000000004B72D6B20000000000002747
-t1265817266
-s10055
-i<asm/fixed_code.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_bootstrap.h
-c000000004B72D6B20000000000000C1D
-t1265817266
-s3101
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_generic.h
-c000000004B72D6B200000000000021FC
-t1265817266
-s8700
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_i386.h
-c000000004B72D6B20000000000002AC2
-t1265817266
-s10946
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_ia64.h
-c000000004B72D6B200000000000064F4
-t1265817266
-s25844
-i<ia64intrin.h>
-i<ia64/sys/inline.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_macosx.h
-c000000004B72D6B200000000000008E8
-t1265817266
-s2280
-i<QtCore/qatomic_x86_64.h>
-i<QtCore/qatomic_i386.h>
-i<QtCore/qatomic_powerpc.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_mips.h
-c000000004B72D6B20000000000006E38
-t1265817266
-s28216
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_parisc.h
-c000000004B72D6B200000000000020CD
-t1265817266
-s8397
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_powerpc.h
-c000000004B72D6B2000000000000597D
-t1265817266
-s22909
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_s390.h
-c000000004B72D6B200000000000038AC
-t1265817266
-s14508
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_sh.h
-c000000004B72D6B20000000000002406
-t1265817266
-s9222
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_sh4a.h
-c000000004B72D6B2000000000000460D
-t1265817266
-s17933
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_sparc.h
-c000000004B72D6B2000000000000424F
-t1265817266
-s16975
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_symbian.h
-c000000004B72D6B200000000000022D0
-t1265817266
-s8912
-i<qglobal.h>
-i<e32std.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_vxworks.h
-c000000004B72D6B2000000000000213A
-t1265817266
-s8506
-i<QtCore/qatomic_powerpc.h>
-i<vxWorksCommon.h>
-i<taskLib.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_windows.h
-c000000004B72D6B20000000000003FA9
-t1265817266
-s16297
-i"QtCore/qatomic_i386.h"
-i"QtCore/qatomic_x86_64.h"
-i<winbase.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_windowsce.h
-c000000004B72D6B20000000000000873
-t1265817266
-s2163
-i<QtCore/qglobal.h>
-i"QtCore/qatomic_windows.h"
-
-N/Library/Frameworks/QtCore.framework/Headers/qatomic_x86_64.h
-c000000004B72D6B20000000000002AE7
-t1265817266
-s10983
-
-N/Library/Frameworks/QtCore.framework/Headers/qbasicatomic.h
-c000000004B72D6B20000000000001922
-t1265817266
-s6434
-i<QtCore/qglobal.h>
-i<QtCore/qatomic_bootstrap.h>
-i<QtCore/qatomic_arch.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qbasictimer.h
-c000000004B72D6B200000000000009BC
-t1265817266
-s2492
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qbitarray.h
-c000000004B72D6B20000000000001857
-t1265817266
-s6231
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qbuffer.h
-c000000004B72D6B20000000000000D13
-t1265817266
-s3347
-i<QtCore/qiodevice.h>
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qbytearray.h
-c000000004B72D6B20000000000005BCC
-t1265817266
-s23500
-i<QtCore/qatomic.h>
-i<QtCore/qnamespace.h>
-i<string.h>
-i<stdarg.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qbytearraymatcher.h
-c000000004B72D6B20000000000000CD4
-t1265817266
-s3284
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qcache.h
-c000000004B72D6B200000000000017D2
-t1265817266
-s6098
-i<QtCore/qhash.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qchar.h
-c000000004B72D6B2000000000000321C
-t1265817266
-s12828
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qconfig.h
-c000000004B72D6B2000000000000122A
-t1265817266
-s4650
-
-N/Library/Frameworks/QtCore.framework/Headers/qcontainerfwd.h
-c000000004B72D6B20000000000000A6A
-t1265817266
-s2666
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qcontiguouscache.h
-c000000004B72D6B2000000000000348F
-t1265817266
-s13455
-i<QtCore/qatomic.h>
-i<limits.h>
-i<new>
-
-N/Library/Frameworks/QtCore.framework/Headers/qcoreapplication.h
-c000000004B72D6B20000000000002790
-t1265817266
-s10128
-i<QtCore/qobject.h>
-i<QtCore/qcoreevent.h>
-i<QtCore/qeventloop.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qcoreevent.h
-c000000004B72D6B20000000000003F97
-t1265817266
-s16279
-i<QtCore/qnamespace.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qobjectdefs.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qcryptographichash.h
-c000000004B72D6B20000000000000A5A
-t1265817266
-s2650
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qdatastream.h
-c000000004B72D6B20000000000002C7E
-t1265817266
-s11390
-i<QtCore/qscopedpointer.h>
-i<QtCore/qiodevice.h>
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qdatetime.h
-c000000004B72D6B20000000000002C62
-t1265817266
-s11362
-i<QtCore/qstring.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qsharedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qdebug.h
-c000000004B72D6B20000000000002762
-t1265817266
-s10082
-i<QtCore/qalgorithms.h>
-i<QtCore/qhash.h>
-i<QtCore/qlist.h>
-i<QtCore/qmap.h>
-i<QtCore/qpair.h>
-i<QtCore/qtextstream.h>
-i<QtCore/qstring.h>
-i<QtCore/qvector.h>
-i<QtCore/qset.h>
-i<QtCore/qcontiguouscache.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qdir.h
-c000000004B72D6B2000000000000259A
-t1265817266
-s9626
-i<QtCore/qstring.h>
-i<QtCore/qfileinfo.h>
-i<QtCore/qstringlist.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qdiriterator.h
-c000000004B72D6B20000000000000C9A
-t1265817266
-s3226
-i<QtCore/qdir.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qeasingcurve.h
-c000000004B72D6B20000000000000F19
-t1265817266
-s3865
-i<QtCore/qglobal.h>
-i<QtCore/qobjectdefs.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qendian.h
-c000000004B72D6B20000000000002E23
-t1265817266
-s11811
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qeventloop.h
-c000000004B72D6B20000000000000C6D
-t1265817266
-s3181
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qeventtransition.h
-c000000004B72D6B20000000000000C88
-t1265817266
-s3208
-i<QtCore/qabstracttransition.h>
-i<QtCore/qcoreevent.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfactoryinterface.h
-c000000004B72D6B2000000000000094D
-t1265817266
-s2381
-i<QtCore/qobject.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfeatures.h
-c000000004B72D6B2000000000000534B
-t1265817266
-s21323
-
-N/Library/Frameworks/QtCore.framework/Headers/qfile.h
-c000000004B72D6B200000000000018D4
-t1265817266
-s6356
-i<QtCore/qiodevice.h>
-i<QtCore/qstring.h>
-i<stdio.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfileinfo.h
-c000000004B72D6B200000000000017AF
-t1265817266
-s6063
-i<QtCore/qfile.h>
-i<QtCore/qlist.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfilesystemwatcher.h
-c000000004B72D6B20000000000000BEC
-t1265817266
-s3052
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfinalstate.h
-c000000004B72D6B200000000000009DC
-t1265817266
-s2524
-i<QtCore/qabstractstate.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfsfileengine.h
-c000000004B72D6B2000000000000109A
-t1265817266
-s4250
-i<QtCore/qabstractfileengine.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfuture.h
-c000000004B72D6B20000000000002374
-t1265817266
-s9076
-i<QtCore/qglobal.h>
-i<QtCore/qfutureinterface.h>
-i<QtCore/qstring.h>
-i<QtCore/qtconcurrentcompilertest.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfutureinterface.h
-c000000004B72D6B200000000000025E4
-t1265817266
-s9700
-i<QtCore/qglobal.h>
-i<QtCore/qrunnable.h>
-i<QtCore/qmutex.h>
-i<QtCore/qtconcurrentexception.h>
-i<QtCore/qtconcurrentresultstore.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfuturesynchronizer.h
-c000000004B72D6B20000000000000D76
-t1265817266
-s3446
-i<QtCore/qfuture.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qfuturewatcher.h
-c000000004B72D6B20000000000001887
-t1265817266
-s6279
-i<QtCore/qfuture.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qglobal.h
-c000000004B72D6B20000000000014DBA
-t1265817266
-s85434
-i<stddef.h>
-i<QtCore/qconfig.h>
-i<AvailabilityMacros.h>
-i<e32def.h>
-i<QtCore/qfeatures.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qhash.h
-c000000004B72D6B200000000000077F8
-t1265817266
-s30712
-i<QtCore/qatomic.h>
-i<QtCore/qchar.h>
-i<QtCore/qiterator.h>
-i<QtCore/qlist.h>
-i<QtCore/qpair.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qhistorystate.h
-c000000004B72D6B20000000000000BD9
-t1265817266
-s3033
-i<QtCore/qabstractstate.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qiodevice.h
-c000000004B72D6B200000000000020AE
-t1265817266
-s8366
-i<QtCore/qobject.h>
-i<QtCore/qobjectdefs.h>
-i<QtCore/qscopedpointer.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qiterator.h
-c000000004B72D6B200000000000022FA
-t1265817266
-s8954
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qlibrary.h
-c000000004B72D6B20000000000000FF2
-t1265817266
-s4082
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qlibraryinfo.h
-c000000004B72D6B20000000000000B16
-t1265817266
-s2838
-i<QtCore/qstring.h>
-i<QtCore/QDate>
-
-N/Library/Frameworks/QtCore.framework/Headers/qline.h
-c000000004B72D6B200000000000026B4
-t1265817266
-s9908
-i<QtCore/qpoint.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qlinkedlist.h
-c000000004B72D6B20000000000003C3E
-t1265817266
-s15422
-i<QtCore/qiterator.h>
-i<QtCore/qatomic.h>
-i<iterator>
-i<list>
-
-N/Library/Frameworks/QtCore.framework/Headers/qlist.h
-c000000004B72D6B20000000000006549
-t1265817266
-s25929
-i<QtCore/qiterator.h>
-i<QtCore/qatomic.h>
-i<QtCore/qalgorithms.h>
-i<iterator>
-i<list>
-i<new>
-i<string.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qlocale.h
-c000000004B72D6B20000000000004BE1
-t1265817266
-s19425
-i<QtCore/qstring.h>
-i<QtCore/qobjectdefs.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmap.h
-c000000004B72D6B20000000000007F19
-t1265817266
-s32537
-i<QtCore/qatomic.h>
-i<QtCore/qiterator.h>
-i<QtCore/qlist.h>
-i<map>
-i<new>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmargins.h
-c000000004B72D6B200000000000010AD
-t1265817266
-s4269
-i<QtCore/qnamespace.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmath.h
-c000000004B72D6B20000000000001BF1
-t1265817266
-s7153
-i<math.h>
-i<QtCore/qglobal.h>
-i<e32math.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmetaobject.h
-c000000004B72D6B20000000000002293
-t1265817266
-s8851
-i<QtCore/qobjectdefs.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmetatype.h
-c000000004B72D6B20000000000002EB3
-t1265817266
-s11955
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmimedata.h
-c000000004B72D6B20000000000000CE3
-t1265817266
-s3299
-i<QtCore/qvariant.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qmutex.h
-c000000004B72D6B200000000000012D6
-t1265817266
-s4822
-i<QtCore/qglobal.h>
-i<new>
-
-N/Library/Frameworks/QtCore.framework/Headers/qnamespace.h
-c000000004B72D6B2000000000000D270
-t1265817266
-s53872
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qnumeric.h
-c000000004B72D6B20000000000000A14
-t1265817266
-s2580
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qobject.h
-c000000004B72D6B20000000000003FC3
-t1265817266
-s16323
-i<QtCore/qobjectdefs.h>
-i<QtCore/qstring.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qlist.h>
-i<QtCore/qcoreevent.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qobjectcleanuphandler.h
-c000000004B72D6B200000000000009F3
-t1265817266
-s2547
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qobjectdefs.h
-c000000004B72D6B20000000000004344
-t1265817266
-s17220
-i<QtCore/qnamespace.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpair.h
-c000000004B72D6B20000000000000F2C
-t1265817266
-s3884
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qparallelanimationgroup.h
-c000000004B72D6B20000000000000B99
-t1265817266
-s2969
-i<QtCore/qanimationgroup.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpauseanimation.h
-c000000004B72D6B20000000000000AA5
-t1265817266
-s2725
-i<QtCore/qanimationgroup.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qplugin.h
-c000000004B72D6B20000000000001307
-t1265817266
-s4871
-i<QtCore/qobject.h>
-i<QtCore/qpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpluginloader.h
-c000000004B72D6B20000000000000C47
-t1265817266
-s3143
-i<QtCore/qlibrary.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpoint.h
-c000000004B72D6B200000000000024BF
-t1265817266
-s9407
-i<QtCore/qnamespace.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpointer.h
-c000000004B72D6B20000000000001475
-t1265817266
-s5237
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qprocess.h
-c000000004B72D6B20000000000001CE1
-t1265817266
-s7393
-i<QtCore/qiodevice.h>
-i<QtCore/qstringlist.h>
-i<QtCore/qshareddata.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qpropertyanimation.h
-c000000004B72D6B20000000000000C2D
-t1265817266
-s3117
-i<QtCore/qvariantanimation.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qqueue.h
-c000000004B72D6B20000000000000997
-t1265817266
-s2455
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qreadwritelock.h
-c000000004B72D6B200000000000018FB
-t1265817266
-s6395
-i<QtCore/qglobal.h>
-i<limits.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qrect.h
-c000000004B72D6B200000000000056D2
-t1265817266
-s22226
-i<QtCore/qsize.h>
-i<QtCore/qpoint.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qregexp.h
-c000000004B72D6B20000000000001589
-t1265817266
-s5513
-i<QtCore/qstring.h>
-i<new>
-
-N/Library/Frameworks/QtCore.framework/Headers/qresource.h
-c000000004B72D6B20000000000000D8C
-t1265817266
-s3468
-i<QtCore/qstring.h>
-i<QtCore/qlocale.h>
-i<QtCore/qstringlist.h>
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qrunnable.h
-c000000004B72D6B200000000000009A1
-t1265817266
-s2465
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qscopedpointer.h
-c000000004B72D6B2000000000000155A
-t1265817266
-s5466
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsemaphore.h
-c000000004B72D6B200000000000009DF
-t1265817266
-s2527
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsequentialanimationgroup.h
-c000000004B72D6B20000000000000D06
-t1265817266
-s3334
-i<QtCore/qanimationgroup.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qset.h
-c000000004B72D6B200000000000035A7
-t1265817266
-s13735
-i<QtCore/qhash.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsettings.h
-c000000004B72D6B200000000000027F1
-t1265817266
-s10225
-i<QtCore/qobject.h>
-i<QtCore/qvariant.h>
-i<QtCore/qstring.h>
-i<QtCore/qstringlist.h>
-i<ctype.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qshareddata.h
-c000000004B72D6B20000000000001DCB
-t1265817266
-s7627
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsharedmemory.h
-c000000004B72D6B20000000000000CC5
-t1265817266
-s3269
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsharedpointer.h
-c000000004B72D6B2000000000000170F
-t1265817266
-s5903
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-i<QtCore/qshareddata.h>
-i<QtCore/qsharedpointer_impl.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsharedpointer_impl.h
-c000000004B72D6B2000000000000644B
-t1265817266
-s25675
-i<new>
-i<QtCore/qatomic.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsignalmapper.h
-c000000004B72D6B20000000000000CA9
-t1265817266
-s3241
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsignaltransition.h
-c000000004B72D6B20000000000000BB7
-t1265817266
-s2999
-i<QtCore/qabstracttransition.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsize.h
-c000000004B72D6B2000000000000286F
-t1265817266
-s10351
-i<QtCore/qnamespace.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsocketnotifier.h
-c000000004B72D6B20000000000000B45
-t1265817266
-s2885
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstack.h
-c000000004B72D6B20000000000000AC1
-t1265817266
-s2753
-i<QtCore/qvector.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstate.h
-c000000004B72D6B20000000000000E89
-t1265817266
-s3721
-i<QtCore/qabstractstate.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstatemachine.h
-c000000004B72D6B2000000000000165F
-t1265817266
-s5727
-i<QtCore/qstate.h>
-i<QtCore/qcoreevent.h>
-i<QtCore/qlist.h>
-i<QtCore/qobject.h>
-i<QtCore/qset.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstring.h
-c000000004B72D6B2000000000000E6DD
-t1265817266
-s59101
-i<QtCore/qchar.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qatomic.h>
-i<QtCore/qnamespace.h>
-i<Qt3Support/q3cstring.h>
-i<string>
-i<string>
-i<stdarg.h>
-i<QtCore/qstringbuilder.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstringbuilder.h
-c000000004B72D6B2000000000000205E
-t1265817266
-s8286
-i<QtCore/qstring.h>
-i<QtCore/qmap.h>
-i<string.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstringlist.h
-c000000004B72D6B2000000000000263B
-t1265817266
-s9787
-i<QtCore/qalgorithms.h>
-i<QtCore/qdatastream.h>
-i<QtCore/qlist.h>
-i<QtCore/qregexp.h>
-i<QtCore/qstring.h>
-i<QtCore/qstringmatcher.h>
-i<Qt3Support/q3valuelist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qstringmatcher.h
-c000000004B72D6B20000000000000D11
-t1265817266
-s3345
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qsystemsemaphore.h
-c000000004B72D6B20000000000000BCE
-t1265817266
-s3022
-i<QtCore/qstring.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentcompilertest.h
-c000000004B72D6B20000000000000966
-t1265817266
-s2406
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentexception.h
-c000000004B72D6B20000000000000D40
-t1265817266
-s3392
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-i<exception>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentfilter.h
-c000000004B72D6B2000000000000735D
-t1265817266
-s29533
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentfilterkernel.h>
-i<QtCore/qtconcurrentfunctionwrappers.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentfilterkernel.h
-c000000004B72D6B20000000000002D8E
-t1265817266
-s11662
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentiteratekernel.h>
-i<QtCore/qtconcurrentmapkernel.h>
-i<QtCore/qtconcurrentreducekernel.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentfunctionwrappers.h
-c000000004B72D6B20000000000001233
-t1265817266
-s4659
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentiteratekernel.h
-c000000004B72D6B2000000000000283C
-t1265817266
-s10300
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-i<QtCore/qtconcurrentmedian.h>
-i<QtCore/qtconcurrentthreadengine.h>
-i<iterator>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentmap.h
-c000000004B72D6B20000000000007EB1
-t1265817266
-s32433
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentmapkernel.h>
-i<QtCore/qtconcurrentreducekernel.h>
-i<QtCore/qtconcurrentfunctionwrappers.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentmapkernel.h
-c000000004B72D6B2000000000000250D
-t1265817266
-s9485
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentiteratekernel.h>
-i<QtCore/qtconcurrentreducekernel.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentmedian.h
-c000000004B72D6B20000000000000EB9
-t1265817266
-s3769
-i<QtCore/qglobal.h>
-i<QtCore/qvector.h>
-i<QtCore/qalgorithms.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentreducekernel.h
-c000000004B72D6B20000000000001D84
-t1265817266
-s7556
-i<QtCore/qglobal.h>
-i<QtCore/qatomic.h>
-i<QtCore/qlist.h>
-i<QtCore/qmap.h>
-i<QtCore/qmutex.h>
-i<QtCore/qthread.h>
-i<QtCore/qthreadpool.h>
-i<QtCore/qvector.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentresultstore.h
-c000000004B72D6B20000000000001D22
-t1265817266
-s7458
-i<QtCore/qglobal.h>
-i<QtCore/qmap.h>
-i<QtCore/qdebug.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentrun.h
-c000000004B72D6B20000000000004946
-t1265817266
-s18758
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentrunbase.h>
-i<QtCore/qtconcurrentstoredfunctioncall.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentrunbase.h
-c000000004B72D6B20000000000000E2D
-t1265817266
-s3629
-i<QtCore/qglobal.h>
-i<QtCore/qfuture.h>
-i<QtCore/qrunnable.h>
-i<QtCore/qthreadpool.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentstoredfunctioncall.h
-c000000004B72D6B2000000000000DB4A
-t1265817266
-s56138
-i<QtCore/qglobal.h>
-i<QtCore/qtconcurrentrunbase.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtconcurrentthreadengine.h
-c000000004B72D6B20000000000002177
-t1265817266
-s8567
-i<QtCore/qglobal.h>
-i<QtCore/qthreadpool.h>
-i<QtCore/qfuture.h>
-i<QtCore/qdebug.h>
-i<QtCore/qtconcurrentexception.h>
-i<QtCore/qwaitcondition.h>
-i<QtCore/qatomic.h>
-i<QtCore/qsemaphore.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtemporaryfile.h
-c000000004B72D6B20000000000000D29
-t1265817266
-s3369
-i<QtCore/qiodevice.h>
-i<QtCore/qfile.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtextboundaryfinder.h
-c000000004B72D6B20000000000000D69
-t1265817266
-s3433
-i<QtCore/qchar.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtextcodec.h
-c000000004B72D6B20000000000001B39
-t1265817266
-s6969
-i<QtCore/qstring.h>
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtextcodecplugin.h
-c000000004B72D6B20000000000000CA1
-t1265817266
-s3233
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-i<QtCore/qlist.h>
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtextstream.h
-c000000004B72D6B200000000000033B9
-t1265817266
-s13241
-i<QtCore/qiodevice.h>
-i<QtCore/qstring.h>
-i<QtCore/qchar.h>
-i<QtCore/qlocale.h>
-i<QtCore/qscopedpointer.h>
-i<QtCore/qtextcodec.h>
-i<stdio.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qthread.h
-c000000004B72D6B20000000000001113
-t1265817266
-s4371
-i<QtCore/qobject.h>
-i<limits.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qthreadpool.h
-c000000004B72D6B20000000000000C06
-t1265817266
-s3078
-i<QtCore/qglobal.h>
-i<QtCore/qthread.h>
-i<QtCore/qrunnable.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qthreadstorage.h
-c000000004B72D6B2000000000000107D
-t1265817266
-s4221
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtimeline.h
-c000000004B72D6B20000000000001125
-t1265817266
-s4389
-i<QtCore/qeasingcurve.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtimer.h
-c000000004B72D6B20000000000000DD7
-t1265817266
-s3543
-i<QtCore/qbasictimer.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qtranslator.h
-c000000004B72D6B20000000000000D23
-t1265817266
-s3363
-i<QtCore/qobject.h>
-i<QtCore/qbytearray.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qurl.h
-c000000004B72D6B20000000000002766
-t1265817266
-s10086
-i<QtCore/qbytearray.h>
-i<QtCore/qobjectdefs.h>
-i<QtCore/qpair.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/quuid.h
-c000000004B72D6B20000000000001462
-t1265817266
-s5218
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qvariant.h
-c000000004B72D6B20000000000004808
-t1265817266
-s18440
-i<QtCore/qatomic.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qlist.h>
-i<QtCore/qmetatype.h>
-i<QtCore/qmap.h>
-i<QtCore/qhash.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qvariantanimation.h
-c000000004B72D6B200000000000011CF
-t1265817266
-s4559
-i<QtCore/qeasingcurve.h>
-i<QtCore/qabstractanimation.h>
-i<QtCore/qvector.h>
-i<QtCore/qvariant.h>
-i<QtCore/qpair.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qvarlengtharray.h
-c000000004B72D6B20000000000001DD1
-t1265817266
-s7633
-i<QtCore/qcontainerfwd.h>
-i<QtCore/qglobal.h>
-i<new>
-
-N/Library/Frameworks/QtCore.framework/Headers/qvector.h
-c000000004B72D6B200000000000065C2
-t1265817266
-s26050
-i<QtCore/qiterator.h>
-i<QtCore/qatomic.h>
-i<QtCore/qalgorithms.h>
-i<QtCore/qlist.h>
-i<iterator>
-i<vector>
-i<stdlib.h>
-i<string.h>
-i<QtCore/QPointF>
-i<QtCore/QPoint>
-
-N/Library/Frameworks/QtCore.framework/Headers/qwaitcondition.h
-c000000004B72D6B20000000000000B5F
-t1265817266
-s2911
-i<QtCore/qglobal.h>
-i<limits.h>
-
-N/Library/Frameworks/QtCore.framework/Headers/qxmlstream.h
-c000000004B72D6B200000000000047F1
-t1265817266
-s18417
-i<QtCore/qiodevice.h>
-i<QtCore/qstring.h>
-i<QtCore/qvector.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/QtCore
-c000000004B72D7D60000000000580A4C
-t1265817558
-s5769804
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QFile
-c000000004B72D6B20000000000000013
-t1265817266
-s19
-i"qfile.h"
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QObject
-c000000004B72D6B20000000000000015
-t1265817266
-s21
-i"qobject.h"
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QString
-c000000004B72D6B20000000000000015
-t1265817266
-s21
-i"qstring.h"
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/QTimer
-c000000004B72D6B20000000000000014
-t1265817266
-s20
-i"qtimer.h"
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qfile.h
-c000000004B72D6B200000000000018D4
-t1265817266
-s6356
-i<QtCore/qiodevice.h>
-i<QtCore/qstring.h>
-i<stdio.h>
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qglobal.h
-c000000004B72D6B20000000000014DBA
-t1265817266
-s85434
-i<stddef.h>
-i<QtCore/qconfig.h>
-i<AvailabilityMacros.h>
-i<e32def.h>
-i<QtCore/qfeatures.h>
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qobject.h
-c000000004B72D6B20000000000003FC3
-t1265817266
-s16323
-i<QtCore/qobjectdefs.h>
-i<QtCore/qstring.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qlist.h>
-i<QtCore/qcoreevent.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qstring.h
-c000000004B72D6B2000000000000E6DD
-t1265817266
-s59101
-i<QtCore/qchar.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qatomic.h>
-i<QtCore/qnamespace.h>
-i<Qt3Support/q3cstring.h>
-i<string>
-i<string>
-i<stdarg.h>
-i<QtCore/qstringbuilder.h>
-
-N/Library/Frameworks/QtCore.framework/Versions/4/Headers/qtimer.h
-c000000004B72D6B20000000000000DD7
-t1265817266
-s3543
-i<QtCore/qbasictimer.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/QCleanlooksStyle
-c000000004B72D6B2000000000000001E
-t1265817266
-s30
-i"qcleanlooksstyle.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QCommonStyle
-c000000004B72D6B2000000000000001A
-t1265817266
-s26
-i"qcommonstyle.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QFileDialog
-c000000004B72D6B20000000000000019
-t1265817266
-s25
-i"qfiledialog.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QFont
-c000000004B72D6B20000000000000013
-t1265817266
-s19
-i"qfont.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QLayout
-c000000004B72D6B20000000000000015
-t1265817266
-s21
-i"qlayout.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QMatrix4x4
-c000000004B72D6B20000000000000018
-t1265817266
-s24
-i"qmatrix4x4.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QPalette
-c000000004B72D6B20000000000000016
-t1265817266
-s22
-i"qpalette.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QPrinter
-c000000004B72D6B20000000000000016
-t1265817266
-s22
-i"qprinter.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QTransform
-c000000004B72D6B20000000000000018
-t1265817266
-s24
-i"qtransform.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/QVector3D
-c000000004B72D6B20000000000000017
-t1265817266
-s23
-i"qvector3d.h"
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractbutton.h
-c000000004B72D6B20000000000001736
-t1265817266
-s5942
-i<QtGui/qicon.h>
-i<QtGui/qkeysequence.h>
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractitemdelegate.h
-c000000004B72D6B200000000000011C9
-t1265817266
-s4553
-i<QtCore/qobject.h>
-i<QtGui/qstyleoption.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractitemview.h
-c000000004B72D6B200000000000034EF
-t1265817266
-s13551
-i<QtGui/qabstractscrollarea.h>
-i<QtCore/qabstractitemmodel.h>
-i<QtGui/qitemselectionmodel.h>
-i<QtGui/qabstractitemdelegate.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractpagesetupdialog.h
-c000000004B72D6B20000000000000AD8
-t1265817266
-s2776
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractprintdialog.h
-c000000004B72D6B20000000000000F41
-t1265817266
-s3905
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractproxymodel.h
-c000000004B72D6B20000000000000E54
-t1265817266
-s3668
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractscrollarea.h
-c000000004B72D6B200000000000012F9
-t1265817266
-s4857
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractslider.h
-c000000004B72D6B20000000000001758
-t1265817266
-s5976
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstractspinbox.h
-c000000004B72D6B200000000000017B0
-t1265817266
-s6064
-i<QtGui/qwidget.h>
-i<QtGui/qvalidator.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qabstracttextdocumentlayout.h
-c000000004B72D6B200000000000014C0
-t1265817266
-s5312
-i<QtCore/qobject.h>
-i<QtGui/qtextlayout.h>
-i<QtGui/qtextdocument.h>
-i<QtGui/qtextcursor.h>
-i<QtGui/qpalette.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qaccessible.h
-c000000004B72D6B2000000000000391C
-t1265817266
-s14620
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtCore/qrect.h>
-i<QtCore/qset.h>
-i<QtCore/qvector.h>
-i<QtCore/qvariant.h>
-i<QtGui/qcolor.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qaccessibleobject.h
-c000000004B72D6B200000000000010AA
-t1265817266
-s4266
-i<QtGui/qaccessible.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qaction.h
-c000000004B72D6B2000000000000230B
-t1265817266
-s8971
-i<QtGui/qkeysequence.h>
-i<QtCore/qstring.h>
-i<QtGui/qwidget.h>
-i<QtCore/qvariant.h>
-i<QtGui/qicon.h>
-i<QtGui/qactiongroup.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qactiongroup.h
-c000000004B72D6B20000000000000E6F
-t1265817266
-s3695
-i<QtGui/qaction.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qboxlayout.h
-c000000004B72D6B200000000000015ED
-t1265817266
-s5613
-i<QtGui/qlayout.h>
-i<QtGui/qwidget.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qbrush.h
-c000000004B72D6B20000000000002513
-t1265817266
-s9491
-i<QtCore/qpair.h>
-i<QtCore/qpoint.h>
-i<QtCore/qvector.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qcolor.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qtransform.h>
-i<QtGui/qimage.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qcleanlooksstyle.h
-c000000004B72D6B20000000000001352
-t1265817266
-s4946
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qcolor.h
-c000000004B72D6B2000000000000224C
-t1265817266
-s8780
-i<QtGui/qrgb.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qcombobox.h
-c000000004B72D6B2000000000000324D
-t1265817266
-s12877
-i<QtGui/qwidget.h>
-i<QtGui/qabstractitemdelegate.h>
-i<QtCore/qabstractitemmodel.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qcommonstyle.h
-c000000004B72D6B200000000000010BA
-t1265817266
-s4282
-i<QtGui/qstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qcursor.h
-c000000004B72D6B2000000000000142A
-t1265817266
-s5162
-i<QtCore/qpoint.h>
-i<QtGui/qwindowdefs.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qdesktopwidget.h
-c000000004B72D6B20000000000000E11
-t1265817266
-s3601
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qdialog.h
-c000000004B72D6B20000000000000FD7
-t1265817266
-s4055
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qdrag.h
-c000000004B72D6B20000000000000C9E
-t1265817266
-s3230
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qdrawutil.h
-c000000004B72D6B200000000000020B6
-t1265817266
-s8374
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtCore/qmargins.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qevent.h
-c000000004B72D6B20000000000006C17
-t1265817266
-s27671
-i<QtGui/qwindowdefs.h>
-i<QtCore/qobject.h>
-i<QtGui/qregion.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtGui/qkeysequence.h>
-i<QtCore/qcoreevent.h>
-i<QtGui/qmime.h>
-i<QtGui/qdrag.h>
-i<QtCore/qvariant.h>
-i<QtCore/qmap.h>
-i<QtCore/qset.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfiledialog.h
-c000000004B72D6B20000000000003676
-t1265817266
-s13942
-i<QtCore/qdir.h>
-i<QtCore/qstring.h>
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfileiconprovider.h
-c000000004B72D6B20000000000000AE8
-t1265817266
-s2792
-i<QtCore/qfileinfo.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfont.h
-c000000004B72D6B200000000000026E3
-t1265817266
-s9955
-i<QtGui/qwindowdefs.h>
-i<QtCore/qstring.h>
-i<QtCore/qsharedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfontdatabase.h
-c000000004B72D6B20000000000001618
-t1265817266
-s5656
-i<QtGui/qwindowdefs.h>
-i<QtCore/qstring.h>
-i<QtGui/qfont.h>
-i<QtCore/qstringlist.h>
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfontinfo.h
-c000000004B72D6B20000000000000B24
-t1265817266
-s2852
-i<QtGui/qfont.h>
-i<QtCore/qsharedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qfontmetrics.h
-c000000004B72D6B20000000000001A4A
-t1265817266
-s6730
-i<QtGui/qfont.h>
-i<QtCore/qsharedpointer.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qframe.h
-c000000004B72D6B20000000000001221
-t1265817266
-s4641
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgenericmatrix.h
-c000000004B72D6B20000000000003281
-t1265817266
-s12929
-i<QtCore/qmetatype.h>
-i<QtCore/qdebug.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgraphicsitem.h
-c000000004B72D6B20000000000009DEA
-t1265817266
-s40426
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtCore/qvariant.h>
-i<QtCore/qrect.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpainterpath.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgraphicslayout.h
-c000000004B72D6B20000000000000CCE
-t1265817266
-s3278
-i<QtGui/qgraphicslayoutitem.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgraphicslayoutitem.h
-c000000004B72D6B200000000000016DD
-t1265817266
-s5853
-i<QtCore/qscopedpointer.h>
-i<QtGui/qsizepolicy.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgraphicsscene.h
-c000000004B72D6B20000000000003646
-t1265817266
-s13894
-i<QtCore/qobject.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtGui/qbrush.h>
-i<QtGui/qfont.h>
-i<QtGui/qtransform.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qpen.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgraphicswidget.h
-c000000004B72D6B200000000000024A1
-t1265817266
-s9377
-i<QtGui/qfont.h>
-i<QtGui/qgraphicslayoutitem.h>
-i<QtGui/qgraphicsitem.h>
-i<QtGui/qpalette.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qgridlayout.h
-c000000004B72D6B20000000000001C8B
-t1265817266
-s7307
-i<QtGui/qlayout.h>
-i<QtGui/qwidget.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qicon.h
-c000000004B72D6B20000000000001650
-t1265817266
-s5712
-i<QtCore/qglobal.h>
-i<QtCore/qsize.h>
-i<QtCore/qlist.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qimage.h
-c000000004B72D6B200000000000036D0
-t1265817266
-s14032
-i<QtGui/qtransform.h>
-i<QtGui/qpaintdevice.h>
-i<QtGui/qrgb.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qrect.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qimageiohandler.h
-c000000004B72D6B2000000000000131D
-t1265817266
-s4893
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qimagereader.h
-c000000004B72D6B20000000000001118
-t1265817266
-s4376
-i<QtCore/qbytearray.h>
-i<QtGui/qimage.h>
-i<QtGui/qimageiohandler.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qitemselectionmodel.h
-c000000004B72D6B2000000000000226B
-t1265817266
-s8811
-i<QtCore/qset.h>
-i<QtCore/qvector.h>
-i<QtCore/qlist.h>
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qkeysequence.h
-c000000004B72D6B20000000000001A0A
-t1265817266
-s6666
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qlayout.h
-c000000004B72D6B20000000000001E5B
-t1265817266
-s7771
-i<QtCore/qobject.h>
-i<QtGui/qlayoutitem.h>
-i<QtGui/qsizepolicy.h>
-i<QtCore/qrect.h>
-i<QtCore/qmargins.h>
-i<limits.h>
-i<QtGui/qboxlayout.h>
-i<QtGui/qgridlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qlayoutitem.h
-c000000004B72D6B20000000000001550
-t1265817266
-s5456
-i<QtGui/qsizepolicy.h>
-i<QtCore/qrect.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qlineedit.h
-c000000004B72D6B2000000000000285D
-t1265817266
-s10333
-i<QtGui/qframe.h>
-i<QtCore/qstring.h>
-i<QtCore/qmargins.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qlistview.h
-c000000004B72D6B20000000000001AB0
-t1265817266
-s6832
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmacdefines_mac.h
-c000000004B72D6B200000000000019C8
-t1265817266
-s6600
-i<QtCore/qglobal.h>
-i<Cocoa/Cocoa.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmatrix.h
-c000000004B72D6B20000000000001AF0
-t1265817266
-s6896
-i<QtGui/qpolygon.h>
-i<QtGui/qregion.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qline.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtGui/qwmatrix.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmatrix4x4.h
-c000000004B72D6B20000000000008264
-t1265817266
-s33380
-i<QtGui/qvector3d.h>
-i<QtGui/qvector4d.h>
-i<QtGui/qquaternion.h>
-i<QtGui/qgenericmatrix.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmenu.h
-c000000004B72D6B20000000000003C15
-t1265817266
-s15381
-i<QtGui/qwidget.h>
-i<QtCore/qstring.h>
-i<QtGui/qicon.h>
-i<QtGui/qaction.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmime.h
-c000000004B72D6B200000000000018D9
-t1265817266
-s6361
-i<QtCore/qmimedata.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qmotifstyle.h
-c000000004B72D6B20000000000001182
-t1265817266
-s4482
-i<QtGui/qcommonstyle.h>
-i<QtCore/qpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpaintdevice.h
-c000000004B72D6B2000000000000178A
-t1265817266
-s6026
-i<QtGui/qwindowdefs.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpainter.h
-c000000004B72D6B20000000000007FC7
-t1265817266
-s32711
-i<QtCore/qnamespace.h>
-i<QtCore/qrect.h>
-i<QtCore/qpoint.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpixmap.h>
-i<QtGui/qimage.h>
-i<QtGui/qtextoption.h>
-i<QtGui/qdrawutil.h>
-i<QtGui/qpolygon.h>
-i<QtGui/qpen.h>
-i<QtGui/qbrush.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qtransform.h>
-i<QtGui/qfontinfo.h>
-i<QtGui/qfontmetrics.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpainterpath.h
-c000000004B72D6B20000000000003715
-t1265817266
-s14101
-i<QtGui/qmatrix.h>
-i<QtCore/qglobal.h>
-i<QtCore/qrect.h>
-i<QtCore/qline.h>
-i<QtCore/qvector.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpalette.h
-c000000004B72D6B2000000000000328F
-t1265817266
-s12943
-i<QtGui/qwindowdefs.h>
-i<QtGui/qcolor.h>
-i<QtGui/qbrush.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpen.h
-c000000004B72D6B20000000000001020
-t1265817266
-s4128
-i<QtGui/qcolor.h>
-i<QtGui/qbrush.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpixmap.h
-c000000004B72D6B20000000000002F9B
-t1265817266
-s12187
-i<QtGui/qpaintdevice.h>
-i<QtGui/qcolor.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtCore/qsharedpointer.h>
-i<QtGui/qimage.h>
-i<QtGui/qtransform.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpolygon.h
-c000000004B72D6B20000000000001930
-t1265817266
-s6448
-i<QtCore/qvector.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qprinter.h
-c000000004B72D6B200000000000025B1
-t1265817266
-s9649
-i<QtCore/qstring.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpaintdevice.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qpushbutton.h
-c000000004B72D6B20000000000001015
-t1265817266
-s4117
-i<QtGui/qabstractbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qquaternion.h
-c000000004B72D6B200000000000026E5
-t1265817266
-s9957
-i<QtGui/qvector3d.h>
-i<QtGui/qvector4d.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qregion.h
-c000000004B72D6B2000000000000207F
-t1265817266
-s8319
-i<QtCore/qatomic.h>
-i<QtCore/qrect.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qrgb.h
-c000000004B72D6B20000000000000D24
-t1265817266
-s3364
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qrubberband.h
-c000000004B72D6B20000000000000D09
-t1265817266
-s3337
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qscrollarea.h
-c000000004B72D6B20000000000000CF0
-t1265817266
-s3312
-i<QtGui/qabstractscrollarea.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qsizepolicy.h
-c000000004B72D6B20000000000002168
-t1265817266
-s8552
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qslider.h
-c000000004B72D6B20000000000001166
-t1265817266
-s4454
-i<QtGui/qabstractslider.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qstyle.h
-c000000004B72D6B20000000000006CCA
-t1265817266
-s27850
-i<QtCore/qobject.h>
-i<QtCore/qrect.h>
-i<QtCore/qsize.h>
-i<QtGui/qicon.h>
-i<QtGui/qpixmap.h>
-i<QtGui/qpalette.h>
-i<QtGui/qsizepolicy.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qstyleoption.h
-c000000004B72D6B20000000000007013
-t1265817266
-s28691
-i<QtCore/qvariant.h>
-i<QtGui/qabstractspinbox.h>
-i<QtGui/qicon.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qslider.h>
-i<QtGui/qstyle.h>
-i<QtGui/qtabbar.h>
-i<QtGui/qtabwidget.h>
-i<QtGui/qrubberband.h>
-i<QtGui/qframe.h>
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtabbar.h
-c000000004B72D6B20000000000001BE1
-t1265817266
-s7137
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtableview.h
-c000000004B72D6B20000000000001AC0
-t1265817266
-s6848
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtabwidget.h
-c000000004B72D6B20000000000002254
-t1265817266
-s8788
-i<QtGui/qwidget.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextcursor.h
-c000000004B72D6B20000000000001B24
-t1265817266
-s6948
-i<QtCore/qstring.h>
-i<QtCore/qshareddata.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextdocument.h
-c000000004B72D6B20000000000002342
-t1265817266
-s9026
-i<QtCore/qobject.h>
-i<QtCore/qsize.h>
-i<QtCore/qrect.h>
-i<QtGui/qfont.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextedit.h
-c000000004B72D6B20000000000003730
-t1265817266
-s14128
-i<QtGui/qabstractscrollarea.h>
-i<QtGui/qtextdocument.h>
-i<QtGui/qtextoption.h>
-i<QtGui/qtextcursor.h>
-i<QtGui/qtextformat.h>
-i<QtGui/qtextobject.h>
-i<QtGui/qtextlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextformat.h
-c000000004B72D6B20000000000007161
-t1265817266
-s29025
-i<QtGui/qcolor.h>
-i<QtGui/qfont.h>
-i<QtCore/qshareddata.h>
-i<QtCore/qvector.h>
-i<QtCore/qvariant.h>
-i<QtGui/qpen.h>
-i<QtGui/qbrush.h>
-i<QtGui/qtextoption.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextlayout.h
-c000000004B72D6B20000000000001C41
-t1265817266
-s7233
-i<QtCore/qstring.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qrect.h>
-i<QtCore/qvector.h>
-i<QtGui/qcolor.h>
-i<QtCore/qobject.h>
-i<QtGui/qevent.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextobject.h
-c000000004B72D6B20000000000002673
-t1265817266
-s9843
-i<QtCore/qobject.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtextoption.h
-c000000004B72D6B20000000000001312
-t1265817266
-s4882
-i<QtCore/qnamespace.h>
-i<QtCore/qchar.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtransform.h
-c000000004B72D6B20000000000002C91
-t1265817266
-s11409
-i<QtGui/qmatrix.h>
-i<QtGui/qpainterpath.h>
-i<QtGui/qpolygon.h>
-i<QtGui/qregion.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qline.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtransportauth_qws.h
-c000000004B72D6B20000000000001DF8
-t1265817266
-s7672
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtCore/qhash.h>
-i<QtCore/qstring.h>
-i<QtCore/qbuffer.h>
-i<QtCore/qpointer.h>
-i<sys/types.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtreeview.h
-c000000004B72D6B2000000000000218E
-t1265817266
-s8590
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qtreewidgetitemiterator.h
-c000000004B72D6B200000000000013D0
-t1265817266
-s5072
-i<QtCore/qglobal.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qvalidator.h
-c000000004B72D6B200000000000017B1
-t1265817266
-s6065
-i<QtCore/qobject.h>
-i<QtCore/qstring.h>
-i<QtCore/qregexp.h>
-i<QtCore/qlocale.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qvector3d.h
-c000000004B72D6B200000000000021FA
-t1265817266
-s8698
-i<QtCore/qpoint.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qvector4d.h
-c000000004B72D6B200000000000022B1
-t1265817266
-s8881
-i<QtCore/qpoint.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwidget.h
-c000000004B72D6B2000000000000955D
-t1265817266
-s38237
-i<QtGui/qwindowdefs.h>
-i<QtCore/qobject.h>
-i<QtCore/qmargins.h>
-i<QtGui/qpaintdevice.h>
-i<QtGui/qpalette.h>
-i<QtGui/qfont.h>
-i<QtGui/qfontmetrics.h>
-i<QtGui/qfontinfo.h>
-i<QtGui/qsizepolicy.h>
-i<QtGui/qregion.h>
-i<QtGui/qbrush.h>
-i<QtGui/qcursor.h>
-i<QtGui/qkeysequence.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwindowdefs.h
-c000000004B72D6B20000000000000EF5
-t1265817266
-s3829
-i<QtCore/qobjectdefs.h>
-i<QtCore/qnamespace.h>
-i<QtGui/qmacdefines_mac.h>
-i<QtGui/qwindowdefs_win.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwindowdefs_win.h
-c000000004B72D6B20000000000000D23
-t1265817266
-s3363
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwindowsstyle.h
-c000000004B72D6B20000000000000FAA
-t1265817266
-s4010
-i<QtGui/qcommonstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwindowsxpstyle.h
-c000000004B72D6B20000000000001074
-t1265817266
-s4212
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Headers/qwmatrix.h
-c000000004B72D6B20000000000000880
-t1265817266
-s2176
-i<QtGui/qmatrix.h>
-
-N/Library/Frameworks/QtGui.framework/QtGui
-c000000004B72D7D9000000000176C778
-t1265817561
-s24561528
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/QApplication
-c000000004B72D6B2000000000000001A
-t1265817266
-s26
-i"qapplication.h"
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/QtGui
-c000000004B72D6B2000000000000174C
-t1265817266
-s5964
-i<QtCore/QtCore>
-i"qbitmap.h"
-i"qicon.h"
-i"qiconengine.h"
-i"qiconengineplugin.h"
-i"qimage.h"
-i"qimageiohandler.h"
-i"qimagereader.h"
-i"qimagewriter.h"
-i"qmovie.h"
-i"qpicture.h"
-i"qpictureformatplugin.h"
-i"qpixmap.h"
-i"qpixmapcache.h"
-i"qs60mainapplication.h"
-i"qs60mainappui.h"
-i"qs60maindocument.h"
-i"qvfbhdr.h"
-i"qwsembedwidget.h"
-i"qabstractbutton.h"
-i"qabstractscrollarea.h"
-i"qabstractslider.h"
-i"qabstractspinbox.h"
-i"qbuttongroup.h"
-i"qcalendarwidget.h"
-i"qcheckbox.h"
-i"qcombobox.h"
-i"qcommandlinkbutton.h"
-i"qdatetimeedit.h"
-i"qdial.h"
-i"qdialogbuttonbox.h"
-i"qdockwidget.h"
-i"qfocusframe.h"
-i"qfontcombobox.h"
-i"qframe.h"
-i"qgroupbox.h"
-i"qlabel.h"
-i"qlcdnumber.h"
-i"qlineedit.h"
-i"qmainwindow.h"
-i"qmdiarea.h"
-i"qmdisubwindow.h"
-i"qmenu.h"
-i"qmenubar.h"
-i"qmenudata.h"
-i"qplaintextedit.h"
-i"qprintpreviewwidget.h"
-i"qprogressbar.h"
-i"qpushbutton.h"
-i"qradiobutton.h"
-i"qrubberband.h"
-i"qscrollarea.h"
-i"qscrollbar.h"
-i"qsizegrip.h"
-i"qslider.h"
-i"qspinbox.h"
-i"qsplashscreen.h"
-i"qsplitter.h"
-i"qstackedwidget.h"
-i"qstatusbar.h"
-i"qtabbar.h"
-i"qtabwidget.h"
-i"qtextbrowser.h"
-i"qtextedit.h"
-i"qtoolbar.h"
-i"qtoolbox.h"
-i"qtoolbutton.h"
-i"qvalidator.h"
-i"qworkspace.h"
-i"qinputcontext.h"
-i"qinputcontextfactory.h"
-i"qinputcontextplugin.h"
-i"qgraphicsanchorlayout.h"
-i"qgraphicsgridlayout.h"
-i"qgraphicsitem.h"
-i"qgraphicsitemanimation.h"
-i"qgraphicslayout.h"
-i"qgraphicslayoutitem.h"
-i"qgraphicslinearlayout.h"
-i"qgraphicsproxywidget.h"
-i"qgraphicsscene.h"
-i"qgraphicssceneevent.h"
-i"qgraphicstransform.h"
-i"qgraphicsview.h"
-i"qgraphicswidget.h"
-i"qgenericmatrix.h"
-i"qmatrix4x4.h"
-i"qquaternion.h"
-i"qvector2d.h"
-i"qvector3d.h"
-i"qvector4d.h"
-i"qabstracttextdocumentlayout.h"
-i"qfont.h"
-i"qfontdatabase.h"
-i"qfontinfo.h"
-i"qfontmetrics.h"
-i"qsyntaxhighlighter.h"
-i"qtextcursor.h"
-i"qtextdocument.h"
-i"qtextdocumentfragment.h"
-i"qtextdocumentwriter.h"
-i"qtextformat.h"
-i"qtextlayout.h"
-i"qtextlist.h"
-i"qtextobject.h"
-i"qtextoption.h"
-i"qtexttable.h"
-i"qabstractpagesetupdialog.h"
-i"qabstractprintdialog.h"
-i"qcolordialog.h"
-i"qdialog.h"
-i"qerrormessage.h"
-i"qfiledialog.h"
-i"qfilesystemmodel.h"
-i"qfontdialog.h"
-i"qinputdialog.h"
-i"qmessagebox.h"
-i"qpagesetupdialog.h"
-i"qprintdialog.h"
-i"qprintpreviewdialog.h"
-i"qprogressdialog.h"
-i"qwizard.h"
-i"qaccessible.h"
-i"qaccessible2.h"
-i"qaccessiblebridge.h"
-i"qaccessibleobject.h"
-i"qaccessibleplugin.h"
-i"qaccessiblewidget.h"
-i"qaction.h"
-i"qactiongroup.h"
-i"qapplication.h"
-i"qboxlayout.h"
-i"qclipboard.h"
-i"qcursor.h"
-i"qdesktopwidget.h"
-i"qdrag.h"
-i"qevent.h"
-i"qformlayout.h"
-i"qgesture.h"
-i"qgesturerecognizer.h"
-i"qgridlayout.h"
-i"qkeysequence.h"
-i"qlayout.h"
-i"qlayoutitem.h"
-i"qmime.h"
-i"qpalette.h"
-i"qsessionmanager.h"
-i"qshortcut.h"
-i"qsizepolicy.h"
-i"qsound.h"
-i"qstackedlayout.h"
-i"qtooltip.h"
-i"qwhatsthis.h"
-i"qwidget.h"
-i"qwidgetaction.h"
-i"qwindowdefs.h"
-i"qabstractitemdelegate.h"
-i"qabstractitemview.h"
-i"qabstractproxymodel.h"
-i"qcolumnview.h"
-i"qdatawidgetmapper.h"
-i"qdirmodel.h"
-i"qfileiconprovider.h"
-i"qheaderview.h"
-i"qitemdelegate.h"
-i"qitemeditorfactory.h"
-i"qitemselectionmodel.h"
-i"qlistview.h"
-i"qlistwidget.h"
-i"qproxymodel.h"
-i"qsortfilterproxymodel.h"
-i"qstandarditemmodel.h"
-i"qstringlistmodel.h"
-i"qstyleditemdelegate.h"
-i"qtableview.h"
-i"qtablewidget.h"
-i"qtreeview.h"
-i"qtreewidget.h"
-i"qtreewidgetitemiterator.h"
-i"qbrush.h"
-i"qcolor.h"
-i"qcolormap.h"
-i"qdrawutil.h"
-i"qmatrix.h"
-i"qpaintdevice.h"
-i"qpaintengine.h"
-i"qpainter.h"
-i"qpainterpath.h"
-i"qpen.h"
-i"qpolygon.h"
-i"qprintengine.h"
-i"qprinter.h"
-i"qprinterinfo.h"
-i"qregion.h"
-i"qrgb.h"
-i"qstylepainter.h"
-i"qtransform.h"
-i"qwmatrix.h"
-i"qsymbianevent.h"
-i"qcdestyle.h"
-i"qcleanlooksstyle.h"
-i"qcommonstyle.h"
-i"qgtkstyle.h"
-i"qmotifstyle.h"
-i"qplastiquestyle.h"
-i"qproxystyle.h"
-i"qs60style.h"
-i"qstyle.h"
-i"qstylefactory.h"
-i"qstyleoption.h"
-i"qstyleplugin.h"
-i"qwindowscestyle.h"
-i"qwindowsmobilestyle.h"
-i"qwindowsstyle.h"
-i"qwindowsvistastyle.h"
-i"qwindowsxpstyle.h"
-i"qkeyeventtransition.h"
-i"qmouseeventtransition.h"
-i"qgraphicseffect.h"
-i"qcompleter.h"
-i"qdesktopservices.h"
-i"qsystemtrayicon.h"
-i"qundogroup.h"
-i"qundostack.h"
-i"qundoview.h"
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractbutton.h
-c000000004B72D6B20000000000001736
-t1265817266
-s5942
-i<QtGui/qicon.h>
-i<QtGui/qkeysequence.h>
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractitemdelegate.h
-c000000004B72D6B200000000000011C9
-t1265817266
-s4553
-i<QtCore/qobject.h>
-i<QtGui/qstyleoption.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractitemview.h
-c000000004B72D6B200000000000034EF
-t1265817266
-s13551
-i<QtGui/qabstractscrollarea.h>
-i<QtCore/qabstractitemmodel.h>
-i<QtGui/qitemselectionmodel.h>
-i<QtGui/qabstractitemdelegate.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractpagesetupdialog.h
-c000000004B72D6B20000000000000AD8
-t1265817266
-s2776
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractprintdialog.h
-c000000004B72D6B20000000000000F41
-t1265817266
-s3905
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractproxymodel.h
-c000000004B72D6B20000000000000E54
-t1265817266
-s3668
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractscrollarea.h
-c000000004B72D6B200000000000012F9
-t1265817266
-s4857
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractslider.h
-c000000004B72D6B20000000000001758
-t1265817266
-s5976
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstractspinbox.h
-c000000004B72D6B200000000000017B0
-t1265817266
-s6064
-i<QtGui/qwidget.h>
-i<QtGui/qvalidator.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qabstracttextdocumentlayout.h
-c000000004B72D6B200000000000014C0
-t1265817266
-s5312
-i<QtCore/qobject.h>
-i<QtGui/qtextlayout.h>
-i<QtGui/qtextdocument.h>
-i<QtGui/qtextcursor.h>
-i<QtGui/qpalette.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessible.h
-c000000004B72D6B2000000000000391C
-t1265817266
-s14620
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtCore/qrect.h>
-i<QtCore/qset.h>
-i<QtCore/qvector.h>
-i<QtCore/qvariant.h>
-i<QtGui/qcolor.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessible2.h
-c000000004B72D6B20000000000002548
-t1265817266
-s9544
-i<QtGui/qaccessible.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessiblebridge.h
-c000000004B72D6B20000000000000C9C
-t1265817266
-s3228
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessibleobject.h
-c000000004B72D6B200000000000010AA
-t1265817266
-s4266
-i<QtGui/qaccessible.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessibleplugin.h
-c000000004B72D6B20000000000000BFB
-t1265817266
-s3067
-i<QtGui/qaccessible.h>
-i<QtCore/qfactoryinterface.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaccessiblewidget.h
-c000000004B72D6B200000000000012AB
-t1265817266
-s4779
-i<QtGui/qaccessibleobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qaction.h
-c000000004B72D6B2000000000000230B
-t1265817266
-s8971
-i<QtGui/qkeysequence.h>
-i<QtCore/qstring.h>
-i<QtGui/qwidget.h>
-i<QtCore/qvariant.h>
-i<QtGui/qicon.h>
-i<QtGui/qactiongroup.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qactiongroup.h
-c000000004B72D6B20000000000000E6F
-t1265817266
-s3695
-i<QtGui/qaction.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qapplication.h
-c000000004B72D6B200000000000038E1
-t1265817266
-s14561
-i<QtCore/qcoreapplication.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qpoint.h>
-i<QtCore/qsize.h>
-i<QtGui/qcursor.h>
-i<QtGui/qdesktopwidget.h>
-i<QtGui/qwidget.h>
-i<QtGui/qpalette.h>
-i<QtGui/qrgb.h>
-i<QtGui/qtransportauth_qws.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qbitmap.h
-c000000004B72D6B20000000000000F09
-t1265817266
-s3849
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qboxlayout.h
-c000000004B72D6B200000000000015ED
-t1265817266
-s5613
-i<QtGui/qlayout.h>
-i<QtGui/qwidget.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qbrush.h
-c000000004B72D6B20000000000002513
-t1265817266
-s9491
-i<QtCore/qpair.h>
-i<QtCore/qpoint.h>
-i<QtCore/qvector.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qcolor.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qtransform.h>
-i<QtGui/qimage.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qbuttongroup.h
-c000000004B72D6B20000000000000DBD
-t1265817266
-s3517
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcalendarwidget.h
-c000000004B72D6B20000000000001C35
-t1265817266
-s7221
-i<QtGui/qwidget.h>
-i<QtCore/qdatetime.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcdestyle.h
-c000000004B72D6B20000000000000B8F
-t1265817266
-s2959
-i<QtGui/qmotifstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcheckbox.h
-c000000004B72D6B20000000000000E7B
-t1265817266
-s3707
-i<QtGui/qabstractbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcleanlooksstyle.h
-c000000004B72D6B20000000000001352
-t1265817266
-s4946
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qclipboard.h
-c000000004B72D6B20000000000000F7F
-t1265817266
-s3967
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcolor.h
-c000000004B72D6B2000000000000224C
-t1265817266
-s8780
-i<QtGui/qrgb.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcolordialog.h
-c000000004B72D6B200000000000013CB
-t1265817266
-s5067
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcolormap.h
-c000000004B72D6B20000000000000B28
-t1265817266
-s2856
-i<QtCore/qatomic.h>
-i<QtGui/qrgb.h>
-i<QtCore/qvector.h>
-i<QtGui/qwindowdefs.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcolumnview.h
-c000000004B72D6B20000000000001122
-t1265817266
-s4386
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcombobox.h
-c000000004B72D6B2000000000000324D
-t1265817266
-s12877
-i<QtGui/qwidget.h>
-i<QtGui/qabstractitemdelegate.h>
-i<QtCore/qabstractitemmodel.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcommandlinkbutton.h
-c000000004B72D6B20000000000000BA5
-t1265817266
-s2981
-i<QtGui/qpushbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcommonstyle.h
-c000000004B72D6B200000000000010BA
-t1265817266
-s4282
-i<QtGui/qstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcompleter.h
-c000000004B72D6B2000000000000157B
-t1265817266
-s5499
-i<QtCore/qobject.h>
-i<QtCore/qpoint.h>
-i<QtCore/qstring.h>
-i<QtCore/qabstractitemmodel.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qcursor.h
-c000000004B72D6B2000000000000142A
-t1265817266
-s5162
-i<QtCore/qpoint.h>
-i<QtGui/qwindowdefs.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdatawidgetmapper.h
-c000000004B72D6B200000000000010E2
-t1265817266
-s4322
-i"QtCore/qobject.h"
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdatetimeedit.h
-c000000004B72D6B20000000000001FBE
-t1265817266
-s8126
-i<QtCore/qdatetime.h>
-i<QtCore/qvariant.h>
-i<QtGui/qabstractspinbox.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdesktopservices.h
-c000000004B72D6B20000000000000B60
-t1265817266
-s2912
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdesktopwidget.h
-c000000004B72D6B20000000000000E11
-t1265817266
-s3601
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdial.h
-c000000004B72D6B20000000000000E96
-t1265817266
-s3734
-i<QtGui/qabstractslider.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdialog.h
-c000000004B72D6B20000000000000FD7
-t1265817266
-s4055
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdialogbuttonbox.h
-c000000004B72D6B2000000000000158C
-t1265817266
-s5516
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdirmodel.h
-c000000004B72D6B20000000000001561
-t1265817266
-s5473
-i<QtCore/qabstractitemmodel.h>
-i<QtCore/qdir.h>
-i<QtGui/qfileiconprovider.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdockwidget.h
-c000000004B72D6B20000000000001398
-t1265817266
-s5016
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdrag.h
-c000000004B72D6B20000000000000C9E
-t1265817266
-s3230
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qdrawutil.h
-c000000004B72D6B200000000000020B6
-t1265817266
-s8374
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtCore/qmargins.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qerrormessage.h
-c000000004B72D6B20000000000000AE7
-t1265817266
-s2791
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qevent.h
-c000000004B72D6B20000000000006C17
-t1265817266
-s27671
-i<QtGui/qwindowdefs.h>
-i<QtCore/qobject.h>
-i<QtGui/qregion.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtGui/qkeysequence.h>
-i<QtCore/qcoreevent.h>
-i<QtGui/qmime.h>
-i<QtGui/qdrag.h>
-i<QtCore/qvariant.h>
-i<QtCore/qmap.h>
-i<QtCore/qset.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfiledialog.h
-c000000004B72D6B20000000000003676
-t1265817266
-s13942
-i<QtCore/qdir.h>
-i<QtCore/qstring.h>
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfileiconprovider.h
-c000000004B72D6B20000000000000AE8
-t1265817266
-s2792
-i<QtCore/qfileinfo.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfilesystemmodel.h
-c000000004B72D6B20000000000001B25
-t1265817266
-s6949
-i<QtCore/qabstractitemmodel.h>
-i<QtCore/qpair.h>
-i<QtCore/qdir.h>
-i<QtGui/qicon.h>
-i<QtCore/qdiriterator.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfocusframe.h
-c000000004B72D6B20000000000000A3D
-t1265817266
-s2621
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfont.h
-c000000004B72D6B200000000000026E3
-t1265817266
-s9955
-i<QtGui/qwindowdefs.h>
-i<QtCore/qstring.h>
-i<QtCore/qsharedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfontcombobox.h
-c000000004B72D6B20000000000000E19
-t1265817266
-s3609
-i<QtGui/qcombobox.h>
-i<QtGui/qfontdatabase.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfontdatabase.h
-c000000004B72D6B20000000000001618
-t1265817266
-s5656
-i<QtGui/qwindowdefs.h>
-i<QtCore/qstring.h>
-i<QtGui/qfont.h>
-i<QtCore/qstringlist.h>
-i<QtCore/qlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfontdialog.h
-c000000004B72D6B2000000000000130C
-t1265817266
-s4876
-i<QtGui/qwindowdefs.h>
-i<QtGui/qdialog.h>
-i<QtGui/qfont.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfontinfo.h
-c000000004B72D6B20000000000000B24
-t1265817266
-s2852
-i<QtGui/qfont.h>
-i<QtCore/qsharedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qfontmetrics.h
-c000000004B72D6B20000000000001A4A
-t1265817266
-s6730
-i<QtGui/qfont.h>
-i<QtCore/qsharedpointer.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qformlayout.h
-c000000004B72D6B20000000000001690
-t1265817266
-s5776
-i<QtGui/QLayout>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qframe.h
-c000000004B72D6B20000000000001221
-t1265817266
-s4641
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgenericmatrix.h
-c000000004B72D6B20000000000003281
-t1265817266
-s12929
-i<QtCore/qmetatype.h>
-i<QtCore/qdebug.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgesture.h
-c000000004B72D6B20000000000001F9E
-t1265817266
-s8094
-i<QtCore/qobject.h>
-i<QtCore/qlist.h>
-i<QtCore/qdatetime.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgesturerecognizer.h
-c000000004B72D6B20000000000000CA4
-t1265817266
-s3236
-i<QtCore/qglobal.h>
-i<QtCore/qnamespace.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsanchorlayout.h
-c000000004B72D6B20000000000001191
-t1265817266
-s4497
-i<QtGui/qgraphicsitem.h>
-i<QtGui/qgraphicslayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicseffect.h
-c000000004B72D6B20000000000002160
-t1265817266
-s8544
-i<QtCore/qobject.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtGui/qcolor.h>
-i<QtGui/qbrush.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsgridlayout.h
-c000000004B72D6B200000000000014A3
-t1265817266
-s5283
-i<QtGui/qgraphicsitem.h>
-i<QtGui/qgraphicslayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsitem.h
-c000000004B72D6B20000000000009DEA
-t1265817266
-s40426
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtCore/qvariant.h>
-i<QtCore/qrect.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpainterpath.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsitemanimation.h
-c000000004B72D6B20000000000000F6D
-t1265817266
-s3949
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicslayout.h
-c000000004B72D6B20000000000000CCE
-t1265817266
-s3278
-i<QtGui/qgraphicslayoutitem.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicslayoutitem.h
-c000000004B72D6B200000000000016DD
-t1265817266
-s5853
-i<QtCore/qscopedpointer.h>
-i<QtGui/qsizepolicy.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicslinearlayout.h
-c000000004B72D6B20000000000000FA5
-t1265817266
-s4005
-i<QtGui/qgraphicsitem.h>
-i<QtGui/qgraphicslayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsproxywidget.h
-c000000004B72D6B20000000000001349
-t1265817266
-s4937
-i<QtGui/qgraphicswidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsscene.h
-c000000004B72D6B20000000000003646
-t1265817266
-s13894
-i<QtCore/qobject.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtGui/qbrush.h>
-i<QtGui/qfont.h>
-i<QtGui/qtransform.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qpen.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicssceneevent.h
-c000000004B72D6B200000000000022E3
-t1265817266
-s8931
-i<QtCore/qcoreevent.h>
-i<QtCore/qpoint.h>
-i<QtCore/qscopedpointer.h>
-i<QtCore/qrect.h>
-i<QtGui/qpolygon.h>
-i<QtCore/qset.h>
-i<QtCore/qhash.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicstransform.h
-c000000004B72D6B200000000000011A6
-t1265817266
-s4518
-i<QtCore/QObject>
-i<QtGui/QVector3D>
-i<QtGui/QTransform>
-i<QtGui/QMatrix4x4>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicsview.h
-c000000004B72D6B20000000000003230
-t1265817266
-s12848
-i<QtCore/qmetatype.h>
-i<QtGui/qpainter.h>
-i<QtGui/qscrollarea.h>
-i<QtGui/qgraphicsscene.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgraphicswidget.h
-c000000004B72D6B200000000000024A1
-t1265817266
-s9377
-i<QtGui/qfont.h>
-i<QtGui/qgraphicslayoutitem.h>
-i<QtGui/qgraphicsitem.h>
-i<QtGui/qpalette.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgridlayout.h
-c000000004B72D6B20000000000001C8B
-t1265817266
-s7307
-i<QtGui/qlayout.h>
-i<QtGui/qwidget.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgroupbox.h
-c000000004B72D6B20000000000000FC2
-t1265817266
-s4034
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qgtkstyle.h
-c000000004B72D6B200000000000013B9
-t1265817266
-s5049
-i<QtGui/QCleanlooksStyle>
-i<QtGui/QPalette>
-i<QtGui/QFont>
-i<QtGui/QFileDialog>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qheaderview.h
-c000000004B72D6B20000000000002347
-t1265817266
-s9031
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qicon.h
-c000000004B72D6B20000000000001650
-t1265817266
-s5712
-i<QtCore/qglobal.h>
-i<QtCore/qsize.h>
-i<QtCore/qlist.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qiconengine.h
-c000000004B72D6B20000000000000E95
-t1265817266
-s3733
-i<QtCore/qglobal.h>
-i<QtCore/qlist.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qiconengineplugin.h
-c000000004B72D6B20000000000000E44
-t1265817266
-s3652
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qimage.h
-c000000004B72D6B200000000000036D0
-t1265817266
-s14032
-i<QtGui/qtransform.h>
-i<QtGui/qpaintdevice.h>
-i<QtGui/qrgb.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qrect.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qimageiohandler.h
-c000000004B72D6B2000000000000131D
-t1265817266
-s4893
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qimagereader.h
-c000000004B72D6B20000000000001118
-t1265817266
-s4376
-i<QtCore/qbytearray.h>
-i<QtGui/qimage.h>
-i<QtGui/qimageiohandler.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qimagewriter.h
-c000000004B72D6B20000000000000DCF
-t1265817266
-s3535
-i<QtCore/qbytearray.h>
-i<QtCore/qlist.h>
-i<QtGui/qimageiohandler.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qinputcontext.h
-c000000004B72D6B20000000000001165
-t1265817266
-s4453
-i<QtCore/qobject.h>
-i<QtCore/qglobal.h>
-i<QtGui/qevent.h>
-i<QtCore/qstring.h>
-i<QtCore/qlist.h>
-i<QtGui/qaction.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qinputcontextfactory.h
-c000000004B72D6B20000000000000C82
-t1265817266
-s3202
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qinputcontextplugin.h
-c000000004B72D6B20000000000000F96
-t1265817266
-s3990
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qinputdialog.h
-c000000004B72D6B2000000000000265E
-t1265817266
-s9822
-i<QtGui/qdialog.h>
-i<QtCore/qstring.h>
-i<QtGui/qlineedit.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qitemdelegate.h
-c000000004B72D6B20000000000001577
-t1265817266
-s5495
-i<QtGui/qabstractitemdelegate.h>
-i<QtCore/qstring.h>
-i<QtGui/qpixmap.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qitemeditorfactory.h
-c000000004B72D6B20000000000000F8E
-t1265817266
-s3982
-i<QtCore/qmetaobject.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qhash.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qitemselectionmodel.h
-c000000004B72D6B2000000000000226B
-t1265817266
-s8811
-i<QtCore/qset.h>
-i<QtCore/qvector.h>
-i<QtCore/qlist.h>
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qkeyeventtransition.h
-c000000004B72D6B20000000000000BAA
-t1265817266
-s2986
-i<QtCore/qeventtransition.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qkeysequence.h
-c000000004B72D6B20000000000001A0A
-t1265817266
-s6666
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlabel.h
-c000000004B72D6B200000000000016D9
-t1265817266
-s5849
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlayout.h
-c000000004B72D6B20000000000001E5B
-t1265817266
-s7771
-i<QtCore/qobject.h>
-i<QtGui/qlayoutitem.h>
-i<QtGui/qsizepolicy.h>
-i<QtCore/qrect.h>
-i<QtCore/qmargins.h>
-i<limits.h>
-i<QtGui/qboxlayout.h>
-i<QtGui/qgridlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlayoutitem.h
-c000000004B72D6B20000000000001550
-t1265817266
-s5456
-i<QtGui/qsizepolicy.h>
-i<QtCore/qrect.h>
-i<limits.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlcdnumber.h
-c000000004B72D6B200000000000011C3
-t1265817266
-s4547
-i<QtGui/qframe.h>
-i<QtCore/qbitarray.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlineedit.h
-c000000004B72D6B2000000000000285D
-t1265817266
-s10333
-i<QtGui/qframe.h>
-i<QtCore/qstring.h>
-i<QtCore/qmargins.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlistview.h
-c000000004B72D6B20000000000001AB0
-t1265817266
-s6832
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qlistwidget.h
-c000000004B72D6B20000000000002FCC
-t1265817266
-s12236
-i<QtGui/qlistview.h>
-i<QtCore/qvariant.h>
-i<QtCore/qvector.h>
-i<QtGui/qitemselectionmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmainwindow.h
-c000000004B72D6B20000000000001C5A
-t1265817266
-s7258
-i<QtGui/qwidget.h>
-i<QtGui/qtabwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmatrix.h
-c000000004B72D6B20000000000001AF0
-t1265817266
-s6896
-i<QtGui/qpolygon.h>
-i<QtGui/qregion.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qline.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-i<QtGui/qwmatrix.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmatrix4x4.h
-c000000004B72D6B20000000000008264
-t1265817266
-s33380
-i<QtGui/qvector3d.h>
-i<QtGui/qvector4d.h>
-i<QtGui/qquaternion.h>
-i<QtGui/qgenericmatrix.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmdiarea.h
-c000000004B72D6B20000000000001540
-t1265817266
-s5440
-i<QtGui/qabstractscrollarea.h>
-i<QtGui/qtabwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmdisubwindow.h
-c000000004B72D6B20000000000001486
-t1265817266
-s5254
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmenu.h
-c000000004B72D6B20000000000003C15
-t1265817266
-s15381
-i<QtGui/qwidget.h>
-i<QtCore/qstring.h>
-i<QtGui/qicon.h>
-i<QtGui/qaction.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmenubar.h
-c000000004B72D6B200000000000036DF
-t1265817266
-s14047
-i<QtGui/qmenu.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmenudata.h
-c000000004B72D6B200000000000009B7
-t1265817266
-s2487
-i<QtCore/qglobal.h>
-i<QtGui/qaction.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmessagebox.h
-c000000004B72D6B200000000000039BE
-t1265817266
-s14782
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmime.h
-c000000004B72D6B200000000000018D9
-t1265817266
-s6361
-i<QtCore/qmimedata.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmotifstyle.h
-c000000004B72D6B20000000000001182
-t1265817266
-s4482
-i<QtGui/qcommonstyle.h>
-i<QtCore/qpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmouseeventtransition.h
-c000000004B72D6B20000000000000C71
-t1265817266
-s3185
-i<QtCore/qeventtransition.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qmovie.h
-c000000004B72D6B200000000000014E2
-t1265817266
-s5346
-i<QtCore/qobject.h>
-i<QtCore/qbytearray.h>
-i<QtCore/qlist.h>
-i<QtCore/qobject.h>
-i<QtGui/qimagereader.h>
-i<QtGui/qimage.h>
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpagesetupdialog.h
-c000000004B72D6B20000000000000E73
-t1265817266
-s3699
-i<QtGui/qabstractpagesetupdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpaintdevice.h
-c000000004B72D6B2000000000000178A
-t1265817266
-s6026
-i<QtGui/qwindowdefs.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpaintengine.h
-c000000004B72D6B20000000000002D63
-t1265817266
-s11619
-i<QtCore/qnamespace.h>
-i<QtCore/qobjectdefs.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpainter.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpainter.h
-c000000004B72D6B20000000000007FC7
-t1265817266
-s32711
-i<QtCore/qnamespace.h>
-i<QtCore/qrect.h>
-i<QtCore/qpoint.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpixmap.h>
-i<QtGui/qimage.h>
-i<QtGui/qtextoption.h>
-i<QtGui/qdrawutil.h>
-i<QtGui/qpolygon.h>
-i<QtGui/qpen.h>
-i<QtGui/qbrush.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qtransform.h>
-i<QtGui/qfontinfo.h>
-i<QtGui/qfontmetrics.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpainterpath.h
-c000000004B72D6B20000000000003715
-t1265817266
-s14101
-i<QtGui/qmatrix.h>
-i<QtCore/qglobal.h>
-i<QtCore/qrect.h>
-i<QtCore/qline.h>
-i<QtCore/qvector.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpalette.h
-c000000004B72D6B2000000000000328F
-t1265817266
-s12943
-i<QtGui/qwindowdefs.h>
-i<QtGui/qcolor.h>
-i<QtGui/qbrush.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpen.h
-c000000004B72D6B20000000000001020
-t1265817266
-s4128
-i<QtGui/qcolor.h>
-i<QtGui/qbrush.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpicture.h
-c000000004B72D6B200000000000017B9
-t1265817266
-s6073
-i<QtCore/qstringlist.h>
-i<QtCore/qsharedpointer.h>
-i<QtGui/qpaintdevice.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpictureformatplugin.h
-c000000004B72D6B20000000000000D45
-t1265817266
-s3397
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpixmap.h
-c000000004B72D6B20000000000002F9B
-t1265817266
-s12187
-i<QtGui/qpaintdevice.h>
-i<QtGui/qcolor.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qstring.h>
-i<QtCore/qsharedpointer.h>
-i<QtGui/qimage.h>
-i<QtGui/qtransform.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpixmapcache.h
-c000000004B72D6B20000000000000C59
-t1265817266
-s3161
-i<QtGui/qpixmap.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qplaintextedit.h
-c000000004B72D6B20000000000002A48
-t1265817266
-s10824
-i<QtGui/qtextedit.h>
-i<QtGui/qabstractscrollarea.h>
-i<QtGui/qtextdocument.h>
-i<QtGui/qtextoption.h>
-i<QtGui/qtextcursor.h>
-i<QtGui/qtextformat.h>
-i<QtGui/qabstracttextdocumentlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qplastiquestyle.h
-c000000004B72D6B200000000000012BA
-t1265817266
-s4794
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpolygon.h
-c000000004B72D6B20000000000001930
-t1265817266
-s6448
-i<QtCore/qvector.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprintdialog.h
-c000000004B72D6B20000000000001579
-t1265817266
-s5497
-i<QtGui/qabstractprintdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprintengine.h
-c000000004B72D6B20000000000000DC2
-t1265817266
-s3522
-i<QtCore/qvariant.h>
-i<QtGui/qprinter.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprinter.h
-c000000004B72D6B200000000000025B1
-t1265817266
-s9649
-i<QtCore/qstring.h>
-i<QtCore/qscopedpointer.h>
-i<QtGui/qpaintdevice.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprinterinfo.h
-c000000004B72D6B20000000000000B48
-t1265817266
-s2888
-i<QtGui/QPrinter>
-i<QtCore/QList>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprintpreviewdialog.h
-c000000004B72D6B20000000000000DCE
-t1265817266
-s3534
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprintpreviewwidget.h
-c000000004B72D6B20000000000000F4C
-t1265817266
-s3916
-i<QtGui/qwidget.h>
-i<QtGui/qprinter.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprogressbar.h
-c000000004B72D6B20000000000001098
-t1265817266
-s4248
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qprogressdialog.h
-c000000004B72D6B20000000000001192
-t1265817266
-s4498
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qproxymodel.h
-c000000004B72D6B200000000000014E0
-t1265817266
-s5344
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qproxystyle.h
-c000000004B72D6B2000000000000139D
-t1265817266
-s5021
-i<QtGui/QCommonStyle>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qpushbutton.h
-c000000004B72D6B20000000000001015
-t1265817266
-s4117
-i<QtGui/qabstractbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qquaternion.h
-c000000004B72D6B200000000000026E5
-t1265817266
-s9957
-i<QtGui/qvector3d.h>
-i<QtGui/qvector4d.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qradiobutton.h
-c000000004B72D6B20000000000000B6C
-t1265817266
-s2924
-i<QtGui/qabstractbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qregion.h
-c000000004B72D6B2000000000000207F
-t1265817266
-s8319
-i<QtCore/qatomic.h>
-i<QtCore/qrect.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qrgb.h
-c000000004B72D6B20000000000000D24
-t1265817266
-s3364
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qrubberband.h
-c000000004B72D6B20000000000000D09
-t1265817266
-s3337
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qs60mainapplication.h
-c000000004B72D6B200000000000009EF
-t1265817266
-s2543
-i<QtCore/qglobal.h>
-i<aknapp.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qs60mainappui.h
-c000000004B72D6B20000000000000B3C
-t1265817266
-s2876
-i<QtCore/qglobal.h>
-i<aknappui.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qs60maindocument.h
-c000000004B72D6B200000000000009CA
-t1265817266
-s2506
-i<QtCore/qglobal.h>
-i<akndoc.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qs60style.h
-c000000004B72D6B200000000000010F4
-t1265817266
-s4340
-i<QtGui/qcommonstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qscrollarea.h
-c000000004B72D6B20000000000000CF0
-t1265817266
-s3312
-i<QtGui/qabstractscrollarea.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qscrollbar.h
-c000000004B72D6B20000000000000DD5
-t1265817266
-s3541
-i<QtGui/qwidget.h>
-i<QtGui/qabstractslider.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsessionmanager.h
-c000000004B72D6B20000000000000D94
-t1265817266
-s3476
-i<QtCore/qobject.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qstring.h>
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qshortcut.h
-c000000004B72D6B20000000000000DA9
-t1265817266
-s3497
-i<QtGui/qwidget.h>
-i<QtGui/qkeysequence.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsizegrip.h
-c000000004B72D6B20000000000000BF6
-t1265817266
-s3062
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsizepolicy.h
-c000000004B72D6B20000000000002168
-t1265817266
-s8552
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qslider.h
-c000000004B72D6B20000000000001166
-t1265817266
-s4454
-i<QtGui/qabstractslider.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsortfilterproxymodel.h
-c000000004B72D6B200000000000021C6
-t1265817266
-s8646
-i<QtGui/qabstractproxymodel.h>
-i<QtCore/qregexp.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsound.h
-c000000004B72D6B20000000000000B38
-t1265817266
-s2872
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qspinbox.h
-c000000004B72D6B200000000000016E6
-t1265817266
-s5862
-i<QtGui/qabstractspinbox.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsplashscreen.h
-c000000004B72D6B20000000000000D1B
-t1265817266
-s3355
-i<QtGui/qpixmap.h>
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsplitter.h
-c000000004B72D6B20000000000001766
-t1265817266
-s5990
-i<QtGui/qframe.h>
-i<QtGui/qsizepolicy.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstackedlayout.h
-c000000004B72D6B20000000000000E1C
-t1265817266
-s3612
-i<QtGui/qlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstackedwidget.h
-c000000004B72D6B20000000000000BFA
-t1265817266
-s3066
-i<QtGui/qframe.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstandarditemmodel.h
-c000000004B72D6B20000000000003E5E
-t1265817266
-s15966
-i<QtCore/qabstractitemmodel.h>
-i<QtGui/qbrush.h>
-i<QtGui/qfont.h>
-i<QtGui/qicon.h>
-i<QtCore/qdatastream.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstatusbar.h
-c000000004B72D6B20000000000000ECC
-t1265817266
-s3788
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstringlistmodel.h
-c000000004B72D6B20000000000000C74
-t1265817266
-s3188
-i<QtCore/qstringlist.h>
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstyle.h
-c000000004B72D6B20000000000006CCA
-t1265817266
-s27850
-i<QtCore/qobject.h>
-i<QtCore/qrect.h>
-i<QtCore/qsize.h>
-i<QtGui/qicon.h>
-i<QtGui/qpixmap.h>
-i<QtGui/qpalette.h>
-i<QtGui/qsizepolicy.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstyleditemdelegate.h
-c000000004B72D6B20000000000000FF7
-t1265817266
-s4087
-i<QtGui/qabstractitemdelegate.h>
-i<QtCore/qstring.h>
-i<QtGui/qpixmap.h>
-i<QtCore/qvariant.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstylefactory.h
-c000000004B72D6B200000000000008E1
-t1265817266
-s2273
-i<QtCore/qstringlist.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstyleoption.h
-c000000004B72D6B20000000000007013
-t1265817266
-s28691
-i<QtCore/qvariant.h>
-i<QtGui/qabstractspinbox.h>
-i<QtGui/qicon.h>
-i<QtGui/qmatrix.h>
-i<QtGui/qslider.h>
-i<QtGui/qstyle.h>
-i<QtGui/qtabbar.h>
-i<QtGui/qtabwidget.h>
-i<QtGui/qrubberband.h>
-i<QtGui/qframe.h>
-i<QtCore/qabstractitemmodel.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstylepainter.h
-c000000004B72D6B2000000000000108B
-t1265817266
-s4235
-i<QtGui/qpainter.h>
-i<QtGui/qstyle.h>
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qstyleplugin.h
-c000000004B72D6B20000000000000AE8
-t1265817266
-s2792
-i<QtCore/qplugin.h>
-i<QtCore/qfactoryinterface.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsymbianevent.h
-c000000004B72D6B20000000000000B7C
-t1265817266
-s2940
-i<QtCore/qglobal.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsyntaxhighlighter.h
-c000000004B72D6B20000000000000E59
-t1265817266
-s3673
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtGui/qtextobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qsystemtrayicon.h
-c000000004B72D6B20000000000000F5F
-t1265817266
-s3935
-i<QtCore/qobject.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtabbar.h
-c000000004B72D6B20000000000001BE1
-t1265817266
-s7137
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtableview.h
-c000000004B72D6B20000000000001AC0
-t1265817266
-s6848
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtablewidget.h
-c000000004B72D6B2000000000000355F
-t1265817266
-s13663
-i<QtGui/qtableview.h>
-i<QtCore/qvariant.h>
-i<QtCore/qvector.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtabwidget.h
-c000000004B72D6B20000000000002254
-t1265817266
-s8788
-i<QtGui/qwidget.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextbrowser.h
-c000000004B72D6B2000000000000121D
-t1265817266
-s4637
-i<QtGui/qtextedit.h>
-i<QtCore/qurl.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextcursor.h
-c000000004B72D6B20000000000001B24
-t1265817266
-s6948
-i<QtCore/qstring.h>
-i<QtCore/qshareddata.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextdocument.h
-c000000004B72D6B20000000000002342
-t1265817266
-s9026
-i<QtCore/qobject.h>
-i<QtCore/qsize.h>
-i<QtCore/qrect.h>
-i<QtGui/qfont.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextdocumentfragment.h
-c000000004B72D6B20000000000000CB1
-t1265817266
-s3249
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextdocumentwriter.h
-c000000004B72D6B20000000000000C15
-t1265817266
-s3093
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextedit.h
-c000000004B72D6B20000000000003730
-t1265817266
-s14128
-i<QtGui/qabstractscrollarea.h>
-i<QtGui/qtextdocument.h>
-i<QtGui/qtextoption.h>
-i<QtGui/qtextcursor.h>
-i<QtGui/qtextformat.h>
-i<QtGui/qtextobject.h>
-i<QtGui/qtextlayout.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextformat.h
-c000000004B72D6B20000000000007161
-t1265817266
-s29025
-i<QtGui/qcolor.h>
-i<QtGui/qfont.h>
-i<QtCore/qshareddata.h>
-i<QtCore/qvector.h>
-i<QtCore/qvariant.h>
-i<QtGui/qpen.h>
-i<QtGui/qbrush.h>
-i<QtGui/qtextoption.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextlayout.h
-c000000004B72D6B20000000000001C41
-t1265817266
-s7233
-i<QtCore/qstring.h>
-i<QtCore/qnamespace.h>
-i<QtCore/qrect.h>
-i<QtCore/qvector.h>
-i<QtGui/qcolor.h>
-i<QtCore/qobject.h>
-i<QtGui/qevent.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextlist.h
-c000000004B72D6B20000000000000BA4
-t1265817266
-s2980
-i<QtGui/qtextobject.h>
-i<QtCore/qobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextobject.h
-c000000004B72D6B20000000000002673
-t1265817266
-s9843
-i<QtCore/qobject.h>
-i<QtGui/qtextformat.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtextoption.h
-c000000004B72D6B20000000000001312
-t1265817266
-s4882
-i<QtCore/qnamespace.h>
-i<QtCore/qchar.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtexttable.h
-c000000004B72D6B20000000000001200
-t1265817266
-s4608
-i<QtCore/qglobal.h>
-i<QtCore/qobject.h>
-i<QtGui/qtextobject.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtoolbar.h
-c000000004B72D6B2000000000000192A
-t1265817266
-s6442
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtoolbox.h
-c000000004B72D6B20000000000001544
-t1265817266
-s5444
-i<QtGui/qframe.h>
-i<QtGui/qicon.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtoolbutton.h
-c000000004B72D6B20000000000001B49
-t1265817266
-s6985
-i<QtGui/qabstractbutton.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtooltip.h
-c000000004B72D6B20000000000000BA6
-t1265817266
-s2982
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtransform.h
-c000000004B72D6B20000000000002C91
-t1265817266
-s11409
-i<QtGui/qmatrix.h>
-i<QtGui/qpainterpath.h>
-i<QtGui/qpolygon.h>
-i<QtGui/qregion.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qline.h>
-i<QtCore/qpoint.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtreeview.h
-c000000004B72D6B2000000000000218E
-t1265817266
-s8590
-i<QtGui/qabstractitemview.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtreewidget.h
-c000000004B72D6B20000000000004345
-t1265817266
-s17221
-i<QtGui/qtreeview.h>
-i<QtGui/qtreewidgetitemiterator.h>
-i<QtCore/qvariant.h>
-i<QtCore/qvector.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qtreewidgetitemiterator.h
-c000000004B72D6B200000000000013D0
-t1265817266
-s5072
-i<QtCore/qglobal.h>
-i<QtCore/qscopedpointer.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qundogroup.h
-c000000004B72D6B20000000000000D85
-t1265817266
-s3461
-i<QtCore/qobject.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qundostack.h
-c000000004B72D6B20000000000001172
-t1265817266
-s4466
-i<QtCore/qobject.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qundoview.h
-c000000004B72D6B20000000000000C4E
-t1265817266
-s3150
-i<QtGui/qlistview.h>
-i<QtCore/qstring.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qvalidator.h
-c000000004B72D6B200000000000017B1
-t1265817266
-s6065
-i<QtCore/qobject.h>
-i<QtCore/qstring.h>
-i<QtCore/qregexp.h>
-i<QtCore/qlocale.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qvector2d.h
-c000000004B72D6B20000000000001CC3
-t1265817266
-s7363
-i<QtCore/qpoint.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qvector3d.h
-c000000004B72D6B200000000000021FA
-t1265817266
-s8698
-i<QtCore/qpoint.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qvector4d.h
-c000000004B72D6B200000000000022B1
-t1265817266
-s8881
-i<QtCore/qpoint.h>
-i<QtCore/qmetatype.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qvfbhdr.h
-c000000004B72D6B200000000000010F1
-t1265817266
-s4337
-i<QtGui/qcolor.h>
-i<QtGui/qwindowdefs.h>
-i<QtCore/qrect.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwhatsthis.h
-c000000004B72D6B20000000000000AFC
-t1265817266
-s2812
-i<QtCore/qobject.h>
-i<QtGui/qcursor.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwidget.h
-c000000004B72D6B2000000000000955D
-t1265817266
-s38237
-i<QtGui/qwindowdefs.h>
-i<QtCore/qobject.h>
-i<QtCore/qmargins.h>
-i<QtGui/qpaintdevice.h>
-i<QtGui/qpalette.h>
-i<QtGui/qfont.h>
-i<QtGui/qfontmetrics.h>
-i<QtGui/qfontinfo.h>
-i<QtGui/qsizepolicy.h>
-i<QtGui/qregion.h>
-i<QtGui/qbrush.h>
-i<QtGui/qcursor.h>
-i<QtGui/qkeysequence.h>
-i<QtGui/qevent.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwidgetaction.h
-c000000004B72D6B20000000000000B82
-t1265817266
-s2946
-i<QtGui/qaction.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowdefs.h
-c000000004B72D6B20000000000000EF5
-t1265817266
-s3829
-i<QtCore/qobjectdefs.h>
-i<QtCore/qnamespace.h>
-i<QtGui/qmacdefines_mac.h>
-i<QtGui/qwindowdefs_win.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowscestyle.h
-c000000004B72D6B20000000000001052
-t1265817266
-s4178
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowsmobilestyle.h
-c000000004B72D6B20000000000001058
-t1265817266
-s4184
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowsstyle.h
-c000000004B72D6B20000000000000FAA
-t1265817266
-s4010
-i<QtGui/qcommonstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowsvistastyle.h
-c000000004B72D6B20000000000001128
-t1265817266
-s4392
-i<QtGui/qwindowsxpstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwindowsxpstyle.h
-c000000004B72D6B20000000000001074
-t1265817266
-s4212
-i<QtGui/qwindowsstyle.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwizard.h
-c000000004B72D6B20000000000002128
-t1265817266
-s8488
-i<QtGui/qdialog.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwmatrix.h
-c000000004B72D6B20000000000000880
-t1265817266
-s2176
-i<QtGui/qmatrix.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qworkspace.h
-c000000004B72D6B20000000000001135
-t1265817266
-s4405
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtGui.framework/Versions/4/Headers/qwsembedwidget.h
-c000000004B72D6B20000000000000A83
-t1265817266
-s2691
-i<QtGui/qwidget.h>
-
-N/Library/Frameworks/QtOpenGL.framework/QtOpenGL
-c000000004B72D7DA00000000001C7E34
-t1265817562
-s1867316
-
-N/Library/Frameworks/QtXml.framework/QtXml
-c000000004B72D7DA00000000000E9C7C
-t1265817562
-s957564
-
-N/Library/Frameworks/QtXml.framework/Versions/4/Headers/QDomElement
-c000000004B72D6B20000000000000012
-t1265817266
-s18
-i"qdom.h"
-
-N/Library/Frameworks/QtXml.framework/Versions/4/Headers/qdom.h
-c000000004B72D6B20000000000005544
-t1265817266
-s21828
-i<QtCore/qstring.h>
-
-N/System/Library/Frameworks/AGL.framework/AGL
-c000000004BD2589F0000000000043820
-t1272076447
-s276512
-
-N/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
-c0000000040C4AA6800000000000001E5
-t1086630504
-s485
-
-N/System/Library/Frameworks/OpenGL.framework/OpenGL
-c000000004CD4F7840000000000043330
-t1289025412
-s275248
-
-N/Users/aye1/Dev/RV/Aye1/AGHFile.cpp
-c000000004CE7A4B00000000000000177
-t1290249392
-s375
-i"AGHFile.h"
-
-N/Users/aye1/Dev/RV/Aye1/AGHFile.h
-c000000004CE7A3CF000000000000011B
-t1290249167
-s283
-i<QString>
-i<QFile>
-
-N/Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp
-c000000004CE8FC22000000000000036D
-t1290337314
-s877
-i"AGHMainWindow.h"
-
-N/Users/aye1/Dev/RV/Aye1/AGHMainWindow.h
-c000000004CE8FCEC000000000000010E
-t1290337516
-s270
-i<QtGui>
-i<QGLViewer/QGLViewer.h>
-i<QDomElement>
-
-N/Users/aye1/Dev/RV/Aye1/RV.app
-t1290348698
-s102
-
-N/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app
-t1290348698
-s102
-
-N/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/Info.plist
-t1290348693
-s560
-
-N/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV
-t1290348698
-s40416
-
-N/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/PkgInfo
-t1290348693
-s8
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/AGHFile.o
-t1290348694
-s134784
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/AGHMainWindow.o
-t1290348697
-s1130912
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/RV.LinkFileList
-c000000004CE9289500000000000000FF
-t1290348693
-s255
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/main.o
-t1290348697
-s1096732
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-A0A52A2ADF7A1E2A99738674.sh
-c000000004CE92895000000000000004C
-t1290348693
-s76
-
-N/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-D7BA7D76DAB5DD13389D6332.sh
-c000000004CE92895000000000000004B
-t1290348693
-s75
-
-N/Users/aye1/Dev/RV/Aye1/main.cpp
-c000000004CE9007000000000000002F5
-t1290338416
-s757
-i<iostream>
-i"AGHFile.h"
-i"AGHMainWindow.h"
-i<QTimer>
-i<QObject>
-i<QApplication>
-
-N/usr/include/AvailabilityMacros.h
-c000000004A8D4DF70000000000006724
-t1250774519
-s26404
-
-N/usr/include/QGLViewer/qglviewer.h
-c000000004BF89EC1000000000000CB6B
-t1274584769
-s52075
-
-N/usr/include/ctype.h
-c000000004AC59C810000000000002C18
-t1254464641
-s11288
-
-N/usr/include/limits.h
-c000000004AC59C81000000000000145A
-t1254464641
-s5210
-
-N/usr/include/math.h
-c000000004AC599B500000000000004F1
-t1254463925
-s1265
-
-N/usr/include/stdarg.h
-c000000004AC59C8100000000000000EA
-t1254464641
-s234
-
-N/usr/include/stddef.h
-c000000004AC59C810000000000001404
-t1254464641
-s5124
-
-N/usr/include/stdio.h
-c000000004AC59C820000000000004174
-t1254464642
-s16756
-
-N/usr/include/stdlib.h
-c000000004AC59C820000000000002DF5
-t1254464642
-s11765
-
-N/usr/include/string.h
-c000000004AC59C820000000000001731
-t1254464642
-s5937
-
-N/usr/include/sys/types.h
-c000000004B90BBAB0000000000002905
-t1267776427
-s10501
-
-NInfo.plist
-c000000004CE9213A000000000000024C
-t1290346810
-s588
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies312041493#312041493#0(0"0(0#1#0"8606664992#0"0#
-
-CCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/AGHFile.o /Users/aye1/Dev/RV/Aye1/AGHFile.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s312041493.742768
-e312041494.415187
-r1
-xCompileC
-xbuild/RV.build/Debug/RV.build/Objects-normal/i386/AGHFile.o
-x/Users/aye1/Dev/RV/Aye1/AGHFile.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@43"Compile /Users/aye1/Dev/RV/Aye1/AGHFile.cpp312041493#312041494#0(0"0(0#0#35"/Users/aye1/Dev/RV/Aye1/AGHFile.cpp8603336864#1380"    cd /Users/aye1/Dev/RV/Aye1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.4 -gdwarf-2 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/RV.hmap -F/Users/aye1/Dev/RV/Aye1/build/Debug -I/Users/aye1/Dev/RV/Aye1/build/Debug/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/Library/Frameworks/QtOpenGL.framework/Versions/4/Headers -I/usr/include/QtOpenGL -I/Library/Frameworks/QtXml.framework/Versions/4/Headers -I/usr/include/QtXml -I/usr/include -I/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/System/Library/Frameworks/AGL.framework/Headers -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.6/mkspecs/macx-xcode -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources/i386 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources -pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/aye1/Dev/RV/Aye1/AGHFile.cpp -o /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/AGHFile.o0#
-
-CCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/AGHMainWindow.o /Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s312041493.743484
-e312041497.290719
-r1
-xCompileC
-xbuild/RV.build/Debug/RV.build/Objects-normal/i386/AGHMainWindow.o
-x/Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@49"Compile /Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp312041493#312041497#0(0"0(0#0#41"/Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp8602979904#1392"    cd /Users/aye1/Dev/RV/Aye1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.4 -gdwarf-2 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/RV.hmap -F/Users/aye1/Dev/RV/Aye1/build/Debug -I/Users/aye1/Dev/RV/Aye1/build/Debug/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/Library/Frameworks/QtOpenGL.framework/Versions/4/Headers -I/usr/include/QtOpenGL -I/Library/Frameworks/QtXml.framework/Versions/4/Headers -I/usr/include/QtXml -I/usr/include -I/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/System/Library/Frameworks/AGL.framework/Headers -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.6/mkspecs/macx-xcode -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources/i386 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources -pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/aye1/Dev/RV/Aye1/AGHMainWindow.cpp -o /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/AGHMainWindow.o0#
-
-CCompileC build/RV.build/Debug/RV.build/Objects-normal/i386/main.o /Users/aye1/Dev/RV/Aye1/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s312041494.415274
-e312041497.618778
-r1
-xCompileC
-xbuild/RV.build/Debug/RV.build/Objects-normal/i386/main.o
-x/Users/aye1/Dev/RV/Aye1/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@40"Compile /Users/aye1/Dev/RV/Aye1/main.cpp312041494#312041497#0(0"0(0#0#32"/Users/aye1/Dev/RV/Aye1/main.cpp8607444736#1374"    cd /Users/aye1/Dev/RV/Aye1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.4 -gdwarf-2 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/RV.hmap -F/Users/aye1/Dev/RV/Aye1/build/Debug -I/Users/aye1/Dev/RV/Aye1/build/Debug/include -I/Library/Frameworks/QtCore.framework/Versions/4/Headers -I/usr/include/QtCore -I/Library/Frameworks/QtGui.framework/Versions/4/Headers -I/usr/include/QtGui -I/Library/Frameworks/QtOpenGL.framework/Versions/4/Headers -I/usr/include/QtOpenGL -I/Library/Frameworks/QtXml.framework/Versions/4/Headers -I/usr/include/QtXml -I/usr/include -I/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/System/Library/Frameworks/AGL.framework/Headers -I. -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/usr/local/Qt4.6/mkspecs/macx-xcode -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources/i386 -I/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources -pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/aye1/Dev/RV/Aye1/main.cpp -o /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/main.o0#
-
-CLd /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV normal i386
-s312041497.619077
-e312041498.104905
-r1
-xLd
-x/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV
-xnormal
-xi386
-lSLF07#2@65"Link /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV312041497#312041498#0(0"0(0#0#0"8598912384#630"    cd /Users/aye1/Dev/RV/Aye1    setenv MACOSX_DEPLOYMENT_TARGET 10.4    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/aye1/Dev/RV/Aye1/build/Debug -L/Library/Frameworks -L/System/Library/Frameworks -F/Users/aye1/Dev/RV/Aye1/build/Debug -filelist /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/RV.LinkFileList -mmacosx-version-min=10.4 -headerpad_max_install_names -L/Library/Frameworks -F/Library/Frameworks -framework OpenGL -framework AGL -framework QtXml -framework QtOpenGL -framework QtGui -framework QtCore -framework QGLViewer -o /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/MacOS/RV0#
-
-CPBXCp RV.app build/Debug/RV.app
-s312041498.114559
-e312041498.131787
-r1
-xPBXCp
-xRV.app
-xbuild/Debug/RV.app
-lSLF07#2@23"Copy build/Debug/RV.app312041498#312041498#0(0"0(0#0#42"/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app8603081728#246"    cd /Users/aye1/Dev/RV/Aye1    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app /Users/aye1/Dev/RV/Aye10#
-
-CPhaseScriptExecution "Qt Preprocessors" /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-A0A52A2ADF7A1E2A99738674.sh
-s312041493.729779
-e312041493.742701
-r1
-xPhaseScriptExecution
-xQt Preprocessors
-x/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-A0A52A2ADF7A1E2A99738674.sh
-omake: Nothing to be done for `preprocess'.
-lSLF07#2@42"Run custom shell script 'Qt Preprocessors'312041493#312041493#0(43"make: Nothing to be done for `preprocess'.1(13@43"make: Nothing to be done for `preprocess'.312041493#0#43#0(1@0"0(0#0#0"8606546016#15296"    cd /Users/aye1/Dev/RV/Aye1    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER aye1    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/aye1/Dev/RV/Aye1/build    setenv BUILD_ROOT /Users/aye1/Dev/RV/Aye1    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv CACHE_ROOT /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug    setenv CONTENTS_FOLDER_PATH RV.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH /Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/RV.dst    setenv DWARF_DSYM_FILE_NAME RV.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/aye1/Dev/RV/Aye1/build/Debug    setenv DYLIB_COMPATIBILITY_VERSION 1.0    setenv DYLIB_CURRENT_VERSION 1.0.0    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH RV.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH RV.app/Contents/MacOS    setenv EXECUTABLE_NAME RV    setenv EXECUTABLE_PATH RV.app/Contents/MacOS/RV    setenv FILE_LIST /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH RV.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME RV.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug/include\" /Library/Frameworks/QtCore.framework/Versions/4/Headers /usr/include/QtCore /Library/Frameworks/QtGui.framework/Versions/4/Headers /usr/include/QtGui /Library/Frameworks/QtOpenGL.framework/Versions/4/Headers /usr/include/QtOpenGL /Library/Frameworks/QtXml.framework/Versions/4/Headers /usr/include/QtXml /usr/include /System/Library/Frameworks/OpenGL.framework/Versions/A/Headers /System/Library/Frameworks/AGL.framework/Headers . /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /usr/local/Qt4.6/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH RV.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH /InfoPlist.strings    setenv INSTALL_DIR /tmp/RV.dst/Users/aye1/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER aye1    setenv INSTALL_PATH /Users/aye1/Applications    setenv INSTALL_ROOT /tmp/RV.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH RV.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/RV-LinkMap-normal-i386.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" /Library/Frameworks /System/Library/Frameworks/"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/RV.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.4    setenv MAC_OS_X_VERSION_ACTUAL 1065    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0605    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal    setenv OBJROOT /Users/aye1/Dev/RV/Aye1/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/Library/Frameworks -F/Library/Frameworks"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH RV.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/PkgInfo    setenv PKGINFO_PATH RV.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH RV.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH RV.app/Contents/PrivateHeaders    setenv PRODUCT_NAME RV    setenv PRODUCT_SETTINGS_PATH /Users/aye1/Dev/RV/Aye1/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT RV    setenv PROJECT_DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/DerivedSources    setenv PROJECT_DIR /Users/aye1/Dev/RV/Aye1    setenv PROJECT_FILE_PATH /Users/aye1/Dev/RV/Aye1/RV.xcodeproj    setenv PROJECT_NAME RV    setenv PROJECT_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build    setenv PUBLIC_HEADERS_FOLDER_PATH RV.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH RV.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH RV.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH RV.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/aye1/Dev/RV/Aye1    setenv SRCROOT /Users/aye1/Dev/RV/Aye1    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/SymbolRepositories    setenv SYMROOT /Users/aye1/Dev/RV/Aye1/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME RV    setenv TARGET_BUILD_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv TARGET_NAME RV    setenv TARGET_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_ROOT /Users/aye1/Dev/RV/Aye1/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH RV.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER aye1    setenv USER_APPS_DIR /Users/aye1/Applications    setenv USER_LIBRARY_DIR /Users/aye1/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH RV.app/Contents/version.plist    setenv VERSION_INFO_BUILDER aye1    setenv VERSION_INFO_FILE RV_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:RV  PROJECT:RV-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME RV.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0323    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv YACCFLAGS -d    /bin/sh -c /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-A0A52A2ADF7A1E2A99738674.sh0#
-
-CPhaseScriptExecution "Qt Qmake" /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-D7BA7D76DAB5DD13389D6332.sh
-s312041493.699877
-e312041493.729304
-r1
-xPhaseScriptExecution
-xQt Qmake
-x/Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-D7BA7D76DAB5DD13389D6332.sh
-omake: `RV.xcodeproj/project.pbxproj' is up to date.
-lSLF07#2@34"Run custom shell script 'Qt Qmake'312041493#312041493#0(52"make: `RV.xcodeproj/project.pbxproj' is up to date.1(13@52"make: `RV.xcodeproj/project.pbxproj' is up to date.312041493#0#52#0(1@0"0(0#0#0"8607445824#15296"    cd /Users/aye1/Dev/RV/Aye1    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER aye1    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/aye1/Dev/RV/Aye1/build    setenv BUILD_ROOT /Users/aye1/Dev/RV/Aye1    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv CACHE_ROOT /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug    setenv CONTENTS_FOLDER_PATH RV.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH /Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/RV.dst    setenv DWARF_DSYM_FILE_NAME RV.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/aye1/Dev/RV/Aye1/build/Debug    setenv DYLIB_COMPATIBILITY_VERSION 1.0    setenv DYLIB_CURRENT_VERSION 1.0.0    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH RV.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH RV.app/Contents/MacOS    setenv EXECUTABLE_NAME RV    setenv EXECUTABLE_PATH RV.app/Contents/MacOS/RV    setenv FILE_LIST /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH RV.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" "    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME RV.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug/include\" /Library/Frameworks/QtCore.framework/Versions/4/Headers /usr/include/QtCore /Library/Frameworks/QtGui.framework/Versions/4/Headers /usr/include/QtGui /Library/Frameworks/QtOpenGL.framework/Versions/4/Headers /usr/include/QtOpenGL /Library/Frameworks/QtXml.framework/Versions/4/Headers /usr/include/QtXml /usr/include /System/Library/Frameworks/OpenGL.framework/Versions/A/Headers /System/Library/Frameworks/AGL.framework/Headers . /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /usr/local/Qt4.6/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH RV.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH /InfoPlist.strings    setenv INSTALL_DIR /tmp/RV.dst/Users/aye1/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER aye1    setenv INSTALL_PATH /Users/aye1/Applications    setenv INSTALL_ROOT /tmp/RV.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH RV.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/RV-LinkMap-normal-i386.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" /Library/Frameworks /System/Library/Frameworks/"    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal/i386/RV.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.4    setenv MAC_OS_X_VERSION_ACTUAL 1065    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0605    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Objects-normal    setenv OBJROOT /Users/aye1/Dev/RV/Aye1/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -O2 -Wall -W -DQT_NO_DEBUG -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/Library/Frameworks -F/Library/Frameworks"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH RV.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/PkgInfo    setenv PKGINFO_PATH RV.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH RV.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH RV.app/Contents/PrivateHeaders    setenv PRODUCT_NAME RV    setenv PRODUCT_SETTINGS_PATH /Users/aye1/Dev/RV/Aye1/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT RV    setenv PROJECT_DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/DerivedSources    setenv PROJECT_DIR /Users/aye1/Dev/RV/Aye1    setenv PROJECT_FILE_PATH /Users/aye1/Dev/RV/Aye1/RV.xcodeproj    setenv PROJECT_NAME RV    setenv PROJECT_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build    setenv PUBLIC_HEADERS_FOLDER_PATH RV.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/aye1/Dev/RV/Aye1/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH RV.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH RV.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/Ec/EcgY9ReYGq4qs2mf3tNYlU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH RV.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/aye1/Dev/RV/Aye1    setenv SRCROOT /Users/aye1/Dev/RV/Aye1    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/SymbolRepositories    setenv SYMROOT /Users/aye1/Dev/RV/Aye1/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME RV    setenv TARGET_BUILD_DIR /Users/aye1/Dev/RV/Aye1/build/Debug    setenv TARGET_NAME RV    setenv TARGET_TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_FILES_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_FILE_DIR /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build    setenv TEMP_ROOT /Users/aye1/Dev/RV/Aye1/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH RV.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER aye1    setenv USER_APPS_DIR /Users/aye1/Applications    setenv USER_LIBRARY_DIR /Users/aye1/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH RV.app/Contents/version.plist    setenv VERSION_INFO_BUILDER aye1    setenv VERSION_INFO_FILE RV_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:RV  PROJECT:RV-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME RV.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0323    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv YACCFLAGS -d    /bin/sh -c /Users/aye1/Dev/RV/Aye1/build/RV.build/Debug/RV.build/Script-D7BA7D76DAB5DD13389D6332.sh0#
-
-CProcessInfoPlistFile /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/Info.plist Info.plist
-s312041493.694581
-e312041493.699805
-r1
-xProcessInfoPlistFile
-x/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist312041493#312041493#0(0"0(0#0#34"/Users/aye1/Dev/RV/Aye1/Info.plist8603770368#247"    cd /Users/aye1/Dev/RV/Aye1    builtin-infoPlistUtility Info.plist -genpkginfo /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app/Contents/Info.plist0#
-
-CTouch /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app
-s312041498.104993
-e312041498.114445
-r1
-xTouch
-x/Users/aye1/Dev/RV/Aye1/build/Debug/RV.app
-lSLF07#2@48"Touch /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app312041498#312041498#0(0"0(0#0#0"8603456704#96"    cd /Users/aye1/Dev/RV/Aye1    /usr/bin/touch -c /Users/aye1/Dev/RV/Aye1/build/Debug/RV.app0#
-
