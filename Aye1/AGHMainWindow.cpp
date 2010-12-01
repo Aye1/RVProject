@@ -67,11 +67,13 @@ void AGHMainWindow::createDock() {
 	paramDock->setWidget(paramDockContent);
 	
 	QLabel * speedLabel = new QLabel("Vitesse");
-	QLineEdit * speedField = new QLineEdit;
+	QSpinBox * speedField = new QSpinBox();
+	speedField->setMaximum(400);
+	speedField->setValue(100);
 	
-	QVBoxLayout * paramLayout = new QVBoxLayout;
-	paramLayout->addWidget(speedLabel);
-	paramLayout->addWidget(speedField);
+	QGridLayout * paramLayout = new QGridLayout;
+	paramLayout->addWidget(speedLabel, 0, 0, Qt::AlignTop);
+	paramLayout->addWidget(speedField, 1, 0, Qt::AlignTop);
 	
 	paramDockContent->setLayout(paramLayout);
 }
