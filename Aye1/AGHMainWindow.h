@@ -22,4 +22,5 @@ public slots:
 private:
 	QFile * _currentFile;
 	QLabel * _fileLabel;
+	QPushButton * _playPauseButton;
 };

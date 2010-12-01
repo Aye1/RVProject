@@ -10,7 +10,6 @@
 #include "AGHMainWindow.h"
 
 AGHMainWindow::AGHMainWindow() {
-	//QMdiArea * area = new QMdiArea();
 	
 	QMenu * menuFichier = menuBar()->addMenu("&Fichier");
 	
@@ -42,12 +41,14 @@ AGHMainWindow::AGHMainWindow() {
 	QGridLayout * mainLayout = new QGridLayout();
 	
 	_fileLabel = new QLabel("Pas de fichier ouvert");
-	mainLayout->addWidget(_fileLabel, 0, 0);
+	mainLayout->addWidget(_fileLabel, 0, 0, Qt::AlignLeft | Qt::AlignTop);
+	
+	_playPauseButton = new QPushButton("Play");
+	_playPauseButton->setEnabled(false);
+	mainLayout->addWidget(_playPauseButton, 1, 0, Qt::AlignLeft);
 	
 	mainWidget->setLayout(mainLayout);
-	
-	//QMdiSubWindow * parametersWindow = new QMdiSubWindow(paramDock);
-	
+		
 	setCentralWidget(mainWidget);
 }
 
