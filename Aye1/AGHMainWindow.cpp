@@ -67,20 +67,21 @@ void AGHMainWindow::createDock() {
 	paramDock->setWidget(paramDockContent);
 	
 	QLabel * speedLabel = new QLabel("Vitesse");
-	QSpinBox * speedField = new QSpinBox();
-	speedField->setMaximum(400);
-	speedField->setValue(100);
+	_speedBox = new QSpinBox();
+	_speedBox->setMaximum(400);
+	_speedBox->setValue(100);
 	
 	QGridLayout * paramLayout = new QGridLayout;
 	paramLayout->addWidget(speedLabel, 0, 0, Qt::AlignTop);
-	paramLayout->addWidget(speedField, 1, 0, Qt::AlignTop);
+	paramLayout->addWidget(_speedBox, 1, 0, Qt::AlignTop);
 	
 	paramDockContent->setLayout(paramLayout);
 }
 
 void AGHMainWindow::openFile() {
 	QString filename = QFileDialog::getOpenFileName(this, "Open Image", ".", "LEJEA files (*.lejea)");
-	_currentFile = new QFile(filename);
+	_currentFile = new AGHFile(filename);
+	_currentFile->init();
 	_fileLabel->setText("Fichier ouvert : " + filename);
 	_playPauseButton->setEnabled(true);
 }
@@ -93,4 +94,16 @@ void AGHMainWindow::closeFile() {
 
 void AGHMainWindow::play() {
 	_playPauseButton->setText("Pause");
+	float T = 60/_speedBox->value();
+	_timer = new QTimer();
+	_timer->start(T*1000);
+	connect(_timer, SIGNAL(timeout()), this, SLOT(playNote()));
+}
+
+void AGHMainWindow::playNote() {
+	int note = _currentFile->nextNote();
+	if (note == -1) {
+		_timer->stop();
+	}
+	printf("note : %d \n", note);
 }

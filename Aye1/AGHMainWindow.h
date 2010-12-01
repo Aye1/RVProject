@@ -9,6 +9,7 @@
 
 #include <QtGui>
 #include <QString>
+#include "AGHFile.h"
 //#include <QGLViewer/QGLViewer.h>
 
 class AGHMainWindow : public QMainWindow {
@@ -22,9 +23,12 @@ public slots:
 	void openFile();
 	void closeFile();
 	void play();
+	void playNote();
 private:
-	QFile * _currentFile;
+	AGHFile * _currentFile;
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;
 	QPushButton * _playPauseButton;
+	QSpinBox * _speedBox;
+	QTimer * _timer;
 };

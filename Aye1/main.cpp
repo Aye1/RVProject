@@ -8,17 +8,12 @@
  */
 
 #include <iostream>
-#include "AGHFile.h"
 #include "AGHMainWindow.h"
 #include <QTimer>
 #include <QObject>
 #include <QApplication>
 
 using namespace std;
-
-void playNote() {
-	cout << "note" << endl;
-}
 
 int main(int argc, char** argv) {
 	
@@ -35,11 +30,6 @@ int main(int argc, char** argv) {
 	AGHFile file(argv[1]);
 	file.init();
 	
-	/*QTimer * timer = new QTimer();
-	QObject::connect(timer, SIGNAL(timeout()), qApp, SLOT(playNote()));
-	timer->start(1000);*/
-	
-	cout << "Hello RV !" << endl;
 	window.show();
 	return app.exec();
 }
