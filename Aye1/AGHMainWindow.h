@@ -21,4 +21,5 @@ public slots:
 	void closeFile();
 private:
 	QFile * _currentFile;
+	QLabel * _fileLabel;
 };

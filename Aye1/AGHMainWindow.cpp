@@ -36,12 +36,13 @@ AGHMainWindow::AGHMainWindow() {
 	paramLayout->addWidget(speedField);
 	
 	paramDockContent->setLayout(paramLayout);
-	
-	QPushButton * placeholder = new QPushButton("Placeholder");
-	
+		
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
 	QGridLayout * mainLayout = new QGridLayout();
+	
+	_fileLabel = new QLabel("Pas de fichier ouvert");
+	mainLayout->addWidget(_fileLabel, 0, 0);
 	
 	mainWidget->setLayout(mainLayout);
 	
@@ -57,6 +58,7 @@ void AGHMainWindow::openFile() {
 	printf("opening");
 	QString filename = QFileDialog::getOpenFileName(this, "Open Image", ".", "LEJEA files (*.lejea)");
 	_currentFile = new QFile(filename);
+	_fileLabel->setText("Fichier ouvert : " + filename);
 }
 
 void AGHMainWindow::closeFile() {
