@@ -30,6 +30,7 @@ int main(int argc, char** argv) {
 	
 	QApplication app(argc, argv);
 	AGHMainWindow window;
+	window.resize(1024, 768);
 	
 	AGHFile file(argv[1]);
 	file.init();

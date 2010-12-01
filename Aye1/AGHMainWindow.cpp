@@ -40,13 +40,14 @@ AGHMainWindow::AGHMainWindow() {
 	QPushButton * placeholder = new QPushButton("Placeholder");
 	
 	QWidget * mainWidget = new QWidget;
+	mainWidget->resize(800,600);
 	QGridLayout * mainLayout = new QGridLayout();
 	
 	mainWidget->setLayout(mainLayout);
 	
 	//QMdiSubWindow * parametersWindow = new QMdiSubWindow(paramDock);
 	
-	setCentralWidget(placeholder);
+	setCentralWidget(mainWidget);
 }
 
 AGHMainWindow::~AGHMainWindow() {
