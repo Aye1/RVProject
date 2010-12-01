@@ -12,21 +12,7 @@
 AGHMainWindow::AGHMainWindow() {
 	
 	createMenu();
-	
-	QDockWidget * paramDock = new QDockWidget("Parametres", this);
-	addDockWidget(Qt::LeftDockWidgetArea, paramDock);
-	
-	QWidget * paramDockContent = new QWidget;
-	paramDock->setWidget(paramDockContent);
-	
-	QLabel * speedLabel = new QLabel("Vitesse");
-	QLineEdit * speedField = new QLineEdit;
-	
-	QVBoxLayout * paramLayout = new QVBoxLayout;
-	paramLayout->addWidget(speedLabel);
-	paramLayout->addWidget(speedField);
-	
-	paramDockContent->setLayout(paramLayout);
+	createDock();
 		
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
@@ -39,6 +25,9 @@ AGHMainWindow::AGHMainWindow() {
 	_playPauseButton->setEnabled(false);
 	mainLayout->addWidget(_playPauseButton, 1, 0, Qt::AlignLeft);
 	connect(_playPauseButton, SIGNAL(clicked()), this, SLOT(play()));
+	
+	_currentNoteLabel = new QLabel("Note : ");
+	mainLayout->addWidget(_currentNoteLabel, 0, 2, Qt::AlignRight | Qt::AlignTop);
 	
 	mainWidget->setLayout(mainLayout);
 		
@@ -68,6 +57,23 @@ void AGHMainWindow::createMenu() {
 	menuFichier->addAction(actionQuitter);
 	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+}
+
+void AGHMainWindow::createDock() {
+	QDockWidget * paramDock = new QDockWidget("Parametres", this);
+	addDockWidget(Qt::LeftDockWidgetArea, paramDock);
+	
+	QWidget * paramDockContent = new QWidget;
+	paramDock->setWidget(paramDockContent);
+	
+	QLabel * speedLabel = new QLabel("Vitesse");
+	QLineEdit * speedField = new QLineEdit;
+	
+	QVBoxLayout * paramLayout = new QVBoxLayout;
+	paramLayout->addWidget(speedLabel);
+	paramLayout->addWidget(speedField);
+	
+	paramDockContent->setLayout(paramLayout);
 }
 
 void AGHMainWindow::openFile() {

@@ -17,6 +17,7 @@ public:
 	AGHMainWindow();
 	~AGHMainWindow();
 	void createMenu();
+	void createDock();
 public slots:
 	void openFile();
 	void closeFile();
@@ -24,5 +25,6 @@ public slots:
 private:
 	QFile * _currentFile;
 	QLabel * _fileLabel;
+	QLabel * _currentNoteLabel;
 	QPushButton * _playPauseButton;
 };
