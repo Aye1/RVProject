@@ -11,15 +11,7 @@
 
 AGHMainWindow::AGHMainWindow() {
 	
-	QMenu * menuFichier = menuBar()->addMenu("&Fichier");
-	
-	QAction * actionOuvrir = new QAction("&Ouvrir", this);
-	menuFichier->addAction(actionOuvrir);
-	connect(actionOuvrir, SIGNAL(triggered()), this, SLOT(openFile()));
-	
-	QAction * actionQuitter = new QAction("&Quitter", this);
-	menuFichier->addAction(actionQuitter);
-	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+	createMenu();
 	
 	QDockWidget * paramDock = new QDockWidget("Parametres", this);
 	addDockWidget(Qt::LeftDockWidgetArea, paramDock);
@@ -46,6 +38,7 @@ AGHMainWindow::AGHMainWindow() {
 	_playPauseButton = new QPushButton("Play");
 	_playPauseButton->setEnabled(false);
 	mainLayout->addWidget(_playPauseButton, 1, 0, Qt::AlignLeft);
+	connect(_playPauseButton, SIGNAL(clicked()), this, SLOT(play()));
 	
 	mainWidget->setLayout(mainLayout);
 		
@@ -55,13 +48,41 @@ AGHMainWindow::AGHMainWindow() {
 AGHMainWindow::~AGHMainWindow() {
 }
 
+void AGHMainWindow::createMenu() {
+	QMenu * menuFichier = menuBar()->addMenu("&Fichier");
+	
+	/* Ouvrir un fichier */
+	QAction * actionOuvrir = new QAction("&Ouvrir", this);
+	menuFichier->addAction(actionOuvrir);
+	actionOuvrir->setShortcut(QKeySequence("Ctrl+O"));
+	connect(actionOuvrir, SIGNAL(triggered()), this, SLOT(openFile()));
+	
+	/* Fermer un fichier */
+	QAction * actionFermer = new QAction("&Fermer", this);
+	menuFichier->addAction(actionFermer);
+	actionFermer->setShortcut(QKeySequence("Ctrl+W"));
+	connect(actionFermer, SIGNAL(triggered()), this, SLOT(closeFile()));
+	
+	/* Quitter le programme */
+	QAction * actionQuitter = new QAction("&Quitter", this);
+	menuFichier->addAction(actionQuitter);
+	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
+	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+}
+
 void AGHMainWindow::openFile() {
-	printf("opening");
 	QString filename = QFileDialog::getOpenFileName(this, "Open Image", ".", "LEJEA files (*.lejea)");
 	_currentFile = new QFile(filename);
 	_fileLabel->setText("Fichier ouvert : " + filename);
+	_playPauseButton->setEnabled(true);
 }
 
 void AGHMainWindow::closeFile() {
 	_currentFile->close();
+	_playPauseButton->setEnabled(false);
+	_fileLabel->setText("Pas de fichier ouvert");
+}
+
+void AGHMainWindow::play() {
+	_playPauseButton->setText("Pause");
 }

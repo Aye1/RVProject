@@ -16,9 +16,11 @@ class AGHMainWindow : public QMainWindow {
 public:
 	AGHMainWindow();
 	~AGHMainWindow();
+	void createMenu();
 public slots:
 	void openFile();
 	void closeFile();
+	void play();
 private:
 	QFile * _currentFile;
 	QLabel * _fileLabel;
