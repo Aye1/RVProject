@@ -11,6 +11,8 @@
 
 AGHMainWindow::AGHMainWindow() {
 	
+	ui.setupUi(this);	
+
 	createMenu();
 	createDock();
 		
