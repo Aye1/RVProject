@@ -19,6 +19,7 @@
 		9EE51BA012B4F91800B4D01A /* mi.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9C12B4F91800B4D01A /* mi.wav */; };
 		9EE51BA112B4F91800B4D01A /* re.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9D12B4F91800B4D01A /* re.wav */; };
 		9EE51BA212B4F91800B4D01A /* sol.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9E12B4F91800B4D01A /* sol.wav */; };
+		9EE51C0812B510EA00B4D01A /* QGLViewer.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 9EE51C0712B510EA00B4D01A /* QGLViewer.framework */; };
 		F83B917214407264EFE7BA68 /* AGHFile.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = A097E4A08933A61501B2246D /* AGHFile.cpp */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		9EE51B9C12B4F91800B4D01A /* mi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mi.wav; sourceTree = "<group>"; };
 		9EE51B9D12B4F91800B4D01A /* re.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = re.wav; sourceTree = "<group>"; };
 		9EE51B9E12B4F91800B4D01A /* sol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sol.wav; sourceTree = "<group>"; };
+		9EE51C0712B510EA00B4D01A /* QGLViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QGLViewer.framework; path = /Library/Frameworks/QGLViewer.framework; sourceTree = "<absolute>"; };
 		A097E4A08933A61501B2246D /* AGHFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AGHFile.cpp; sourceTree = "<group>"; };
 		E878C030144017A4DB533451 /* AGHMainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGHMainWindow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 			files = (
 				501667F26B3C1FF6767A7C12 /* QtGui.framework in Frameworks & Libraries */,
 				069D05B0128AE5DC7EE31738 /* QtCore.framework in Frameworks & Libraries */,
+				9EE51C0812B510EA00B4D01A /* QGLViewer.framework in Frameworks & Libraries */,
 			);
 			name = "Frameworks & Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +145,7 @@
 			children = (
 				9B36DA7E32F0304E780E7972 /* QtGui.framework */,
 				7BC2E65A5E699A5E5D834CA2 /* QtCore.framework */,
+				9EE51C0712B510EA00B4D01A /* QGLViewer.framework */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";

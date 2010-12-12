@@ -60,6 +60,7 @@ void AGHMainWindow::createMenu() {
 	menuFichier->addAction(actionQuitter);
 	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+	
 }
 
 void AGHMainWindow::initSounds() {
@@ -90,7 +91,7 @@ void AGHMainWindow::createDock() {
 }
 
 void AGHMainWindow::openFile() {
-	QString filename = QFileDialog::getOpenFileName(this, "Open Image", ".", "LEJEA files (*.lejea)");
+	QString filename = QFileDialog::getOpenFileName(this, "Open Song", ".", "LEJEA files (*.lejea)");
 	_currentFile = new AGHFile(filename);
 	_currentFile->init();
 	_fileLabel->setText("Fichier ouvert : " + filename);
