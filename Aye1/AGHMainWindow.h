@@ -25,10 +25,19 @@ public slots:
 	void play();
 	void playNote();
 private:
+	void initSounds();
+	void playSoundFromNote(int note);
+	
+	bool _isPlaying;
 	AGHFile * _currentFile;
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;
 	QPushButton * _playPauseButton;
 	QSpinBox * _speedBox;
 	QTimer * _timer;
+	QSound * _do;
+	QSound * _re;
+	QSound * _mi;
+	QSound * _fa;
+	QSound * _sol;
 };
