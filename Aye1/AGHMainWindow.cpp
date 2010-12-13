@@ -13,6 +13,7 @@ AGHMainWindow::AGHMainWindow() {
 	
 	createMenu();
 	createDock();
+	initSounds();
 		
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
@@ -32,6 +33,8 @@ AGHMainWindow::AGHMainWindow() {
 	mainWidget->setLayout(mainLayout);
 		
 	setCentralWidget(mainWidget);
+	
+	_isPlaying = false;
 }
 
 AGHMainWindow::~AGHMainWindow() {
@@ -57,6 +60,14 @@ void AGHMainWindow::createMenu() {
 	menuFichier->addAction(actionQuitter);
 	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+}
+
+void AGHMainWindow::initSounds() {
+	_do = new QSound("do.wav");
+	_re = new QSound("re.wav");
+	_mi = new QSound("mi.wav");
+	_fa = new QSound("fa.wav");
+	_sol = new QSound("sol.wav");
 }
 
 void AGHMainWindow::createDock() {
@@ -93,17 +104,50 @@ void AGHMainWindow::closeFile() {
 }
 
 void AGHMainWindow::play() {
-	_playPauseButton->setText("Pause");
-	float T = 60/_speedBox->value();
-	_timer = new QTimer();
-	_timer->start(T*1000);
-	connect(_timer, SIGNAL(timeout()), this, SLOT(playNote()));
+	if (_isPlaying) {
+		_timer->stop();
+		_playPauseButton->setText("Play");
+		_isPlaying = false;
+	} else {
+		_playPauseButton->setText("Pause");
+		float T = 60/(float)_speedBox->value();
+		_timer = new QTimer();
+		_timer->start(T*1000);
+		connect(_timer, SIGNAL(timeout()), this, SLOT(playNote()));
+		_isPlaying = true;
+	}
 }
 
 void AGHMainWindow::playNote() {
 	int note = _currentFile->nextNote();
 	if (note == -1) {
 		_timer->stop();
+		_currentFile->seek(0);
+		_playPauseButton->setText("Play");
+		_isPlaying = false;
+	} else {
+		_currentNoteLabel->setText("Note : " + QString::number(note));
+		printf("note : %d \n", note);
+		playSoundFromNote(note);
 	}
-	printf("note : %d \n", note);
+}
+
+void AGHMainWindow::playSoundFromNote(int note) {
+	QSound * soundToPlay;
+	if (note == 1) {
+		soundToPlay = _do;
+	} else if (note == 2) {
+		soundToPlay = _re;
+	} else if (note == 3) {
+		soundToPlay = _mi;
+	} else if (note == 4) {
+		soundToPlay = _fa;
+	} else {
+		soundToPlay = _sol;
+	}
+	if (soundToPlay != NULL) {
+		soundToPlay->play();
+	} else {
+		printf("note nulle \n");
+	}
 }

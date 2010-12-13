@@ -12,7 +12,13 @@
 		501667F26B3C1FF6767A7C12 /* QtGui.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 9B36DA7E32F0304E780E7972 /* QtGui.framework */; };
 		75D0F8D0CA62AC7581496651 /* moc_AGHMainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 3D59B329847D11D39938A61A /* moc_AGHMainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
 		83A54C38F64B5D25693EE751 /* AGHMainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 3953BB2C418A4FC3A509B2A0 /* AGHMainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
-		9E7BEBB912A6458800774A91 /* Aye1.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 9E7BEBB612A6458800774A91 /* Aye1.app */; };
+		9EAAFB1812A7DB870059956B /* Aye1.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 9EAAFB1512A7DB870059956B /* Aye1.app */; };
+		9EE51B6512B4F41800B4D01A /* test.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B6412B4F41800B4D01A /* test.wav */; };
+		9EE51B9A12B4F74F00B4D01A /* do.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9912B4F74F00B4D01A /* do.wav */; };
+		9EE51B9F12B4F91800B4D01A /* fa.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9B12B4F91700B4D01A /* fa.wav */; };
+		9EE51BA012B4F91800B4D01A /* mi.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9C12B4F91800B4D01A /* mi.wav */; };
+		9EE51BA112B4F91800B4D01A /* re.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9D12B4F91800B4D01A /* re.wav */; };
+		9EE51BA212B4F91800B4D01A /* sol.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9E12B4F91800B4D01A /* sol.wav */; };
 		F83B917214407264EFE7BA68 /* AGHFile.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = A097E4A08933A61501B2246D /* AGHFile.cpp */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
@@ -23,7 +29,7 @@
 			dstPath = /Users/aye1/Dev/RV/Aye1;
 			dstSubfolderSpec = 0;
 			files = (
-				9E7BEBB912A6458800774A91 /* Aye1.app in Project Copy */,
+				9EAAFB1812A7DB870059956B /* Aye1.app in Project Copy */,
 			);
 			name = "Project Copy";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +44,13 @@
 		6AC4259A4ACE3BEDD5375EBA /* AGHFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGHFile.h; sourceTree = "<group>"; };
 		7BC2E65A5E699A5E5D834CA2 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = /Library/Frameworks/QtCore.framework; sourceTree = "<absolute>"; };
 		9B36DA7E32F0304E780E7972 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /Library/Frameworks/QtGui.framework; sourceTree = "<absolute>"; };
-		9E7BEBB612A6458800774A91 /* Aye1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aye1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAAFB1512A7DB870059956B /* Aye1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aye1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE51B6412B4F41800B4D01A /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test.wav; sourceTree = "<group>"; };
+		9EE51B9912B4F74F00B4D01A /* do.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = do.wav; sourceTree = "<group>"; };
+		9EE51B9B12B4F91700B4D01A /* fa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fa.wav; sourceTree = "<group>"; };
+		9EE51B9C12B4F91800B4D01A /* mi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mi.wav; sourceTree = "<group>"; };
+		9EE51B9D12B4F91800B4D01A /* re.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = re.wav; sourceTree = "<group>"; };
+		9EE51B9E12B4F91800B4D01A /* sol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sol.wav; sourceTree = "<group>"; };
 		A097E4A08933A61501B2246D /* AGHFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AGHFile.cpp; sourceTree = "<group>"; };
 		E878C030144017A4DB533451 /* AGHMainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGHMainWindow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,12 +72,13 @@
 		05596AB53D8D521C69802C27 /* Aye1 */ = {
 			isa = PBXGroup;
 			children = (
+				9EE51B6312B4F40900B4D01A /* Resources */,
 				FB61758D0F0FDA4BA867C3D5 /* Sources */,
 				46E892BBB6BB6952967E0561 /* Temporary Sources */,
 				883D7615C4D2DE3FA1218F12 /* Headers */,
 				7CABE3C80E79AD2B307756D2 /* Sources [qmake] */,
 				ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */,
-				9E7BEBB712A6458800774A91 /* Products */,
+				9EAAFB1612A7DB870059956B /* Products */,
 			);
 			name = Aye1;
 			sourceTree = "<group>";
@@ -95,12 +108,33 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
-		9E7BEBB712A6458800774A91 /* Products */ = {
+		9EAAFB1612A7DB870059956B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9E7BEBB612A6458800774A91 /* Aye1.app */,
+				9EAAFB1512A7DB870059956B /* Aye1.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9EE51B6312B4F40900B4D01A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EE51B9812B4F73900B4D01A /* Audio */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9EE51B9812B4F73900B4D01A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9EE51B9B12B4F91700B4D01A /* fa.wav */,
+				9EE51B9C12B4F91800B4D01A /* mi.wav */,
+				9EE51B9D12B4F91800B4D01A /* re.wav */,
+				9EE51B9E12B4F91800B4D01A /* sol.wav */,
+				9EE51B9912B4F74F00B4D01A /* do.wav */,
+				9EE51B6412B4F41800B4D01A /* test.wav */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 		ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */ = {
@@ -127,7 +161,7 @@
 /* Begin PBXNativeTarget section */
 		30698D4B4AC5D36EC966A7A1 /* Aye1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E7BEBCF12A645A600774A91 /* Build configuration list for PBXNativeTarget "Aye1" */;
+			buildConfigurationList = 9EAAFB2E12A7DB910059956B /* Build configuration list for PBXNativeTarget "Aye1" */;
 			buildPhases = (
 				D7BA7D76DAB5DD13389D6332 /* Qt Qmake */,
 				A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */,
@@ -142,7 +176,7 @@
 			);
 			name = Aye1;
 			productName = Aye1;
-			productReference = 9E7BEBB612A6458800774A91 /* Aye1.app */;
+			productReference = 9EAAFB1512A7DB870059956B /* Aye1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +188,7 @@
 			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 05596AB53D8D521C69802C27 /* Aye1 */;
-			productRefGroup = 9E7BEBB712A6458800774A91 /* Products */;
+			productRefGroup = 9EAAFB1612A7DB870059956B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -168,6 +202,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE51B6512B4F41800B4D01A /* test.wav in Bundle Resources */,
+				9EE51B9A12B4F74F00B4D01A /* do.wav in Bundle Resources */,
+				9EE51B9F12B4F91800B4D01A /* fa.wav in Bundle Resources */,
+				9EE51BA012B4F91800B4D01A /* mi.wav in Bundle Resources */,
+				9EE51BA112B4F91800B4D01A /* re.wav in Bundle Resources */,
+				9EE51BA212B4F91800B4D01A /* sol.wav in Bundle Resources */,
 			);
 			name = "Bundle Resources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +270,7 @@
 			};
 			name = Release;
 		};
-		9E7BEBBE12A6458800774A91 /* Debug */ = {
+		9EAAFB1D12A7DB870059956B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -288,7 +328,7 @@
 			};
 			name = Debug;
 		};
-		9E7BEBBF12A6458800774A91 /* Release */ = {
+		9EAAFB1E12A7DB870059956B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -345,7 +385,7 @@
 			};
 			name = Release;
 		};
-		9E7BEBC012A6458800774A91 /* Default */ = {
+		9EAAFB1F12A7DB870059956B /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -412,12 +452,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E7BEBCF12A645A600774A91 /* Build configuration list for PBXNativeTarget "Aye1" */ = {
+		9EAAFB2E12A7DB910059956B /* Build configuration list for PBXNativeTarget "Aye1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E7BEBBE12A6458800774A91 /* Debug */,
-				9E7BEBBF12A6458800774A91 /* Release */,
-				9E7BEBC012A6458800774A91 /* Default */,
+				9EAAFB1D12A7DB870059956B /* Debug */,
+				9EAAFB1E12A7DB870059956B /* Release */,
+				9EAAFB1F12A7DB870059956B /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
