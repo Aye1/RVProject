@@ -13,9 +13,13 @@
 #include <QtGui>
 #include <QString>
 #include "AGHFile.h"
-//#include <QGLViewer/QGLViewer.h>
+
+
+#include <QGLViewer/qglviewer.h>
 
 #include "ui_AGHMainWindow.h"
+
+class GLViewer;
 
 class AGHMainWindow : public QMainWindow {
 	Q_OBJECT
@@ -23,8 +27,8 @@ public:
 
 	AGHMainWindow();
 	~AGHMainWindow();
-	void createMenu();
-	void createDock();
+
+	Ui_MainWindow getUI();
 
 public slots:
 
@@ -39,8 +43,8 @@ private:
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;
 	QPushButton * _playPauseButton;
-	QSpinBox * _speedBox;
 	QTimer * _timer;
+
 
 private:
 private:

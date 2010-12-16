@@ -1,0 +1,285 @@
+#include "charger_collada.h"
+#include "../dependencies/tinyxml.h"
+#include "Debug.h"
+
+Mesh* Charger_Collada(std::string __nom_du_fichier){
+    Mesh *objet_charge = NULL;
+
+    std::cout <<"Chargement de mesh, fichier: "<<  __nom_du_fichier << ".xml\n";
+
+    // Chargement du fichier avec TinyXML
+    string name=__nom_du_fichier;
+    TiXmlDocument fileXML(name.c_str());
+
+    if (!fileXML.LoadFile()){
+        std::cerr << "Le fichier "<<__nom_du_fichier<<" n'existe pas"<<std::endl;
+        return NULL;
+    }
+
+    // Elements de TinyXML
+    TiXmlHandle docHandle( &fileXML );
+    TiXmlElement* elem;
+    TiXmlElement* elem2;
+    TiXmlElement* elem3;
+
+    // Chargement de la racine
+    TiXmlHandle root=TiXmlHandle(docHandle.FirstChildElement().Element());
+
+
+    // Parcours de <COLLADA> <library_geometries>
+    elem=root.FirstChild("library_geometries").Element();
+    if (!elem) {
+        std::cerr << "Probleme de lecture"<<std::endl;
+        return NULL;
+    }
+
+    root=TiXmlHandle(elem);
+    Debug::_trace(7,"<library_geometries>");
+
+    // Parcours de <geometry>
+    elem=root.FirstChild("geometry").Element();
+    if (!elem) {
+        std::cerr << "Probleme de lecture"<<std::endl;
+        return NULL;
+    }
+
+    Debug::_trace(7,"<geometry>");
+    root=TiXmlHandle(elem);
+    //std::cout << "Geometry   name : " <<elem->Attribute("name")<<"  id : "<<  elem->Attribute("id")<< std::endl;
+
+    // Parcours de <mesh>
+    // Un seul mesh sera chargé !
+    elem2=root.FirstChild("mesh").Element();
+    if (!elem2) {
+        std::cerr << "Probleme de lecture"<<std::endl;
+        return NULL;
+    }
+
+    Debug::_trace(7,"<mesh>");
+    root=TiXmlHandle(elem2);
+
+    //-------------------------------------
+    // ----- Chargement des vertex
+    //-------------------------------------
+    // <source> <float_array>
+    elem3=root.FirstChild("source").FirstChild("float_array").Element();
+    Debug::_trace(7,"<source> <float_array>");
+
+    // Definition du mesh
+    objet_charge = new Mesh();
+    objet_charge->_nb_vertex = (atoi(elem3->Attribute("count")) / 3 );
+    const char *parcour = elem3->GetText();
+    objet_charge->_tab_vertex = new Vertex[objet_charge->_nb_vertex];
+
+    //Chargement des vertex
+    for (int i = 0; i < objet_charge->_nb_vertex; i ++) {
+        //printf("%f \n",atof(parcour));
+        objet_charge->_tab_vertex[i]._position[0] = atof(parcour);
+        while (*parcour != ' '){
+            parcour ++;
+        }
+        parcour ++;
+        objet_charge->_tab_vertex[i]._position[1] = atof(parcour);
+        while (*parcour != ' '){
+            parcour ++;
+        }
+        parcour ++;
+        objet_charge->_tab_vertex[i]._position[2] = atof(parcour);
+        while (*parcour != ' '){
+            parcour ++;
+        }
+        parcour ++;
+    }
+    Debug::_trace(7,"</float_array> </source> ");
+    // </source> </float_array>
+
+
+    //-------------------------------------
+    // ----- Chargement des faces
+    //-------------------------------------
+    // <triangles> <p>
+    elem3=root.FirstChild("triangles").Element();
+    Debug::_trace(7,"<triangles> ");
+
+    objet_charge->_nb_triangles = atoi(elem3->Attribute("count"));
+    objet_charge->_tab_triangles = new Triangles[objet_charge->_nb_triangles];
+    bool normal = false;
+    bool coord = false;
+    bool color = false;
+    int vertex_offset;
+    int coord_offset;
+    int color_offset;
+    int total_offset;
+    // On recupere les infos des offsets
+    root=TiXmlHandle(elem3);
+
+    // <geometry>
+    elem3=root.FirstChild("input").Element();
+    if (!elem3) return 0;
+
+    total_offset = 0;
+
+    for( ; elem3 ; elem3=elem3->NextSiblingElement("input")){
+
+        total_offset++;
+        std::string att = elem3->Attribute("semantic");
+        if ( att == "VERTEX"){
+            vertex_offset = atoi(elem3->Attribute("offset"));
+            std::cout<<"Vertex\n";
+        }
+
+        att = elem3->Attribute("semantic");
+        if ( att == "NORMAL"){
+            normal = true;
+            std::cout<<"Normal\n";
+        }
+
+        att = elem3->Attribute("semantic");
+        if ( att == "TEXCOORD"){
+            coord = true;
+            coord_offset = atoi(elem3->Attribute("offset"));
+            std::cout<<"Text\n";
+        }
+
+        att = elem3->Attribute("semantic");
+        if ( att == "COLOR"){
+            color = true;
+            color_offset = atoi(elem3->Attribute("offset"));
+            std::cout<<"Color\n";
+        }
+    }
+
+    elem3=root.FirstChild("p").Element();
+    Debug::_trace(7,"<p> ");
+
+    parcour = elem3->GetText();
+
+    for (int i = 0; i < (objet_charge->_nb_triangles) * total_offset -1 ; i++) {
+        std::cout << "boucle i " << i << std::endl;
+
+        objet_charge->_tab_triangles[i]._vertexIndices[0] = atoi(&parcour[vertex_offset]);
+        // trouve le prochain chiffre
+        while (*parcour != ' '){
+            parcour ++;
+        }
+
+        // ignore la normale
+        if(normal){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+         }
+        // textcoord
+        if(coord){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+        }
+
+        parcour ++;
+
+
+        objet_charge->_tab_triangles[i]._vertexIndices[1] = atoi(&parcour[vertex_offset]);
+        // trouve le prochain chiffre
+        while (*parcour != ' '){
+            parcour ++;
+        }
+
+        // ignore la normale
+        if(normal){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+         }
+        // textcoord
+        if(coord){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+        }
+
+        parcour ++;
+
+
+
+        objet_charge->_tab_triangles[i]._vertexIndices[2] = atoi(&parcour[vertex_offset]);
+        // trouve le prochain chiffre
+        while (*parcour != ' '){
+            parcour ++;
+        }
+
+        // ignore la normale
+        if(normal){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+         }
+        // textcoord
+        if(coord){
+            parcour ++;
+            while (*parcour != ' '){
+                parcour ++;
+            }
+        }
+
+        parcour ++;
+
+    }
+    Debug::_trace(7,"</triangles> </p> ");
+
+
+    // ---------
+    Debug::_trace(7,"</mesh>");
+
+    Debug::_trace(7,"</geometry>");
+
+
+    Debug::_trace(7,"</library_geometries> </COLLADA> ");
+
+    std::cout <<"Loaded: "<< name << ".xml" << std::endl;
+
+
+    return objet_charge;
+}
+
+
+// ----------- EXEMPLE DE FICHIER COLLADA ---------- //
+
+
+        /* collada :
+           <COLLADA>
+                <library_geometries>
+                    <geometry id="Cube_002" name="Cube_002">
+                        <mesh>
+                            <source id="Cube_002-Position">
+                                <float_array count="132" id="Cube_002-Position-array">
+                                    1.00000 1.00000 -0.99971 ....
+                                </float_array>
+                            </source>
+                            <source id="Cube_002-Normals">
+                                <float_array count="126" id="Cube_002-Normals-array">
+                                    0.00000 0.00000
+                                </float_array>
+                            </source>
+                            <triangles count="84" material="Material">
+                                <p>
+                                    0 0 1 0 2
+                                </p>
+                             </triangles>
+                        </mesh>
+                        <mesh>
+                            ....
+                        </mesh>
+                    </geometry>
+                    <geometry id="Cube_002" name="Cube_002">
+                        ...
+                    </geometry>
+                </library_geometries>
+           </COLLADA>
+        */
+

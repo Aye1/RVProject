@@ -45,7 +45,7 @@ private:
 private:
 private:
 /*  Qt GUI exported from QtDesigner ********************************************************/
-	 Ui_MainWindow ui;
+	 ui_AGHMainWindow ui;
 };
 
 #endif

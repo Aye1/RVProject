@@ -11,8 +11,13 @@
 
 AGHMainWindow::AGHMainWindow() {
 	
-	ui.setupUi(this);	
+	ui.setupUi(this);
 
+	//connect des actions
+	connect(ui.actionOuvrir, SIGNAL(triggered()), this, SLOT(openFile()));
+	connect(ui.actionFermer, SIGNAL(triggered()), this, SLOT(closeFile()));
+
+/*
 	createMenu();
 	createDock();
 		
@@ -34,51 +39,12 @@ AGHMainWindow::AGHMainWindow() {
 	mainWidget->setLayout(mainLayout);
 		
 	setCentralWidget(mainWidget);
+*/
 }
 
 AGHMainWindow::~AGHMainWindow() {
 }
 
-void AGHMainWindow::createMenu() {
-	QMenu * menuFichier = menuBar()->addMenu("&Fichier");
-	
-	/* Ouvrir un fichier */
-	QAction * actionOuvrir = new QAction("&Ouvrir", this);
-	menuFichier->addAction(actionOuvrir);
-	actionOuvrir->setShortcut(QKeySequence("Ctrl+O"));
-	connect(actionOuvrir, SIGNAL(triggered()), this, SLOT(openFile()));
-	
-	/* Fermer un fichier */
-	QAction * actionFermer = new QAction("&Fermer", this);
-	menuFichier->addAction(actionFermer);
-	actionFermer->setShortcut(QKeySequence("Ctrl+W"));
-	connect(actionFermer, SIGNAL(triggered()), this, SLOT(closeFile()));
-	
-	/* Quitter le programme */
-	QAction * actionQuitter = new QAction("&Quitter", this);
-	menuFichier->addAction(actionQuitter);
-	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
-	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
-}
-
-void AGHMainWindow::createDock() {
-	QDockWidget * paramDock = new QDockWidget("Parametres", this);
-	addDockWidget(Qt::LeftDockWidgetArea, paramDock);
-	
-	QWidget * paramDockContent = new QWidget;
-	paramDock->setWidget(paramDockContent);
-	
-	QLabel * speedLabel = new QLabel("Vitesse");
-	_speedBox = new QSpinBox();
-	_speedBox->setMaximum(400);
-	_speedBox->setValue(100);
-	
-	QGridLayout * paramLayout = new QGridLayout;
-	paramLayout->addWidget(speedLabel, 0, 0, Qt::AlignTop);
-	paramLayout->addWidget(_speedBox, 1, 0, Qt::AlignTop);
-	
-	paramDockContent->setLayout(paramLayout);
-}
 
 void AGHMainWindow::openFile() {
 	QString filename = QFileDialog::getOpenFileName(this, "Open Image", ".", "LEJEA files (*.lejea)");
@@ -96,7 +62,7 @@ void AGHMainWindow::closeFile() {
 
 void AGHMainWindow::play() {
 	_playPauseButton->setText("Pause");
-	float T = 60/_speedBox->value();
+	float T = 60/((ui.vitesse_spinbox)->value());
 	_timer = new QTimer();
 	_timer->start(T*1000);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(playNote()));
@@ -108,4 +74,8 @@ void AGHMainWindow::playNote() {
 		_timer->stop();
 	}
 	printf("note : %d \n", note);
+}
+
+Ui_MainWindow AGHMainWindow::getUI() {
+	return ui;
 }
