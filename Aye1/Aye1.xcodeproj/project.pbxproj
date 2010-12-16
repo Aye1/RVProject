@@ -8,18 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		069D05B0128AE5DC7EE31738 /* QtCore.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 7BC2E65A5E699A5E5D834CA2 /* QtCore.framework */; };
+		083E673CCB41A7580D6832E2 /* Materiau.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 7B6924F4C00C5FF3BF07EDAB /* Materiau.cpp */; settings = {ATTRIBUTES = (); }; };
 		2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 118FCBAABA162BA17933C789 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		2BE68FE5BFFFFE7DFBA2BCFF /* Ressource_Manager.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 63A71F0396A860CE7CBEDBB3 /* Ressource_Manager.cpp */; settings = {ATTRIBUTES = (); }; };
 		501667F26B3C1FF6767A7C12 /* QtGui.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 9B36DA7E32F0304E780E7972 /* QtGui.framework */; };
 		75D0F8D0CA62AC7581496651 /* moc_AGHMainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 3D59B329847D11D39938A61A /* moc_AGHMainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
+		7A84D3527CDBE4ACA07ADBED /* quaternion.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 2B156BC23D7CB8F577E690A4 /* quaternion.cpp */; settings = {ATTRIBUTES = (); }; };
 		83A54C38F64B5D25693EE751 /* AGHMainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 3953BB2C418A4FC3A509B2A0 /* AGHMainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
-		9EAAFB1812A7DB870059956B /* Aye1.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 9EAAFB1512A7DB870059956B /* Aye1.app */; };
-		9EE51B6512B4F41800B4D01A /* test.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B6412B4F41800B4D01A /* test.wav */; };
-		9EE51B9A12B4F74F00B4D01A /* do.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9912B4F74F00B4D01A /* do.wav */; };
-		9EE51B9F12B4F91800B4D01A /* fa.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9B12B4F91700B4D01A /* fa.wav */; };
-		9EE51BA012B4F91800B4D01A /* mi.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9C12B4F91800B4D01A /* mi.wav */; };
-		9EE51BA112B4F91800B4D01A /* re.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9D12B4F91800B4D01A /* re.wav */; };
-		9EE51BA212B4F91800B4D01A /* sol.wav in Bundle Resources */ = {isa = PBXBuildFile; fileRef = 9EE51B9E12B4F91800B4D01A /* sol.wav */; };
-		9EE51C0812B510EA00B4D01A /* QGLViewer.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 9EE51C0712B510EA00B4D01A /* QGLViewer.framework */; };
+		847107C39767EA13E736E7C4 /* chargeur_collada.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 5DFB187AD23BA7A9F31AED76 /* chargeur_collada.cpp */; settings = {ATTRIBUTES = (); }; };
+		8D77D43D53608B83886CF8F3 /* tinyxmlparser.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 1B9CA6CC435147B4724A114A /* tinyxmlparser.cpp */; settings = {ATTRIBUTES = (); }; };
+		99462E35DB24BA825A511E82 /* tinyxml.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 49D9C83E2508C9FE317D3400 /* tinyxml.cpp */; settings = {ATTRIBUTES = (); }; };
+		9E09192A4085AF6848AB2CA4 /* tinystr.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 0C50C8E3414050AE2AED9E70 /* tinystr.cpp */; settings = {ATTRIBUTES = (); }; };
+		9E32B87812BA63270012D2B5 /* Aye1.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 9E32B87512BA63270012D2B5 /* Aye1.app */; };
+		BAB939ADCFDA8D233A76ADF2 /* tinyxmlerror.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 072D9D491BC84A88180880D8 /* tinyxmlerror.cpp */; settings = {ATTRIBUTES = (); }; };
+		BACF3C4C5F969688B67981A5 /* Chargeur_MD3.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 337C1C6FE464FE7DEF2922B6 /* Chargeur_MD3.cpp */; settings = {ATTRIBUTES = (); }; };
+		C53BB4F11BB41ED1664F1C0F /* Mesh.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 832890885F63E4B04BC9FA86 /* Mesh.cpp */; settings = {ATTRIBUTES = (); }; };
+		D712E2724CB574C26A7EE1E9 /* Vecteur3D.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = E68664E6E4EDD5CE856FA4A2 /* Vecteur3D.cpp */; settings = {ATTRIBUTES = (); }; };
+		F126E72C7665AD11ABF15223 /* Chargeur_BMP.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 471442C7F4B17D88513698D4 /* Chargeur_BMP.cpp */; settings = {ATTRIBUTES = (); }; };
 		F83B917214407264EFE7BA68 /* AGHFile.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = A097E4A08933A61501B2246D /* AGHFile.cpp */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
@@ -30,7 +35,7 @@
 			dstPath = /Users/aye1/Dev/RV/Aye1;
 			dstSubfolderSpec = 0;
 			files = (
-				9EAAFB1812A7DB870059956B /* Aye1.app in Project Copy */,
+				9E32B87812BA63270012D2B5 /* Aye1.app in Project Copy */,
 			);
 			name = "Project Copy";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,23 +43,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0483BB2079ADC3936E07B79B /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		072D9D491BC84A88180880D8 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = dependencies/tinyxmlerror.cpp; sourceTree = "<group>"; };
+		0C50C8E3414050AE2AED9E70 /* tinystr.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tinystr.cpp; path = dependencies/tinystr.cpp; sourceTree = "<group>"; };
 		118FCBAABA162BA17933C789 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1B9CA6CC435147B4724A114A /* tinyxmlparser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = dependencies/tinyxmlparser.cpp; sourceTree = "<group>"; };
+		1BA696E1F3E42FD01AA882AE /* Vecteur3D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vecteur3D.h; sourceTree = "<group>"; };
+		288E40392650F11CBAC6A4F3 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		2B156BC23D7CB8F577E690A4 /* quaternion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = quaternion.cpp; sourceTree = "<group>"; };
+		337C1C6FE464FE7DEF2922B6 /* Chargeur_MD3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Chargeur_MD3.cpp; sourceTree = "<group>"; };
 		3953BB2C418A4FC3A509B2A0 /* AGHMainWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AGHMainWindow.cpp; sourceTree = "<group>"; };
 		3D59B329847D11D39938A61A /* moc_AGHMainWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = moc_AGHMainWindow.cpp; sourceTree = "<group>"; };
+		471442C7F4B17D88513698D4 /* Chargeur_BMP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Chargeur_BMP.cpp; sourceTree = "<group>"; };
+		49D9C83E2508C9FE317D3400 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = dependencies/tinyxml.cpp; sourceTree = "<group>"; };
+		4CEF6D91E5C6EC5413785629 /* quaternion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quaternion.h; sourceTree = "<group>"; };
+		542098ADFB1ABAB352BA6F12 /* tinyxml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = dependencies/tinyxml.h; sourceTree = "<group>"; };
 		576B940D3F5D6BC499095462 /* Aye1.pro */ = {isa = PBXFileReference; lastKnownFileType = text; path = Aye1.pro; sourceTree = "<group>"; };
+		5DFB187AD23BA7A9F31AED76 /* chargeur_collada.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chargeur_collada.cpp; sourceTree = "<group>"; };
+		63A71F0396A860CE7CBEDBB3 /* Ressource_Manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ressource_Manager.cpp; sourceTree = "<group>"; };
 		6AC4259A4ACE3BEDD5375EBA /* AGHFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGHFile.h; sourceTree = "<group>"; };
+		7009290185B386476D2C0C0D /* Lumiere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lumiere.h; sourceTree = "<group>"; };
+		710FD4D0C02904387F951AE7 /* chargeur_collada.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chargeur_collada.h; sourceTree = "<group>"; };
+		7B6924F4C00C5FF3BF07EDAB /* Materiau.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Materiau.cpp; sourceTree = "<group>"; };
 		7BC2E65A5E699A5E5D834CA2 /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = /Library/Frameworks/QtCore.framework; sourceTree = "<absolute>"; };
+		83016E161038AA0596E5DB39 /* Ressource_Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ressource_Manager.h; sourceTree = "<group>"; };
+		832890885F63E4B04BC9FA86 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		8B3B942C1A33D88D2CB4FAD4 /* ui_AGHMainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui_AGHMainWindow.h; sourceTree = "<group>"; };
 		9B36DA7E32F0304E780E7972 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = /Library/Frameworks/QtGui.framework; sourceTree = "<absolute>"; };
-		9EAAFB1512A7DB870059956B /* Aye1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aye1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EE51B6412B4F41800B4D01A /* test.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test.wav; sourceTree = "<group>"; };
-		9EE51B9912B4F74F00B4D01A /* do.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = do.wav; sourceTree = "<group>"; };
-		9EE51B9B12B4F91700B4D01A /* fa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fa.wav; sourceTree = "<group>"; };
-		9EE51B9C12B4F91800B4D01A /* mi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mi.wav; sourceTree = "<group>"; };
-		9EE51B9D12B4F91800B4D01A /* re.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = re.wav; sourceTree = "<group>"; };
-		9EE51B9E12B4F91800B4D01A /* sol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sol.wav; sourceTree = "<group>"; };
-		9EE51C0712B510EA00B4D01A /* QGLViewer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QGLViewer.framework; path = /Library/Frameworks/QGLViewer.framework; sourceTree = "<absolute>"; };
+		9DF2F461DB2B45795801306F /* Materiau.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Materiau.h; sourceTree = "<group>"; };
+		9E32B87512BA63270012D2B5 /* Aye1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aye1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A097E4A08933A61501B2246D /* AGHFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AGHFile.cpp; sourceTree = "<group>"; };
+		BA040D4EA25C9A0F92FE5D48 /* Chargeur_BMP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chargeur_BMP.h; sourceTree = "<group>"; };
+		C57A446753C5DB363021DB6E /* AGHMainWindow.ui */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AGHMainWindow.ui; sourceTree = "<group>"; };
+		CE5B38C6754E960089F8D9FB /* Chargeur_MD3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chargeur_MD3.h; sourceTree = "<group>"; };
+		E68664E6E4EDD5CE856FA4A2 /* Vecteur3D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vecteur3D.cpp; sourceTree = "<group>"; };
 		E878C030144017A4DB533451 /* AGHMainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGHMainWindow.h; sourceTree = "<group>"; };
+		F3B99BCC2F5672D500D40310 /* Couleur.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Couleur.h; sourceTree = "<group>"; };
+		F982DB1F88287AE08009CBAC /* tinystr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = dependencies/tinystr.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +89,6 @@
 			files = (
 				501667F26B3C1FF6767A7C12 /* QtGui.framework in Frameworks & Libraries */,
 				069D05B0128AE5DC7EE31738 /* QtCore.framework in Frameworks & Libraries */,
-				9EE51C0812B510EA00B4D01A /* QGLViewer.framework in Frameworks & Libraries */,
 			);
 			name = "Frameworks & Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,23 +99,44 @@
 		05596AB53D8D521C69802C27 /* Aye1 */ = {
 			isa = PBXGroup;
 			children = (
-				9EE51B6312B4F40900B4D01A /* Resources */,
 				FB61758D0F0FDA4BA867C3D5 /* Sources */,
 				46E892BBB6BB6952967E0561 /* Temporary Sources */,
 				883D7615C4D2DE3FA1218F12 /* Headers */,
 				7CABE3C80E79AD2B307756D2 /* Sources [qmake] */,
+				EEC299C65D5017EB9DD513B0 /* Sources [UIC] */,
 				ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */,
-				9EAAFB1612A7DB870059956B /* Products */,
+				9E32B87612BA63270012D2B5 /* Products */,
 			);
 			name = Aye1;
+			sourceTree = "<group>";
+		};
+		0BE274BEBAACAF2C3C4FF81D /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				0C50C8E3414050AE2AED9E70 /* tinystr.cpp */,
+				49D9C83E2508C9FE317D3400 /* tinyxml.cpp */,
+				072D9D491BC84A88180880D8 /* tinyxmlerror.cpp */,
+				1B9CA6CC435147B4724A114A /* tinyxmlparser.cpp */,
+			);
+			name = dependencies;
 			sourceTree = "<group>";
 		};
 		46E892BBB6BB6952967E0561 /* Temporary Sources */ = {
 			isa = PBXGroup;
 			children = (
 				3D59B329847D11D39938A61A /* moc_AGHMainWindow.cpp */,
+				8B3B942C1A33D88D2CB4FAD4 /* ui_AGHMainWindow.h */,
 			);
 			name = "Temporary Sources";
+			sourceTree = "<group>";
+		};
+		647DD38960A963958467C498 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F982DB1F88287AE08009CBAC /* tinystr.h */,
+				542098ADFB1ABAB352BA6F12 /* tinyxml.h */,
+			);
+			name = dependencies;
 			sourceTree = "<group>";
 		};
 		7CABE3C80E79AD2B307756D2 /* Sources [qmake] */ = {
@@ -107,37 +152,28 @@
 			children = (
 				6AC4259A4ACE3BEDD5375EBA /* AGHFile.h */,
 				E878C030144017A4DB533451 /* AGHMainWindow.h */,
+				BA040D4EA25C9A0F92FE5D48 /* Chargeur_BMP.h */,
+				710FD4D0C02904387F951AE7 /* chargeur_collada.h */,
+				CE5B38C6754E960089F8D9FB /* Chargeur_MD3.h */,
+				F3B99BCC2F5672D500D40310 /* Couleur.h */,
+				0483BB2079ADC3936E07B79B /* debug.h */,
+				7009290185B386476D2C0C0D /* Lumiere.h */,
+				9DF2F461DB2B45795801306F /* Materiau.h */,
+				288E40392650F11CBAC6A4F3 /* Mesh.h */,
+				4CEF6D91E5C6EC5413785629 /* quaternion.h */,
+				83016E161038AA0596E5DB39 /* Ressource_Manager.h */,
+				1BA696E1F3E42FD01AA882AE /* Vecteur3D.h */,
+				647DD38960A963958467C498 /* dependencies */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
 		};
-		9EAAFB1612A7DB870059956B /* Products */ = {
+		9E32B87612BA63270012D2B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EAAFB1512A7DB870059956B /* Aye1.app */,
+				9E32B87512BA63270012D2B5 /* Aye1.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9EE51B6312B4F40900B4D01A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9EE51B9812B4F73900B4D01A /* Audio */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9EE51B9812B4F73900B4D01A /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				9EE51B9B12B4F91700B4D01A /* fa.wav */,
-				9EE51B9C12B4F91800B4D01A /* mi.wav */,
-				9EE51B9D12B4F91800B4D01A /* re.wav */,
-				9EE51B9E12B4F91800B4D01A /* sol.wav */,
-				9EE51B9912B4F74F00B4D01A /* do.wav */,
-				9EE51B6412B4F41800B4D01A /* test.wav */,
-			);
-			name = Audio;
 			sourceTree = "<group>";
 		};
 		ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */ = {
@@ -145,9 +181,16 @@
 			children = (
 				9B36DA7E32F0304E780E7972 /* QtGui.framework */,
 				7BC2E65A5E699A5E5D834CA2 /* QtCore.framework */,
-				9EE51C0712B510EA00B4D01A /* QGLViewer.framework */,
 			);
 			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		EEC299C65D5017EB9DD513B0 /* Sources [UIC] */ = {
+			isa = PBXGroup;
+			children = (
+				C57A446753C5DB363021DB6E /* AGHMainWindow.ui */,
+			);
+			name = "Sources [UIC]";
 			sourceTree = "<group>";
 		};
 		FB61758D0F0FDA4BA867C3D5 /* Sources */ = {
@@ -155,7 +198,16 @@
 			children = (
 				A097E4A08933A61501B2246D /* AGHFile.cpp */,
 				3953BB2C418A4FC3A509B2A0 /* AGHMainWindow.cpp */,
+				471442C7F4B17D88513698D4 /* Chargeur_BMP.cpp */,
+				5DFB187AD23BA7A9F31AED76 /* chargeur_collada.cpp */,
+				337C1C6FE464FE7DEF2922B6 /* Chargeur_MD3.cpp */,
 				118FCBAABA162BA17933C789 /* main.cpp */,
+				7B6924F4C00C5FF3BF07EDAB /* Materiau.cpp */,
+				832890885F63E4B04BC9FA86 /* Mesh.cpp */,
+				2B156BC23D7CB8F577E690A4 /* quaternion.cpp */,
+				63A71F0396A860CE7CBEDBB3 /* Ressource_Manager.cpp */,
+				E68664E6E4EDD5CE856FA4A2 /* Vecteur3D.cpp */,
+				0BE274BEBAACAF2C3C4FF81D /* dependencies */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -165,7 +217,7 @@
 /* Begin PBXNativeTarget section */
 		30698D4B4AC5D36EC966A7A1 /* Aye1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EAAFB2E12A7DB910059956B /* Build configuration list for PBXNativeTarget "Aye1" */;
+			buildConfigurationList = 9E32B88812BA633E0012D2B5 /* Build configuration list for PBXNativeTarget "Aye1" */;
 			buildPhases = (
 				D7BA7D76DAB5DD13389D6332 /* Qt Qmake */,
 				A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */,
@@ -180,7 +232,7 @@
 			);
 			name = Aye1;
 			productName = Aye1;
-			productReference = 9EAAFB1512A7DB870059956B /* Aye1.app */;
+			productReference = 9E32B87512BA63270012D2B5 /* Aye1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -192,7 +244,7 @@
 			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 05596AB53D8D521C69802C27 /* Aye1 */;
-			productRefGroup = 9EAAFB1612A7DB870059956B /* Products */;
+			productRefGroup = 9E32B87612BA63270012D2B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -206,12 +258,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EE51B6512B4F41800B4D01A /* test.wav in Bundle Resources */,
-				9EE51B9A12B4F74F00B4D01A /* do.wav in Bundle Resources */,
-				9EE51B9F12B4F91800B4D01A /* fa.wav in Bundle Resources */,
-				9EE51BA012B4F91800B4D01A /* mi.wav in Bundle Resources */,
-				9EE51BA112B4F91800B4D01A /* re.wav in Bundle Resources */,
-				9EE51BA212B4F91800B4D01A /* sol.wav in Bundle Resources */,
 			);
 			name = "Bundle Resources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +294,19 @@
 			files = (
 				F83B917214407264EFE7BA68 /* AGHFile.cpp in Build Sources */,
 				83A54C38F64B5D25693EE751 /* AGHMainWindow.cpp in Build Sources */,
+				F126E72C7665AD11ABF15223 /* Chargeur_BMP.cpp in Build Sources */,
+				847107C39767EA13E736E7C4 /* chargeur_collada.cpp in Build Sources */,
+				BACF3C4C5F969688B67981A5 /* Chargeur_MD3.cpp in Build Sources */,
 				2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */,
+				083E673CCB41A7580D6832E2 /* Materiau.cpp in Build Sources */,
+				C53BB4F11BB41ED1664F1C0F /* Mesh.cpp in Build Sources */,
+				7A84D3527CDBE4ACA07ADBED /* quaternion.cpp in Build Sources */,
+				2BE68FE5BFFFFE7DFBA2BCFF /* Ressource_Manager.cpp in Build Sources */,
+				D712E2724CB574C26A7EE1E9 /* Vecteur3D.cpp in Build Sources */,
+				9E09192A4085AF6848AB2CA4 /* tinystr.cpp in Build Sources */,
+				99462E35DB24BA825A511E82 /* tinyxml.cpp in Build Sources */,
+				BAB939ADCFDA8D233A76ADF2 /* tinyxmlerror.cpp in Build Sources */,
+				8D77D43D53608B83886CF8F3 /* tinyxmlparser.cpp in Build Sources */,
 				75D0F8D0CA62AC7581496651 /* moc_AGHMainWindow.cpp in Build Sources */,
 			);
 			name = "Build Sources";
@@ -274,7 +332,7 @@
 			};
 			name = Release;
 		};
-		9EAAFB1D12A7DB870059956B /* Debug */ = {
+		9E32B87F12BA63290012D2B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -290,6 +348,8 @@
 					/Library/Frameworks/QtGui.framework/Versions/4/Headers,
 					/usr/include/QtGui,
 					/usr/include,
+					.,
+					dependencies,
 					.,
 					.,
 					/usr/local/include,
@@ -332,7 +392,7 @@
 			};
 			name = Debug;
 		};
-		9EAAFB1E12A7DB870059956B /* Release */ = {
+		9E32B88012BA63290012D2B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -347,6 +407,8 @@
 					/Library/Frameworks/QtGui.framework/Versions/4/Headers,
 					/usr/include/QtGui,
 					/usr/include,
+					.,
+					dependencies,
 					.,
 					.,
 					/usr/local/include,
@@ -389,7 +451,7 @@
 			};
 			name = Release;
 		};
-		9EAAFB1F12A7DB870059956B /* Default */ = {
+		9E32B88112BA63290012D2B5 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = i386;
@@ -402,6 +464,8 @@
 					/Library/Frameworks/QtGui.framework/Versions/4/Headers,
 					/usr/include/QtGui,
 					/usr/include,
+					.,
+					dependencies,
 					.,
 					.,
 					/usr/local/include,
@@ -456,12 +520,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EAAFB2E12A7DB910059956B /* Build configuration list for PBXNativeTarget "Aye1" */ = {
+		9E32B88812BA633E0012D2B5 /* Build configuration list for PBXNativeTarget "Aye1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EAAFB1D12A7DB870059956B /* Debug */,
-				9EAAFB1E12A7DB870059956B /* Release */,
-				9EAAFB1F12A7DB870059956B /* Default */,
+				9E32B87F12BA63290012D2B5 /* Debug */,
+				9E32B88012BA63290012D2B5 /* Release */,
+				9E32B88112BA63290012D2B5 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
