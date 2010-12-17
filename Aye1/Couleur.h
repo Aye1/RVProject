@@ -3,7 +3,11 @@
 
 
 
+#ifdef __APPLE__
+#include <GLUT/GLUT.h>
+#else
 #include <GL/glut.h>
+#endif
 
 /** Classe de base pour une couleur en RGB */
 class Couleur{

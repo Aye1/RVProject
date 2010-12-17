@@ -5,7 +5,11 @@
 #ifdef USE_GLEW
 	#include <GL/glew.h>	// OpenGL extensions
 #endif
+#ifdef __APPLE__
+#include <GLUT/GLUT.h>
+#else
 #include <GL/glut.h>
+#endif
 
 #include <map>
 #include <set>

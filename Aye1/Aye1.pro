@@ -11,15 +11,10 @@ INCLUDEPATH += . dependencies
 HEADERS += AGHFile.h \
            AGHMainWindow.h \
            Chargeur_BMP.h \
-           chargeur_collada.h \
-           Chargeur_MD3.h \
            Couleur.h \
            debug.h \
            Lumiere.h \
-           Materiau.h \
-           Mesh.h \
            quaternion.h \
-           Ressource_Manager.h \
            Vecteur3D.h \
            dependencies/tinystr.h \
            dependencies/tinyxml.h
@@ -27,13 +22,8 @@ FORMS += AGHMainWindow.ui
 SOURCES += AGHFile.cpp \
            AGHMainWindow.cpp \
            Chargeur_BMP.cpp \
-           chargeur_collada.cpp \
-           Chargeur_MD3.cpp \
            main.cpp \
-           Materiau.cpp \
-           Mesh.cpp \
            quaternion.cpp \
-           Ressource_Manager.cpp \
            Vecteur3D.cpp \
            dependencies/tinystr.cpp \
            dependencies/tinyxml.cpp \
