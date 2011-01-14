@@ -1,3 +1,5 @@
+//ligne à rajouter dans le .bashrc (ou dans le terminal si ça vous amuse de le faire à chaque fois) pour que ça compile bien les trucs de l'api_arv : export QMAKEFEATURES=~/api_arv/qmake
+
 #include <ApiArv/Wii.h>
 #include <iostream>
 #include <csignal>
