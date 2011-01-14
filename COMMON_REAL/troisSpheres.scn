@@ -49,6 +49,30 @@
   </Frame>
  </Batterie>
 
+  <Baguette rayBaguette="0.4" heiBaguette="16.0">
+  <Material>
+   <DiffuseColor red="0.93" green="0.87" blue="0.72" />
+   <SpecularColor red="0.93" green="0.87" blue="0.72" exponent="2" />
+   <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
+  </Material>
+  <Frame>
+   <position x="-1" y="0" z="0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Baguette>
+
+  <Baguette rayBaguette="0.4" heiBaguette="16.0">
+  <Material>
+   <DiffuseColor red="0.93" green="0.87" blue="0.72" />
+   <SpecularColor red="0.93" green="0.87" blue="0.72" exponent="2" />
+   <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
+  </Material>
+  <Frame>
+   <position x="1" y="0" z="0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Baguette>
+
  <Camera fieldOfView="0.7854" xResolution="20" yResolution="20">
   <Frame>
    <position x="1.0" y="-1.0" z="0.5"/>

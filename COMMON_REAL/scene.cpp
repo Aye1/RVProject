@@ -1,5 +1,6 @@
 #include "scene.h"
 #include "elementBat.h"
+#include "baguette.h"
 #include <qfile.h>
 #include <QList>
 #include <iostream>
@@ -14,6 +15,9 @@ void Scene::draw() const
   //parcours de la liste d'object
   foreach(ElementBat* ele,liste_batterie_){
     ele->draw();
+  }
+  foreach(Baguette* bag,liste_baguette_){
+    bag->draw();
   }
 }
 
@@ -51,10 +55,22 @@ void Scene::loadFromFile(const QString& filename)
 		//ajout a la liste d'objets
 		this->addElement(S);			
 	}
+	else if (QString::compare(QString("Baguette"),e.tagName())==0) 
+	{
+		//creation de la baterie			
+		Baguette* S = new Baguette();
+		//initialisation avec QdomElement
+		S->initFromDOMElement(e);
+		//mise a jour de la position du centre
+		S->setCenter(S->frame().position());
+		S->setDirectionBaguette(S->frame().orientation().axis());
+		//ajout a la liste d'objets
+		this->addBaguette(S);			
+	}
 	else if (QString::compare(QString("Camera"),e.tagName())==0)
 	{
 		//initialisation avec QdomElement
-		camera_.initFromDOMElement(e);	
+		cameraDroite_.initFromDOMElement(e);	
 	}
      }
      n = n.nextSibling();
@@ -107,9 +123,18 @@ QList<ElementBat *> Scene::getListeBatterie()
  return liste_batterie_;
 }
 
+QList<Baguette *> Scene::getListeBaguette()
+{
+ return liste_baguette_;
+}
+
 
 void Scene::addElement(ElementBat* e)
 {
 	liste_batterie_.push_back(e);
+}
+void Scene::addBaguette(Baguette* e)
+{
+	liste_baguette_.push_back(e);
 }
 

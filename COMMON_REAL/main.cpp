@@ -1,20 +1,28 @@
-#include "viewer.h"
+//#include "viewer.h"
 #include <qapplication.h>
+#include "AGHMainWindow.h"
 
 int main(int argc, char** argv)
 {
   // Read command lines arguments.
   QApplication application(argc,argv);
-
+/*
+	QGLFormat format;
+	format.setStereo(true);
+	QGLFormat::setDefaultFormat(format);
+*/
   // Instantiate the viewer.
-  Viewer v;
+  //Viewer v;
+  AGHMainWindow window;
+
 
   // Make the viewer window visible on screen.
-  v.show();
+  //v.show();
+  window.show();
   
 #if QT_VERSION < 0x040000
   // Set the viewer as the application main widget.
-  application.setMainWidget(&v);
+  application.setMainWidget(&window);
 #endif
     
   // Run main loop.

@@ -4,6 +4,7 @@
 #include <QKeyEvent>
 #include <math.h>
 #include "elementBat.h"
+#include "baguette.h"
 
 using namespace std;
 using namespace qglviewer;
@@ -16,72 +17,23 @@ Viewer::~Viewer()
 
 void Viewer::draw()
 {
-  // A FAIRE
-  /*
-  //Dessin de la sphere 1,2,3
-  Sphere   s1,s2,s3;
-  Frame    f1,f2,f3;
-  Material m1,m2,m3;
-  
-  m1 = s1.material();
-  f1 = s1.frame();
-  m2 = s2.material();
-  f2 = s2.frame();
-  m3 = s3.material();
-  f3 = s3.frame();
-
-  m1.setDiffuseColor( Color(1.0 , 0.0 , 0.2) );
-  m2.setDiffuseColor( Color(1.0 , 0.6 , 0.0) );
-  m3.setDiffuseColor( Color(0.0 , 0.5 , 0.8) );
-  
-  f1.setPosition(0.0,0.0,0.0);
-  f2.setPosition(2.0,0.0,0.0);
-  f3.setPosition(0.0,2.0,0.0);
-
-  s1.setMaterial(m1);
-  s2.setMaterial(m2);
-  s3.setMaterial(m3);
-
-  s1.setFrame(f1);
-  s2.setFrame(f2);
-  s3.setFrame(f3);
-  
-  s1.draw();
-  s2.draw();
-  s3.draw();
-
-
-
-
-
-  const float nbSteps = 200.0;
-
-  glBegin(GL_QUAD_STRIP);
-  for (float i=0; i<nbSteps; ++i)
-    {
-      float ratio = i/nbSteps;
-      float angle = 21.0*ratio;
-      float c = cos(angle);
-      float s = sin(angle);
-      float r1 = 1.0 - 0.8*ratio;
-      float r2 = 0.8 - 0.8*ratio;
-      float alt = ratio - 0.5;
-      const float nor = .5;
-      const float up = sqrt(1.0-nor*nor);
-      glColor3f(1.0-ratio, 0.2 , ratio);
-      glNormal3f(nor*c, up, nor*s);
-      glVertex3f(r1*c, alt, r1*s);
-      glVertex3f(r2*c, alt+0.05, r2*s);
-    }
-  glEnd();
-  */
-
+ 
+  glViewport (0, 0, (GLsizei)(400), (GLsizei)(400));
+	
+		
   
   if ( scene_ ) {
 	scene_->draw();
   }
- 
-  	
+ /*
+  	  camera()->setPosition(camera()->position()+Vec(50,0,0));
+  camera()->setOrientation(camera()->orientation());
+  camera()->setFieldOfView(camera()->fieldOfView());
+*/
+glViewport (400, 0, (GLsizei)(400), (GLsizei)(400));
+if ( scene_ ) {
+	scene_->draw();
+  }
 
 }
 
@@ -96,6 +48,8 @@ void Viewer::init()
   setKeyDescription(Qt::Key_L, "Loads a new scene");
   setKeyDescription(Qt::Key_S, "Shoot rays in the scene and saves the result");
   setKeyDescription(Qt::SHIFT+Qt::Key_S, "Shoot rays from <i>current</i> view point");
+	
+  //setStereoDisplay(true);
 
   setScene(new Scene());
 
@@ -104,19 +58,21 @@ void Viewer::init()
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+
   // Restore previous viewer state (camera, key frames...)
-  restoreStateFromFile();
+  //restoreStateFromFile();
 
   // Loads scene (prevents from pressing 'L' at each start).
   loadScene("troisSpheres.scn");
 
   // Set Camera to scene Camera. Set scene center and radius.
   initFromScene();
+
 }
 
 QString Viewer::helpString() const
 {
-  QString text("<h2>L a n c e r   d e   r a y o n s</h2>");
+  QString text("<h2>Simulation de batterie ARV</h2>");
   text += "Ajoutez ici toute aide utile à l'utilisateur. ";
   text += "N'oubliez pas de commenter vos raccourcis clavier avec setKeyDescription().<br>";
   text += "Appuyez sur <b>Escape</b> pour quitter.";
@@ -150,6 +106,10 @@ void Viewer::keyPressEvent(QKeyEvent *e)
         isSelected2 = false;
   		isSelected3 = false;
   		isSelected4 = true;
+		break;
+	case Qt::Key_5 :
+		(scene()->getListeBaguette())[0]->setDirectionBaguette((scene()->getListeBaguette())[0]->getDirectionBaguette()+Vec(0.1,0.1,0.1));
+		update();
 		break;
 	
 	//deplacement des elements
@@ -232,8 +192,8 @@ void Viewer::keyPressEvent(QKeyEvent *e)
 #endif
 	    {
 	      // Shift+S renders image from current view point
-	      scene()->camera().frame().setPosition(camera()->position());
-	      scene()->camera().frame().setOrientation(camera()->orientation());
+	      scene()->cameraDroite().frame().setPosition(camera()->position());
+	      scene()->cameraDroite().frame().setOrientation(camera()->orientation());
 	    }
 	  
 	  // Remplacer cette ligne par : const QString name = "result.jpg";
@@ -248,8 +208,8 @@ void Viewer::keyPressEvent(QKeyEvent *e)
 #endif
 	    {
 	      // Restore initial scene camera
-	      scene()->camera().frame().setPosition(camera()->keyFrameInterpolator(1)->keyFrame(0).position());
-	      scene()->camera().frame().setOrientation(camera()->keyFrameInterpolator(1)->keyFrame(0).orientation());
+	      scene()->cameraDroite().frame().setPosition(camera()->keyFrameInterpolator(1)->keyFrame(0).position());
+	      scene()->cameraDroite().frame().setOrientation(camera()->keyFrameInterpolator(1)->keyFrame(0).orientation());
 	    }
 	  break;
 	}
@@ -281,9 +241,9 @@ void Viewer::loadScene(const QString& name)
 // scene's camera position. Attention, camera() is moved to camera position.
 void Viewer::initFromScene()
 {
-  camera()->setPosition(scene()->camera().frame().position());
-  camera()->setOrientation(scene()->camera().frame().orientation());
-  camera()->setFieldOfView(scene()->camera().fieldOfView());
+  camera()->setPosition(scene()->cameraDroite().frame().position());
+  camera()->setOrientation(scene()->cameraDroite().frame().orientation());
+  camera()->setFieldOfView(scene()->cameraDroite().fieldOfView());
   
   // Remove previous keyFrames in path 1 (if any)
   if (camera()->keyFrameInterpolator(1))
