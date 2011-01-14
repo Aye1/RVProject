@@ -1,0 +1,268 @@
+/* 
+ *   Video capture subrutine for Linux/libdc1394 devices
+ *   author: Kiyoshi Kiyokawa ( kiyo@crl.go.jp )
+             Hirokazu Kato ( kato@sys.im.hiroshima-cu.ac.jp )
+ *
+ *   Revision: 1.0   Date: 2002/01/01
+ */
+#if __APPLE_CC__
+	#include <Carbon/Carbon.h>
+	#include <QuicKTime/QuickTime.h>
+#endif
+//#include <CoreServices/FixMath.h>
+#include <AR/ar.h>
+#include <AR/config.h>
+#include <AR/video.h>
+
+#define BailErr(x) {err = x; if(err != noErr) return -1;}
+#define BailErr2(x) {err = x; if(err != noErr) return NULL;}
+
+static Rect		theRect = {0, 0, DEFAULT_VIDEO_HEIGHT-1, DEFAULT_VIDEO_WIDTH-1};
+static SeqGrabComponent	seqGrab = NULL;
+static SGChannel	sgchanVideo = NULL;
+static GWorldPtr        pGWorld = NULL;
+static ImageSequence    decomSeq = NULL;
+static ImageDescriptionHandle imageDesc = NULL;
+static status;
+static ARUint8   *imgPtr;
+static int        imgLen;
+pascal OSErr mySGDataProc(SGChannel c, Ptr p, long len, long *offset, long chRefCon, TimeValue time, short writeType, long refCon);
+
+static ARUint8 *ar3VideoGetImage( void );
+
+enum
+{
+	kAboutDLOGID = 128,
+	kMonitorDLOGID,
+	kMovieHasBeenRecordedAlertID
+};
+
+int arVideoDispOption( void )
+{
+    return  0;
+}
+
+static pascal Boolean
+SeqGrabberModalFilterProc (DialogPtr theDialog, const EventRecord *theEvent,
+	short *itemHit, long refCon)
+{
+#pragma unused(theDialog, itemHit)
+	// Ordinarily, if we had multiple windows we cared about, we'd handle
+	// updating them in here, but since we don't, we'll just clear out
+	// any update events meant for us
+	
+	Boolean	handled = false;
+
+//HiliteMeno(0);
+printf("PPP : %d\n", theEvent->what);
+
+if(theEvent->what == kHighLevelEvent) {
+printf("YYY\n");
+//AEProcessAppleEvent(theEvent);
+}
+printf("QQQ\n");
+
+	if ((theEvent->what == updateEvt) && 
+		((WindowPtr) theEvent->message == (WindowPtr) refCon))
+	{
+		//BeginUpdate ((WindowPtr) refCon);
+		//EndUpdate ((WindowPtr) refCon);
+		handled = true;
+	}
+	return (handled);
+}
+
+int arVideoOpen( char *config )
+{
+    OSErr		err = noErr;
+DialogPtr				gDialog=0;
+WindowPtr				gMonitor=0;
+
+	InitCursor();
+    EnterMovies();
+
+	gDialog = GetNewDialog (kMonitorDLOGID, NULL, (WindowPtr) -1L);
+	gMonitor = GetDialogWindow(gDialog);
+
+    if( pGWorld == NULL ) {
+        err = QTNewGWorld( &pGWorld, k32ARGBPixelFormat, &theRect, 0, NULL, 0);
+printf("aa0\n");
+        BailErr(err);
+printf("aa\n");
+   
+        if(!LockPixels(GetPortPixMap(pGWorld))) BailErr(-1);
+    }
+printf("aa1\n");
+    
+    seqGrab = OpenDefaultComponent(SeqGrabComponentType, 0);
+    err = SGInitialize(seqGrab);
+    BailErr(err);
+printf("aa2\n");
+    
+    err = SGSetDataRef(seqGrab, 0, 0, seqGrabDontMakeMovie);
+    BailErr(err);
+printf("aa3\n");
+     
+    err = SGSetGWorld(seqGrab, pGWorld, NULL);
+    //err = SGSetGWorld(seqGrab, pGWorld, GetMainDevice());
+    BailErr(err);
+printf("aa4\n");
+    
+    err = SGNewChannel(seqGrab, VideoMediaType, &sgchanVideo);
+    BailErr(err);
+printf("aa5\n");
+
+{
+OSErr		err = noErr;
+VideoDigitizerComponent ci;
+Fixed frameRate = FixRatio(30, 4); 
+err = SGSetFrameRate(sgchanVideo, frameRate);
+BailErr(err);
+frameRate = 0; 
+err = SGGetFrameRate(sgchanVideo, &frameRate);
+BailErr(err);
+printf("Framerate = %f\n", (float)FixRound(frameRate));
+/*
+frameRate = FixRatio(30, 4); 
+ci = SGGetVideoDigitizerComponent(sgchanVideo);
+err = VDSetFrameRate(ci, frameRate);
+BailErr(err);
+*/
+}
+    
+{
+Rect					gActiveVideoRect;
+err = SGGetSrcVideoBounds (sgchanVideo, &gActiveVideoRect);
+BailErr(err);
+printf("%d %d %d %d\n",
+gActiveVideoRect.right, gActiveVideoRect.left,
+gActiveVideoRect.bottom, gActiveVideoRect.top);
+}
+
+
+    err = SGSetChannelBounds(sgchanVideo, &theRect);
+    BailErr(err);
+printf("aa6\n");
+
+    err = SGSetChannelUsage(sgchanVideo, seqGrabRecord);
+    BailErr(err);
+printf("aa7\n");
+    
+    err = SGSetDataProc(seqGrab,NewSGDataUPP(mySGDataProc),(long)0);
+    BailErr(err);
+printf("aa8\n");
+
+
+#if 0
+{
+SGModalFilterUPP	seqGragModalFilterUPP;
+
+	seqGragModalFilterUPP = (SGModalFilterUPP)NewSGModalFilterUPP(SeqGrabberModalFilterProc);
+printf("xxx1\n");
+	err = SGSettingsDialog(seqGrab, sgchanVideo, 0, 
+		NULL, 0L, seqGragModalFilterUPP, (long)gMonitor);
+printf("xxx2\n");
+	DisposeSGModalFilterUPP(seqGragModalFilterUPP);
+printf("xxx3\n");
+}
+#endif
+
+    return 0;
+}
+
+int arVideoClose( void )
+{
+    if( seqGrab != NULL ) {
+    	CloseComponent(seqGrab);
+        seqGrab = NULL;
+    }
+    
+    if( pGWorld != NULL ) {
+        DisposeGWorld(pGWorld);
+        pGWorld = NULL;
+    }
+
+    if( decomSeq != NULL ) {
+        CDSequenceEnd(decomSeq);
+        decomSeq = NULL;
+    }
+
+    if( imageDesc != NULL ) {
+        DisposeHandle((Handle)imageDesc);
+        imageDesc = NULL;
+    }
+}
+
+int arVideoInqSize( int *x, int *y )
+{
+    *x = DEFAULT_VIDEO_WIDTH;
+    *y = DEFAULT_VIDEO_HEIGHT;
+}
+
+ARUint8 *arVideoGetImage( void )
+{
+    return ar3VideoGetImage();
+}
+
+int arVideoCapStart( void )
+{
+    SGStartRecord(seqGrab);
+    status = 0;
+}
+
+int arVideoCapStop( void )
+{
+    if(seqGrab) SGStop(seqGrab);
+}
+
+int arVideoCapNext( void )
+{
+}
+
+
+
+static ARUint8 *ar3VideoGetImage( void )
+{
+    CodecFlags 		ignore;
+    OSErr		err = noErr;
+
+    while(!err && status == 0) {
+    	err = SGIdle(seqGrab);
+    }
+
+    if( decomSeq == NULL ) {
+        err = DecompressSequenceBegin( &decomSeq, imageDesc, pGWorld,
+            			       NULL, &theRect, NULL, srcCopy, NULL, 0,
+                                       codecNormalQuality, bestSpeedCodec);
+        BailErr2(err);
+    }
+
+    err = DecompressSequenceFrameS( decomSeq, imgPtr, imgLen, 0, &ignore, NULL);
+    BailErr2(err);
+
+    status = 0;
+    return GetPixBaseAddr(GetGWorldPixMap(pGWorld))+1;
+}
+
+
+pascal OSErr mySGDataProc(SGChannel c, Ptr p, long len, long *offset, long chRefCon, TimeValue time, short writeType, long refCon)
+{
+#pragma unused(offset,chRefCon,time,writeType)
+    OSErr                  err = noErr;
+
+    if( imageDesc == NULL ) {
+        imageDesc = (ImageDescriptionHandle)NewHandle(0);
+        SGGetChannelSampleDescription(c,(Handle)imageDesc);
+        printf("CTYPE = %c%c%c%c\n", 
+            ((*imageDesc)->cType >> 24) & 0xFF,
+            ((*imageDesc)->cType >> 16) & 0xFF,
+            ((*imageDesc)->cType >>  8) & 0xFF,
+            ((*imageDesc)->cType >>  0) & 0xFF );
+    }
+
+    status = 1;
+    imgPtr = (ARUint8 *)p;
+    imgLen = len;
+
+    return err;
+}

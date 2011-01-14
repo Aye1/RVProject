@@ -1,0 +1,1 @@
+ c++ -g fanfSample.C FobAlone.C FobCommand.C RS232Interface.C  

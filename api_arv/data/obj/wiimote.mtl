@@ -1,0 +1,93 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub 03_-_Default (10) to come 
+#
+newmtl Material__11
+Ka  0.0 0.0 0.0
+Kd  0.9 0.0 0.4
+Ks  0.0 0.3 0.9
+d  1.0
+Ns  5.0
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__12
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  5.0
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__13
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.8
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__14
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__15
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  0.6
+Ns  7.5
+illum 2
+#
+newmtl Material__16
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.4
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__17
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  6.2
+illum 2
+map_Kd wiimote.jpg
+#
+newmtl Material__18
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__19
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Material__20
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub 03_-_Default done 
+#
+# EOF

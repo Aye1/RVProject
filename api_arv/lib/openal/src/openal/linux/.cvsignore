@@ -1,0 +1,14 @@
+ChangeLog~
+configure
+config.h
+config.h.in
+config.log
+config.cache
+config.status
+Makefile
+OpenAL.pbproj
+English.pbproj
+English.lproj
+build
+.DS_Store
+autom4te.cache

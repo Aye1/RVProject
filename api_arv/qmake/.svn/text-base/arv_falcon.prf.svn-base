@@ -1,0 +1,8 @@
+#################################
+# configuration for arv::Falcon :
+#################################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Falcon.h
+SOURCES *= $$ARV_SRC_DIR/Falcon.cpp
+CONFIG  *= arv_ext_falcon

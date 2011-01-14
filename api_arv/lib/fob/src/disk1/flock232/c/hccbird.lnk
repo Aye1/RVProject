@@ -1,0 +1,20 @@
+birdmain.obj
+birdcmds.obj
+cmdutil.obj
+serdpcin.obj
+menu.obj
+rstofbb.obj
+pctimer.obj
+hcint.obj
+-exeformat exp
+-minreal 38
+-maxreal 200
+-priv
+-lib \highc\small\hcloc
+-lib \highc\small\hcna
+-lib \highc\small\hc386
+-lib \highc\small\hc387
+-lib \phar386\lib\dosx32
+-exe cbird
+          
+        

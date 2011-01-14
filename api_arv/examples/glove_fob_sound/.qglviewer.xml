@@ -1,0 +1,28 @@
+<!DOCTYPE QGLVIEWER>
+<QGLViewer>
+ <State stereo="false" mouseTracking="false" >
+  <foregroundColor x="0.7" y="0.7" z="0.7" />
+  <backgroundColor x="0" y="0" z="0" />
+ </State>
+ <Display enableText="true" pathEditor="false" displayZBuffer="false" drawAxis="false" drawGrid="false" displayFPS="false" />
+ <Geometry width="640" posX="630" posY="535" height="409" fullScreen="false" />
+ <Camera>
+  <Parameters fieldOfView="0.785398" Type="PERSPECTIVE" sceneRadius="100" zNearCoef="0.001" />
+  <SceneCenter x="0" y="0" z="0" />
+  <RevolveAroundPoint x="0" y="0" z="0" />
+  <ManipulatedCameraFrame FlySpeed="1" >
+   <flyUpVector x="0" y="1" z="0" />
+   <ManipulatedFrame spinSens="0.3" transSens="1" rotSens="1" >
+    <SpinningFrame RAP="true" UpdateInterval="40" frozen="false" >
+     <RotationCenter x="0" y="0" z="0" />
+     <SpinningQuaternion q0="0" q1="0" q2="0" q3="1" />
+     <Frame>
+      <position x="0" y="0" z="50" />
+      <orientation q0="0" q1="0" q2="0" q3="1" />
+     </Frame>
+    </SpinningFrame>
+   </ManipulatedFrame>
+  </ManipulatedCameraFrame>
+  <Stereo distToScreen="5" distToZPP="20" IODist="0.062" physScreenWidth="3.5" />
+ </Camera>
+</QGLViewer>

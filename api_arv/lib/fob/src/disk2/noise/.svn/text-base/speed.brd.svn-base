@@ -1,0 +1,13 @@
+This is the data file used with the program SETSPEED.BAS.  DON't delete these
+instruction lines from this file. The data to add consists of 3 lines:
+LINE 1. BAUD RATE. No commas, no decimal points. it must be one of the
+        the following: 2400, 4800, 9600, 19200, 38400, 57600, 115200
+LINE 2. COM PORT. It must be one of the following:  COM1:, COM2:
+LINE 3. BIRD SPEED. Speed in measurements/sec, it can contain decimal points
+        It must be greater that 16 and less than 144. For example: 108.5
+ENTER LINE 1 on the first blank line after these instructions followed by 
+LINE2 on the next line followed by LINE 3. No blank lines between LINES.
+9600
+COM1:
+108.5
+

@@ -1,0 +1,96 @@
+FreeBSD joystick support
+------------------------
+
+FreeBSD supports two flavors of joysticks: analog and USB. By default,
+non-root users do not have access to these devices on FreeBSD, and the
+required devices may not even be created yet. Please browse the below
+notes before writing to the plib mailing list.
+
+Contents of this file:
+-----------
+	Analog joysticks
+	USB joysticks
+	Testing the joysticks
+	Compiling and linking
+
+Analog joysticks
+----------------
+
+Plib uses the joy(4) interface to analog joysticks. You will need to
+make sure the device files exist:
+	ls -l /dev/joy*
+
+If they do not yet exist, create them (logged in as root):
+	cd /dev
+	sh MAKEDEV joy
+
+By default, they will have permissions that do not allow unprivileged
+users access to them:
+	crw-r-----   1 root   operator   51,   0 Aug 30 16:59 joy0
+	crw-r-----   1 root   operator   51,   1 Aug 30 16:59 joy1
+
+You may wish to consider making the devices world read/writable:
+	chmod a+rw /dev/joy*
+
+Users of xdm(1) or any of its more modern successors may wish to look
+into GiveConsole and TakeConsole or its equivalent.
+
+If you do not have a joystick driver compiled into you kernel, you can
+load one dynamically with the command
+	kldload joy
+When in doubt, check the FreeBSD handbook about making sure this driver
+is loaded every time you reboot.
+
+
+USB joysticks
+-------------
+
+Plib uses the usbhid(3) interface to USB joysticks. Joysticks will show
+up as generic USB Human Interface Devices (uhid). Because the USB design
+allows an almost unlimited number of USB buses and USB devices, you should
+make sure you have enough devices in /dev to deal with your devices.
+When in doubt, create a few extra to make sure. If you have insufficient
+USB or uhid devices, your joystick may not appear at all, or it may
+disappear if you connect your USB devices in a different order.
+Fortunately, device nodes are free. For example, you might see this:
+	ls -al /dev/usb* /dev/uhid*
+	crw-rw----  1 root  operator  108, 255 Apr 12 01:44 /dev/usb
+	crw-rw----  1 root  operator  108,   0 Apr 12 01:44 /dev/usb0
+	crw-rw----  1 root  operator  122,   0 Apr 12 01:44 /dev/uhid0
+
+This shows you have one usb interface (/dev/usb itself doesn't count), and
+one uhid device. Make a few extra with
+	cd /dev
+	sh MAKEDEV usb0 usb1 usb2 usb3 uhid0 uhid1 uhid2 uhid3
+(you can leave out the devices that exist already).
+
+Next, you'll have to think about permissions. Both the /dev/usb0..3
+(but not /dev/usb) have to be world readable, as well as the uhid devices.
+This command will take care of it:
+	chmod a+r /dev/usb?* /dev/uhid*
+(yes, the "?*" after /dev/usb is intentional).
+
+Obviously, any permission change you make is at your own risk! XDM users
+may use the GiveConsole/TakeConsole mechanism as an alternative.
+
+Plib will complain if /dev/uhid* or /dev/usb* exist but are
+unreadable with your current privileges.
+
+
+Testing the joysticks
+---------------------
+
+Users of FlightGear can quickly test their joysticks with the js_demo
+program.
+
+
+Compiling and linking
+---------------------
+
+Compile plib on FreeBSD with the same compiler options as used for the
+other libraries you may use. In particular, if you use pthreads anywhere
+in your application, you should compile Plib with
+	g++ -pthread
+
+Applications linking to recent Plib's -ljs should add -lusbhid to the
+link command line in the Makefile.

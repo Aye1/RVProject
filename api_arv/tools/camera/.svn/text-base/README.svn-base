@@ -1,0 +1,24 @@
+Pour obtenir le fichier de calibration d'une camera pour l'utilisation de
+la classe arv::Tracker, utilisez successivement CalibDist puis CalibCParam.
+
+CalibDist s'utilise avec la mire constituée de 4 rangées de 6 points
+(patterns/calib_dist.pdf). Le but consiste a cliquer les points dans l'ordre
+suivant:
+ 1   2   3   4   5   6
+ 7   8   9  10  11  12
+13  14  15  16  17  18
+19  20  21  22  23  24
+et ce pour 5 à 10 images avec des positions de mire différentes.
+
+
+CalibCParam permet d'affiner les résultats obtenus par CalibDist.
+Le programme utilise la grille constituée de 7 lignes horyzontales et 9 lignes 
+verticales (patterns/calib_cpara.pdf).
+Après chaque capture d'images, il faut superposer le mieux possible des lignes
+virtuelles sur celles de la grille en commenceant par les horyzontales (de haut
+en bas) puis les verticales (de gauche à droite).
+faites le pour plusieurs images en capturant toujours une vue de la mire
+perpendiculaire à l'axe de la caméra. les vue doivent etre répartie en
+s'éloignant d'une dizaine de centimetres entre chaque prise de vue.
+
+Pour plus de détails, se reporter à la documentation disponible dans le placard.

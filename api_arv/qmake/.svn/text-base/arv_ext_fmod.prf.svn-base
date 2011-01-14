@@ -1,0 +1,9 @@
+##########################
+# configuration for FMOD :
+##########################
+
+isEmpty(ARV_LIB_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+LIB_DIR = $$ARV_LIB_DIR/fmod
+INCLUDEPATH *= $$LIB_DIR/include
+LIBS *=  -Wl,"-rpath=$$LIB_DIR/lib" -L$$LIB_DIR/lib -lfmod     # pour libfmod.so
+

@@ -1,0 +1,52 @@
+- Flock of Birds Library 1.0.1
+
+==============
+Installing the library should be as easy as:
+
+./configure
+make install
+
+You'll probably also want to build the test programs to make sure
+everything is working:
+
+cd test
+make
+
+This will generate two test programs: "fly" and "fly2".  "fly" simply
+outputs received data from the flock to stderr.  "fly2" is an OpenGL
+based program which shows you the bird's location/orientation.  Of the
+two programs, you should definitely give "fly2" to a try.
+
+Part of the fun of getting your flock to work with the library is
+figuring out how long the library should wait between sending 
+commands to the flock hardware.  By default the library waits 500ms
+between commands.  This is very conservative and a bit slow.  A good
+way to find the best wait time for your particular setup is to use
+the test program "fly2":
+
+./fly2 -s 250 /dev/ttyS0
+
+The above command tells the library to wait 250ms between sending 
+commands to the flock hardware.  To find the optimal wait time, keep 
+decreasing the wait time until the the library is unable to initialize
+the birds.  Once you've found a bad value, simply use the previous good
+value.
+
+It's important to note that this "command wait time" only affects
+the amount of time it takes to start up the flock.  It does not affect
+the operation of the flock once the "fly( )" has been called.
+
+
+==============
+API documentation can be generated via Doxygen:
+
+doxygen fob.doxygen
+
+This should create a directory named "api" in which you'll find both
+html and tex based documentation.
+
+
+==============
+Please send any comments/suggestions/threats to Nathan Cournia at:
+
+acnatha@vr.clemson.edu

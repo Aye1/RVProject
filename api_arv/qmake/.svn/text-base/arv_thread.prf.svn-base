@@ -1,0 +1,9 @@
+#################################
+# configuration for arv::Thread :
+#################################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Thread.h
+SOURCES *= $$ARV_SRC_DIR/Thread.cpp
+CONFIG  *= thread
+

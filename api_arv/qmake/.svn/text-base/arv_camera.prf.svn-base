@@ -1,0 +1,9 @@
+#################################
+# configuration for arv::Camera :
+#################################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to the variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Camera.h
+SOURCES *= $$ARV_SRC_DIR/Camera.cpp
+CONFIG  *= arv_image arv_ext_artk
+

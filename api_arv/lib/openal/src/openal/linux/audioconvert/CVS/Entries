@@ -1,0 +1,16 @@
+/.cvsignore/1.1.1.1/Mon Mar 18 14:41:42 2002//
+/Makefile.in/1.2/Fri Jun 20 19:23:05 2003//
+/ac_adpcm.c/1.3/Fri Jun 20 19:23:05 2003//
+/ac_adpcm.h/1.2/Fri Jun 20 19:23:05 2003//
+/ac_bits.c/1.2/Mon Mar 18 22:39:37 2002//
+/ac_channels.c/1.3/Mon Nov  3 16:14:48 2003//
+/ac_endian.c/1.3/Fri Jun 20 19:23:05 2003//
+/ac_endian.h/1.2/Wed Jul 10 22:08:29 2002//
+/ac_format.c/1.2/Mon May  6 15:06:17 2002//
+/ac_freq.c/1.6/Wed Jan  7 11:18:56 2004//
+/ac_helper.c/1.4/Fri Jun 20 19:23:05 2003//
+/ac_misc.c/1.3/Fri Jun 20 19:23:05 2003//
+/ac_wave.h/1.1.1.1/Mon Mar 18 14:41:42 2002//
+/audioconvert.h/1.1.1.1/Mon Mar 18 14:41:42 2002//
+/test.c/1.1.1.1/Mon Mar 18 14:41:42 2002//
+D

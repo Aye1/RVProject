@@ -1,0 +1,54 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:717: checking host system type
+configure:738: checking target system type
+configure:756: checking build system type
+configure:885: checking for gcc
+configure:998: checking whether the C compiler (gcc -g -O2 ) works
+configure:1014: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:1040: checking whether the C compiler (gcc -g -O2 ) is a cross-compiler
+configure:1045: checking whether we are using GNU C
+configure:1054: gcc -E conftest.c
+configure:1073: checking whether gcc accepts -g
+configure:1109: checking for c++
+configure:1141: checking whether the C++ compiler (c++  ) works
+configure:1157: c++ -o conftest    conftest.C  1>&5
+configure:1183: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:1188: checking whether we are using GNU C++
+configure:1197: c++ -E conftest.C
+configure:1216: checking whether c++ accepts -g
+configure:1248: checking how to run the C preprocessor
+configure:1269: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1328: checking whether byte ordering is bigendian
+configure:1346: gcc -c -g -O2  conftest.c 1>&5
+configure:1361: gcc -c -g -O2  conftest.c 1>&5
+configure: In function `main':
+configure:1356: error: `not' undeclared (first use in this function)
+configure:1356: error: (Each undeclared identifier is reported only once
+configure:1356: error: for each function it appears in.)
+configure:1356: error: syntax error before "big"
+configure: failed program was:
+#line 1350 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/param.h>
+int main() {
+
+#if BYTE_ORDER != BIG_ENDIAN
+ not big endian
+#endif
+; return 0; }
+configure:1465: checking for dlopen in -ldl
+configure:1484: gcc -o conftest -g -O2   conftest.c -ldl   1>&5
+configure:1509: checking for sin in -lm
+configure:1528: gcc -o conftest -g -O2   conftest.c -lm   -ldl 1>&5
+configure:1521: warning: conflicting types for built-in function `sin'
+configure:1670: checking size of void *
+configure:1689: gcc -o conftest -g -O2   conftest.c  -ldl -lm 1>&5
+configure:2089: checking for pthread.h
+configure:2099: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2919: checking for makeinfo
+configure:3023: checking for a BSD compatible install
+configure:3076: checking whether ln -s works
+configure:3100: checking for gmake

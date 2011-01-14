@@ -1,0 +1,52 @@
+# Generated automatically from Makefile.in by configure.
+CC=gcc
+CFLAGS=-g -O2 -fPIC -Wshadow -Wall -W -Wbad-function-cast -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wimplicit-function-declaration -Waggregate-return -Winline -Wpointer-arith -fno-common -ansi -Wredundant-decls
+TEST_PROGS=test
+T_OBJS=test.o
+AC_OBJS=ac_bits.o               \
+	ac_freq.o               \
+	ac_helper.o             \
+	ac_channels.o           \
+	ac_endian.o             \
+	ac_adpcm.o              \
+	ac_misc.o
+LIN_OBJS=
+AC_OBJS+=
+LIBS=-L. -laudioconvert  -ldl -lm -lpthread
+INC=-I../include -I../../include -I../src 
+MAKE=gmake
+MAJOR_VERSION=0
+MINOR_VERSION=0
+MICRO_VERSION=7
+VERSION=$(MAJOR_VERSION).$(MINOR_VERSION).$(MICRO_VERSION)
+
+
+.SUFFIXES: .c .o
+%.o : %.c ../config.h
+	$(CC) $(INC) -fPIC -DPIC $(CFLAGS) -c $< -o $@
+
+all: libaudioconvert $(TEST_PROGS)
+
+clean:
+	rm -f $(T_OBJS)
+	rm -f $(TEST_PROGS)
+	rm -f $(AC_OBJS)
+	rm -f libaudioconvert.a
+	rm -f libaudioconvert.so
+	rm -f libaudioconvert.so.$(VERSION)
+	rm -f core
+	rm -f gmon.out
+
+distclean: clean
+	rm -Rf Makefile
+
+libaudioconvert: libaudioconvert.a libaudioconvert.so
+
+libaudioconvert.a: $(AC_OBJS)
+	ar cru libaudioconvert.a $(AC_OBJS)
+
+libaudioconvert.so: $(AC_OBJS)
+	$(CC) -shared -o libaudioconvert.so.$(VERSION) $(AC_OBJS)
+
+test: libaudioconvert $(T_OBJS)
+	$(CC) $(CFLAGS) -o test $(T_OBJS) $(LIBS)

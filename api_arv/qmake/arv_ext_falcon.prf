@@ -1,0 +1,8 @@
+############################
+# configuration for Falcon :
+############################
+
+isEmpty(ARV_LIB_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+LIB_DIR = $$ARV_LIB_DIR/falcon
+INCLUDEPATH *= $$LIB_DIR/include
+LIBS *= -L$$LIB_DIR/lib -lnifalcon -lusb-1.0

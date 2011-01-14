@@ -1,0 +1,2 @@
+ssgaLensFlareTexture.o: ssgaLensFlareTexture.cxx
+ssgaLensFlareTexture.cxx :

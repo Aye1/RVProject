@@ -1,0 +1,9 @@
+#####################################
+# configuration for arv::Microphone :
+#####################################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Microphone.h
+SOURCES *= $$ARV_SRC_DIR/Microphone.cpp
+CONFIG  *= arv_ext_fmod
+

@@ -1,0 +1,124 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:585: checking for a BSD compatible install
+configure:638: checking whether build environment is sane
+configure:695: checking whether make sets ${MAKE}
+configure:741: checking for working aclocal
+configure:754: checking for working autoconf
+configure:767: checking for working automake
+configure:780: checking for working autoheader
+configure:793: checking for working makeinfo
+configure:827: checking for gcc
+configure:940: checking whether the C compiler (gcc  ) works
+configure:956: gcc -o conftest    conftest.c  1>&5
+configure:982: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:987: checking whether we are using GNU C
+configure:996: gcc -E conftest.c
+configure:1015: checking whether gcc accepts -g
+configure:1047: checking how to run the C preprocessor
+configure:1068: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1131: checking for c++
+configure:1163: checking whether the C++ compiler (c++  ) works
+configure:1179: c++ -o conftest    conftest.C  1>&5
+configure:1205: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:1210: checking whether we are using GNU C++
+configure:1219: c++ -E conftest.C
+configure:1238: checking whether c++ accepts -g
+configure:1270: checking how to run the C++ preprocessor
+configure:1288: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1324: checking for a BSD compatible install
+configure:1379: checking for ranlib
+configure:1774: checking host system type
+configure:1820: checking for X
+configure:2134: checking for dnet_ntoa in -ldnet
+configure:2153: gcc -o conftest -g -O2   conftest.c -ldnet   1>&5
+/usr/bin/ld: cannot find -ldnet
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2142 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char dnet_ntoa();
+
+int main() {
+dnet_ntoa()
+; return 0; }
+configure:2175: checking for dnet_ntoa in -ldnet_stub
+configure:2194: gcc -o conftest -g -O2   conftest.c -ldnet_stub   1>&5
+/usr/bin/ld: cannot find -ldnet_stub
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2183 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char dnet_ntoa();
+
+int main() {
+dnet_ntoa()
+; return 0; }
+configure:2223: checking for gethostbyname
+configure:2251: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2321: checking for connect
+configure:2349: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2413: checking for remove
+configure:2441: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2505: checking for shmat
+configure:2533: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2606: checking for IceConnectionNumber in -lICE
+configure:2625: gcc -o conftest -g -O2   -L/usr/X11R6/lib conftest.c -lICE   1>&5
+configure:2657: checking for pthread_create in -lpthread
+configure:2676: gcc -o conftest -g -O2    -L/usr/X11R6/lib conftest.c -lpthread    -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+configure:2704: checking for glNewList in -lGL
+configure:2723: gcc -o conftest -g -O2    -L/usr/X11R6/lib conftest.c -lGL  -lpthread   -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+configure:2804: checking for dlclose in -ldl
+configure:2823: gcc -o conftest -g -O2    -L/usr/X11R6/lib conftest.c -ldl  -lGL -lpthread   -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+configure:2852: checking for ALopenport in -laudio
+configure:2871: gcc -o conftest -g -O2    -L/usr/X11R6/lib conftest.c -laudio  -ldl -lGL -lpthread   -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+/home/perms/grasset/tmp/ccmQmtcH.o(.text+0x9): In function `main':
+/tmp/plib/configure:2867: undefined reference to `ALopenport'
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 2860 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char ALopenport();
+
+int main() {
+ALopenport()
+; return 0; }
+configure:2904: checking for ANSI C header files
+configure:2917: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2984: gcc -o conftest -g -O2    -L/usr/X11R6/lib conftest.c -ldl -lGL -lpthread   -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+configure:3010: checking for windows.h
+configure:3020: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3016:21: windows.h: No such file or directory
+configure: failed program was:
+#line 3015 "configure"
+#include "confdefs.h"
+#include <windows.h>
+configure:3125: checking for GL/gl.h
+configure:3135: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:3185: checking for pthread_exit in -lc_r
+configure:3204: gcc -o conftest -pthread -g -O2 -Wall    -L/usr/X11R6/lib conftest.c -lc_r  -ldl -lGL -lpthread   -lSM -lICE -lXi -lXmu -lXext -lX11  -lm 1>&5
+/usr/bin/ld: cannot find -lc_r
+collect2: ld returned 1 exit status
+configure: failed program was:
+#line 3193 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char pthread_exit();
+
+int main() {
+pthread_exit()
+; return 0; }
+configure:3239: checking for socklen_t
+configure:3252: gcc -c -g -O2 -Wall  conftest.c 1>&5

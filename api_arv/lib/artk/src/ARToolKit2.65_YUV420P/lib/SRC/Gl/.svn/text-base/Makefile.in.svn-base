@@ -1,0 +1,54 @@
+#
+# For instalation. Change this to your settings.
+#
+INC_DIR = ../../../include
+LIB_DIR = ../..
+#
+#  compiler
+#
+CC= cc
+CFLAG= @CFLAG@ -I$(INC_DIR)
+#
+# For making the library
+#
+AR= ar
+ARFLAGS= @ARFLAG@
+RANLIB= @RANLIB@
+#
+#   products
+#
+LIB= ${LIB_DIR}/libARgsub.a
+LIB2= ${LIB_DIR}/libARgsubUtil.a
+
+INCLUDE= ${INC_DIR}/AR/gsub.h \
+         ${INC_DIR}/AR/config.h \
+         ${INC_DIR}/AR/ar.h \
+         ${INC_DIR}/AR/matrix.h \
+         ${INC_DIR}/AR/param.h
+INCLUDE2= ${INC_DIR}/AR/gsubUtil.h
+
+#
+#   compilation control
+#
+LIBOBJS= ${LIB}(gsub.o)
+LIB2OBJS= ${LIB2}(gsubUtil.o)
+
+all:	${LIBOBJS} ${LIB2OBJS}
+
+${LIBOBJS}:		${INCLUDE}
+${LIB2OBJS}:		${INCLUDE} ${INCLUDE2}
+
+.c.a:
+	${CC} -c ${CFLAG} $<
+	${AR} ${ARFLAGS} $@ $*.o
+	${RANLIB}
+	rm -f $*.o
+
+clean:
+	rm -f *.o
+	rm -f ${LIB} ${LIB2}
+
+allclean:
+	rm -f *.o
+	rm -f ${LIB} ${LIB2}
+	rm -f Makefile

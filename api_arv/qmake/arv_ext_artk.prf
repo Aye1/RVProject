@@ -1,0 +1,21 @@
+###############################
+# configuration for ARToolkit :
+###############################
+
+isEmpty(ARV_LIB_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+LIB_DIR = $$ARV_LIB_DIR/artk
+INCLUDEPATH *= $$LIB_DIR/include
+
+#LIBS *= -L$$LIB_DIR/lib -lARvideo -lAR
+#contains(ARTK, gsub) {
+#    LIBS -=          -lARvideo -lAR     # because of a linking problem,
+#    LIBS *= -lARgsub -lARvideo -lAR     # if not put in this order.
+#    CONFIG *= glut      # needed by ARgsub
+#    }
+
+# this simple solution avoids problems when artk is included serveral times
+# (qmake will run only once this prf, so only the first value of ARTK would be used)
+# but it forces glut to be used when artk is used.
+LIBS *= -L$$LIB_DIR/lib -lARgsub -lARvideo -lAR
+CONFIG *= glut      # needed by ARgsub
+

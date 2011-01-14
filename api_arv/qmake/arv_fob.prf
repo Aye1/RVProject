@@ -1,0 +1,9 @@
+##############################
+# configuration for arv::Fob :
+##############################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Fob.h
+SOURCES *= $$ARV_SRC_DIR/Fob.cpp
+CONFIG  *= arv_serial_port arv_ext_fob qglviewer
+

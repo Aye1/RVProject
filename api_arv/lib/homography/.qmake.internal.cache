@@ -1,0 +1,41 @@
+[check]
+QMAKE_CACHE_VERSION = 1.02a
+QMAKE_ABSOLUTE_SOURCE_PATH = 
+MOC_DIR = 
+UI_DIR = 
+UI_HEADERS_DIR = 
+UI_SOURCES_DIR = 
+[depend]
+UErrors.h = UTypes.h
+UProjective.cc = UProjective.h NR/nr.h NR/nrutil.h UErrors.h UTypes.h NR/multMatVect.cc NR/multMatrice.cc NR/multCstVect.cc NR/multCstMat.cc NR/transpose.cc NR/nrutil.cc NR/tqli.cc NR/tred2.cc
+UProjective.h = UErrors.h UTypes.h
+UTypes.h = 
+NR/jacobi.cc = NR/nrutil.h
+NR/multCstMat.cc = 
+NR/multCstVect.cc = 
+NR/multMatVect.cc = 
+NR/multMatrice.cc = 
+NR/nr.h = NR/multMatVect.cc NR/multMatrice.cc NR/multCstVect.cc NR/multCstMat.cc NR/transpose.cc NR/nrutil.cc NR/tqli.cc NR/tred2.cc NR/nrutil.h
+NR/nrNoTemplate.cc = NR/nrutil.h
+NR/nrutil.cc = 
+NR/nrutil.h = 
+NR/tqli.cc = NR/nrutil.h
+NR/transpose.cc = 
+NR/tred2.cc = NR/nrutil.h
+[mocable]
+UErrors.h = *qmake_ignore*
+UProjective.h = *qmake_ignore*
+UTypes.h = *qmake_ignore*
+NR/nr.h = *qmake_ignore*
+NR/nrutil.h = *qmake_ignore*
+UProjective.cc = *qmake_ignore*
+NR/jacobi.cc = *qmake_ignore*
+NR/multCstMat.cc = *qmake_ignore*
+NR/multCstVect.cc = *qmake_ignore*
+NR/multMatrice.cc = *qmake_ignore*
+NR/multMatVect.cc = *qmake_ignore*
+NR/nrNoTemplate.cc = *qmake_ignore*
+NR/nrutil.cc = *qmake_ignore*
+NR/tqli.cc = *qmake_ignore*
+NR/transpose.cc = *qmake_ignore*
+NR/tred2.cc = *qmake_ignore*

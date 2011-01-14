@@ -1,0 +1,8 @@
+###############################
+# configuration for QGLViewer :
+###############################
+
+CONFIG *= qt
+QT     *= xml opengl
+LIBS   *= -Wl,"-rpath=/usr/local/lib" -L/usr/local/lib -lQGLViewer
+

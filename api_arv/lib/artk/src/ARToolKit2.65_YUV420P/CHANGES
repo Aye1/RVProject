@@ -1,0 +1,38 @@
+2003-03-06 : (exodusd@web.de) added support for YUV420P palette:
+	- How to use:
+	  - Run ./Configure and select the Video4Linux driver
+	  - Add "-palette=YUV420P" to your video-config (vconf) parameter
+	    in the arVideoOpen( vconf ) call
+	    (see examples/simple/simpleTest.c for an example usage...
+	    only the vconf variable at the top of the code has been changed)
+
+	- Note: If you are using a Philips ToUCam USB webcam (like the 740K)
+	    then you should also install the pwcx module available from
+	      http://www.smcc.demon.nl/webcam/
+	    this should allow you to use video modes like 640x480...
+	    The pwc driver itself should already be part of your linux
+	    kernel, but you might also want to download it, because the
+	    package will contain header files to access advanced features
+	    of the webcam (like white-balance, etc).
+
+	    As some webcams (like the Philips ToUCam 740K) are using an
+	    automatical white-balancing you might want to look at their
+	    drivers on how to disable this (for the Philips cam, this is
+	    in the pwc-ioctl.h header of the pwc-driver...)
+
+	    Also note that the YUV420P to RGB24/32 conversion code is
+	    far from optimal, it just converts the image into a temporary
+	    image buffer and then uses that image buffer for the ARToolKit
+	    routines (much like the Firewire camera code in ARToolKit).
+	    This has not been optimized (assembly code with MMX extensions
+	    could speed this up on Intel(TM) machines...). It also hasn't
+	    been thoroughly tested.
+
+	- Files changed (backups made, with suffix ".orig", you can use
+	  diff to see the changes):
+	  - lib/SRC/VideoLinuxV4L/video.c
+	  - include/AR/sys/videoLinuxV4L.h
+	  - all the examples and utils (only modified the vconf variable)
+
+2002-09-19 : original version 2.65 of ARToolKit (from the art02 workshop CD)
+

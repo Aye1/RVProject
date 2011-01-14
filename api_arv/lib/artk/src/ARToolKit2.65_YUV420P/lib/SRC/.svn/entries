@@ -1,0 +1,123 @@
+10
+
+dir
+3
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv/api_arv/lib/artk/src/ARToolKit2.65_YUV420P/lib/SRC
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv
+
+
+
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a8002e22-e93b-4a17-a6c0-f7475d5985f5
+
+VideoLinuxDV
+dir
+
+VideoMacOSX
+dir
+
+AR
+dir
+
+Gl
+dir
+
+Makefile.in
+file
+
+
+
+
+2011-01-07T14:06:09.000000Z
+bca815d599b35af69c0bbf37a754b495
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+949
+
+VideoLinux1394Cam
+dir
+
+VideoSGI
+dir
+
+VideoWin32
+dir
+
+VideoLinuxV4L
+dir
+
+ARMulti
+dir
+
+Makefile
+file
+
+
+
+
+2011-01-07T14:06:09.000000Z
+bb1e49303b58db066114b804e876db26
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+947
+

@@ -1,0 +1,22 @@
+###########################
+# configuration of ApiArv :
+###########################
+
+message(configuring ApiARV.)
+ARV_ROOT = $$PWD/..
+
+# by default, if ARV sub-modules are not specified (into variable ARV), all are included :
+isEmpty(ARV) {
+    ARV = camera motorized_camera fob falcon glove yoke sound sound3d microphone mouse keyboard mutex obj_loader thread tcp_socket udp_socket wii
+    #@@ verifier..
+    }
+    
+INCLUDEPATH *= $$ARV_ROOT/src
+
+# these paths are used by the sub-modules to configure themselves :
+ARV_SRC_DIR = $$ARV_ROOT/src/ApiArv
+ARV_LIB_DIR = $$ARV_ROOT/lib
+
+# we add ARV sub-modules to the config :
+for(module, ARV) : CONFIG *= arv_$$module
+

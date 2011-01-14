@@ -1,0 +1,86 @@
+10
+
+dir
+3
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv/api_arv/lib/openal/src/openal/win
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv
+
+
+
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a8002e22-e93b-4a17-a6c0-f7475d5985f5
+
+Alc
+dir
+
+Router
+dir
+
+Alu
+dir
+
+OpenAL32
+dir
+
+OpenALDemo
+dir
+
+ALUT
+dir
+
+OpenAL.dsw
+file
+
+
+
+
+2011-01-07T14:06:20.000000Z
+c41d26c15cddcef5050022aebd06ec8e
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1757
+
+CVS
+dir
+
+AL
+dir
+

@@ -1,0 +1,52 @@
+10
+
+dir
+3
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv/api_arv
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv
+
+
+
+2010-12-03T12:46:55.971750Z
+3
+serott
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a8002e22-e93b-4a17-a6c0-f7475d5985f5
+
+tools
+dir
+
+tests
+dir
+
+doc
+dir
+
+lib
+dir
+
+src
+dir
+
+data
+dir
+
+examples
+dir
+
+qmake
+dir
+

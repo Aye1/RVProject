@@ -1,0 +1,5 @@
+- Library assumes that all birds operate in the same hemisphere.  Hemisphere
+  should be set on a per-bird basis.
+- Does the code work with Extended Range Transmitters (ERT)?
+- Should we report errors through exceptions instead of return values?  How
+  do exception interact with threads?

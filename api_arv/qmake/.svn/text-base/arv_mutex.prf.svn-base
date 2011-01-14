@@ -1,0 +1,9 @@
+################################
+# configuration for arv::Mutex :
+################################
+
+isEmpty(ARV_SRC_DIR):error("keyword ARV must be added to variable CONFIG to use any class from namespace arv.")
+HEADERS *= $$ARV_SRC_DIR/Mutex.h
+SOURCES *= $$ARV_SRC_DIR/Mutex.cpp
+CONFIG *= thread
+

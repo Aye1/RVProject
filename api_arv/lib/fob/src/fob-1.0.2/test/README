@@ -1,0 +1,3 @@
+Your system must have GL and Glut to compile fly2.
+
+Autoconf does not check for the these libraries.

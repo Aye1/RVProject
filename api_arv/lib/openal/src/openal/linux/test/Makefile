@@ -1,0 +1,52 @@
+# Generated automatically from Makefile.in by configure.
+CC=gcc
+CXX=c++
+CFLAGS=-g -O2 -fPIC -Wshadow -Wall -W -Wbad-function-cast -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wimplicit-function-declaration -Waggregate-return -Winline -Wpointer-arith -fno-common -ansi -Wredundant-decls -Wno-unused 
+DEFS=
+TEST_PROGS=testreverb testda testmulti testalut testtime  \
+           testmultialut testalinitexit                 \
+	   testsingle testnothread \
+	   testmath           \
+	   testmultinothread testpitch testdoppler 		 \
+	   testsourcestop 	    testext teststream \
+	   testcallback testorient testrelative testchannel     \
+	   testpause \
+	   testpitchnothread testpitch2 testpitchnothread2 \
+	   testgain testchannel2 testloop testlistener testbufferuniq    \
+	   testsourceuniq testgendelbuffer_error testgendelsource_error        \
+	   testmultichannel testlistener2 testlistener3      \
+	   testlistener4 testmp3 testvorbis testgainlinear \
+	   testmultimp3 testpitch3 testpitch4 testqueue testqueue2       \
+	   testqueue3 testcapture testmp32 testleak testmulticontext      \
+	   testleak2 testmulticontext2 teststartstop testdevice \
+	   teststrings testcpp testattributes
+
+INC=-I../src -I../include -I../../include -I../audioconvert 
+LIBOPENAL=../src/libopenal.a
+LIBS=testlib.o -L../src $(LIBOPENAL)  -ldl -lm -lpthread
+MAKE=gmake
+
+% : %.c ../config.h testlib.o
+	$(CC) $(INC) $(DEFS) $(CFLAGS) $< -o $@ $(LIBS)
+
+% : %.cc ../config.h testlib.o
+	$(CXX) $(INC) $(DEFS) $(CFLAGS) $< -o $@ $(LIBS)
+
+all: testlib.o $(LIBOPENAL) $(TEST_PROGS) ../src/libopenal.a
+
+testlib.o : testlib.c testlib.h ../config.h
+	$(CC) $(INC) $(DEFS) $(CFLAGS) -c testlib.c -o testlib.o
+
+clean:
+	rm -f testlib.o
+	rm -f $(TEST_PROGS)
+	rm -f core
+	rm -f gmon.out
+
+distclean: clean
+	rm -Rf Makefile
+
+libopenal: $(LIBOPENAL)
+
+$(LIBOPENAL):
+	(cd ../src && make all)

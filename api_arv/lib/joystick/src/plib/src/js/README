@@ -1,0 +1,30 @@
+
+Joystick interfaces are horribly non-portable.
+
+Using conditional compilation on a line-by-line basis
+became FAR too complex after more than a couple of OS's
+were supported so now there is on standard interface header:
+
+   js.h
+
+...one set of common routines:
+
+   js.cxx
+
+
+...and a bunch of OS-specific code:
+
+
+   jsLinux.cxx
+   jsLinuxOld.cxx
+   jsWindows.cxx
+   jsBSD.cxx
+   jsMacOS.cxx
+
+...for OS's (eg IRIX and SOLARIS) without standard joystick
+functionality, we add:
+
+   jsNone.cxx
+
+...which safely returns error status with no buttons or axes provided.
+

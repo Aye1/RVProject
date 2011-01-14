@@ -1,0 +1,82 @@
+10
+
+dir
+3
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv/api_arv/lib/openal/src/openal/linux/src/arch
+svn+ssh://mbosun.imag.fr/svn/repo/apiarv
+
+
+
+2010-11-09T13:44:07.957604Z
+1
+root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a8002e22-e93b-4a17-a6c0-f7475d5985f5
+
+alsa
+dir
+
+sdl
+dir
+
+emu10k1
+dir
+
+darwin
+dir
+
+morphos
+dir
+
+i386
+dir
+
+windows
+dir
+
+waveout
+dir
+
+CVS
+dir
+
+linux
+dir
+
+interface
+dir
+
+bsd
+dir
+
+portable
+dir
+
+arts
+dir
+
+null
+dir
+
+irix
+dir
+
+esd
+dir
+
+solaris
+dir
+

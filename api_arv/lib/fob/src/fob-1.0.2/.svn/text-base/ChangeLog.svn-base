@@ -1,0 +1,22 @@
+2003-12-16 libfob 1.0.2
+ - Time to sleep between sending commands over the RS232 cable to 
+   the flock hardware can now be specified in fob::fob and
+   fob::open.  The default is 500ms.
+ - Added fob::set_sleep, fob::get_sleep.
+ - Reworked the flock initialization code in fob::open to work on
+   more systems.
+ - Added fob::set_error_level.  If the hardware flags an error less than
+   the level specified to set_error_level, then the hardware error is
+   ignored.  The default level is fob::FATAL.
+ - fob::check_error now will set a descriptive hardware error message
+   when a hardware error is detected.
+ - Button support didn't quite work in the last version.  It
+   fully works now.
+ - test/fly nows reports position/button information continuously 
+   on 1 line.
+ - test/fly2 now shows button presses as sphere's at the end of
+   the birds reference frame.
+ - Mutexes/Threads are now intialized in the proper order.
+
+2003-07-24 libfob 1.0.0
+ - Initial release.
