@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'AGHMainWindow.h'
 **
-** Created: Wed Jan 26 11:41:12 2011
+** Created: Wed Jan 26 13:17:02 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
