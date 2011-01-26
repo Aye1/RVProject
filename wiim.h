@@ -13,7 +13,7 @@ using namespace arv;
 
 bool stop(Wii *wii);
 
-Wii* init();
+Wii* init(bool& stop);
 
 void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y);
 

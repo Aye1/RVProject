@@ -17,7 +17,7 @@ bool stop(Wii *wii) {
 	return _stop;
 }
 
-Wii* init() {
+Wii* init(bool& stop) {
 	signal(SIGINT, sigproc);
 	signal(SIGQUIT, sigproc);
 	
@@ -27,12 +27,14 @@ Wii* init() {
 	cout << "> Wii allocated." << endl;
 	
 	cout << "> Adding the first wiimote" << endl;
-	wii->addWiimote();
-	//cwiid_ir_src* wii1;
-	//cwiid_ir_src* wii2;
-	
+	if (wii->addWiimote() == -1) {
+		stop = true;
+	}
+		
 	cout << "> Adding the second wiimote" << endl;
-	wii->addWiimote();
+	if (wii->addWiimote() == -1) {
+		stop = true;
+	}
 	return wii;
 }
 

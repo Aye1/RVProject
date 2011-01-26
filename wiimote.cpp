@@ -12,9 +12,14 @@ using namespace std;
 
 int main(int /*argc*/, char* /*argv*/[]) {
 
+
 	Wii *wii = NULL;
-	wii = init();
-	
+	bool arret = false;
+	wii = init(arret);
+	if (arret) {
+		cout << "ERREUR : lors de (of the rings) l'ajout des wiimotes" << endl;
+		exit(0);
+	}
 	int wiiZone1 = 0;
 	int wiiZone2 = 0;
 	bool valid1 = false;
