@@ -7,23 +7,27 @@
 using namespace arv;
 using namespace std;
 
+
 bool _stop;
 
 void sigproc(int /*i*/) {
     _stop = true;
 }
 
-bool stop(Wii *wii) {
+Wiim::Wiim() {
+	wii = new Wii();
+}
+
+bool Wiim::stop(Wii *wii) {
 	return _stop;
 }
 
-Wii* init(bool& stop) {
+void Wiim::init() {
 	signal(SIGINT, sigproc);
 	signal(SIGQUIT, sigproc);
 	
 	_stop = false;
 	cout << "Connexion des wiimotes" << endl;
-	Wii* wii = new Wii();
 	cout << "> Wii allocated." << endl;
 	
 	cout << "> Adding the first wiimote" << endl;
@@ -38,7 +42,7 @@ Wii* init(bool& stop) {
 	return wii;
 }
 
-void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
+void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
 	cwiid_ir_src* wii1;
 	cwiid_ir_src* wii2;
 	double a1x, a1y, a1z, a2x, a2y, a2z;
@@ -50,18 +54,17 @@ void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
 	pos2y = wii2->pos[1];
 }	
 
-void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, float& acc1, float& acc2) {
+void Wiim::getVal(int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, float& acc1, float& acc2) {
 	
 	cwiid_ir_src* wii1;
 	cwiid_ir_src* wii2;
-	//	wiiZone1 = 0;
-	//	wiiZone2 = 0;
+	
 	double a1x, a1y, a1z, a2x, a2y, a2z;
 	bool rumble = false;
 	bool val1, val2;
 	valid1 = false;
 	valid2 = false;
-	//	while(!stop) {
+	
 	float seuil = 1.5;
 	if (wii->update()) {
 		wii1 = wii->getIRData(0);
@@ -156,7 +159,7 @@ void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, 
 	
 }
 
-void close(Wii *wii) {
+void Wiim::close(Wii *wii) {
     wii->close();
     cout << "> device closed." << endl;
 }
