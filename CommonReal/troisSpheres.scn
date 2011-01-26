@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene>
+
+ <Batterie rayBat="10.0" heiBat="8.0" rayPied="0.8" heiPied="25.0" rayBase="1.0">
+  <Material>
+   <DiffuseColor red="0.9" green="0.1" blue="0.1" />
+   <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+   <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+  </Material>
+  <Frame>
+   <position x="-30.0" y="0.0" z="0.0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Batterie>
+
+ <Batterie rayBat="10.0" heiBat="8.0" rayPied="0.8" heiPied="25.0" rayBase="1.0">
+  <Material>
+   <DiffuseColor red="0.1" green="0.9" blue="0.1" />
+   <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+   <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+  </Material>
+  <Frame>
+   <position x="30.0" y="0.0" z="0.0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Batterie>
+
+ <Batterie rayBat="10.0" heiBat="8.0" rayPied="0.8" heiPied="25.0" rayBase="1.0">
+  <Material>
+   <DiffuseColor red="0.1" green="0.1" blue="0.9" />
+   <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+   <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+  </Material>
+  <Frame>
+   <position x="-15.0" y="25,980762114" z="0.0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Batterie>
+
+ <Batterie rayBat="10.0" heiBat="8.0" rayPied="0.8" heiPied="25.0" rayBase="1.0">
+  <Material>
+   <DiffuseColor red="0.9" green="0.9" blue="0.9" />
+   <SpecularColor red="0.8" green="0.6" blue="0.6" exponent="2" />
+   <ReflectiveColor red="0.4" green="0.2" blue="0.2" />
+  </Material>
+  <Frame>
+   <position x="15.0" y="25,980762114" z="0.0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Batterie>
+
+  <Baguette rayBaguette="0.4" heiBaguette="16.0">
+  <Material>
+   <DiffuseColor red="0.93" green="0.87" blue="0.72" />
+   <SpecularColor red="0.93" green="0.87" blue="0.72" exponent="2" />
+   <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
+  </Material>
+  <Frame>
+   <position x="-1" y="0" z="0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Baguette>
+
+  <Baguette rayBaguette="0.4" heiBaguette="16.0">
+  <Material>
+   <DiffuseColor red="0.93" green="0.87" blue="0.72" />
+   <SpecularColor red="0.93" green="0.87" blue="0.72" exponent="2" />
+   <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
+  </Material>
+  <Frame>
+   <position x="1" y="0" z="0" />
+   <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
+  </Frame>
+ </Baguette>
+
+ <Camera fieldOfView="0.7854" xResolution="20" yResolution="20">
+  <Frame>
+   <position x="10.0" y="10.0" z="10"/>
+   <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0"/>
+  </Frame>
+ </Camera>
+ 
+ <AmbientLight>
+  <Color red="0.2" green="0.2" blue="0.2" />
+ </AmbientLight>
+
+ <DirectionalLight>
+  <Direction x="0.3" y="0.5" z="-0.3" />
+  <Color red="0.8" green="0.8" blue="0.8" />
+ </DirectionalLight>
+
+ <PointLight>
+  <Position x="1.0" y="-0.7" z="0.45" />
+  <Color red="0.7" green="0.7" blue="0.7" />
+ </PointLight>
+
+</Scene>

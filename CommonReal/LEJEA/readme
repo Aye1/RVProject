@@ -1,0 +1,22 @@
+Comment créer un .LEJEA ?
+Les séries de notes sont disposées ligne par ligne, chaque ligne donnant un ensemble de note à jouer en même temps (attention donc à ne pas mettre plus de deux notes par ligne).
+
+Une série de notes est représentée par un seul nombre.
+Ce nombre indique, via ses bits, quelles notes sont à jouer.
+nombre & 2 -> note verte
+nombre & 4 -> note rouge
+nombre & 8 -> note jaune
+nombre & 16 -> note bleue
+
+V : 2
+R : 4
+J : 8
+B : 16
+
+VR : 6
+VJ : 10
+VB : 18
+
+RJ : 12
+RB : 24
+

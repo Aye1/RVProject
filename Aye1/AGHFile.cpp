@@ -8,7 +8,7 @@
  */
 
 #include "AGHFile.h"
-
+#include <stdlib.h>
 int AGHFile::nextNote() {
 	if (this->atEnd()) {
 		return -1;
