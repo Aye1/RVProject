@@ -1,7 +1,7 @@
 /*
  * WARNING : pour que le code compile, il est nécessaire de taper la commande
  * export QMAKEFEATURES=~/RVProject/api_arv/qmake
- * (éventuellement, l'ajouter dans le .bashrc ou équivalent
+ * (éventuellement, l'ajouter dans le .bashrc ou équivalent)
  */
 
 #include <ApiArv/Wii.h>
