@@ -6,10 +6,13 @@
 //#include "elementBat.h"
 
 #include "Skybox.h"
+//#include "wiim.h"
 
 class ElementBat;
 class Baguette ;
 class Touche;
+class Wiim;
+class myFob;
 
 class Scene
 {
@@ -32,10 +35,13 @@ public :
 
   void initTouches();
   void initSkybox();
+  void setWii(Wiim* w){_wii=w;};
+  void update();
 
 private:
   Camera camera_;
   Skybox * env_;
+  Wiim* _wii;
 
   QList<Touche *> touches_;
 

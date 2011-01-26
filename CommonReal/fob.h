@@ -1,4 +1,5 @@
 #include <ApiArv/Fob.h>
+#include  <QGLViewer/qglviewer.h>
 
 class myFob{
 
@@ -9,12 +10,12 @@ myFob(){};
 int initFob();
 
 /* Récupère la position et l'orientation actuelles du FOB */
-int getPosAndOriFob(Vec& pos, Quaternion& ori);
+int getPosAndOriFob(qglviewer::Vec& pos, qglviewer::Quaternion& ori);
 
 /* Ferme la connexion avec le FOB */
 int closeFob();
 
 protected:
-Fob* fob;
+arv::Fob* fob;
 }
 

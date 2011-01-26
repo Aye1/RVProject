@@ -164,3 +164,24 @@ void Scene::addTouches(Touche* c)
 	touches_.push_back(c);
 }
 
+void Scene::update(){
+   float pos1x;
+   float pos1y;
+   float pos2x;
+   float pos2y;
+//On récupère les positions des wiimotes
+   _wii->getPos(pos1x,pos2x,pos1y,pos2y);
+//La profondeur reste constante
+   qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
+   qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
+//mise à jour
+   pg.x=pos1x;
+   pg.z=pos1y;
+   pd.x=pos2x;
+   pd.z=pos2y;
+//Baguette gauche
+   liste_baguette_[0].setPositionBoutBaguette(pg);
+//Baguette droite
+   liste_baguette_[1].setPositionBoutBaguette(pd);
+}
+

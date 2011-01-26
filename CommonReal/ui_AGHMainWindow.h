@@ -1,10 +1,10 @@
 /********************************************************************************
-** Form generated from reading ui file 'AGHMainWindow.ui'
+** Form generated from reading UI file 'AGHMainWindow.ui'
 **
-** Created: Wed Jan 26 22:33:18 2011
-**      by: Qt User Interface Compiler version 4.5.2
+** Created: Wed Jan 26 23:42:56 2011
+**      by: Qt User Interface Compiler version 4.6.2
 **
-** WARNING! All changes made in this file will be lost when recompiling ui file!
+** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
 #ifndef UI_AGHMAINWINDOW_H

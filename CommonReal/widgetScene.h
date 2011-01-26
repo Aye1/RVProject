@@ -7,6 +7,8 @@
 #include "viewerG.h"
 #include "viewerD.h"
 #include "scene.h"
+#include "fob.h"
+#include "wiim.h"
 
 class WidgetScene : public QWidget {
 	Q_OBJECT
@@ -24,6 +26,8 @@ private:
   	bool isSelected4 ;
 
 	Scene*   _scene;
+	myFob* _fob;
+	Wiim* _wii;
 	ViewerG* _viewerG;
 	ViewerD* _viewerD;
 	qglviewer::Camera*  _cameraCenter;

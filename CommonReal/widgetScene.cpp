@@ -3,6 +3,8 @@
 #include "elementBat.h"
 #include "baguette.h"
 #include <iostream>
+#include "wiim.h"
+#include "fob.h"
 
 using namespace std; 	
 
@@ -13,6 +15,10 @@ WidgetScene::WidgetScene(){
 
 	_viewerG = new ViewerG();
 	_viewerD = new ViewerD();
+
+	_wii = new Wiim();
+	_fob = new myFob();
+
 
 
 	/////////////////////CAMERA
@@ -68,10 +74,16 @@ WidgetScene::~WidgetScene(){
 
 void WidgetScene::init()
 {
-		isSelected1 = false;
+	_fob->init();
+//On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
+	_wii->init();
+
+//Passage des wiimotes à la scène
+	_scene->setWii(_wii);
+	isSelected1 = false;
         isSelected2 = false;
-  		isSelected3 = false;
-  		isSelected4 = false;
+  	isSelected3 = false;
+  	isSelected4 = false;
 
 	setFocusPolicy(Qt::StrongFocus);
 

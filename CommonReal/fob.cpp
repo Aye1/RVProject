@@ -1,4 +1,5 @@
 #include <ApiArv/Fob.h>
+#include  <QGLViewer/qglviewer.h>
 #include <iostream>
 #include "fob.h"
 
