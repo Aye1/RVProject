@@ -13,6 +13,8 @@ using namespace qglviewer;
 
 void Scene::draw() const
 {
+
+  //env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
   //parcours de la liste d'object
   foreach(ElementBat* ele,liste_batterie_){
     ele->draw();
@@ -34,6 +36,12 @@ void Scene::initTouches()
 		addTouches(t);
 	}
 */
+}
+
+void Scene::initSkybox()
+{
+	env_ = new Skybox();
+	env_->SkyBox_CreateTexture();
 }
 
 void Scene::loadFromFile(const QString& filename)

@@ -9,7 +9,7 @@ using namespace std;
 WidgetScene::WidgetScene(){
 	_scene = new Scene();
 	_scene->loadFromFile("troisSpheres.scn");
-	_scene->initTouches();
+	_scene->initSkybox();
 
 	_viewerG = new ViewerG();
 	_viewerD = new ViewerD();

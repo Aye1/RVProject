@@ -5,7 +5,7 @@
 #include "camera.h"
 //#include "elementBat.h"
 
-
+#include "Skybox.h"
 
 class ElementBat;
 class Baguette ;
@@ -31,9 +31,11 @@ public :
   void addTouches(Touche* c);
 
   void initTouches();
+  void initSkybox();
 
 private:
   Camera camera_;
+  Skybox * env_;
 
   QList<Touche *> touches_;
 
