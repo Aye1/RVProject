@@ -58,45 +58,52 @@ void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, 
 	//	wiiZone2 = 0;
 	double a1x, a1y, a1z, a2x, a2y, a2z;
 	bool rumble = false;
+	bool val1, val2;
 	valid1 = false;
 	valid2 = false;
 	//	while(!stop) {
+	float seuil = 1.5;
 	if (wii->update()) {
 		wii1 = wii->getIRData(0);
 		wii2 = wii->getIRData(1);
 		wii->getAcceleration(a1x, a1y, a1z, 0); 
 		wii->getAcceleration(a2x, a2y, a2z, 1);
-		if (a1y > 1.5 || a2y > 1.5 ) {
+		//val1 = (acc1 > seuil && a1y < acc1 && a1y > 0);
+		//val2 = (acc2 > seuil && a2y < acc2 && a2y > 0);
+		val1 = (a1y > seuil && acc1 < seuil && acc1 > 0);
+		val2 = (a2y > seuil && acc2 < seuil && acc2 > 0);
+
+		if (val1 || val2) {
 			//blabla validate touche
-			if (a1y > 1.5 && acc1 < 1.5) {
+			if (val1) {
 				//		cout << "wii1 " << wiiZone1 << endl;
 				valid1 = true;
 			}
-			if (a2y > 1.5 && acc2 < 1.5) {
+			if (val2) {
 				//		cout << "wii2 " << wiiZone2 << endl;
 				valid2 = true;
 			}
 		} else {
 			if (wii1->size >= 3) {
-				if (wii1->pos[0] < 200) {
+				if (wii1->pos[0] < 225) {
 					// dans la zone x de la caisse 4
 					// if (wii1->pos[1] > (800 - taillecaisse4pieds) && wii1->pos[1] < (800 - taillepieds4)) {
 					// dans la zone y de la caisse 4
 					wiiZone1 = 4;
 					//}              
-				} else if (wii1->pos[0] > 275 && wii1->pos[0] < 425) {
+				} else if (wii1->pos[0] > 250 && wii1->pos[0] < 450) {
 					// dans la zone x de la caisse 3
 					//if (wii1->pos[1] > (800 - taillecaisse3pieds) && wii1->pos[1] < (800 - taillepieds3)) {
 					// dans la zone y de la caisse 4
 					wiiZone1 = 3;
 					//}
-				} else if (wii1->pos[0] > 575 && wii1->pos[0] < 725) {
+				} else if (wii1->pos[0] > 550 && wii1->pos[0] < 750) {
 					// dans la zone x de la caisse 2
 					// if (wii1->pos[1] > (800 - taillecaisse2pieds) && wii1->pos[1] < (800 - taillepieds2)) {
 					// dans la zone y de la caisse 4
 					wiiZone1 = 2;
 					//}
-				} else if (wii1->pos[0] > 800 && wii1->pos[0] < 1000) {
+				} else if (wii1->pos[0] > 775 && wii1->pos[0] < 1000) {
 					// dans la zone x de la caisse 1
 					// if (wii1->pos[1] > (800 - taillecaisse1pieds) && wii1->pos[1] < (800 - taillepieds1)) {
 					// dans la zone y de la caisse 4
@@ -105,25 +112,25 @@ void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, 
 				}	
 			}
 			if (wii2->size >= 3) {
-				if (wii2->pos[0] < 250) {
+				if (wii2->pos[0] < 225) {
 					// dans la zone x de la caisse 4
 					//if (wii2->pos[1] > (800 - taillecaisse4pieds) && wii2->pos[1] < (800 - taillepieds4)) {
 					// dans la zone y de la caisse 4
 					wiiZone2 = 4;
 					//}
-				} else if (wii2->pos[0] < 500) {
+				} else if (wii2->pos[0] > 250 && wii2->pos[0] < 450) {
 					// dans la zone x de la caisse 3
 					//if (wii2->pos[1] > (800 - taillecaisse3pieds) && wii2->pos[1] < (800 - taillepieds3)) {
 					// dans la zone y de la caisse 4
 					wiiZone2 = 3;
 					//}
-				} else if (wii2->pos[0] < 750) {
+				} else if (wii2->pos[0] > 550 && wii2->pos[0] < 750) {
 					// dans la zone x de la caisse 2
 					//if (wii2->pos[1] > (800 - taillecaisse2pieds) && wii2->pos[1] < (800 - taillepieds2)) {
 					// dans la zone y de la caisse 4
 					wiiZone2 = 2;
 					//}
-				} else if (wii2->pos[0] < 1000) {
+				} else if (wii2->pos[0] > 775 && wii2->pos[0] < 1000) {
 					// dans la zone x de la caisse 1
 					//if (wii2->pos[1] > (800 - taillecaisse1pieds) && wii2->pos[1] < (800 - taillepieds1)) {
 					// dans la zone y de la caisse 4
