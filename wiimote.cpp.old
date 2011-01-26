@@ -13,23 +13,30 @@ using namespace std;
 int main(int /*argc*/, char* /*argv*/[]) {
 
 
-	Wiim wiim = Wiim();
-	wiim.init();
-	if (wiim.getStop()) {
+	Wii *wii = NULL;
+	bool arret = false;
+	wii = init(arret);
+	if (arret) {
 		cout << "ERREUR : lors de (of the rings) l'ajout des wiimotes" << endl;
 		exit(0);
 	}
+	int wiiZone1 = 0;
+	int wiiZone2 = 0;
+	bool valid1 = false;
+	bool valid2 = false;
+	float acc1 = 0;
+	float acc2 = 0;
 	float pos1x, pos2x, pos1y, pos2y;
-
-	while (!wiim.getStop()) {
-		wiim.getVal();
-		if (wiim.getValid1()) {
-			cout << "wii1 validee dans la zone " << wiim.getWiiZone1() << endl;
+//	int i = 0;
+	while (!stop(wii)) {
+		getVal(wii, wiiZone1, wiiZone2, valid1, valid2, acc1, acc2);
+		if (valid1) {
+			cout << "wii1 validee dans la zone " << wiiZone1 << endl;
 		}
-		if (wiim.getValid2()) {
-			cout << "wii2 validee dans la zone " << wiim.getWiiZone2() << endl;
+		if (valid2) {
+			cout << "wii2 validee dans la zone " << wiiZone2 << endl;
 		}
-		wiim.getPos(pos1x, pos2x, pos1y, pos2y);
+		getPos(wii, pos1x, pos2x, pos1y, pos2y);
 /*		if (i < 100000) {
 			i++;
 		} else {
@@ -37,6 +44,6 @@ int main(int /*argc*/, char* /*argv*/[]) {
 			i = 0;
 		}
 */	}
-	wiim.close();
+	close(wii);
 	return 0;
 }

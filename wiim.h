@@ -9,34 +9,47 @@
 
 #include <ApiArv/Wii.h>
 
-using namespace arv;
 
 class Wiim {
 
+
 protected:
 
-	Wii* wii;
-	Wiimote wiimote1;
-	Wiimote wiimote2;
-	Vec pos1;
-	Vec pos2;
-	int zone1;
-	int zone2;
+	arv::Wii* _wii;
+	bool _stop;
+	cwiid_ir_src* _wiimote1;
+	cwiid_ir_src* _wiimote2;
+	float acc1, acc2;
+	int wiiZone1;
+	int wiiZone2;
 	bool valid1;
 	bool valid2;
 
 
 public:
 
-	bool stop(Wii *wii);
+	Wiim();
 	
-	Wii* init(bool& stop);
+	arv::Wii* getWii();
 
-	void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y);
+	bool getStop();
+	
+	int getWiiZone1();
+	int getWiiZone2();
 
-	void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, float& acc1, float& acc2);
+	bool getValid1();
+	bool getValid2();
 
-	void close(Wii *wii);
+	float getAcc1();
+	float getAcc2();
+	
+	void init();
+
+	void getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y);
+
+	void getVal();
+
+	void close();
 
 }
 
