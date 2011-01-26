@@ -10,6 +10,7 @@
 #include <QtGui>
 #include <QString>
 #include "AGHFile.h"
+#include "viewer.h"
 //#include <QGLViewer/QGLViewer.h>
 
 class AGHMainWindow : public QMainWindow {
@@ -29,6 +30,7 @@ private:
 	void playSoundFromNote(int note);
 	
 	bool _isPlaying;
+	Viewer * _viewer;
 	AGHFile * _currentFile;
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;

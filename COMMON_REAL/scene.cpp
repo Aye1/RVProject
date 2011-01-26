@@ -70,7 +70,7 @@ void Scene::loadFromFile(const QString& filename)
 	else if (QString::compare(QString("Camera"),e.tagName())==0)
 	{
 		//initialisation avec QdomElement
-		cameraDroite_.initFromDOMElement(e);	
+		camera_.initFromDOMElement(e);	
 	}
      }
      n = n.nextSibling();

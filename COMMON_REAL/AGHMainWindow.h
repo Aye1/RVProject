@@ -10,7 +10,9 @@
 #include <QtGui>
 #include <QString>
 #include "AGHFile.h"
-#include "viewer.h"
+#include "viewerG.h"
+#include "viewerD.h"
+#include "widgetScene.h"
 //#include <QGLViewer/QGLViewer.h>
 
 class AGHMainWindow : public QMainWindow {
@@ -24,13 +26,17 @@ public slots:
 	void openFile();
 	void closeFile();
 	void play();
-	void playNote();
+	void playNote();	
+	void openWindow();	
 private:
 	void initSounds();
 	void playSoundFromNote(int note);
-	
+
+
+
 	bool _isPlaying;
-	Viewer * _viewer;
+//	ViewerG * _vG;
+//	ViewerD * _vD;
 	AGHFile * _currentFile;
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;
@@ -42,4 +48,6 @@ private:
 	QSound * _mi;
 	QSound * _fa;
 	QSound * _sol;
+	WidgetScene * _openGLGlobalWindow;
+
 };

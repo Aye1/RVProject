@@ -19,8 +19,14 @@ AGHMainWindow::AGHMainWindow() {
 	mainWidget->resize(800,600);
 	QGridLayout * mainLayout = new QGridLayout();
 
-	_viewer = new Viewer();
-	mainLayout->addWidget(_viewer, 0, 1, Qt::AlignLeft);
+	/*
+	_vG = new ViewerG();
+	_vD = new ViewerD();
+*/
+
+	//_viewer->resize(2000,2000);
+	//mainLayout->addWidget(_vG, 0, 1, Qt::AlignLeft);
+	//mainLayout->addWidget(_vD, 0, 2, Qt::AlignLeft);
 	
 	_fileLabel = new QLabel("Pas de fichier ouvert");
 	mainLayout->addWidget(_fileLabel, 0, 0, Qt::AlignLeft | Qt::AlignTop);
@@ -34,6 +40,7 @@ AGHMainWindow::AGHMainWindow() {
 	mainLayout->addWidget(_currentNoteLabel, 0, 2, Qt::AlignRight | Qt::AlignTop);
 	
 	mainWidget->setLayout(mainLayout);
+	//mainWidget->adjustSize();
 		
 	setCentralWidget(mainWidget);
 	
@@ -63,6 +70,12 @@ void AGHMainWindow::createMenu() {
 	menuFichier->addAction(actionQuitter);
 	actionQuitter->setShortcut(QKeySequence("Ctrl+Q"));
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+	/*Ouvrir la fenetre OpenGL*/
+	QAction* actionOuvrirOpenGL = new QAction("ouvrir la fenetre de &jeu", this);
+	menuFichier->addAction(actionOuvrirOpenGL);
+	actionOuvrirOpenGL->setShortcut(QKeySequence("Ctrl+J"));
+	connect(actionOuvrirOpenGL, SIGNAL(triggered()),this, SLOT(openWindow()) );
 	
 }
 
@@ -155,3 +168,15 @@ void AGHMainWindow::playSoundFromNote(int note) {
 		printf("note nulle \n");
 	}
 }
+
+void AGHMainWindow::openWindow(){
+	printf("open window\n");
+	QDesktopWidget desktop;
+	QRect screensize = desktop.screenGeometry(desktop.primaryScreen());
+
+	_openGLGlobalWindow = new WidgetScene();
+	_openGLGlobalWindow->resize(screensize.width()*100,screensize.height());
+	_openGLGlobalWindow->init();
+	_openGLGlobalWindow->show();
+}
+

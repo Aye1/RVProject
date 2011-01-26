@@ -17,21 +17,16 @@ public :
   qglviewer::Vec center() const;
   float radius(const qglviewer::Vec& center) const;
 
-  void setCameraDroite(const Camera& camera) { cameraDroite_ = camera; }
-  void setCameraGauche(const Camera& camera) { cameraGauche_ = camera; }
-  const Camera& cameraDroite() const { return cameraDroite_; }
-  const Camera& cameraGauche() const { return cameraGauche_; }
-  Camera& cameraDroite() { return cameraDroite_; }
-  Camera& cameraGauche() { return cameraGauche_; }
-
+  void setCamera(const Camera& camera) { camera_ = camera; }
+  const Camera& camera() const { return camera_; } 
+  Camera& camera() { return camera_; }
   QList<ElementBat *> getListeBatterie(); 
   QList<Baguette *> getListeBaguette();  
 
   void addElement(ElementBat* e);
   void addBaguette(Baguette* e);
 private:
-  Camera cameraDroite_;
-  Camera cameraGauche_;
+  Camera camera_;
   QList<ElementBat *> liste_batterie_;
   QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
   // A FAIRE

@@ -7,6 +7,9 @@
  *
  */
 
+#ifndef AGHFILE
+#define AGHFILE
+
 #include <QString>
 #include <QFile>
 
@@ -18,3 +21,5 @@ class AGHFile : public QFile {
 	void init();
 };
 
+
+#endif
