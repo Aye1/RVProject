@@ -150,21 +150,22 @@ void AGHMainWindow::playNote() {
 
 void AGHMainWindow::playSoundFromNote(int note) {
 	QSound * soundToPlay;
-	if (note == 1) {
-		soundToPlay = _do;
-	} else if (note == 2) {
-		soundToPlay = _re;
-	} else if (note == 3) {
-		soundToPlay = _mi;
-	} else if (note == 4) {
-		soundToPlay = _fa;
-	} else {
-		soundToPlay = _sol;
-	}
-	if (soundToPlay != NULL) {
+	
+	if (note & 2) {
+		soundToPlay = _vert;
 		soundToPlay->play();
-	} else {
-		printf("note nulle \n");
+	}
+	if (note & 4) {
+		soundToPlay = _rouge;
+		soundToPlay->play();
+	}
+	if (note & 8) {
+		soundToPlay = _jaune;
+		soundToPlay->play();
+	}
+	if (note & 16) {
+		soundToPlay = _bleu;
+		soundToPlay->play();
 	}
 }
 
