@@ -4,5 +4,5 @@
 
 CONFIG *= qt
 QT     *= xml opengl
-LIBS   *= -Wl,"-rpath=/usr/local/lib" -L/usr/local/lib -lQGLViewer
+LIBS   *= -Wl,"-rpath=/usr/local/lib" -L/usr/local/lib -lqglviewer-qt4
 

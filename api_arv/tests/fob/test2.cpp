@@ -9,6 +9,7 @@
 #include <iostream>
 #include <GL/gl.h>
 #include <GL/glut.h>
+#include <stdio.h>
 
 using namespace arv;
 using namespace qglviewer;
