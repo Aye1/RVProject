@@ -1,14 +1,12 @@
+#include "wiim.h"
 #include <iostream>
 #include <csignal>
 #include <stdio.h>
 #include <stdlib.h>
-#include "wiim.h"
 
 using namespace arv;
 using namespace std;
 
-
-bool _stop;
 
 void sigproc(int /*i*/) {
     _stop = true;
@@ -16,6 +14,13 @@ void sigproc(int /*i*/) {
 
 Wiim::Wiim() {
 	_wii = new Wii();
+	_stop = false;
+	acc1 = 0;
+	acc2 = 0;
+	wiiZone1 = 0;
+	wiiZone2 = 0;
+	valid1 = false;
+	valid2 = false;
 }
 
 // accesseurs
@@ -69,7 +74,7 @@ void Wiim::init() {
 	if (wii->addWiimote() == -1) {
 		_stop = true;
 	}
-	return wii;
+//	return wii;
 }
 
 void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y) {

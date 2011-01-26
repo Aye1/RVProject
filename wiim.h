@@ -4,22 +4,24 @@
  * (éventuellement, l'ajouter dans le .bashrc ou équivalent)
  */
 
-#ifndef WIIM_H
-#define WIIM_H
+#ifndef WIIM_H_
+#define WIIM_H_
 
 #include <ApiArv/Wii.h>
 
+using namespace arv;
+using namespace std;
 
-class Wiim {
-
+class Wiim { 
 
 protected:
 
-	arv::Wii* _wii;
+	Wii* _wii;
 	bool _stop;
 	cwiid_ir_src* _wiimote1;
 	cwiid_ir_src* _wiimote2;
-	float acc1, acc2;
+	float acc1;
+	float acc2;
 	int wiiZone1;
 	int wiiZone2;
 	bool valid1;
@@ -54,3 +56,4 @@ public:
 }
 
 #endif
+

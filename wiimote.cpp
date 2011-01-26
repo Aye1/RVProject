@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include "wiim.h"
 
-using namespace arv;
-using namespace std;
+//using namespace arv;
+//using namespace std;
 
-int main(int /*argc*/, char* /*argv*/[]) {
+int main(int argc, char* argv[]) {
 
 
 	Wiim wiim = Wiim();
@@ -30,13 +30,8 @@ int main(int /*argc*/, char* /*argv*/[]) {
 			cout << "wii2 validee dans la zone " << wiim.getWiiZone2() << endl;
 		}
 		wiim.getPos(pos1x, pos2x, pos1y, pos2y);
-/*		if (i < 100000) {
-			i++;
-		} else {
-			cout << "position 1 " << pos1x << " " << pos1y << " position 2 " << pos2x << " " << pos2y << endl;
-			i = 0;
-		}
-*/	}
+	}
 	wiim.close();
 	return 0;
 }
+
