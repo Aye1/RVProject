@@ -56,6 +56,13 @@ WidgetScene::~WidgetScene(){
 
 void WidgetScene::init()
 {
+	//initialisation
+	bool pb;
+	wii=initWii(pb);
+	if(pb){
+	    cout<<"Connection échouée....GAME OVER"<<endl;
+	}
+	initFob(fob);
 	QHBoxLayout * layout = new QHBoxLayout();
 	layout->addWidget(_viewerG);
 	layout->addWidget(_viewerD);
