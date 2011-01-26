@@ -1,6 +1,7 @@
 #include "scene.h"
 #include "elementBat.h"
 #include "baguette.h"
+#include "touche.h"
 #include <qfile.h>
 #include <QList>
 #include <iostream>
@@ -19,8 +20,21 @@ void Scene::draw() const
   foreach(Baguette* bag,liste_baguette_){
     bag->draw();
   }
+  foreach(Touche* touch,touches_){
+    touch->draw();
+  }
 }
 
+void Scene::initTouches()
+{
+/*	for(unsigned int i=0;i<500;++i){
+		Touche * t = new Touche();
+		t->setInclinaison(i);
+		t->setPosition(Vec(i,0.0,0.0));
+		addTouches(t);
+	}
+*/
+}
 
 void Scene::loadFromFile(const QString& filename)
 {
@@ -136,5 +150,9 @@ void Scene::addElement(ElementBat* e)
 void Scene::addBaguette(Baguette* e)
 {
 	liste_baguette_.push_back(e);
+}
+void Scene::addTouches(Touche* c)
+{
+	touches_.push_back(c);
 }
 
