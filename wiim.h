@@ -4,7 +4,14 @@
  * (éventuellement, l'ajouter dans le .bashrc ou équivalent)
  */
 
+#ifndef WIIM_H
+#define WIIM_H
+
 #include <ApiArv/Wii.h>
+
+using namespace arv;
+
+bool stop(Wii *wii);
 
 Wii* init();
 
@@ -13,3 +20,5 @@ void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y);
 void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, float& acc1, float& acc2);
 
 void close(Wii *wii);
+
+#endif

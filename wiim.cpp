@@ -7,18 +7,21 @@
 using namespace arv;
 using namespace std;
 
-
-bool stop = false;
+bool _stop;
 
 void sigproc(int /*i*/) {
-    stop = true;
+    _stop = true;
+}
+
+bool stop(Wii *wii) {
+	return _stop;
 }
 
 Wii* init() {
 	signal(SIGINT, sigproc);
 	signal(SIGQUIT, sigproc);
 	
-	stop = false;
+	_stop = false;
 	cout << "Connexion des wiimotes" << endl;
 	Wii* wii = new Wii();
 	cout << "> Wii allocated." << endl;
