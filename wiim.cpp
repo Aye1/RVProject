@@ -47,15 +47,6 @@ void getPos(Wii *wii, float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
 
 void getVal(Wii *wii, int& wiiZone1, int& wiiZone2, bool& valid1, bool& valid2, float& acc1, float& acc2) {
 	
-	// juste pour vérifier que ça compile
-	/*int taillecaisse4pieds = 150;	
-	 int taillecaisse3pieds = 150;
-	 int taillecaisse2pieds = 150;
-	 int taillecaisse1pieds = 150;
-	 int taillepieds4 = 50;
-	 int taillepieds3 = 50;
-	 int taillepieds2 = 50;
-	 int taillepieds1 = 50;*/
 	cwiid_ir_src* wii1;
 	cwiid_ir_src* wii2;
 	//	wiiZone1 = 0;
