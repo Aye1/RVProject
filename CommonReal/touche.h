@@ -7,8 +7,12 @@
 
 #ifndef TOUCHE_H_
 #define TOUCHE_H_
-#include "QGLViewer/qglviewer.h"
+#include <QGLViewer/qglviewer.h>
 #include "color.h"
+#include <iostream>
+
+using namespace std;
+
 
 class Touche {
 protected:
@@ -19,23 +23,26 @@ protected:
 	float inclinaison_;
 	GLUquadric* touche_;
 
+
 public:
 	Touche();
 
-	virtual ~Touche(){}
-	void setPosition(qglviewer::Vec& pos){
+	~Touche(){gluDeleteQuadric(touche_);};
+	void setPosition(qglviewer::Vec pos){
+		cout << "creation touche" << endl;
 		position_=pos;
-	}
+	};
 	void setInclinaison(float incl){
 		inclinaison_=incl;
-	}
+	};
 	void setAngleRotation(float angle){
 		angleRotation_=angle;
-	}
+	};
 	void setColor(Color& c){
 		color_=c;
-	}
+	};
 	void draw();
+
 
 };
 

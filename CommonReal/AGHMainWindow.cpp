@@ -80,10 +80,11 @@ void AGHMainWindow::createMenu() {
 }
 
 void AGHMainWindow::initSounds() {
-	_vert = new QSound("claire.wav");
-	_rouge = new QSound("tome.wav");
-	_jaune = new QSound("charleston.wav");
-	_bleu = new QSound("cymbale.wav");
+	_do = new QSound("do.wav");
+	_re = new QSound("re.wav");
+	_mi = new QSound("mi.wav");
+	_fa = new QSound("fa.wav");
+	_sol = new QSound("sol.wav");
 }
 
 void AGHMainWindow::createDock() {
@@ -150,22 +151,21 @@ void AGHMainWindow::playNote() {
 
 void AGHMainWindow::playSoundFromNote(int note) {
 	QSound * soundToPlay;
-	
-	if (note & 2) {
-		soundToPlay = _vert;
-		soundToPlay->play();
+	if (note == 1) {
+		soundToPlay = _do;
+	} else if (note == 2) {
+		soundToPlay = _re;
+	} else if (note == 3) {
+		soundToPlay = _mi;
+	} else if (note == 4) {
+		soundToPlay = _fa;
+	} else {
+		soundToPlay = _sol;
 	}
-	if (note & 4) {
-		soundToPlay = _rouge;
+	if (soundToPlay != NULL) {
 		soundToPlay->play();
-	}
-	if (note & 8) {
-		soundToPlay = _jaune;
-		soundToPlay->play();
-	}
-	if (note & 16) {
-		soundToPlay = _bleu;
-		soundToPlay->play();
+	} else {
+		printf("note nulle \n");
 	}
 }
 

@@ -13,9 +13,9 @@ class ElementBat
 
 private:
 
-	Vec center_; // a mettre a jour quand on creer l'objet
+	qglviewer::Vec center_; // a mettre a jour quand on creer l'objet
 
-	Vec positionCenterBat_; // a mettre a jour quand on dessine a chaque fois
+	qglviewer::Vec positionCenterBat_; // a mettre a jour quand on dessine a chaque fois
 	
 	//A lire avec le .scn
 	float rayonBat_;
@@ -46,7 +46,7 @@ public:
 					   float RBat = 0, float HBat = 0, float RPied = 0, float HPied = 0, float RBase = 0);
 
 	/* draw */
-	virtual void draw() const;
+	virtual void draw() ;
     virtual float boundingRadius() const { return radius(); }
 
 	// faire un scale général de l'élément

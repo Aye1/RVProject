@@ -21,7 +21,8 @@ HEADERS += AGHFile.h \
            scene.h \
            viewerD.h \
 		   viewerG.h \
-		   widgetScene.h
+		   widgetScene.h \
+		   touche.h
 FORMS += AGHMainWindow.ui
 SOURCES += AGHFile.cpp \
            AGHMainWindow.cpp \
@@ -33,7 +34,8 @@ SOURCES += AGHFile.cpp \
            material.cpp \
            scene.cpp \
            viewerD.cpp \
-		   viewerG.cpp\
-		   widgetScene.cpp
+		   viewerG.cpp \
+		   widgetScene.cpp \
+		   touche.cpp
 
 include( config.pri )

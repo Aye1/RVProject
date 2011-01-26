@@ -64,7 +64,7 @@ void ElementBat::createElement(Vec centre, Vec posBat,
 	TX=0;TY=0;TZ=0;
 }
 
-void ElementBat::draw() const
+void ElementBat::draw() 
 {
 	const int slices = 100;
     const int stacks = 50 ;
@@ -137,9 +137,20 @@ void ElementBat::draw() const
 
 	glPopMatrix();
 	
-	//MISE A JOUR DE LA POSITION DU CENTRE DE LA BATTERIE.
-	//TODO
 
+
+	//MISE A JOUR DE LA POSITION DU CENTRE DE LA BATTERIE.
+	positionCenterBat_ = Vec(center_.x,center_.y,center_.z) + 0.5*Vec(0.0,0.0,1.0)*heightPied_ + heightBat_*cos(inclinaison_*M_PI/180.0)*Vec(0.0,0.0,1.0) 
+							+ Vec(0.0,-1.0,0.0)*cos(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0)
+							+ Vec(1.0,0.0,0.0)*sin(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0);
+
+//DEBUG
+/*	glPointSize(10.0);
+	glBegin(GL_POINTS);
+	glColor3f(1.0,1.0,1.0);
+	glVertex3f(positionCenterBat_.x,positionCenterBat_.y,positionCenterBat_.z);
+	glEnd();
+*/
 }
 
 void ElementBat::scaleBat(float s)

@@ -16,6 +16,9 @@ public:
   const Scene* const scene() const { return scene_; };
 
   void setScene(Scene* const scene) { scene_ = scene; };
+	
+  void setParametersStereo(qglviewer::Vec dirRight,qglviewer::Vec dirUp, float& ecart, float& divergence ) {divergence_=divergence; ecart_=ecart; dirRight_=dirRight; dirUp_=dirUp;};
+
 
 protected :
   virtual void draw();
@@ -30,10 +33,11 @@ private:
   // Definit la position F1 comme étant celle de la camera.
   void initFromScene();
 
-  bool isSelected1;
-  bool isSelected2;
-  bool isSelected3;
-  bool isSelected4;
+
+  qglviewer::Vec dirRight_;
+  qglviewer::Vec dirUp_;
+  float ecart_;
+  float divergence_;
 
   Scene* scene_;
 };
