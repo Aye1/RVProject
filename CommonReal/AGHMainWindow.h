@@ -13,7 +13,6 @@
 #include "viewerG.h"
 #include "viewerD.h"
 #include "widgetScene.h"
-//#include <QGLViewer/QGLViewer.h>
 
 class AGHMainWindow : public QMainWindow {
 	Q_OBJECT
@@ -35,8 +34,6 @@ private:
 
 
 	bool _isPlaying;
-//	ViewerG * _vG;
-//	ViewerD * _vD;
 	AGHFile * _currentFile;
 	QLabel * _fileLabel;
 	QLabel * _currentNoteLabel;

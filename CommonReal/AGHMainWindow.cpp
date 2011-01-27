@@ -18,15 +18,6 @@ AGHMainWindow::AGHMainWindow() {
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
 	QGridLayout * mainLayout = new QGridLayout();
-
-	/*
-	_vG = new ViewerG();
-	_vD = new ViewerD();
-*/
-
-	//_viewer->resize(2000,2000);
-	//mainLayout->addWidget(_vG, 0, 1, Qt::AlignLeft);
-	//mainLayout->addWidget(_vD, 0, 2, Qt::AlignLeft);
 	
 	_fileLabel = new QLabel("Pas de fichier ouvert");
 	mainLayout->addWidget(_fileLabel, 0, 0, Qt::AlignLeft | Qt::AlignTop);
