@@ -3,13 +3,14 @@
 #include "touche.h"
 #include <QList>
 #include <QGLViewer/qglviewer.h>
+#include "elementBat.h"
 
 using namespace qglviewer;
 
-class AGHListeTouches : public QList<Touche> {
+class AGHListeTouches : public QList<Touche *> {
 public:
-	AGHListeTouches();
-	void addNotes(int notes);
+	AGHListeTouches(QList<ElementBat *> liste);
+	void addNotes(int notes,QList<ElementBat *> liste);
 	void updateNotesPos();
 	void setPosElemVert(Vec pos);
 	void setPosElemRouge(Vec pos);

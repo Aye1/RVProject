@@ -37,21 +37,16 @@ void Scene::draw()
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
-  	/*foreach(Touche touch, _listeTouches){
+	Touche * touch;
+  	foreach(touch, *_listeTouches){
     		touch->draw();
-  	}*/
+  	}
 
 }
 
 void Scene::initTouches()
 {
-/*	for(unsigned int i=0;i<500;++i){
-		Touche * t = new Touche();
-		t->setInclinaison(i);
-		t->setPosition(Vec(i,0.0,0.0));
-		addTouches(t);
-	}
-*/
+_listeTouches = new AGHListeTouches(liste_batterie_); 
 }
 
 void Scene::initSkybox()
@@ -62,7 +57,7 @@ void Scene::initSkybox()
 
 void Scene::loadFromFile(const QString& filename)
 {
- _listeTouches=new AGHListeTouches(); 
+ 
  QDomDocument doc("mydocument");
  QFile file(filename);
  if (!file.open(QIODevice::ReadOnly))
@@ -118,6 +113,7 @@ void Scene::loadFromFile(const QString& filename)
  QDomElement elem = doc.createElement("img");
  elem.setAttribute("src", "myimage.png");
  docElem.appendChild(elem);
+
 
   // Pour ne pas avoir de warnings "unused parameter" - A supprimer
 }
@@ -348,9 +344,10 @@ void Scene::updateTime() {
 	if(_file != NULL) {
 		_timeSinceLastNote += dt;
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
+			//printf("newnote \n");
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			_listeTouches->addNotes(newNotes);
+			_listeTouches->addNotes(newNotes,liste_batterie_);
 		}
 	}
 }
