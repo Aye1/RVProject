@@ -1,8 +1,2 @@
-.DS_Store
-Aye1/*.xcodeproj/*.pbxuser
-Aye1/*.xcodeproj/*.mode1v3
-Aye1/*.xcodeproj/*.perspectivev3
-Aye1/Aye1.app/
-Aye1/moc*
-build
-Aye1/*.o
+**/.moc/*
+**/.obj/*
