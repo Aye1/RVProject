@@ -1,4 +1,5 @@
 #include "touche.h"
+#include <QList>
 
 class AGHListeTouches : public QList<Touche> {
 public:
