@@ -55,6 +55,7 @@ private:
   AGHFile * _file;
   
   QList<Touche *> touches_;
+  float timeSinceLastNote;
 
   QList<ElementBat *> liste_batterie_;
   QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent

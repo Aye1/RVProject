@@ -1,2 +1,4 @@
 **/.moc/*
 **/.obj/*
+**/Makefile
+**/rt
