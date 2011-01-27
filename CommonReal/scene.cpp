@@ -11,7 +11,7 @@ using namespace std;
 
 using namespace qglviewer;
 
-void Scene::draw() const
+void Scene::draw() 
 {
 	update();
   //env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	

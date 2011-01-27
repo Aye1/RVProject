@@ -17,7 +17,7 @@ class myFob;
 class Scene
 {
 public :
-  void draw() const;
+  void draw();
   void loadFromFile(const QString& filename);
 
   qglviewer::Vec center() const;
