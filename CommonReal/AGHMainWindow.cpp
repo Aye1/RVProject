@@ -71,11 +71,10 @@ void AGHMainWindow::createMenu() {
 }
 
 void AGHMainWindow::initSounds() {
-	_do = new QSound("do.wav");
-	_re = new QSound("re.wav");
-	_mi = new QSound("mi.wav");
-	_fa = new QSound("fa.wav");
-	_sol = new QSound("sol.wav");
+	_vert = new QSound("do.wav");
+	_rouge = new QSound("re.wav");
+	_jaune = new QSound("mi.wav");
+	_bleu = new QSound("fa.wav");
 }
 
 void AGHMainWindow::createDock() {
@@ -142,31 +141,30 @@ void AGHMainWindow::playNote() {
 
 void AGHMainWindow::playSoundFromNote(int note) {
 	QSound * soundToPlay;
-	if (note == 1) {
-		soundToPlay = _do;
-	} else if (note == 2) {
-		soundToPlay = _re;
-	} else if (note == 3) {
-		soundToPlay = _mi;
-	} else if (note == 4) {
-		soundToPlay = _fa;
-	} else {
-		soundToPlay = _sol;
-	}
-	if (soundToPlay != NULL) {
+	if (note & 2) {
+		soundToPlay = _vert;
 		soundToPlay->play();
-	} else {
-		printf("note nulle \n");
+	}
+	if (note & 4) {
+		soundToPlay = _rouge;
+		soundToPlay->play();
+	}
+	if (note & 8) {
+		soundToPlay = _jaune;
+		soundToPlay->play();
+	}
+	if (note & 16) {
+		soundToPlay = _bleu;
+		soundToPlay->play();
 	}
 }
 
 void AGHMainWindow::openWindow(){
-	printf("open window\n");
 	QDesktopWidget desktop;
 	QRect screensize = desktop.screenGeometry(desktop.primaryScreen());
 
 	_openGLGlobalWindow = new WidgetScene();
-	_openGLGlobalWindow->resize(screensize.width()*100,screensize.height());
+	_openGLGlobalWindow->resize(screensize.width()*2,screensize.height());
 	_openGLGlobalWindow->init();
 	_openGLGlobalWindow->show();
 }
