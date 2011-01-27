@@ -19,7 +19,7 @@ void ViewerD::draw()
 {
  
  // glViewport (0, 0, (GLsizei)(400), (GLsizei)(400));
-	updateCameraViewer();
+	//updateCameraViewer();
 	float dx,dy,dz;
 	dx = dirRight_.x * ecart_;
 	dy = dirRight_.y * ecart_;

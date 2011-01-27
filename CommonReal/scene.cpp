@@ -15,8 +15,8 @@ using namespace qglviewer;
 
 void Scene::draw() 
 {
-	updateCamera();
-	updateWiimote();
+	//updateCamera();
+	//updateWiimote();
 	updateTime();
 	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
@@ -62,7 +62,7 @@ void Scene::initSkybox()
 
 void Scene::loadFromFile(const QString& filename)
 {
-  
+ _listeTouches=new AGHListeTouches(); 
  QDomDocument doc("mydocument");
  QFile file(filename);
  if (!file.open(QIODevice::ReadOnly))
