@@ -348,6 +348,8 @@ void Scene::updateTime() {
 	_timeSinceLastNote += dt;
 	if (_timeSinceLastNote >= _timeBetweenNotes) {
 		_timeSinceLastNote = 0.0f;
+		int newNotes = _file->nextNote();
+		_listeTouches->addNotes(newNotes);
 	}
 }
 
