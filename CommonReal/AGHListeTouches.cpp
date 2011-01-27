@@ -1,5 +1,5 @@
 #include "AGHListeTouches.h"
-
+#include <stdio.h>
 using namespace qglviewer;
 
 AGHListeTouches::AGHListeTouches() {
@@ -10,6 +10,7 @@ AGHListeTouches::AGHListeTouches() {
 }
 
 void AGHListeTouches::addNotes(int notes) {
+	printf("add note \n");
 	Vec dir;
 	if (notes & 2) {
 		Touche tmp;
@@ -43,6 +44,7 @@ void AGHListeTouches::addNotes(int notes) {
 		tmp.setDirection(dir);
 		this->append(tmp);
 	}
+	printf("fin add note \n");
 }
 
 void AGHListeTouches::updateNotesPos() {

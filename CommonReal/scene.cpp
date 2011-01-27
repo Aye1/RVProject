@@ -22,7 +22,7 @@ void Scene::draw()
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;
-	validate(validDrum1,validDrum2);
+	//validate(validDrum1,validDrum2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
