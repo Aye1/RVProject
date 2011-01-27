@@ -165,7 +165,7 @@ void AGHMainWindow::openWindow(){
 
 	_openGLGlobalWindow = new WidgetScene();
 	_openGLGlobalWindow->getScene()->setFile(_currentFile);
-	float T = 60.0f/(float)_speedBox->value();
+	float T = 1000*60.0f/(float)_speedBox->value();
 	_openGLGlobalWindow->getScene()->setTimeBetweenNotes(T);
 	_openGLGlobalWindow->resize(screensize.width()*2,screensize.height());
 	_openGLGlobalWindow->init();
