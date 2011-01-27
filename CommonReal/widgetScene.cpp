@@ -72,6 +72,10 @@ WidgetScene::~WidgetScene(){
 	delete _viewerD ;
 }
 
+Scene * WidgetScene::getScene() {
+	return _scene;
+}
+
 void WidgetScene::init()
 {
 //	_fob->init();

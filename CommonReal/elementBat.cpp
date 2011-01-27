@@ -64,7 +64,7 @@ void ElementBat::createElement(Vec centre, Vec posBat,
 	TX=0;TY=0;TZ=0;
 }
 
-void ElementBat::draw() 
+void ElementBat::draw(bool validated) 
 {
 	const int slices = 100;
     const int stacks = 50 ;
@@ -129,7 +129,15 @@ void ElementBat::draw()
 	//glTranslated(0.0,0.0, -(heightBat_/2.0));
 	glRotated(angleRotationBat_,0,0,1);
 	glRotated(-inclinaison_,0,1,0);
+//On change la couleur du caisson si la touche est validée
+	if(validated){
+	  glColor3f(1.0,1.0,1.0);
+	}
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
+	if(validated){
+//retour à la couleur d'origine
+	  glColor3fv(material().diffuseColor());
+	}
 	gluCylinder(batterie_,rayonBat_,rayonBat_,heightBat_,slices,stacks);
 	glTranslated(0.0,0.0,heightBat_);
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);

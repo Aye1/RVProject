@@ -40,6 +40,8 @@ public :
   void updateWiimote();
 
   void setFile(AGHFile * file);
+  //retourne l'indice du tambour validé
+  int validate();
 private:
   Camera camera_;
   Skybox * env_;

@@ -15,6 +15,8 @@ class WidgetScene : public QWidget {
 public:
 	WidgetScene();
 	~WidgetScene();
+	
+	Scene * getScene();
 
 	void init();
 
