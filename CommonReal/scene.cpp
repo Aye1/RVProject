@@ -7,6 +7,7 @@
 #include <iostream>
 #include <qdom.h>
 #include "myfob.h"
+#include "time.h"
 
 using namespace std;
 
@@ -230,3 +231,11 @@ void Scene::updateCamera(){
 	camera_.setOrientation(q);
 }
 
+void Scene::updateTime() {
+	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
+	_timeSinceLastNote += dt;
+}
+
+void Scene::setTimeBetweenNotes(float time) {
+	_timeBetweenNotes = time;
+}
