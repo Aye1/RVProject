@@ -164,6 +164,7 @@ void AGHMainWindow::openWindow(){
 	QRect screensize = desktop.screenGeometry(desktop.primaryScreen());
 
 	_openGLGlobalWindow = new WidgetScene();
+	_openGLGlobalWindow->getScene()->setFile(_currentFile);
 	_openGLGlobalWindow->resize(screensize.width()*2,screensize.height());
 	_openGLGlobalWindow->init();
 	_openGLGlobalWindow->show();
