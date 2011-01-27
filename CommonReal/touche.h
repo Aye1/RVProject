@@ -17,6 +17,7 @@ using namespace std;
 class Touche {
 protected:
 	qglviewer::Vec position_;
+	qglviewer::Vec direction_;
 	float rayon_;
 	Color color_;
 	float angleRotation_;
@@ -42,8 +43,9 @@ public:
 		color_=c;
 	};
 	void draw();
-
-
+	void setDirection(qglviewer::Vec dir) {
+		direction_ = dir;
+	}
 };
 
 #endif /* TOUCHE_H_ */
