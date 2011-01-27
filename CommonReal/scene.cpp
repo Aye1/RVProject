@@ -17,6 +17,7 @@ void Scene::draw()
 {
 	updateCamera();
 	updateWiimote();
+	updateTime();
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;
@@ -244,6 +245,9 @@ void Scene::updateCamera(){
 void Scene::updateTime() {
 	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
 	_timeSinceLastNote += dt;
+	if (_timeSinceLastNote >= _timeBetweenNotes) {
+		_timeSinceLastNote = 0.0f;
+	}
 }
 
 void Scene::setTimeBetweenNotes(float time) {
