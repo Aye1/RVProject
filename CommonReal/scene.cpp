@@ -13,18 +13,19 @@ using namespace qglviewer;
 
 void Scene::draw() 
 {
-	update();
-  //env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
-  //parcours de la liste d'object
-  foreach(ElementBat* ele,liste_batterie_){
-    ele->draw();
-  }
+	updateWiimote();
+	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
+	//parcours de la liste d'object
+	foreach(ElementBat* ele,liste_batterie_){
+		ele->draw();
+	}
   foreach(Baguette* bag,liste_baguette_){
     bag->draw();
   }
   foreach(Touche* touch,touches_){
     touch->draw();
   }
+
 }
 
 void Scene::initTouches()
@@ -164,13 +165,14 @@ void Scene::addTouches(Touche* c)
 	touches_.push_back(c);
 }
 
-void Scene::update(){
+void Scene::updateWiimote(){
    float pos1x;
    float pos1y;
    float pos2x;
    float pos2y;
 //On récupère les positions des wiimotes
-   _wii->getPos(pos1x,pos2x,pos1y,pos2y);
+   	_wii->getVal();
+	_wii->getPos(pos1x,pos2x,pos1y,pos2y);
 //La profondeur reste constante
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
@@ -182,8 +184,9 @@ void Scene::update(){
 	
 	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
 //Baguette gauche
-   liste_baguette_[0]->setPositionBoutBaguette(pg);
+   liste_baguette_[0]->setCenter(pg);
 //Baguette droite
-   liste_baguette_[1]->setPositionBoutBaguette(pd);
+   liste_baguette_[1]->setCenter(pd);
+
 }
 

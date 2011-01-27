@@ -33,6 +33,7 @@ void ViewerD::draw()
 	scene_->draw();
   }
 
+	update();
 
 }
 

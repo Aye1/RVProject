@@ -84,6 +84,7 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
 	pos2x = _wiimote2->pos[0];
 	pos1y = _wiimote1->pos[1];
 	pos2y = _wiimote2->pos[1];
+	cout << pos1x << " " << pos1y << " " << pos2x << " " << pos2y << endl;
 }	
 
 void Wiim::getVal() {

@@ -31,7 +31,7 @@ void ViewerG::draw()
 	scene_->draw();
   }
 
-
+	update();
 }
 
 void ViewerG::init()

@@ -36,7 +36,7 @@ public :
   void initTouches();
   void initSkybox();
   void setWii(Wiim* w){_wii=w;};
-  void update();
+  void updateWiimote();
 
 private:
   Camera camera_;
