@@ -14,8 +14,8 @@ int AGHFile::nextNote() {
 		return -1;
 	}
 	QByteArray line = this->readLine();
-	int number = line.at(0);
-	return number;
+	char number = line.at(0);
+	return atoi(&number);
 }
 
 void AGHFile::init() {
