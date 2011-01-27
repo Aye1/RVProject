@@ -13,7 +13,7 @@ using namespace qglviewer;
 
 void Scene::draw() const
 {
-
+	update();
   //env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
   //parcours de la liste d'object
   foreach(ElementBat* ele,liste_batterie_){
@@ -179,6 +179,8 @@ void Scene::update(){
    pg.z=pos1y;
    pd.x=pos2x;
    pd.z=pos2y;
+	
+	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
 //Baguette gauche
    liste_baguette_[0]->setPositionBoutBaguette(pg);
 //Baguette droite
