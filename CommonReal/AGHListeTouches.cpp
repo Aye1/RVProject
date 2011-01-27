@@ -66,10 +66,15 @@ void AGHListeTouches::addNotes(int notes,QList<ElementBat *> liste) {
 }
 
 void AGHListeTouches::updateNotesPos() {
-	Touche * t;	
+	Touche * t;
+	int i=0;	
 	foreach(t, *this) {
 		Vec pos = t->getPosition();
-		t->setPosition(pos + t->getDirection());	
+		t->setPosition(pos + t->getDirection());
+		if(t->getPosition().y < _posElemVert.y - 30){
+		  this->removeAt(i);
+		}
+	i++;	
 	}
 }
 
