@@ -30,6 +30,8 @@ protected:
 
 public:
 
+	void sigproc(int* i);
+
 	Wiim();
 	
 	arv::Wii* getWii();
@@ -53,7 +55,7 @@ public:
 
 	void close();
 
-}
+};
 
 #endif
 

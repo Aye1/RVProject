@@ -180,8 +180,8 @@ void Scene::update(){
    pd.x=pos2x;
    pd.z=pos2y;
 //Baguette gauche
-   liste_baguette_[0].setPositionBoutBaguette(pg);
+   liste_baguette_[0]->setPositionBoutBaguette(pg);
 //Baguette droite
-   liste_baguette_[1].setPositionBoutBaguette(pd);
+   liste_baguette_[1]->setPositionBoutBaguette(pd);
 }
 

@@ -8,6 +8,7 @@ CONFIG  += qt opengl warn_on release thread arv
 DEPENDPATH += .
 INCLUDEPATH += .
 LIBS += -L/usr/local/lib/ -lSDL -lSDL_image 
+ARV= wii fob
 
 # Input
 HEADERS += AGHFile.h \

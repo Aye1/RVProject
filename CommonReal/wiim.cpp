@@ -8,7 +8,7 @@ using namespace arv;
 using namespace std;
 
 
-void sigproc(int /*i*/) {
+void Wiim::sigproc(int* i) {
     _stop = true;
 }
 
@@ -58,28 +58,28 @@ float Wiim::getAcc2() {
 
 
 void Wiim::init() {
-	signal(SIGINT, sigproc);
-	signal(SIGQUIT, sigproc);
+//	signal(SIGINT, sigproc);
+//	signal(SIGQUIT, sigproc);
 	
 	_stop = false;
 	cout << "Connexion des wiimotes" << endl;
 	cout << "> Wii allocated." << endl;
 	
 	cout << "> Adding the first wiimote" << endl;
-	if (wii->addWiimote() == -1) {
+	if (_wii->addWiimote() == -1) {
 		_stop = true;
 	}
 		
 	cout << "> Adding the second wiimote" << endl;
-	if (wii->addWiimote() == -1) {
+	if (_wii->addWiimote() == -1) {
 		_stop = true;
 	}
 //	return wii;
 }
 
 void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y) {
-	_wiimote1 = wii->getIRData(0);
-	_wiimote2 = wii->getIRData(1);
+	_wiimote1 = _wii->getIRData(0);
+	_wiimote2 = _wii->getIRData(1);
 	pos1x = _wiimote1->pos[0];
 	pos2x = _wiimote2->pos[0];
 	pos1y = _wiimote1->pos[1];
@@ -96,8 +96,8 @@ void Wiim::getVal() {
 	
 	float seuil = 1.5;
 	if (_wii->update()) {
-		_wiimote1 = wii->getIRData(0);
-		_wiimote2 = wii->getIRData(1);
+		_wiimote1 = _wii->getIRData(0);
+		_wiimote2 = _wii->getIRData(1);
 		_wii->getAcceleration(a1x, a1y, a1z, 0); 
 		_wii->getAcceleration(a2x, a2y, a2z, 1);
 		//val1 = (acc1 > seuil && a1y < acc1 && a1y > 0);

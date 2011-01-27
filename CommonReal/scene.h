@@ -6,12 +6,12 @@
 //#include "elementBat.h"
 
 #include "Skybox.h"
-//#include "wiim.h"
+#include "wiim.h"
 
 class ElementBat;
 class Baguette ;
 class Touche;
-class Wiim;
+//class Wiim;
 class myFob;
 
 class Scene
