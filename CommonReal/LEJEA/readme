@@ -3,6 +3,7 @@ Les séries de notes sont disposées ligne par ligne, chaque ligne donnant un en
 
 Une série de notes est représentée par un seul nombre.
 Ce nombre indique, via ses bits, quelles notes sont à jouer.
+Pour faire un silence, mettre une note 0.
 nombre & 2 -> note verte
 nombre & 4 -> note rouge
 nombre & 8 -> note jaune
