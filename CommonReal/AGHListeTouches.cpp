@@ -72,3 +72,13 @@ void AGHListeTouches::setPosElems(Vec posV, Vec posR, Vec posJ, Vec posB) {
 	setPosElemJaune(posJ);
 	setPosElemBleu(posB);
 }
+
+Vec AGHListeTouches::calcPosition(Vec posBat){
+	float a=(float)(posBat.y+30)/(float)posBat.x;
+	float b=30;
+	qglviewer::Vec newPos;
+	newPos.y=posBat.y+200;
+	newPos.x=(float)(newPos.y-b)/(float)a;
+	newPos.z=posBat.z;
+	return newPos;
+}

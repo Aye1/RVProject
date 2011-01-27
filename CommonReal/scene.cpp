@@ -18,6 +18,7 @@ void Scene::draw()
 	updateCamera();
 	updateWiimote();
 	updateTime();
+	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;

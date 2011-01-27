@@ -32,13 +32,4 @@ qglviewer::Vec Touche::getDirection() {
 	return direction_;
 }
 
-void Touche::initPosition(qglviewer::Vec posBat){
-	float a=(float)(posBat.y+30)/(float)posBat.x;
-	float b=30;
-	qglviewer::Vec newPos;
-	newPos.y=posBat.y+200;
-	newPos.x=(float)(newPos.y-b)/(float)a;
-	newPos.z=posBat.z;
-	this->setPosition(newPos);
 
-}
