@@ -49,7 +49,7 @@ public :
   void setTimeBetweenNotes(float time);
   //retourne l'indice du tambour validé
   void validate(int& drum1,int& drum2);
-  void isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2);
+  void isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1,int& i2);
 private:
   Camera camera_;
   Skybox * env_;

@@ -23,7 +23,7 @@ void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
 		dir = -(calcPosition(_posElemVert) - _posElemVert);
 		dir.normalize();
 		tmp->setPosition(calcPosition(_posElemVert));
-		tmp->setColor(Color(0.0f, 1.0f, 0.0f));
+		tmp->setColor(Color(0.1f, 0.9f, 0.1f));
 		tmp->setDirection(dir);
 		this->append(tmp);
 	}
@@ -33,7 +33,7 @@ void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
 		dir = -(calcPosition(_posElemRouge) - _posElemRouge);
 		dir.normalize();
 		tmp->setPosition(calcPosition(_posElemRouge));
-		tmp->setColor(Color(1.0f, 0.0f, 0.0f));
+		tmp->setColor(Color(0.9f, 0.1f, 0.1f));
 		tmp->setDirection(dir);
 		this->append(tmp);
 	}
@@ -43,7 +43,7 @@ void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
 		dir = -(calcPosition(_posElemJaune) - _posElemJaune);
 		dir.normalize();
 		tmp->setPosition(calcPosition(_posElemJaune));
-		tmp->setColor(Color(1.0f, 1.0f, 0.0f));
+		tmp->setColor(Color(0.9f, 0.9f, 0.1f));
 		tmp->setDirection(dir);
 		this->append(tmp);
 	}
@@ -53,7 +53,7 @@ void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
 		dir = -(calcPosition(_posElemBleu) - _posElemBleu);
 		dir.normalize();
 		tmp->setPosition(calcPosition(_posElemBleu));
-		tmp->setColor(Color(0.0f, 0.0f, 1.0f));
+		tmp->setColor(Color(0.1f, 0.1f, 0.9f));
 		tmp->setDirection(dir);
 		this->append(tmp);
 	}

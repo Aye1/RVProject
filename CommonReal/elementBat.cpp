@@ -134,10 +134,10 @@ void ElementBat::draw(bool validated)
 	  glColor3f(1.0,1.0,1.0);
 	}
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
-	if(validated){
+	/*if(validated){
 //retour à la couleur d'origine
 	  glColor3fv(material().diffuseColor());
-	}
+	}*/
 	gluCylinder(batterie_,rayonBat_,rayonBat_,heightBat_,slices,stacks);
 	glTranslated(0.0,0.0,heightBat_);
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);

@@ -50,6 +50,7 @@ public:
 	};
 
 	qglviewer::Vec getDirection();
+	Color getColor(){return color_;};
 };
 
 

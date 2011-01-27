@@ -21,18 +21,21 @@ void Scene::draw()
 	updateTime();
 	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
-	int validDrum1;
-	int validDrum2;
+	int validDrum1=3;
+	int validDrum2=0;
 	//validate(validDrum1,validDrum2);
 	bool drum1;
 	bool drum2;
-	isValid(validDrum1,validDrum2,drum1,drum2);
+	int i1;
+	int i2;
+	isValid(validDrum1,validDrum2,drum1,drum2,i1,i2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
 	foreach(ElementBat* ele,liste_batterie_){
 		bool valid=false;		
 		if((i==validDrum1 && drum1) || (i==validDrum2 && drum2)){
+		 //  std::cout<<"tralala"<<std::endl;
 		   valid=true;
 		}		
 		ele->draw(valid);
@@ -41,6 +44,12 @@ void Scene::draw()
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
+	if(validDrum1!=0 && drum1){
+		//_listeTouches->removeAt(i1);
+	}
+	if(validDrum2!=0 && drum2){
+		//_listeTouches->removeAt(i2);
+	}
 	Touche * touch;
   	foreach(touch, *_listeTouches){
     		touch->draw();
@@ -360,25 +369,57 @@ void Scene::updateTime() {
 void Scene::setTimeBetweenNotes(float time) {
 	_timeBetweenNotes = time;
 }
-void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2){
+void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, int& i2){
 	drum1=false;
 	drum2=false;
-	qglviewer::Vec center1=liste_batterie_[nbdrum1]->getPositionCenterBat();
-	qglviewer::Vec center2=liste_batterie_[nbdrum2]->getPositionCenterBat();
+	bool d1=false;
+	bool d2=false;
+	qglviewer::Vec center1;
+	qglviewer::Vec center2;
+	Color color1;
+	Color color2;
+	if(nbdrum1!=0){
+		center1=liste_batterie_[nbdrum1-1]->getPositionCenterBat();
+		color1=liste_batterie_[nbdrum1-1]->material().diffuseColor();
+		d1=true;
+	}
+	if(nbdrum2!=0){
+		center2=liste_batterie_[nbdrum2-1]->getPositionCenterBat();
+		color2=liste_batterie_[nbdrum2-1]->material().diffuseColor();
+		d2=true;
+	}
+	
+	if(d1 | d2){
 	//Parcours de la liste des touches
-	float seuil=3.0;
+	float seuil=5.0;
 	Touche* touch;
+	//std::cout<<"nb de touches: "<<_listeTouches->size()<<std::endl;
+	int i=0;
 	foreach(touch, *_listeTouches){
 		qglviewer::Vec pos=touch->getPosition();
-		float d1=sqrt(pow(pos.x-center1.x,2)+pow(pos.y-center1.y,2)+pow(pos.z-center1.z,2));
-		float d2=sqrt(pow(pos.x-center2.x,2)+pow(pos.y-center2.y,2)+pow(pos.z-center2.z,2));
-
-		if(d1<seuil){
-	   		drum1=true;
+		if(d1){
+		//std::cout<<"color1: "<<color1.r<<" "<<color1.g<<" "<<color1.b<<std::endl;
+		if(color1.r==touch->getColor().r && color1.g==touch->getColor().g && color1.b==touch->getColor().b ){
+			//std::cout<<"jaune"<<std::endl;
+			float dist1=sqrt(pow(pos.x-center1.x,2)+pow(pos.y-center1.y,2)+pow(pos.z-center1.z,2));
+		
+			if(dist1<seuil){
+				i1=i;
+	   			drum1=true;
+			}
 		}
-    		if(d2<seuil){
-			drum2=true;
-		}	
-  	}	
+		}
+		if(d2){
+		if(color2.r==touch->getColor().r && color2.g==touch->getColor().g && color2.b==touch->getColor().b){
+			float dist2=sqrt(pow(pos.x-center2.x,2)+pow(pos.y-center2.y,2)+pow(pos.z-center2.z,2));
+    			if(dist2<seuil){
+				i2=i;
+				drum2=true;
+			}
+		}
+		}
+	i++;	
+  	}
+}	
 	
 }
