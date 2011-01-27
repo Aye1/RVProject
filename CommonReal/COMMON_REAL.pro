@@ -7,7 +7,7 @@ TARGET   = rt
 CONFIG  += qt opengl warn_on release thread arv
 DEPENDPATH += .
 INCLUDEPATH += .
-LIBS += -L/usr/local/lib/ -lSDL -lSDL_image 
+LIBS += -L/usr/local/lib/ -lSDL -lSDL_image -g
 ARV= wii fob
 
 # Input

@@ -16,13 +16,13 @@ using namespace qglviewer;
 void Scene::draw() 
 {
 	//updateCamera();
-	updateWiimote();
+	//updateWiimote();
 	updateTime();
 	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;
-	validate(validDrum1,validDrum2);
+	//validate(validDrum1,validDrum2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
@@ -62,7 +62,7 @@ void Scene::initSkybox()
 
 void Scene::loadFromFile(const QString& filename)
 {
-  
+ _listeTouches=new AGHListeTouches(); 
  QDomDocument doc("mydocument");
  QFile file(filename);
  if (!file.open(QIODevice::ReadOnly))
@@ -345,11 +345,13 @@ void Scene::updateCamera(){
 
 void Scene::updateTime() {
 	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
-	_timeSinceLastNote += dt;
-	if (_timeSinceLastNote >= _timeBetweenNotes) {
-		_timeSinceLastNote = 0.0f;
-		int newNotes = _file->nextNote();
-		_listeTouches->addNotes(newNotes);
+	if(_file != NULL) {
+		_timeSinceLastNote += dt;
+		if (_timeSinceLastNote >= _timeBetweenNotes) {
+			_timeSinceLastNote = 0.0f;
+			int newNotes = _file->nextNote();
+			_listeTouches->addNotes(newNotes);
+		}
 	}
 }
 
