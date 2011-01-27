@@ -7,6 +7,7 @@
 
 #include "Skybox.h"
 #include "wiim.h"
+#include "AGHFile.h"
 
 class ElementBat;
 class Baguette ;

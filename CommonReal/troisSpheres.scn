@@ -56,7 +56,7 @@
    <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
   </Material>
   <Frame>
-   <position x="-1" y="0" z="0" />
+   <position x="-1" y="0" z="4" />
    <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
   </Frame>
  </Baguette>
@@ -68,7 +68,7 @@
    <ReflectiveColor red="0.93" green="0.87" blue="0.72" />
   </Material>
   <Frame>
-   <position x="1" y="0" z="0" />
+   <position x="1" y="0" z="4" />
    <orientation q0="0.0" q1="0.0" q2="1.0" q3="1.0" />
   </Frame>
  </Baguette>

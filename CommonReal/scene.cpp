@@ -177,10 +177,10 @@ void Scene::updateWiimote(){
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
 //mise à jour
-   pg.x=pos1x;
-   pg.z=pos1y;
-   pd.x=pos2x;
-   pd.z=pos2y;
+   pg.y=(pos1x - 500)*3.0/25.0;
+   pg.z=-(pos1y-600)*1.0/10.0; 
+   pd.y=(pos2x - 500)*3.0/25.0; 
+   pd.z=-(pos2y-600)*1.0/10.0; 
 	
 	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
 //Baguette gauche
