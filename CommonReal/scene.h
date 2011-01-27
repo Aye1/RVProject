@@ -5,8 +5,14 @@
 #include "camera.h"
 //#include "elementBat.h"
 
+#include "Skybox.h"
+//#include "wiim.h"
+
 class ElementBat;
 class Baguette ;
+class Touche;
+class Wiim;
+class myFob;
 
 class Scene
 {
@@ -25,8 +31,20 @@ public :
 
   void addElement(ElementBat* e);
   void addBaguette(Baguette* e);
+  void addTouches(Touche* c);
+
+  void initTouches();
+  void initSkybox();
+  void setWii(Wiim* w){_wii=w;};
+  void update();
+
 private:
   Camera camera_;
+  Skybox * env_;
+  Wiim* _wii;
+
+  QList<Touche *> touches_;
+
   QList<ElementBat *> liste_batterie_;
   QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
   // A FAIRE

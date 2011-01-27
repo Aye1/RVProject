@@ -1,4 +1,5 @@
 #include <ApiArv/Fob.h>
+#include  <QGLViewer/qglviewer.h>
 #include <iostream>
 #include "fob.h"
 
@@ -6,7 +7,8 @@ using namespace arv;
 using namespace std;
 using namespace qglviewer;
 
-int init(Fob* fob) {
+
+int myFob::init() {
 	cout << "Connecting FOB." << endl;
 	fob = new Fob(Fob::HEMI_UPPER);
    	cout << "> FOB allocated." << endl;
@@ -15,7 +17,7 @@ int init(Fob* fob) {
 	return 0;
 }
 
-int getPosAndOri(Fob* fob, Vec& pos, Quaternion& ori) {
+int myFob::getPosAndOri(Vec& pos, Quaternion& ori) {
 	
 	fob->update();
 	pos = fob->position();
@@ -23,7 +25,7 @@ int getPosAndOri(Fob* fob, Vec& pos, Quaternion& ori) {
 	return 0;
 }
 
-int close(Fob* fob) {
+int myFob::close() {
 	fob->close();
 	cout << "> Device connection closed." << endl;
 	return 0;

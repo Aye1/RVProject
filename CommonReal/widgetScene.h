@@ -7,6 +7,8 @@
 #include "viewerG.h"
 #include "viewerD.h"
 #include "scene.h"
+#include "fob.h"
+#include "wiim.h"
 
 class WidgetScene : public QWidget {
 	Q_OBJECT
@@ -18,10 +20,23 @@ public:
 
 private:
 
+	bool isSelected1 ;
+    bool isSelected2 ;
+  	bool isSelected3 ;
+  	bool isSelected4 ;
+
 	Scene*   _scene;
+	myFob* _fob;
+	Wiim* _wii;
 	ViewerG* _viewerG;
 	ViewerD* _viewerD;
 	qglviewer::Camera*  _cameraCenter;
+
+	float ecartementYeux;
+	float inclinaisonStrabisme;
+
+protected:	
+	virtual void keyPressEvent(QKeyEvent *e);
 
 };
 

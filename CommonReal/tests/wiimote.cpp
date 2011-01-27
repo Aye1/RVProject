@@ -7,38 +7,31 @@
 #include <stdlib.h>
 #include "wiim.h"
 
-using namespace arv;
-using namespace std;
+//using namespace arv;
+//using namespace std;
 
-int main(int /*argc*/, char* /*argv*/[]) {
+int main(int argc, char* argv[]) {
 
-	Wii *wii = NULL;
-	wii = init();
-	
-	int wiiZone1 = 0;
-	int wiiZone2 = 0;
-	bool valid1 = false;
-	bool valid2 = false;
-	float acc1 = 0;
-	float acc2 = 0;
+
+	Wiim wiim = Wiim();
+	wiim.init();
+	if (wiim.getStop()) {
+		cout << "ERREUR : lors de (of the rings) l'ajout des wiimotes" << endl;
+		exit(0);
+	}
 	float pos1x, pos2x, pos1y, pos2y;
-//	int i = 0;
-	while (!stop(wii)) {
-		getVal(wii, wiiZone1, wiiZone2, valid1, valid2, acc1, acc2);
-		if (valid1) {
-			cout << "wii1 validee dans la zone " << wiiZone1 << endl;
+
+	while (!wiim.getStop()) {
+		wiim.getVal();
+		if (wiim.getValid1()) {
+			cout << "wii1 validee dans la zone " << wiim.getWiiZone1() << endl;
 		}
-		if (valid2) {
-			cout << "wii2 validee dans la zone " << wiiZone2 << endl;
+		if (wiim.getValid2()) {
+			cout << "wii2 validee dans la zone " << wiim.getWiiZone2() << endl;
 		}
-		getPos(wii, pos1x, pos2x, pos1y, pos2y);
-/*		if (i < 100000) {
-			i++;
-		} else {
-			cout << "position 1 " << pos1x << " " << pos1y << " position 2 " << pos2x << " " << pos2y << endl;
-			i = 0;
-		}
-*/	}
-	close(wii);
+		wiim.getPos(pos1x, pos2x, pos1y, pos2y);
+	}
+	wiim.close();
 	return 0;
 }
+

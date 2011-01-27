@@ -43,9 +43,11 @@ private:
 	QPushButton * _playPauseButton;
 	QSpinBox * _speedBox;
 	QTimer * _timer;
-	QSound * _vert;
-	QSound * _rouge;
-	QSound * _jaune;
-	QSound * _bleu;
+	QSound * _do;
+	QSound * _re;
+	QSound * _mi;
+	QSound * _fa;
+	QSound * _sol;
 	WidgetScene * _openGLGlobalWindow;
+
 };

@@ -4,10 +4,9 @@
 
 TEMPLATE = app
 TARGET   = rt
-CONFIG  += qt opengl warn_on release thread 
+CONFIG  += qt opengl warn_on release thread
 DEPENDPATH += .
 INCLUDEPATH += .
-LIBS += -L/usr/local/lib/ -lSDL -lSDL_image 
 
 # Input
 HEADERS += AGHFile.h \
@@ -21,13 +20,7 @@ HEADERS += AGHFile.h \
            material.h \
            scene.h \
            viewerD.h \
-		   viewerG.h \
-		   widgetScene.h \
-		   touche.h \
-		   Skybox.h \
-		   sdlglutils.h \
-		   fob.h \
-		   wiim.h
+		   viewerG.h
 FORMS += AGHMainWindow.ui
 SOURCES += AGHFile.cpp \
            AGHMainWindow.cpp \
@@ -39,12 +32,6 @@ SOURCES += AGHFile.cpp \
            material.cpp \
            scene.cpp \
            viewerD.cpp \
-		   viewerG.cpp \
-		   widgetScene.cpp \
-		   touche.cpp \
-		   Skybox.cpp \
-		   sdlglutils.cpp \
-		   fob.cpp \
-		   wiim.cpp
+		   viewerG.cpp
 
 include( config.pri )
