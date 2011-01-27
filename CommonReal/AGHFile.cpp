@@ -9,14 +9,18 @@
 
 #include "AGHFile.h"
 #include <stdlib.h>
+
 int AGHFile::nextNote() {
 	if (this->atEnd()) {
 		return -1;
 	}
 	QByteArray line = this->readLine();
-	std::cout << "taille : " << line.size() << endl;
-	char number = line.at(0);
-	return atoi(&number);
+	int number = 0;
+	for(int i=0; i<line.size()-1; i++) {	
+	    char tmp = line.at(i);
+	    number = number * 10 + atoi(&tmp);
+        }
+	return number;
 }
 
 void AGHFile::init() {
