@@ -11,7 +11,7 @@
 Touche::Touche() {
 	touche_=gluNewQuadric();
 	position_=qglviewer::Vec(0.0,0.0,0.0);
-	rayon_=1.0;
+	rayon_=6.0;
 	color_ = Color(1.0,0.0,0.0);//couleur rouge de base
 }
 
