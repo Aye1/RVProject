@@ -5,24 +5,38 @@ AGHListeTouches::AGHListeTouches() {
 
 void AGHListeTouches::addNotes(int notes) {
 	Touche * tmp;
+	Vec pos(-5.0f, 0.0f, 0.0f);
+	Vec dir();
 	if (notes & 2) {
 		tmp = new Touche();
+		dir = pos - _posElemVert;
+		dir.normalize();
 		tmp->setColor(0.0f, 1.0f, 0.0f);
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 4) {
 		tmp = new Touche();
+		dir = pos - _posElemRouge;
+		dir.normalize();
 		tmp->setColor(1.0f, 0.0f, 0.0f);
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 8) {
 		tmp = new Touche();
+		dir = pos - _posElemJaune;
+		dir.normalize();
 		tmp->setColor(1.0f, 1.0f, 0.0f);
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 16) {
 		tmp = new Touche();
+		dir = pos - _posElemBleu;
+		dir.normalize();
 		tmp->setColor(0.0f, 0.0f, 1.0f);
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 }
