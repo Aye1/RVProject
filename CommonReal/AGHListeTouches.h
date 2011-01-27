@@ -1,3 +1,5 @@
+#ifndef LISTE_TOUCHES_H_
+#define LISTE_TOUCHES_H_
 #include "touche.h"
 #include <QList>
 
@@ -7,3 +9,5 @@ public:
 	void addNotes(int notes);
 	void updateNotesPos();
 };
+
+#endif
