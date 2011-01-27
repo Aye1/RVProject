@@ -11,17 +11,12 @@ AGHListeTouches::AGHListeTouches(QList<ElementBat *> liste) {
 	_posElemBleu = liste[3]->getPositionCenterBat();
 }
 
-void AGHListeTouches::addNotes(int notes,QList<ElementBat *> liste) {
-	//printf("add note \n");
+void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
 	_posElemVert = liste[0]->getPositionCenterBat();
 	_posElemRouge = liste[1]->getPositionCenterBat();	
 	_posElemJaune = liste[2]->getPositionCenterBat();
 	_posElemBleu = liste[3]->getPositionCenterBat();
 	Vec dir;
-	//std::cout<<"position vert: "<<calcPosition(_posElemVert).x<<" "<<calcPosition(_posElemVert).y<<" "<<calcPosition(_posElemVert).z<<std::endl;
-	//std::cout<<"position rouge: "<<calcPosition(_posElemRouge).x<<" "<<calcPosition(_posElemRouge).y<<" "<<calcPosition(_posElemRouge).z<<std::endl;
-	//std::cout<<"position jaune: "<<calcPosition(_posElemJaune).x<<" "<<calcPosition(_posElemJaune).y<<" "<<calcPosition(_posElemJaune).z<<std::endl;
-	//std::cout<<"position bleu: "<<calcPosition(_posElemBleu).x<<" "<<calcPosition(_posElemBleu).y<<" "<<calcPosition(_posElemBleu).z<<std::endl;
 	if (notes & 2) {
 		Touche * tmp;
 		tmp = new Touche();
@@ -62,7 +57,6 @@ void AGHListeTouches::addNotes(int notes,QList<ElementBat *> liste) {
 		tmp->setDirection(dir);
 		this->append(tmp);
 	}
-	//printf("fin add note \n");
 }
 
 void AGHListeTouches::updateNotesPos() {
