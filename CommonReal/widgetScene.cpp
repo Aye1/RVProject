@@ -55,7 +55,7 @@ WidgetScene::WidgetScene(){
 	//ecartementOeil
 
 	ecartementYeux = 0.0;
-    inclinaisonStrabisme = 5.0;
+ 	inclinaisonStrabisme = 5.0;
 
 	_viewerD->setCamera(_cameraCenter);
 	_viewerD->setParametersStereo(-dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
@@ -66,7 +66,12 @@ WidgetScene::WidgetScene(){
 
 }
 
+
 WidgetScene::~WidgetScene(){
+	_wii->close();
+	//_fob->close();
+	delete _wii;
+	delete _fob;
 	delete _scene ;
 	delete _viewerG ;
 	delete _viewerD ;
@@ -80,9 +85,9 @@ void WidgetScene::init()
 {
 	//_fob->init();
 //On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
-	//_wii->init();
+	_wii->init();
 //Passage des wiimotes à la scène
-	//_scene->setWii(_wii);
+	_scene->setWii(_wii);
 //Passage du fob à la scène
 	//_scene->setFob(_fob);
 	isSelected1 = false;
@@ -235,7 +240,7 @@ void WidgetScene::keyPressEvent(QKeyEvent *e)
 
     default :
 	  	isSelected1 = false;
-        isSelected2 = false;
+        	isSelected2 = false;
   		isSelected3 = false;
   		isSelected4 = false;
       	break;
