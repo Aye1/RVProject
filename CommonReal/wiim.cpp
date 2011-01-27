@@ -68,8 +68,6 @@ float Wiim::getAcc2() {
 
 
 void Wiim::init() {
-//	signal(SIGINT, sigproc);
-//	signal(SIGQUIT, sigproc);
 	
 	_stop = false;
 	cout << "Connexion des wiimotes" << endl;
@@ -89,7 +87,6 @@ void Wiim::init() {
 	_wiimote2 = _wii->getIRData(1);
 	_pos1x = _wiimote1->pos[0];
 	_pos2x = _wiimote2->pos[0];
-	//	return wii;
 }
 
 void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double& acc1x, double& acc2x, double& acc1y, double& acc2y, double& acc1z, double& acc2z) {
@@ -109,7 +106,6 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double
 	}
 	pos1y = _wiimote1->pos[1];
 	pos2y = _wiimote2->pos[1];
-	//cout << pos1x << " " << pos1y << " " << pos2x << " " << pos2y << endl;
 	if (_wiimote1->size >= 3) {
 		if (_wiimote1->pos[0] < 225) {
 			wiiZone1 = 4;
@@ -142,7 +138,6 @@ void Wiim::update() {
 void Wiim::getVal() {
 	
 	double a1x, a1y, a1z, a2x, a2y, a2z;
-	//bool rumble = false;
 	bool val1, val2;
 	valid1 = false;
 	valid2 = false;
@@ -158,15 +153,13 @@ void Wiim::getVal() {
 	if (val1 || val2) {
 		//blabla validate touche
 		if (val1) {
-			//		cout << "wii1 " << wiiZone1 << endl;
 			valid1 = true;
 		}
 		if (val2) {
-			//		cout << "wii2 " << wiiZone2 << endl;
 			valid2 = true;
 		}
 	} else {
-		if (_wiimote1->size >= 3) {
+		if (_wiimote1->size >= 3 && a1y < _seuilPos) {
 			if (_wiimote1->pos[0] < 225) {
 				wiiZone1 = 4;
 			} else if (_wiimote1->pos[0] > 250 && _wiimote1->pos[0] < 450) {
@@ -177,7 +170,7 @@ void Wiim::getVal() {
 				wiiZone1 = 1;
 			}	
 		}
-		if (_wiimote2->size >= 3) {
+		if (_wiimote2->size >= 3 && a2y < _seuilPos) {
 			if (_wiimote2->pos[0] < 225) {
 				wiiZone2 = 4;
 				
