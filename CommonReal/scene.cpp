@@ -15,7 +15,7 @@ using namespace qglviewer;
 
 void Scene::draw() 
 {
-	updateCamera();
+	//updateCamera();
 	updateWiimote();
 	updateTime();
 	_listeTouches->updateNotesPos();
@@ -198,12 +198,12 @@ void Scene::updateWiimote()
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
 //mise à jourqglviewer::Vec
-   pg.x= -15.0;
-   pg.y=(pos1x - 500)*3.0/25.0;
-   pg.z=-(pos1y-600)*1.0/10.0; 
-   pd.x= -15.0;
-   pd.y=(pos2x - 500)*3.0/25.0; 
-   pd.z=-(pos2y-600)*1.0/10.0; 
+   pg.y= -15.0;
+   pg.x=-(pos1x - 500)*3.0/25.0;
+   pg.z=-(pos1y-800)*60.0/800.0 + 25.0; 
+   pd.y= -15.0;
+   pd.x=-(pos2x - 500)*3.0/25.0; 
+   pd.z=-(pos2y-800)*60.0/800.0 + 25.0; 
 	//REGELER LA HAUTEUR
 	/*
   if(acc1y < _wii->getSeuilPos()) {
@@ -231,23 +231,23 @@ void Scene::updateWiimote()
 	float h = 0;
 
 	if(_wii->getWiiZone1()==1){
-		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
-		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,0.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
 		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
 		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
 	} else if(_wii->getWiiZone1()==2) {
 		dirbagG = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
-		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
 		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
 		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
 	} else if(_wii->getWiiZone1()==3) {
 		dirbagG = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
-		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
 		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
 		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
 	} else if(_wii->getWiiZone1()==4) {		
 		dirbagG = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
-		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
 		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
 		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
 	}
@@ -307,7 +307,7 @@ void Scene::updateWiimote()
   }
 
 	
-	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
+	//std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
 //Baguette gauche
    liste_baguette_[0]->setCenter(pg);
 //Baguette droite

@@ -17,7 +17,7 @@ ViewerG::~ViewerG()
 
 void ViewerG::draw()
 {
-	updateCameraViewer();
+	//updateCameraViewer();
 	float dx,dy,dz;
 	dx = dirRight_.x * ecart_;
 	dy = dirRight_.y * ecart_;
