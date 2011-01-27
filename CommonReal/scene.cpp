@@ -21,8 +21,8 @@ void Scene::draw()
 	updateTime();
 	_listeTouches->updateNotesPos(liste_batterie_);
 	//retourne l'indice du tambour validé
-	int validDrum1=3;
-	int validDrum2=1;
+	int validDrum1;
+	int validDrum2;
 	//validate(validDrum1,validDrum2);
 	bool drum1;
 	bool drum2;
