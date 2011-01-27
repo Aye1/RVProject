@@ -348,11 +348,12 @@ void Scene::updateTime() {
 	if(_file != NULL) {
 		_timeSinceLastNote += dt;
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
-			//printf("newnote \n");
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			_listeTouches->addNotes(newNotes,liste_batterie_);
-		}
+			if (newNotes != -1) {
+				_listeTouches->addNotes(newNotes,liste_batterie_);
+			}
+		}	
 	}
 }
 
