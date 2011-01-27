@@ -14,17 +14,25 @@ using namespace qglviewer;
 void Scene::draw() 
 {
 	updateWiimote();
+	//retourne l'indice du tambour validé
+	int validDrum=validate();
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
+	int i=1;
 	foreach(ElementBat* ele,liste_batterie_){
-		ele->draw();
+		bool valid=false;		
+		if(i==validDrum){
+		   valid=true;
+		}		
+		ele->draw(valid);
+		i++;
 	}
-  foreach(Baguette* bag,liste_baguette_){
-    bag->draw();
-  }
-  foreach(Touche* touch,touches_){
-    touch->draw();
-  }
+  	foreach(Baguette* bag,liste_baguette_){
+    		bag->draw();
+  	}
+  	foreach(Touche* touch,touches_){
+    		touch->draw();
+  	}
 
 }
 
@@ -193,5 +201,10 @@ void Scene::updateWiimote(){
 
 void Scene::setFile(AGHFile * file) {
 	_file = file;
+}
+
+int Scene::validate(){
+//TODO
+	return 1;
 }
 
