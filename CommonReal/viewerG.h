@@ -19,6 +19,8 @@ public:
 	
   void setParametersStereo(qglviewer::Vec dirRight,qglviewer::Vec dirUp, float& ecart, float& divergence ) {divergence_=divergence; ecart_=ecart; dirRight_=dirRight; dirUp_=dirUp;};
 
+  void updateCameraViewer();
+
 
 protected :
   virtual void draw();

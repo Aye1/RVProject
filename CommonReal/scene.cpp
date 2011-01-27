@@ -6,6 +6,7 @@
 #include <QList>
 #include <iostream>
 #include <qdom.h>
+#include "myfob.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ using namespace qglviewer;
 
 void Scene::draw() 
 {
+	updateCamera();
 	updateWiimote();
 	//retourne l'indice du tambour validé
 	int validDrum=validate();
@@ -206,5 +208,13 @@ void Scene::setFile(AGHFile * file) {
 int Scene::validate(){
 //TODO
 	return 1;
+}
+
+void Scene::updateCamera(){
+	qglviewer::Vec pos;
+	qglviewer::Quaternion q;
+	_fob->getPosAndOri(pos,q);
+	camera_.setPosition(pos);
+	camera_.setOrientation(q);
 }
 

@@ -4,7 +4,7 @@
 #include "baguette.h"
 #include <iostream>
 #include "wiim.h"
-#include "fob.h"
+#include "myfob.h"
 
 using namespace std; 	
 
@@ -23,8 +23,8 @@ WidgetScene::WidgetScene(){
 
 	/////////////////////CAMERA
 	_cameraCenter = new qglviewer::Camera();
-	_cameraCenter->setPosition(_scene->camera().frame().position());
-  	_cameraCenter->setOrientation(_scene->camera().frame().orientation());
+	_cameraCenter->setPosition(_scene->camera().position());
+  	_cameraCenter->setOrientation(_scene->camera().orientation());
   	_cameraCenter->setFieldOfView(_scene->camera().fieldOfView());
   
   	// Remove previous keyFrames in path 1 (if any)
@@ -78,14 +78,16 @@ Scene * WidgetScene::getScene() {
 
 void WidgetScene::init()
 {
-//	_fob->init();
+	_fob->init();
 //On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
 	_wii->init();
 	float a,b,c,d;
 	_wii->getPos(a,b,c,d);
-	std::cout << a << " " << b << " " << c << " " << d << std::endl;
+	//std::cout << a << " " << b << " " << c << " " << d << std::endl;
 //Passage des wiimotes à la scène
 	_scene->setWii(_wii);
+//Passage du fob à la scène
+	_scene->setFob(_fob);
 	isSelected1 = false;
         isSelected2 = false;
   	isSelected3 = false;

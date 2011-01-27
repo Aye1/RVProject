@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'AGHMainWindow.ui'
 **
-** Created: Thu Jan 27 11:16:29 2011
+** Created: Thu Jan 27 14:24:56 2011
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

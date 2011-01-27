@@ -18,6 +18,7 @@ public:
   void setScene(Scene* const scene) { scene_ = scene; };
 
   void setParametersStereo(qglviewer::Vec dirRight,qglviewer::Vec dirUp, float& ecart, float& divergence ) {divergence_=divergence; ecart_=ecart; dirRight_=dirRight; dirUp_=dirUp;};
+  void updateCameraViewer();
 
 
 protected :

@@ -17,7 +17,7 @@ ViewerG::~ViewerG()
 
 void ViewerG::draw()
 {
-
+	updateCameraViewer();
 	float dx,dy,dz;
 	dx = dirRight_.x * ecart_;
 	dy = dirRight_.y * ecart_;
@@ -32,6 +32,7 @@ void ViewerG::draw()
   }
 
 	update();
+	
 }
 
 void ViewerG::init()
@@ -100,8 +101,8 @@ void ViewerG::keyPressEvent(QKeyEvent *e)
 // scene's camera position. Attention, camera() is moved to camera position.
 void ViewerG::initFromScene()
 {
-  camera()->setPosition(scene()->camera().frame().position());
-  camera()->setOrientation(scene()->camera().frame().orientation());
+  camera()->setPosition(scene()->camera().position());
+  camera()->setOrientation(scene()->camera().orientation());
   camera()->setFieldOfView(scene()->camera().fieldOfView());
   
   // Remove previous keyFrames in path 1 (if any)
@@ -118,4 +119,10 @@ void ViewerG::select(const QPoint& point)
   
   Vec orig,dir;
   camera()->convertClickToLine(point,orig,dir);
+}
+
+void ViewerG::updateCameraViewer(){
+	camera()->setPosition(scene()->camera().position());
+  	camera()->setOrientation(scene()->camera().orientation());
+  	camera()->setFieldOfView(scene()->camera().fieldOfView());
 }
