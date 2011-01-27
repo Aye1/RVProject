@@ -16,11 +16,6 @@ Wiim::Wiim() {
 	_wii = new Wii();
 	_stop = false;
 	_seuilPos = 1.0;
-	_wii->update();
-	_wiimote1 = _wii->getIRData(0);
-	_wiimote2 = _wii->getIRData(1);
-	_pos1x = _wiimote1->pos[0];
-	_pos2x = _wiimote2->pos[0];
 	acc1 = 0;
 	acc2 = 0;
 	wiiZone1 = 0;
@@ -80,7 +75,12 @@ void Wiim::init() {
 	if (_wii->addWiimote() == -1) {
 		_stop = true;
 	}
-//	return wii;
+	_wii->update();
+	_wiimote1 = _wii->getIRData(0);
+	_wiimote2 = _wii->getIRData(1);
+	_pos1x = _wiimote1->pos[0];
+	_pos2x = _wiimote2->pos[0];
+	//	return wii;
 }
 
 void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double& acc1x, double& acc2x, double& acc1y, double& acc2y, double& acc1z, double& acc2z) {
