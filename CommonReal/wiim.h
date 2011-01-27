@@ -27,7 +27,7 @@ protected:
 	int wiiZone2;
 	bool valid1;
 	bool valid2;
-	float _seuilPos;
+	float _seuilPos, _seuilVal;
 
 public:
 
@@ -38,6 +38,9 @@ public:
 	arv::Wii* getWii();
 
 	bool getStop();
+
+	float getSeuilPos();
+	float getSeuilVal();
 	
 	int getWiiZone1();
 	int getWiiZone2();

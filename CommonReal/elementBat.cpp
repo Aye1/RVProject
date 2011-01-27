@@ -152,6 +152,7 @@ void ElementBat::draw(bool validated)
 							+ Vec(0.0,-1.0,0.0)*cos(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0)
 							+ Vec(1.0,0.0,0.0)*sin(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0);
 
+	//cout << positionCenterBat_.x << " " << positionCenterBat_.y << " " <<positionCenterBat_.z <<endl;
 //DEBUG
 /*	glPointSize(10.0);
 	glBegin(GL_POINTS);

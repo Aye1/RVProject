@@ -45,6 +45,7 @@ public :
   void updateCamera();
 
   void setFile(AGHFile * file);
+  void setTimeBetweenNotes(float time);
   //retourne l'indice du tambour validé
   void validate(int& drum1,int& drum2);
 private:
@@ -55,11 +56,13 @@ private:
   AGHFile * _file;
   
   QList<Touche *> touches_;
-  float timeSinceLastNote;
-
+  float _timeSinceLastNote;
+  float _timeBetweenNotes;
   QList<ElementBat *> liste_batterie_;
   QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
   // A FAIRE
+
+  void updateTime();
 };
 
 #endif // SCENE_H
