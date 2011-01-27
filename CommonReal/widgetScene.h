@@ -17,6 +17,7 @@ public:
 	~WidgetScene();
 
 	void init();
+	void setFile(AGHFile * file);
 
 private:
 
@@ -28,6 +29,7 @@ private:
 	Scene*   _scene;
 	myFob* _fob;
 	Wiim* _wii;
+	AGHFile * _file;
 	ViewerG* _viewerG;
 	ViewerD* _viewerD;
 	qglviewer::Camera*  _cameraCenter;
