@@ -16,6 +16,7 @@ Wiim::Wiim() {
 	_wii = new Wii();
 	_stop = false;
 	_seuilPos = 1.0;
+	_seuilVal = 1.5;
 	acc1 = 0;
 	acc2 = 0;
 	wiiZone1 = 0;
@@ -31,6 +32,14 @@ Wii* Wiim::getWii() {
 
 bool Wiim::getStop() {
 	return _stop;
+}
+
+float Wiim::getSeuilPos() {
+	return _seuilPos;
+}
+
+float Wiim::getSeuilVal() {
+	return _seuilVal;
 }
 
 int Wiim::getWiiZone1() {
@@ -100,7 +109,29 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double
 	}
 	pos1y = _wiimote1->pos[1];
 	pos2y = _wiimote2->pos[1];
-	cout << pos1x << " " << pos1y << " " << pos2x << " " << pos2y << endl;
+	//cout << pos1x << " " << pos1y << " " << pos2x << " " << pos2y << endl;
+	if (_wiimote1->size >= 3) {
+		if (_wiimote1->pos[0] < 225) {
+			wiiZone1 = 4;
+		} else if (_wiimote1->pos[0] > 250 && _wiimote1->pos[0] < 450) {
+			wiiZone1 = 3;
+		} else if (_wiimote1->pos[0] > 550 && _wiimote1->pos[0] < 750) {
+			wiiZone1 = 2;
+		} else if (_wiimote1->pos[0] > 775 && _wiimote1->pos[0] < 1000) {
+			wiiZone1 = 1;
+		}
+	}
+	if (_wiimote2->size >= 3) {
+		if (_wiimote2->pos[1] < 225) {
+			wiiZone2 = 4;
+		} else if (_wiimote2->pos[1] > 250 && _wiimote2->pos[1] < 450) {
+			wiiZone2 = 3;
+		} else if (_wiimote2->pos[1] > 550 && _wiimote2->pos[1] < 750) {
+			wiiZone2 = 2;
+		} else if (_wiimote2->pos[1] > 775) {
+			wiiZone2 = 1;
+		}
+	} 
 }	
 
 
@@ -116,15 +147,14 @@ void Wiim::getVal() {
 	valid1 = false;
 	valid2 = false;
 	
-	float seuil = 1.5;
 	_wiimote1 = _wii->getIRData(0);
 	_wiimote2 = _wii->getIRData(1);
 	_wii->getAcceleration(a1x, a1y, a1z, 0); 
 	_wii->getAcceleration(a2x, a2y, a2z, 1);
 	//val1 = (acc1 > seuil && a1y < acc1 && a1y > 0);
 	//val2 = (acc2 > seuil && a2y < acc2 && a2y > 0);
-	val1 = (a1y > seuil && acc1 < seuil && acc1 > 0);
-	val2 = (a2y > seuil && acc2 < seuil && acc2 > 0);
+	val1 = (a1y > _seuilVal && acc1 < _seuilVal && acc1 > 0);
+	val2 = (a2y > _seuilVal && acc2 < _seuilVal && acc2 > 0);
 	if (val1 || val2) {
 		//blabla validate touche
 		if (val1) {

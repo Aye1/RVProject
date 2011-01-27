@@ -48,7 +48,10 @@ public:
 	void draw();
 	void setDirection(qglviewer::Vec dir) {
 		direction_ = dir;
-	}
+	};
+//posBat position du tambour associé
+	void initPosition(qglviewer::Vec posBat);
+
 
 	qglviewer::Vec getDirection();
 };

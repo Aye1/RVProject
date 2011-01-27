@@ -62,7 +62,7 @@ void Baguette::draw()
 
 	glPushMatrix();//transfo reversibles	
 	//on se place au centre de l'élément = centre du pied
-	glMultMatrixd(frame().matrix());
+	//glMultMatrixd(frame().matrix());
 	glTranslated(center_.x,center_.y,center_.z);
 	glColor3fv(material().diffuseColor());
 
