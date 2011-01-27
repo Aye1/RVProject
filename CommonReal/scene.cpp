@@ -192,10 +192,10 @@ void Scene::updateWiimote()
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
 //mise à jourqglviewer::Vec
-   pg.x= -5.0;
+   pg.x= -10.0;
    pg.y=(pos1x - 500)*3.0/25.0;
    pg.z=-(pos1y-600)*1.0/10.0; 
-   pd.x= -5.0;
+   pd.x= -10.0;
    pd.y=(pos2x - 500)*3.0/25.0; 
    pd.z=-(pos2y-600)*1.0/10.0; 
 
