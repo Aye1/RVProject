@@ -17,13 +17,15 @@ void Scene::draw()
 	updateCamera();
 	updateWiimote();
 	//retourne l'indice du tambour validé
-	int validDrum=validate();
+	int validDrum1;
+	int validDrum2;
+	validate(validDrum1,validDrum2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
 	foreach(ElementBat* ele,liste_batterie_){
 		bool valid=false;		
-		if(i==validDrum){
+		if(i==validDrum1 || i==validDrum2){
 		   valid=true;
 		}		
 		ele->draw(valid);
@@ -216,10 +218,18 @@ void Scene::setFile(AGHFile * file)
 	_file = file;
 }
 
-int Scene::validate()
-{
-//TODO
-	return 1;
+void Scene::validate(int& drum1,int& drum2)
+{	
+	drum1=0;
+	drum2=0;
+	_wii->update();
+	_wii->getVal();
+	if(_wii->getValid1()){
+		drum1=_wii->getWiiZone1();
+	}
+	if(_wii->getValid1()){
+		drum2=_wii->getWiiZone2();
+	}	
 }
 
 void Scene::updateCamera(){
