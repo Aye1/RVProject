@@ -18,6 +18,7 @@ void Scene::draw()
 	//updateCamera();
 	updateWiimote();
 	updateTime();
+	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;
@@ -36,9 +37,9 @@ void Scene::draw()
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
-  	foreach(Touche* touch,touches_){
+  	/*foreach(Touche touch, _listeTouches){
     		touch->draw();
-  	}
+  	}*/
 
 }
 
@@ -176,7 +177,6 @@ void Scene::addBaguette(Baguette* e)
 }
 void Scene::addTouches(Touche* c)
 {
-	touches_.push_back(c);
 }
 
 void Scene::updateWiimote()
@@ -348,6 +348,8 @@ void Scene::updateTime() {
 	_timeSinceLastNote += dt;
 	if (_timeSinceLastNote >= _timeBetweenNotes) {
 		_timeSinceLastNote = 0.0f;
+		int newNotes = _file->nextNote();
+		_listeTouches->addNotes(newNotes);
 	}
 }
 

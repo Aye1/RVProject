@@ -16,6 +16,7 @@ public:
 	void setPosElemJaune(Vec pos);
 	void setPosElemBleu(Vec pos);
 	void setPosElems(Vec posV, Vec posR, Vec posJ, Vec posB);
+	Vec calcPosition(Vec posBat);
 private:
 	Vec _posElemVert;
 	Vec _posElemRouge;

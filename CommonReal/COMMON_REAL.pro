@@ -27,7 +27,8 @@ HEADERS += AGHFile.h \
 		   Skybox.h \
 		   sdlglutils.h \
 		   myfob.h \
-		   wiim.h
+		   wiim.h \
+	   AGHListeTouches.h
 FORMS += AGHMainWindow.ui
 SOURCES += AGHFile.cpp \
            AGHMainWindow.cpp \
@@ -44,6 +45,7 @@ SOURCES += AGHFile.cpp \
 		   Skybox.cpp \
 		   sdlglutils.cpp \
 		   myfob.cpp \
-		   wiim.cpp
+		   wiim.cpp \
+	   AGHListeTouches.cpp
 
 include( config.pri )

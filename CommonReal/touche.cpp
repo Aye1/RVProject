@@ -32,3 +32,4 @@ qglviewer::Vec Touche::getDirection() {
 	return direction_;
 }
 
+

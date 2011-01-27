@@ -2,3 +2,5 @@
 **/.obj/*
 **/Makefile
 **/rt
+**/*.swp
+**/*.swo
