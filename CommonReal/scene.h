@@ -47,7 +47,7 @@ public :
   void setFile(AGHFile * file);
   void setTimeBetweenNotes(float time);
   //retourne l'indice du tambour validé
-  int validate();
+  void validate(int& drum1,int& drum2);
 private:
   Camera camera_;
   Skybox * env_;
