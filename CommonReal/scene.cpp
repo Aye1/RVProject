@@ -192,12 +192,113 @@ void Scene::updateWiimote()
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
 //mise à jourqglviewer::Vec
-   pg.x= -10.0;
+   pg.x= -15.0;
    pg.y=(pos1x - 500)*3.0/25.0;
    pg.z=-(pos1y-600)*1.0/10.0; 
-   pd.x= -10.0;
+   pd.x= -15.0;
    pd.y=(pos2x - 500)*3.0/25.0; 
    pd.z=-(pos2y-600)*1.0/10.0; 
+	//REGELER LA HAUTEUR
+	/*
+  if(acc1y < _wii->getSeuilPos()) {
+	liste_baguette_[0]->setCenter(pg);	
+	liste_baguette_[1]->setCenter(pd);		
+	liste_baguette_[0]->setDirectionBaguette(Vec(0.0,0.0,1.0));	
+	liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
+  } else*/ if (false/*acc1y > _wii->getSeuilVal()*/) {
+	liste_baguette_[0]->setCenter(pg);	
+	liste_baguette_[1]->setCenter(pd);
+	Vec dirbagG;
+	Vec dirbagD;
+
+	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
+		glColor3f(0.0,0.0,1.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
+	glEnd();
+
+	double angleAlphaMax = 0 ;
+	double angleGamma = 0;
+	float h = 0;
+
+	if(_wii->getWiiZone1()==1){
+		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+	} else if(_wii->getWiiZone1()==2) {
+		dirbagG = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+	} else if(_wii->getWiiZone1()==3) {
+		dirbagG = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+	} else if(_wii->getWiiZone1()==4) {		
+		dirbagG = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,0.0,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+	}
+	if(_wii->getWiiZone1()!=0){
+		pg.x = h*cos(M_PI/2.0 - angleAlphaMax)*cos(angleGamma);
+		pg.y = h*cos(M_PI/2.0 - angleAlphaMax)*sin(angleGamma);
+		pg.z = h*sin(M_PI/2.0 - angleAlphaMax);
+	}
+
+
+	if(_wii->getWiiZone2()==1){
+		dirbagD = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
+		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
+	} else if(_wii->getWiiZone2()==2) {
+		dirbagD = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
+		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
+	} else if(_wii->getWiiZone2()==3) {
+		dirbagD = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
+		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
+	} else if(_wii->getWiiZone2()==4) {
+		dirbagD = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
+		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
+	}
+	if(_wii->getWiiZone2()!=0){		
+		pd.x = h*cos(M_PI/2.0 - angleAlphaMax)*cos(angleGamma);
+		pd.y = h*cos(M_PI/2.0 - angleAlphaMax)*sin(angleGamma);
+		pd.z = h*sin(M_PI/2.0 - angleAlphaMax);
+	}
+
+	liste_baguette_[0]->setDirectionBaguette(dirbagG);	
+	liste_baguette_[1]->setDirectionBaguette(dirbagD);
+	liste_baguette_[0]->setCenter(pg);	
+	liste_baguette_[1]->setCenter(pd);
+	
+  } else {
+	liste_baguette_[0]->setCenter(pg);	
+	liste_baguette_[1]->setCenter(pd);
+	liste_baguette_[0]->setDirectionBaguette(Vec(0.0,0.0,1.0));	
+	liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
+
+	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
+		glColor3f(0.0,0.0,1.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
+	glEnd();
+  }
 
 	
 	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
