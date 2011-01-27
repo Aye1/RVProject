@@ -38,10 +38,12 @@ public :
   void setWii(Wiim* w){_wii=w;};
   void updateWiimote();
 
+  void setFile(AGHFile * file);
 private:
   Camera camera_;
   Skybox * env_;
   Wiim* _wii;
+  AGHFile * _file;
 
   QList<Touche *> touches_;
 

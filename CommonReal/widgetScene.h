@@ -17,7 +17,6 @@ public:
 	~WidgetScene();
 
 	void init();
-	void setFile(AGHFile * file);
 
 private:
 

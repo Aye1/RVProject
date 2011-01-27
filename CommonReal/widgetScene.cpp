@@ -100,11 +100,6 @@ void WidgetScene::init()
 
 }
 
-WidgetScene::setFile(AGHFile * file) {
-	_file = file;
-}
-
-
 void WidgetScene::keyPressEvent(QKeyEvent *e)
 {
 	qglviewer::Vec cameraDirRight;

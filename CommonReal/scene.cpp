@@ -190,3 +190,8 @@ void Scene::updateWiimote(){
 
 }
 
+
+void Scene::setFile(AGHFile * file) {
+	_file = file;
+}
+
