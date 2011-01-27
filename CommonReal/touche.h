@@ -33,13 +33,16 @@ public:
 		cout << "creation touche" << endl;
 		position_=pos;
 	};
+	qglviewer::Vec getPosition() {
+		return position_;
+	}
 	void setInclinaison(float incl){
 		inclinaison_=incl;
 	};
 	void setAngleRotation(float angle){
 		angleRotation_=angle;
 	};
-	void setColor(Color& c){
+	void setColor(Color c){
 		color_=c;
 	};
 	void draw();

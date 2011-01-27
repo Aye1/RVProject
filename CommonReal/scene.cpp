@@ -36,9 +36,9 @@ void Scene::draw()
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
-  	foreach(Touche* touch,touches_){
+  	/*foreach(Touche touch, _listeTouches){
     		touch->draw();
-  	}
+  	}*/
 
 }
 
@@ -176,7 +176,6 @@ void Scene::addBaguette(Baguette* e)
 }
 void Scene::addTouches(Touche* c)
 {
-	touches_.push_back(c);
 }
 
 void Scene::updateWiimote()

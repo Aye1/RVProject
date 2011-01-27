@@ -9,6 +9,7 @@
 #include "Skybox.h"
 #include "wiim.h"
 #include "AGHFile.h"
+#include "AGHListeTouches.h"
 
 class ElementBat;
 class Baguette ;
@@ -55,7 +56,7 @@ private:
   myFob* _fob;
   AGHFile * _file;
   
-  QList<Touche *> touches_;
+  AGHListeTouches * _listeTouches;
   float _timeSinceLastNote;
   float _timeBetweenNotes;
   QList<ElementBat *> liste_batterie_;
