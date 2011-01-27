@@ -15,6 +15,12 @@ void Wiim::sigproc(int* i) {
 Wiim::Wiim() {
 	_wii = new Wii();
 	_stop = false;
+	_seuilPos = 1.0;
+	_wii->update();
+	_wiimote1 = _wii->getIRData(0);
+	_wiimote2 = _wii->getIRData(1);
+	_pos1x = _wiimote1->pos[0];
+	_pos2x = _wiimote2->pos[0];
 	acc1 = 0;
 	acc2 = 0;
 	wiiZone1 = 0;
@@ -82,8 +88,16 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double
 	_wiimote2 = _wii->getIRData(1);
 	_wii->getAcceleration(acc1x, acc1y, acc1z, 0);
 	_wii->getAcceleration(acc2x, acc2y, acc2z, 1);
-	pos1x = _wiimote1->pos[0];
-	pos2x = _wiimote2->pos[0];
+	if (acc1y > _seuilPos) {
+		pos1x = _pos1x;
+	} else {
+		pos1x = _wiimote1->pos[0];
+	}
+	if (acc2y > _seuilPos) {
+		pos2x = _pos2x;
+	} else {
+		pos2x = _wiimote2->pos[0];
+	}
 	pos1y = _wiimote1->pos[1];
 	pos2y = _wiimote2->pos[1];
 	cout << pos1x << " " << pos1y << " " << pos2x << " " << pos2y << endl;

@@ -22,11 +22,12 @@ protected:
 	cwiid_ir_src* _wiimote2;
 	double acc1;
 	double acc2;
+	float _pos1x, _pos2x;
 	int wiiZone1;
 	int wiiZone2;
 	bool valid1;
 	bool valid2;
-
+	float _seuilPos;
 
 public:
 

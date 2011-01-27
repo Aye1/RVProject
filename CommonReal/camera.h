@@ -2,11 +2,10 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include <QGLViewer/frame.h>
-
+#include <QGLViewer/qglviewer.h>
 class Scene;
 
-class Camera
+class Camera : public qglviewer::Camera
 {
 public :
   Camera();

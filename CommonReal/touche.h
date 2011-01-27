@@ -46,6 +46,9 @@ public:
 	void setDirection(qglviewer::Vec dir) {
 		direction_ = dir;
 	}
+
+	qglviewer::Vec getDirection();
 };
+
 
 #endif /* TOUCHE_H_ */
