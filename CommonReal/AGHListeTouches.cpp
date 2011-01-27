@@ -29,3 +29,26 @@ void AGHListeTouches::addNotes(int notes) {
 
 void AGHListeTouches::updateNotesPos() {
 }
+
+void AGHListeTouches::setPosElemVert(Vec pos) {
+	_posElemVert = pos;
+}
+
+void AGHListeTouches::setPosElemRouge(Vec pos) {
+	_posElemRouge = pos;
+}
+
+void AGHListeTouches::setPosElemJaune(Vec pos) {
+	_posElemJaune = pos;
+}
+
+void AGHListeTouches::setPosElemBleu(Vec pos) {
+	_posElemBleu = pos;
+}
+
+void AGHListeTouches::setPosElems(Vec posV, Vec posR, Vec posJ, Vec posB) {
+	setPosElemVert(posV);
+	setPosElemRouge(posR);
+	setPosElemJaune(posJ);
+	setPosElemBleu(posB);
+}
