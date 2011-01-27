@@ -2,7 +2,9 @@
 #define LISTE_TOUCHES_H_
 #include "touche.h"
 #include <QList>
-#include "vec.h"
+#include <QGLViewer/qglviewer.h>
+
+using namespace qglviewer;
 
 class AGHListeTouches : public QList<Touche> {
 public:
