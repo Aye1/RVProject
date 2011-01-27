@@ -1,57 +1,74 @@
 #include "AGHListeTouches.h"
+#include "elementBat.h"
 #include <stdio.h>
+
 using namespace qglviewer;
 
-AGHListeTouches::AGHListeTouches() {
-	_posElemVert = Vec(0,0,0);
-	_posElemRouge = Vec(0,0,0);	
-	_posElemJaune = Vec(0,0,0);
-	_posElemBleu = Vec(0,0,0);
+AGHListeTouches::AGHListeTouches(QList<ElementBat *> liste) {
+	_posElemVert = liste[0]->getPositionCenterBat();
+	_posElemRouge = liste[1]->getPositionCenterBat();	
+	_posElemJaune = liste[2]->getPositionCenterBat();
+	_posElemBleu = liste[3]->getPositionCenterBat();
 }
 
-void AGHListeTouches::addNotes(int notes) {
-	printf("add note \n");
+void AGHListeTouches::addNotes(int notes, QList<ElementBat *> liste) {
+	_posElemVert = liste[0]->getPositionCenterBat();
+	_posElemRouge = liste[1]->getPositionCenterBat();	
+	_posElemJaune = liste[2]->getPositionCenterBat();
+	_posElemBleu = liste[3]->getPositionCenterBat();
 	Vec dir;
 	if (notes & 2) {
-		Touche tmp;
-		dir = calcPosition(_posElemVert) - _posElemVert;
+		Touche * tmp;
+		tmp = new Touche();
+		dir = -(calcPosition(_posElemVert) - _posElemVert);
 		dir.normalize();
-		tmp.setColor(Color(0.0f, 1.0f, 0.0f));
-		tmp.setDirection(dir);
+		tmp->setPosition(calcPosition(_posElemVert));
+		tmp->setColor(Color(0.0f, 1.0f, 0.0f));
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 4) {
-		Touche tmp;
-		dir = calcPosition(_posElemRouge) - _posElemRouge;
+		Touche * tmp;
+		tmp = new Touche();
+		dir = -(calcPosition(_posElemRouge) - _posElemRouge);
 		dir.normalize();
-		tmp.setColor(Color(1.0f, 0.0f, 0.0f));
-		tmp.setDirection(dir);
+		tmp->setPosition(calcPosition(_posElemRouge));
+		tmp->setColor(Color(1.0f, 0.0f, 0.0f));
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 8) {
-		Touche tmp;
-		dir = calcPosition(_posElemJaune) - _posElemJaune;
+		Touche * tmp;
+		tmp = new Touche();
+		dir = -(calcPosition(_posElemJaune) - _posElemJaune);
 		dir.normalize();
-		tmp.setColor(Color(1.0f, 1.0f, 0.0f));
-		tmp.setDirection(dir);
+		tmp->setPosition(calcPosition(_posElemJaune));
+		tmp->setColor(Color(1.0f, 1.0f, 0.0f));
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
 	if (notes & 16) {
-		Touche tmp;
-		dir = calcPosition(_posElemBleu) - _posElemBleu;
+		Touche * tmp;
+		tmp = new Touche();
+		dir = -(calcPosition(_posElemBleu) - _posElemBleu);
 		dir.normalize();
-		tmp.setColor(Color(0.0f, 0.0f, 1.0f));
-		tmp.setDirection(dir);
+		tmp->setPosition(calcPosition(_posElemBleu));
+		tmp->setColor(Color(0.0f, 0.0f, 1.0f));
+		tmp->setDirection(dir);
 		this->append(tmp);
 	}
-	printf("fin add note \n");
 }
 
 void AGHListeTouches::updateNotesPos() {
-	Touche t;	
+	Touche * t;
+	int i=0;	
 	foreach(t, *this) {
-		Vec pos = t.getPosition();
-		t.setPosition(pos + t.getDirection());	
+		Vec pos = t->getPosition();
+		t->setPosition(pos + t->getDirection());
+		if(t->getPosition().y < _posElemVert.y - 30){
+		  this->removeAt(i);
+		}
+	i++;	
 	}
 }
 
@@ -79,10 +96,10 @@ void AGHListeTouches::setPosElems(Vec posV, Vec posR, Vec posJ, Vec posB) {
 }
 
 Vec AGHListeTouches::calcPosition(Vec posBat){
-	float a=(float)(posBat.y+30)/(float)posBat.x;
+	float a=-((float)(posBat.y+30)/(float)posBat.x);
 	float b=30;
 	qglviewer::Vec newPos;
-	newPos.y=posBat.y+200;
+	newPos.y=-(posBat.y-200);
 	newPos.x=(float)(newPos.y-b)/(float)a;
 	newPos.z=posBat.z;
 	return newPos;

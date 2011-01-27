@@ -23,7 +23,7 @@ public:
 private:
 
 	bool isSelected1 ;
-    bool isSelected2 ;
+        bool isSelected2 ;
   	bool isSelected3 ;
   	bool isSelected4 ;
 

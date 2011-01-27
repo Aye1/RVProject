@@ -8,6 +8,7 @@
 #include <qdom.h>
 #include "myfob.h"
 #include "time.h"
+#include <math.h>
 
 using namespace std;
 
@@ -22,13 +23,17 @@ void Scene::draw()
 	//retourne l'indice du tambour validé
 	int validDrum1;
 	int validDrum2;
-	validate(validDrum1,validDrum2);
+
+	//validate(validDrum1,validDrum2);
+	bool drum1;
+	bool drum2;
+	isValid(validDrum1,validDrum2,drum1,drum2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
 	foreach(ElementBat* ele,liste_batterie_){
 		bool valid=false;		
-		if(i==validDrum1 || i==validDrum2){
+		if((i==validDrum1 && drum1) || (i==validDrum2 && drum2)){
 		   valid=true;
 		}		
 		ele->draw(valid);
@@ -37,21 +42,16 @@ void Scene::draw()
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
-  	/*foreach(Touche touch, _listeTouches){
+	Touche * touch;
+  	foreach(touch, *_listeTouches){
     		touch->draw();
-  	}*/
+  	}
 
 }
 
 void Scene::initTouches()
 {
-/*	for(unsigned int i=0;i<500;++i){
-		Touche * t = new Touche();
-		t->setInclinaison(i);
-		t->setPosition(Vec(i,0.0,0.0));
-		addTouches(t);
-	}
-*/
+_listeTouches = new AGHListeTouches(liste_batterie_); 
 }
 
 void Scene::initSkybox()
@@ -62,7 +62,7 @@ void Scene::initSkybox()
 
 void Scene::loadFromFile(const QString& filename)
 {
- _listeTouches=new AGHListeTouches(); 
+ 
  QDomDocument doc("mydocument");
  QFile file(filename);
  if (!file.open(QIODevice::ReadOnly))
@@ -118,6 +118,7 @@ void Scene::loadFromFile(const QString& filename)
  QDomElement elem = doc.createElement("img");
  elem.setAttribute("src", "myimage.png");
  docElem.appendChild(elem);
+
 
   // Pour ne pas avoir de warnings "unused parameter" - A supprimer
 }
@@ -449,11 +450,35 @@ void Scene::updateTime() {
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			_listeTouches->addNotes(newNotes);
-		}
+			if (newNotes != -1) {
+				_listeTouches->addNotes(newNotes,liste_batterie_);
+			}
+		}	
 	}
 }
 
 void Scene::setTimeBetweenNotes(float time) {
 	_timeBetweenNotes = time;
+}
+void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2){
+	drum1=false;
+	drum2=false;
+	qglviewer::Vec center1=liste_batterie_[nbdrum1]->getPositionCenterBat();
+	qglviewer::Vec center2=liste_batterie_[nbdrum2]->getPositionCenterBat();
+	//Parcours de la liste des touches
+	float seuil=3.0;
+	Touche* touch;
+	foreach(touch, *_listeTouches){
+		qglviewer::Vec pos=touch->getPosition();
+		float d1=sqrt(pow(pos.x-center1.x,2)+pow(pos.y-center1.y,2)+pow(pos.z-center1.z,2));
+		float d2=sqrt(pow(pos.x-center2.x,2)+pow(pos.y-center2.y,2)+pow(pos.z-center2.z,2));
+
+		if(d1<seuil){
+	   		drum1=true;
+		}
+    		if(d2<seuil){
+			drum2=true;
+		}	
+  	}	
+	
 }

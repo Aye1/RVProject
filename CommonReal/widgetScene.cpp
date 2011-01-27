@@ -12,6 +12,7 @@ WidgetScene::WidgetScene(){
 	_scene = new Scene();
 	_scene->loadFromFile("troisSpheres.scn");
 	_scene->initSkybox();
+	_scene->initTouches();
 
 	_viewerG = new ViewerG();
 	_viewerD = new ViewerD();

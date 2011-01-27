@@ -14,6 +14,7 @@ AGHMainWindow::AGHMainWindow() {
 	createMenu();
 	createDock();
 	initSounds();
+	_currentFile = NULL;
 		
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
@@ -162,10 +163,9 @@ void AGHMainWindow::playSoundFromNote(int note) {
 void AGHMainWindow::openWindow(){
 	QDesktopWidget desktop;
 	QRect screensize = desktop.screenGeometry(desktop.primaryScreen());
-
 	_openGLGlobalWindow = new WidgetScene();
 	_openGLGlobalWindow->getScene()->setFile(_currentFile);
-	float T = 60.0f/(float)_speedBox->value();
+	float T = 1000*60.0f/(float)_speedBox->value();
 	_openGLGlobalWindow->getScene()->setTimeBetweenNotes(T);
 	_openGLGlobalWindow->resize(screensize.width()*2,screensize.height());
 	_openGLGlobalWindow->init();
