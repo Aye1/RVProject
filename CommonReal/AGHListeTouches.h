@@ -11,7 +11,7 @@ class AGHListeTouches : public QList<Touche *> {
 public:
 	AGHListeTouches(QList<ElementBat *> liste);
 	void addNotes(int notes,QList<ElementBat *> liste);
-	void updateNotesPos();
+	void updateNotesPos(QList<ElementBat *> liste);
 	void setPosElemVert(Vec pos);
 	void setPosElemRouge(Vec pos);
 	void setPosElemJaune(Vec pos);

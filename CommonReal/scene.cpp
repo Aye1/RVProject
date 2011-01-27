@@ -19,26 +19,33 @@ void Scene::draw()
 	//updateCamera();
 	//updateWiimote();
 	updateTime();
-	_listeTouches->updateNotesPos();
+	_listeTouches->updateNotesPos(liste_batterie_);
 	//retourne l'indice du tambour validé
-	int validDrum1;
-	int validDrum2;
+	int validDrum1=3;
+	int validDrum2=1;
 	//validate(validDrum1,validDrum2);
 	bool drum1;
 	bool drum2;
 	int i1;
 	int i2;
-	isValid(validDrum1,validDrum2,drum1,drum2,i1,i2);
+	Color c1;
+	Color c2;
+	isValid(validDrum1,validDrum2,drum1,drum2,i1,i2,c1,c2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
 	foreach(ElementBat* ele,liste_batterie_){
-		bool valid=false;		
-		if((i==validDrum1 && drum1) || (i==validDrum2 && drum2)){
+		
+		if(i==validDrum1 && drum1){
 		 //  std::cout<<"tralala"<<std::endl;
-		   valid=true;
-		}		
-		ele->draw(valid);
+		   ele->draw(true,c1);	   
+		  
+		}else if(i==validDrum2 && drum2){
+		   ele->draw(true,c2);	   
+		  
+		}else{		
+		   ele->draw(false,ele->material().diffuseColor());
+		}
 		i++;
 	}
   	foreach(Baguette* bag,liste_baguette_){
@@ -468,7 +475,7 @@ void Scene::updateTime() {
 void Scene::setTimeBetweenNotes(float time) {
 	_timeBetweenNotes = time;
 }
-void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, int& i2){
+void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, int& i2,Color& c1,Color& c2){
 	drum1=false;
 	drum2=false;
 	bool d1=false;
@@ -490,7 +497,9 @@ void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, in
 	
 	if(d1 | d2){
 	//Parcours de la liste des touches
-	float seuil=5.0;
+	float seuilPerfect=0.5;
+	float seuilMoyen=3.0;
+	float seuilBof=6.0;
 	Touche* touch;
 	//std::cout<<"nb de touches: "<<_listeTouches->size()<<std::endl;
 	int i=0;
@@ -502,7 +511,18 @@ void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, in
 			//std::cout<<"jaune"<<std::endl;
 			float dist1=sqrt(pow(pos.x-center1.x,2)+pow(pos.y-center1.y,2)+pow(pos.z-center1.z,2));
 		
-			if(dist1<seuil){
+			if(dist1<=seuilPerfect){
+				c1.r=0.4; c1.g=0.2; c1.b=0.4;
+				i1=i;
+	   			drum1=true;
+			}
+			if(dist1<=seuilMoyen){
+				c1.r=1.0; c1.g=0.6; c1.b=1.0;
+				i1=i;
+	   			drum1=true;
+			}
+			if(dist1<=seuilBof){
+				c1.r=1.0; c1.g=1.0; c1.b=1.0;
 				i1=i;
 	   			drum1=true;
 			}
@@ -511,9 +531,20 @@ void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, in
 		if(d2){
 		if(color2.r==touch->getColor().r && color2.g==touch->getColor().g && color2.b==touch->getColor().b){
 			float dist2=sqrt(pow(pos.x-center2.x,2)+pow(pos.y-center2.y,2)+pow(pos.z-center2.z,2));
-    			if(dist2<seuil){
+    			if(dist2<=seuilPerfect){
+				c2.r=0.4; c2.g=0.2; c2.b=0.4;
 				i2=i;
-				drum2=true;
+	   			drum2=true;
+			}
+			if(dist2<=seuilMoyen){
+				c2.r=1.0; c2.g=0.6; c2.b=1.0;
+				i2=i;
+	   			drum2=true;
+			}
+			if(dist2<=seuilBof){
+				c2.r=1.0; c2.g=1.0; c2.b=1.0;
+				i2=i;
+	   			drum2=true;
 			}
 		}
 		}

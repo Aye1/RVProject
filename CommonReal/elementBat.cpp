@@ -64,7 +64,7 @@ void ElementBat::createElement(Vec centre, Vec posBat,
 	TX=0;TY=0;TZ=0;
 }
 
-void ElementBat::draw(bool validated) 
+void ElementBat::draw(bool validated,Color c) 
 {
 	const int slices = 100;
     const int stacks = 50 ;
