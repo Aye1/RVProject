@@ -7,7 +7,7 @@
 #include "viewerG.h"
 #include "viewerD.h"
 #include "scene.h"
-#include "fob.h"
+#include "myfob.h"
 #include "wiim.h"
 
 class WidgetScene : public QWidget {

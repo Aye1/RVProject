@@ -1,5 +1,5 @@
-#ifndef FOB_H_
-#define FOB_H_
+#ifndef MYFOB_H_
+#define MYFOB_H_
 
 #include <ApiArv/Fob.h>
 #include  <QGLViewer/qglviewer.h>

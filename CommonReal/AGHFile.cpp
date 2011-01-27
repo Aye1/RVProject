@@ -9,12 +9,17 @@
 
 #include "AGHFile.h"
 #include <stdlib.h>
+
 int AGHFile::nextNote() {
 	if (this->atEnd()) {
 		return -1;
 	}
 	QByteArray line = this->readLine();
-	int number = line.at(0);
+	int number = 0;
+	for(int i=0; i<line.size()-1; i++) {	
+	    char tmp = line.at(i);
+	    number = number * 10 + atoi(&tmp);
+        }
 	return number;
 }
 

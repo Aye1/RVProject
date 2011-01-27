@@ -14,7 +14,6 @@ ARV= wii fob
 HEADERS += AGHFile.h \
            AGHMainWindow.h \
            baguette.h \
-           camera.h \
            color.h \
            elementBat.h \
            hit.h \
@@ -27,13 +26,12 @@ HEADERS += AGHFile.h \
 		   touche.h \
 		   Skybox.h \
 		   sdlglutils.h \
-		   fob.h \
+		   myfob.h \
 		   wiim.h
 FORMS += AGHMainWindow.ui
 SOURCES += AGHFile.cpp \
            AGHMainWindow.cpp \
            baguette.cpp \
-           camera.cpp \
            elementBat.cpp \
            light.cpp \
            main.cpp \
@@ -45,7 +43,7 @@ SOURCES += AGHFile.cpp \
 		   touche.cpp \
 		   Skybox.cpp \
 		   sdlglutils.cpp \
-		   fob.cpp \
+		   myfob.cpp \
 		   wiim.cpp
 
 include( config.pri )

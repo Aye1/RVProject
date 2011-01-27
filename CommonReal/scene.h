@@ -2,8 +2,9 @@
 #define SCENE_H
 
 //#include "object.h"
-#include "camera.h"
+//#include "camera.h"
 //#include "elementBat.h"
+#include  <QGLViewer/qglviewer.h>
 
 #include "Skybox.h"
 #include "wiim.h"
@@ -15,6 +16,8 @@ class Touche;
 //class Wiim;
 class myFob;
 
+using namespace qglviewer;
+
 class Scene
 {
 public :
@@ -24,7 +27,7 @@ public :
   qglviewer::Vec center() const;
   float radius(const qglviewer::Vec& center) const;
 
-  void setCamera(const Camera& camera) { camera_ = camera; }
+  void setCamera(Camera& camera) { camera_ = camera; }
   const Camera& camera() const { return camera_; } 
   Camera& camera() { return camera_; }
   QList<ElementBat *> getListeBatterie(); 
@@ -38,21 +41,28 @@ public :
   void initSkybox();
   void setWii(Wiim* w){_wii=w;};
   void updateWiimote();
+  void setFob(myFob* f){_fob=f;};
+  void updateCamera();
 
   void setFile(AGHFile * file);
+  void setTimeBetweenNotes(float time);
   //retourne l'indice du tambour validé
-  int validate();
+  void validate(int& drum1,int& drum2);
 private:
   Camera camera_;
   Skybox * env_;
   Wiim* _wii;
+  myFob* _fob;
   AGHFile * _file;
-
+  
   QList<Touche *> touches_;
-
+  float _timeSinceLastNote;
+  float _timeBetweenNotes;
   QList<ElementBat *> liste_batterie_;
   QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
   // A FAIRE
+
+  void updateTime();
 };
 
 #endif // SCENE_H

@@ -19,6 +19,7 @@ void ViewerD::draw()
 {
  
  // glViewport (0, 0, (GLsizei)(400), (GLsizei)(400));
+	updateCameraViewer();
 	float dx,dy,dz;
 	dx = dirRight_.x * ecart_;
 	dy = dirRight_.y * ecart_;
@@ -34,6 +35,7 @@ void ViewerD::draw()
   }
 
 	update();
+	
 
 }
 
@@ -102,8 +104,8 @@ void ViewerD::loadScene(const QString& name)
 // scene's camera position. Attention, camera() is moved to camera position.
 void ViewerD::initFromScene()
 {
-  camera()->setPosition(scene()->camera().frame().position());
-  camera()->setOrientation(scene()->camera().frame().orientation());
+  camera()->setPosition(scene()->camera().position());
+  camera()->setOrientation(scene()->camera().orientation());
   camera()->setFieldOfView(scene()->camera().fieldOfView());
   
   // Remove previous keyFrames in path 1 (if any)
@@ -119,4 +121,10 @@ void ViewerD::select(const QPoint& point)
 {
   Vec orig,dir;
   camera()->convertClickToLine(point,orig,dir);
+}
+
+void ViewerD::updateCameraViewer(){
+	camera()->setPosition(scene()->camera().position());
+  	camera()->setOrientation(scene()->camera().orientation());
+  	camera()->setFieldOfView(scene()->camera().fieldOfView());
 }
