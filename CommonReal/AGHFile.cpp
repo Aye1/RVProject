@@ -14,8 +14,9 @@ int AGHFile::nextNote() {
 		return -1;
 	}
 	QByteArray line = this->readLine();
-	int number = line.at(0);
-	return number;
+	std::cout << "taille : " << line.size() << endl;
+	char number = line.at(0);
+	return atoi(&number);
 }
 
 void AGHFile::init() {

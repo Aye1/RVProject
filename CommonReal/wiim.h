@@ -20,13 +20,14 @@ protected:
 	bool _stop;
 	cwiid_ir_src* _wiimote1;
 	cwiid_ir_src* _wiimote2;
-	float acc1;
-	float acc2;
+	double acc1;
+	double acc2;
+	float _pos1x, _pos2x;
 	int wiiZone1;
 	int wiiZone2;
 	bool valid1;
 	bool valid2;
-
+	float _seuilPos;
 
 public:
 
@@ -49,7 +50,9 @@ public:
 	
 	void init();
 
-	void getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y);
+	void getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double& acc1x, double& acc2x, double& acc1y, double& acc2y, double& acc1z, double& acc2z);
+
+	void update();
 
 	void getVal();
 

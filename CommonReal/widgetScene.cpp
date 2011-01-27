@@ -81,9 +81,6 @@ void WidgetScene::init()
 	_fob->init();
 //On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
 	_wii->init();
-	float a,b,c,d;
-	_wii->getPos(a,b,c,d);
-	//std::cout << a << " " << b << " " << c << " " << d << std::endl;
 //Passage des wiimotes à la scène
 	_scene->setWii(_wii);
 //Passage du fob à la scène
@@ -201,7 +198,7 @@ void WidgetScene::keyPressEvent(QKeyEvent *e)
 		break;
 
 	case Qt::Key_Plus :
-		ecartementYeux += 0.5;
+		ecartementYeux += 0.05;
 		cout << "ecartementYeux " << ecartementYeux << endl;
 		_viewerG->setParametersStereo(dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
 		_viewerD->setParametersStereo(-dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
@@ -210,7 +207,7 @@ void WidgetScene::keyPressEvent(QKeyEvent *e)
 		break;
 
 	case Qt::Key_Minus :
-		ecartementYeux -= 0.5;
+		ecartementYeux -= 0.05;
 		cout << "ecartementYeux " << ecartementYeux << endl;
 		_viewerG->setParametersStereo(dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
 		_viewerD->setParametersStereo(-dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);

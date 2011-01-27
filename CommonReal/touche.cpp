@@ -27,3 +27,8 @@ void Touche::draw(){
 	gluDisk(touche_,0,rayon_,slices,stacks);
 	glPopMatrix();
 }
+
+qglviewer::Vec Touche::getDirection() {
+	return direction_;
+}
+

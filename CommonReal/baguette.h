@@ -35,7 +35,7 @@ public:
 	~Baguette();
 
 	/* draw */
-	virtual void draw() const;
+	virtual void draw() ;
     virtual float boundingRadius() const { return radius(); }
 
 	// faire un scale général de l'élément

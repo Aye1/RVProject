@@ -175,22 +175,32 @@ void Scene::addTouches(Touche* c)
 	touches_.push_back(c);
 }
 
-void Scene::updateWiimote(){
+void Scene::updateWiimote()
+{
    float pos1x;
    float pos1y;
    float pos2x;
    float pos2y;
+   double acc1x;
+   double acc2x;
+   double acc1y;
+   double acc2y;
+   double acc1z;
+   double acc2z;
 //On récupère les positions des wiimotes
-   	_wii->getVal();
-	_wii->getPos(pos1x,pos2x,pos1y,pos2y);
+   	_wii->update();
+	_wii->getPos(pos1x,pos2x,pos1y,pos2y,acc1x,acc2x,acc1y,acc2y,acc1z,acc2z);
 //La profondeur reste constante
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
-//mise à jour
-   pg.x=pos1x;
-   pg.z=pos1y;
-   pd.x=pos2x;
-   pd.z=pos2y;
+//mise à jourqglviewer::Vec
+   pg.x= -10.0;
+   pg.y=(pos1x - 500)*3.0/25.0;
+   pg.z=-(pos1y-600)*1.0/10.0; 
+   pd.x= -10.0;
+   pd.y=(pos2x - 500)*3.0/25.0; 
+   pd.z=-(pos2y-600)*1.0/10.0; 
+
 	
 	std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
 //Baguette gauche
@@ -201,11 +211,13 @@ void Scene::updateWiimote(){
 }
 
 
-void Scene::setFile(AGHFile * file) {
+void Scene::setFile(AGHFile * file) 
+{
 	_file = file;
 }
 
-int Scene::validate(){
+int Scene::validate()
+{
 //TODO
 	return 1;
 }

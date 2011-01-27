@@ -34,7 +34,7 @@ Baguette::~Baguette()
 }
 
 
-void Baguette::draw() const
+void Baguette::draw() 
 {
 	const int slices = 100;
     const int stacks = 50 ;
@@ -63,7 +63,7 @@ void Baguette::draw() const
 	glPushMatrix();//transfo reversibles	
 	//on se place au centre de l'élément = centre du pied
 	glMultMatrixd(frame().matrix());
-	glTranslated(TX,TY,TZ);
+	glTranslated(center_.x,center_.y,center_.z);
 	glColor3fv(material().diffuseColor());
 
 	//on s'oriente selon Normdir
@@ -101,7 +101,10 @@ void Baguette::draw() const
 	glPopMatrix();
 	
 	//MISE A JOUR DE LA POSITION DU BOUT DE LA BAGUETTE.
-	//TODO
+	positionBoutBaguette_ = Vec(center_.x+heightBaguette_*Normdir.x/2.0,
+				    center_.y+heightBaguette_*Normdir.y/2.0,
+				    center_.z+heightBaguette_*Normdir.z/2.0);
+
 
 }
 
