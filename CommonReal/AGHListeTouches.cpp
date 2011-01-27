@@ -3,6 +3,10 @@
 using namespace qglviewer;
 
 AGHListeTouches::AGHListeTouches() {
+	_posElemVert = Vec(0,0,0);
+	_posElemRouge = Vec(0,0,0);	
+	_posElemJaune = Vec(0,0,0);
+	_posElemBleu = Vec(0,0,0);
 }
 
 void AGHListeTouches::addNotes(int notes) {
