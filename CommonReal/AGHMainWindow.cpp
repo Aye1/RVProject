@@ -14,6 +14,7 @@ AGHMainWindow::AGHMainWindow() {
 	createMenu();
 	createDock();
 	initSounds();
+	_currentFile = NULL;
 		
 	QWidget * mainWidget = new QWidget;
 	mainWidget->resize(800,600);
@@ -63,7 +64,7 @@ void AGHMainWindow::createMenu() {
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	/*Ouvrir la fenetre OpenGL*/
-	QAction* actionOuvrirOpenGL = new QAction("ouvrir la fenetre de &jeu", this);
+	QAction* actionOuvrirOpenGL = new QAction("Ouvrir la fenetre de &jeu", this);
 	menuFichier->addAction(actionOuvrirOpenGL);
 	actionOuvrirOpenGL->setShortcut(QKeySequence("Ctrl+J"));
 	connect(actionOuvrirOpenGL, SIGNAL(triggered()),this, SLOT(openWindow()) );
@@ -87,7 +88,7 @@ void AGHMainWindow::createDock() {
 	QLabel * speedLabel = new QLabel("Vitesse");
 	_speedBox = new QSpinBox();
 	_speedBox->setMaximum(400);
-	_speedBox->setValue(100);
+	_speedBox->setValue(50);
 	
 	QGridLayout * paramLayout = new QGridLayout;
 	paramLayout->addWidget(speedLabel, 0, 0, Qt::AlignTop);
@@ -162,7 +163,6 @@ void AGHMainWindow::playSoundFromNote(int note) {
 void AGHMainWindow::openWindow(){
 	QDesktopWidget desktop;
 	QRect screensize = desktop.screenGeometry(desktop.primaryScreen());
-
 	_openGLGlobalWindow = new WidgetScene();
 	_openGLGlobalWindow->getScene()->setFile(_currentFile);
 	float T = 60.0f/(float)_speedBox->value();

@@ -8,50 +8,104 @@
 #include <qdom.h>
 #include "myfob.h"
 #include "time.h"
+#include <math.h>
 
 using namespace std;
 
 using namespace qglviewer;
 
+#define temps 7
+
 void Scene::draw() 
 {
+
 	updateCamera();
-	//updateWiimote();
-	//updateTime();
-	_listeTouches->updateNotesPos();
+
+	_wii->update();
+	if(cpt1==0){
+		_wii->getPos1(_pos1x,_pos1y,_acc1x,_acc1y,_acc1z);
+		if(_acc1y>_wii->getSeuilPos()){
+			cpt1=1;
+		}	
+  	} else {
+		if(cpt1<temps){
+			cpt1++;		
+		} else {
+			cpt1 =0;
+			
+		}
+	}
+
+	if(cpt2==0){
+		_wii->getPos2(_pos2x,_pos2y,_acc2x,_acc2y,_acc2z);
+		if(_acc2y>_wii->getSeuilPos()){
+			cpt2=1;
+		} 
+  	} else {
+		if(cpt2<temps){
+			cpt2++;		
+		} else {
+			cpt2 =0;
+		}
+	}
+	
+	//updateCamera();
+
+	updateWiimote(cpt1,cpt2,_pos1x,_pos2x,_pos1y,_pos2y,_acc1x,_acc2x,_acc1y,_acc2y,_acc1z,_acc2z);
+	if (_shouldPlay) {
+		updateTime();
+	}
+	_listeTouches->updateNotesPos(liste_batterie_);
+
 	//retourne l'indice du tambour validé
-	int validDrum1;
+	int validDrum1=3;
 	int validDrum2;
-	//validate(validDrum1,validDrum2);
+	validate(validDrum1,validDrum2);
+	bool drum1;
+	bool drum2;
+	int i1;
+	int i2;
+	Color c1;
+	Color c2;
+	isValid(validDrum1,validDrum2,drum1,drum2,i1,i2,c1,c2);
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
+
 	foreach(ElementBat* ele,liste_batterie_){
-		bool valid=false;		
-		if(i==validDrum1 || i==validDrum2){
-		   valid=true;
-		}		
-		ele->draw(valid);
+		
+		if(i==validDrum1 && drum1){
+		 //  std::cout<<"tralala"<<std::endl;
+		   ele->draw(true,c1);	   
+		   playSoundFromIndex(i);
+		}else if(i==validDrum2 && drum2){
+		   ele->draw(true,c2);	   
+		  
+		}else{		
+		   ele->draw(false,ele->material().diffuseColor());
+		}
 		i++;
 	}
   	foreach(Baguette* bag,liste_baguette_){
     		bag->draw();
   	}
-  	/*foreach(Touche touch, _listeTouches){
+	if(validDrum1!=0 && drum1){
+		//_listeTouches->removeAt(i1);
+	}
+	if(validDrum2!=0 && drum2){
+		//_listeTouches->removeAt(i2);
+	}
+	Touche * touch;
+  	foreach(touch, *_listeTouches){
     		touch->draw();
-  	}*/
+  	}
 
 }
 
 void Scene::initTouches()
 {
-/*	for(unsigned int i=0;i<500;++i){
-		Touche * t = new Touche();
-		t->setInclinaison(i);
-		t->setPosition(Vec(i,0.0,0.0));
-		addTouches(t);
-	}
-*/
+	_listeTouches = new AGHListeTouches(liste_batterie_); 
+	_oldTime = 0.0f;
 }
 
 void Scene::initSkybox()
@@ -60,9 +114,46 @@ void Scene::initSkybox()
 	env_->SkyBox_CreateTexture();
 }
 
+void Scene::initSounds() {
+	_vert = new QSound("WAV/cymbale.wav");
+	_rouge = new QSound("WAV/claire.wav");
+	_jaune = new QSound("WAV/charleston.wav");
+	_bleu = new QSound("WAV/tome.wav");
+}
+
+void Scene::playSoundFromIndex(int index) {
+	QSound * soundToPlay;
+	if (index == 1) {
+		soundToPlay = _vert;
+	} else if (index == 2) {
+		soundToPlay = _rouge;
+	} else if (index == 3) {
+		soundToPlay = _jaune;
+	} else if (index == 4) {
+		soundToPlay = _bleu;
+	}
+	if (soundToPlay != NULL) {
+		soundToPlay->play();
+	}
+}
+
 void Scene::loadFromFile(const QString& filename)
 {
- _listeTouches=new AGHListeTouches(); 
+ cpt1 = 0;
+
+ cpt2 = 0;
+_pos1x= 0;
+ _pos1y= 0;
+ _pos2x= 0;
+ _pos2y= 0;
+ _acc1x= 0;
+ _acc2x= 0;
+ _acc1y= 0;
+ _acc2y= 0;
+ _acc1z= 0;
+ _acc2z= 0;
+
+
  QDomDocument doc("mydocument");
  QFile file(filename);
  if (!file.open(QIODevice::ReadOnly))
@@ -79,7 +170,7 @@ void Scene::loadFromFile(const QString& filename)
 
  QDomNode n = docElem.firstChild();
  while(!n.isNull()) {
-     QDomElement e = n.toElement(); // try to convert the node to an element.
+     QDomElement e = n.toElement(); // try to convert the node to an element.,cpt2
      if(!e.isNull()) {
          cout << qPrintable(e.tagName()) << endl; // the node really is an element.
 	if (QString::compare(QString("Batterie"),e.tagName())==0) 
@@ -109,7 +200,7 @@ void Scene::loadFromFile(const QString& filename)
 	{
 		//initialisation avec QdomElement
 		camera_.initFromDOMElement(e);	
-	}
+	} 
      }
      n = n.nextSibling();
  }
@@ -118,6 +209,7 @@ void Scene::loadFromFile(const QString& filename)
  QDomElement elem = doc.createElement("img");
  elem.setAttribute("src", "myimage.png");
  docElem.appendChild(elem);
+
 
   // Pour ne pas avoir de warnings "unused parameter" - A supprimer
 }
@@ -175,12 +267,10 @@ void Scene::addBaguette(Baguette* e)
 {
 	liste_baguette_.push_back(e);
 }
-void Scene::addTouches(Touche* c)
-{
-}
 
-void Scene::updateWiimote()
+void Scene::updateWiimote(int cpt1,int cpt2,float _pos1x,float _pos2x,float _pos1y,float _pos2y,double _acc1x,double _acc2x,double _acc1y,double _acc2y,double _acc1z,double _acc2z)
 {
+	/*
    float pos1x;
    float pos1y;
    float pos2x;
@@ -193,118 +283,249 @@ void Scene::updateWiimote()
    double acc2z;
 //On récupère les positions des wiimotes
    	_wii->update();
-	_wii->getPos(pos1x,pos2x,pos1y,pos2y,acc1x,acc2x,acc1y,acc2y,acc1z,acc2z);
+	_wii->getPos(pos1x,pos2x,pos1y,pos2y,acc1x,acc2x,acc1y,acc2y,acc1z,acc2z);*/
 //La profondeur reste constante
    qglviewer::Vec pg=liste_baguette_[0]->getPositionBoutBaguette();
    qglviewer::Vec pd=liste_baguette_[1]->getPositionBoutBaguette();
 //mise à jourqglviewer::Vec
    pg.y= -15.0;
-   pg.x=-(pos1x - 500)*3.0/25.0;
-   pg.z=-(pos1y-800)*60.0/800.0 + 25.0; 
+   pg.x=-(_pos1x - 500)*3.0/25.0;
+   pg.z=-(_pos1y-800)*60.0/800.0 + 25.0; 
    pd.y= -15.0;
-   pd.x=-(pos2x - 500)*3.0/25.0; 
-   pd.z=-(pos2y-800)*60.0/800.0 + 25.0; 
-	//REGELER LA HAUTEUR
-	/*
-  if(acc1y < _wii->getSeuilPos()) {
-	liste_baguette_[0]->setCenter(pg);	
-	liste_baguette_[1]->setCenter(pd);		
-	liste_baguette_[0]->setDirectionBaguette(Vec(0.0,0.0,1.0));	
-	liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
-  } else*/ if (false/*acc1y > _wii->getSeuilVal()*/) {
-	liste_baguette_[0]->setCenter(pg);	
-	liste_baguette_[1]->setCenter(pd);
-	Vec dirbagG;
-	Vec dirbagD;
+   pd.x=-(_pos2x - 500)*3.0/25.0; 
+   pd.z=-(_pos2y-800)*60.0/800.0 + 25.0; 
 
-	glBegin(GL_LINES);
-		glColor3f(1.0,0.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
-		glColor3f(0.0,1.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
-		glColor3f(0.0,0.0,1.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
-	glEnd();
+	float pivot_x2,pivot_y2;
+	float pivot_x1,pivot_y1;
+	pivot_x1 = pg.x;
+	pivot_y1 = pg.y;
+	pivot_x2 = pd.x;
+	pivot_y2 = pd.y;
+	
+	//cout << _pos1x << " " << _pos1y << " " << _pos2x << " " << _pos2y << endl; 
+
+  if(cpt1<=0) {
+	liste_baguette_[0]->setCenter(pg);	
+	//liste_baguette_[1]->setCenter(pd);		
+	liste_baguette_[0]->setDirectionBaguette(Vec(0.0,0.0,1.0));	
+	//liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
+  } else if (/*acc1y > _wii->getSeuilVal()*/ cpt1 == temps-1) {
+	liste_baguette_[0]->setCenter(pg);	
+//	liste_baguette_[1]->setCenter(pd);
+	Vec dirbagG;
+//	Vec dirbagD;
 
 	double angleAlphaMax = 0 ;
 	double angleGamma = 0;
 	float h = 0;
 
 	if(_wii->getWiiZone1()==1){
-		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,0.0)).unit();
+		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
 		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0).unit()*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm() -liste_baguette_[0]->getHeightBaguette()/2.0;
 	} else if(_wii->getWiiZone1()==2) {
-		dirbagG = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		dirbagG = (liste_batterie_[1]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
 		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
 	} else if(_wii->getWiiZone1()==3) {
-		dirbagG = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		dirbagG = (liste_batterie_[2]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
 		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
 	} else if(_wii->getWiiZone1()==4) {		
-		dirbagG = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).unit();
+		dirbagG = (liste_batterie_[3]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
 		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pg.y,0.0)).norm();
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
 	}
 	if(_wii->getWiiZone1()!=0){
-		pg.x = h*cos(M_PI/2.0 - angleAlphaMax)*cos(angleGamma);
-		pg.y = h*cos(M_PI/2.0 - angleAlphaMax)*sin(angleGamma);
-		pg.z = h*sin(M_PI/2.0 - angleAlphaMax);
+		if(liste_batterie_[_wii->getWiiZone1()-1]->getPositionCenterBat().x < pg.x){
+			pg.x -= h*sin(abs(angleAlphaMax))*sin(angleGamma);
+			pg.y += h*sin(abs(angleAlphaMax))*cos(angleGamma);
+			pg.z = 20 + h*cos(abs(angleAlphaMax));
+		} else {
+			pg.x += h*sin(abs(angleAlphaMax))*sin(angleGamma);
+			pg.y += h*sin(abs(angleAlphaMax))*cos(angleGamma);
+			pg.z = 20 + h*cos(abs(angleAlphaMax));
+		}
 	}
 
-
-	if(_wii->getWiiZone2()==1){
-		dirbagD = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
-		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
-	} else if(_wii->getWiiZone2()==2) {
-		dirbagD = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
-		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
-	} else if(_wii->getWiiZone2()==3) {
-		dirbagD = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
-		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
-	} else if(_wii->getWiiZone2()==4) {
-		dirbagD = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).unit();
-		angleAlphaMax = acos((double) (dirbagD*Vec(0.0,0.0,1.0)));
-		angleGamma = acos((double) (dirbagD*Vec(1.0,0.0,0.0)));
-		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(-15.0,pd.y,0.0)).norm();
-	}
-	if(_wii->getWiiZone2()!=0){		
-		pd.x = h*cos(M_PI/2.0 - angleAlphaMax)*cos(angleGamma);
-		pd.y = h*cos(M_PI/2.0 - angleAlphaMax)*sin(angleGamma);
-		pd.z = h*sin(M_PI/2.0 - angleAlphaMax);
-	}
 
 	liste_baguette_[0]->setDirectionBaguette(dirbagG);	
-	liste_baguette_[1]->setDirectionBaguette(dirbagD);
+	//liste_baguette_[1]->setDirectionBaguette(dirbagD);
 	liste_baguette_[0]->setCenter(pg);	
-	liste_baguette_[1]->setCenter(pd);
+	//liste_baguette_[1]->setCenter(pd);
 	
   } else {
 	liste_baguette_[0]->setCenter(pg);	
-	liste_baguette_[1]->setCenter(pd);
-	liste_baguette_[0]->setDirectionBaguette(Vec(0.0,0.0,1.0));	
-	liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
+	//liste_baguette_[1]->setCenter(pd);
+	Vec dirbagG;
+	//Vec dirbagD;
 
-	glBegin(GL_LINES);
-		glColor3f(1.0,0.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
-		glColor3f(0.0,1.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
-		glColor3f(0.0,0.0,1.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
-	glEnd();
+
+	double angleAlpha = 0 ;
+	double angleAlphaMax = 0 ;
+	double angleGamma = 0;
+	float h = 0;
+
+	if(_wii->getWiiZone1()==1){
+		dirbagG = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc1y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt1)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0).unit()*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm() -liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone1()==2) {
+		dirbagG = (liste_batterie_[1]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc1y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt1)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone1()==3) {
+		dirbagG = (liste_batterie_[2]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc1y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt1)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone1()==4) {		
+		dirbagG = (liste_batterie_[3]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagG.x,dirbagG.y,dirbagG.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc1y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt1)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagG.x,dirbagG.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(pg.x,pg.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	}
+	if(_wii->getWiiZone1()!=0){
+		if(liste_batterie_[_wii->getWiiZone1()-1]->getPositionCenterBat().x < pg.x){
+			pg.x -= h*sin(abs(angleAlpha))*sin(angleGamma);
+			pg.y += h*sin(abs(angleAlpha))*cos(angleGamma);
+			pg.z = 20 + h*cos(abs(angleAlpha));
+		} else {
+			pg.x += h*sin(abs(angleAlpha))*sin(angleGamma);
+			pg.y += h*sin(abs(angleAlpha))*cos(angleGamma);
+			pg.z = 20 + h*cos(abs(angleAlpha));
+		}
+	}
+
+
+	liste_baguette_[0]->setCenter(pg);	
+	//liste_baguette_[1]->setCenter(pd);
+	liste_baguette_[0]->setDirectionBaguette((pg - Vec(pivot_x1,pivot_y1,20.0)).unit());	
+	//liste_baguette_[1]->setDirectionBaguette((pd - Vec(pivot_x2,pivot_y2,20.0)).unit());
+
   }
+
+
+  if(cpt2<=0) {
+	liste_baguette_[1]->setCenter(pd);		
+	liste_baguette_[1]->setDirectionBaguette(Vec(0.0,0.0,1.0));
+  } else if (/*acc1y > _wii->getSeuilVal()*/ cpt2== temps-1) {
+	
+	liste_baguette_[1]->setCenter(pd);
+	
+	Vec dirbagD;
+
+	double angleAlphaMax = 0 ;
+	double angleGamma = 0;
+	float h = 0;
+	if(_wii->getWiiZone2()==1){
+		dirbagD = (liste_batterie_[0]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0).unit()*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm() -liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==2) {
+		dirbagD = (liste_batterie_[1]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==3) {
+		dirbagD = (liste_batterie_[2]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==4) {		
+		dirbagD = (liste_batterie_[3]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	}
+	if(_wii->getWiiZone2()!=0){
+		if(liste_batterie_[_wii->getWiiZone2()-1]->getPositionCenterBat().x < pd.x){
+			pd.x -= h*sin(abs(angleAlphaMax))*sin(angleGamma);
+			pd.y += h*sin(abs(angleAlphaMax))*cos(angleGamma);
+			pd.z = 20 + h*cos(abs(angleAlphaMax));
+		} else {
+			pd.x += h*sin(abs(angleAlphaMax))*sin(angleGamma);
+			pd.y += h*sin(abs(angleAlphaMax))*cos(angleGamma);
+			pd.z = 20 + h*cos(abs(angleAlphaMax));
+		}
+	}
+
+	liste_baguette_[1]->setDirectionBaguette(dirbagD);
+	liste_baguette_[1]->setCenter(pd);
+	
+  } else {
+	liste_baguette_[1]->setCenter(pd);
+	Vec dirbagD;
+
+	double angleAlpha = 0 ;
+	double angleAlphaMax = 0 ;
+	double angleGamma = 0;
+	float h = 0;
+
+	
+	if(_wii->getWiiZone2()==1){
+		dirbagD = (liste_batterie_[0]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc2y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt2)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0).unit()*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[0]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm() -liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==2) {
+		dirbagD = (liste_batterie_[1]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc2y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt2)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[1]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==3) {
+		dirbagD = (liste_batterie_[2]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc2y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt2)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[2]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	} else if(_wii->getWiiZone2()==4) {		
+		dirbagD = (liste_batterie_[3]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).unit();
+		angleAlphaMax = acos((double) (Vec(dirbagD.x,dirbagD.y,dirbagD.z)*Vec(0.0,0.0,1.0)));
+		//angleAlpha = (acc2y-_wii->getSeuilPos())*angleAlphaMax/(_wii->getSeuilVal()-_wii->getSeuilPos());
+		angleAlpha = (cpt2)*angleAlphaMax/(temps);
+		angleGamma = acos((double) (Vec(dirbagD.x,dirbagD.y,0.0)*Vec(0.0,1.0,0.0)));
+		h = (liste_batterie_[3]->getPositionCenterBat() - Vec(pd.x,pd.y,20.0)).norm()-liste_baguette_[0]->getHeightBaguette()/2.0;
+	}
+	if(_wii->getWiiZone2()!=0){
+		if(liste_batterie_[_wii->getWiiZone2()-1]->getPositionCenterBat().x < pd.x){
+			pd.x -= h*sin(abs(angleAlpha))*sin(angleGamma);
+			pd.y += h*sin(abs(angleAlpha))*cos(angleGamma);
+			pd.z = 20 + h*cos(abs(angleAlpha));
+		} else {
+			pd.x += h*sin(abs(angleAlpha))*sin(angleGamma);
+			pd.y += h*sin(abs(angleAlpha))*cos(angleGamma);
+			pd.z = 20 + h*cos(abs(angleAlpha));
+		}
+	}
+
+	
+	liste_baguette_[1]->setCenter(pd);
+	liste_baguette_[1]->setDirectionBaguette((pd - Vec(pivot_x2,pivot_y2,20.0)).unit());
+
+  }
+
+
 
 	
 	//std::cout << pg.x << " " << pg.z << " " << pd.x << " " << pd.z << std::endl;
@@ -323,16 +544,16 @@ void Scene::setFile(AGHFile * file)
 
 void Scene::validate(int& drum1,int& drum2)
 {	
-	drum1=0;
+	drum1=0; 
 	drum2=0;
 	_wii->update();
-	_wii->getVal();
+	_wii->getVal(); 
 	if(_wii->getValid1()){
 		drum1=_wii->getWiiZone1();
 	}
 	if(_wii->getValid1()){
-		drum2=_wii->getWiiZone2();
-	}	
+		drum2=_wii->getWiiZone2(); 
+	}	   
 }
 
 void Scene::updateCamera(){
@@ -341,24 +562,109 @@ void Scene::updateCamera(){
 	_fob->getPosAndOri(pos,q);
 	//cout << "pos : " << pos << " quaternion : " << q << endl;
   	//cout << "orientation " << camera_.orientation() << endl;
-	camera_.setPosition(Vec(pos.x, -pos.z-25.0, pos.y+20.0));
+	camera_.setPosition(Vec(pos.x, -pos.z-5.0, pos.y+15.0));
   float angle = 2*acos(q[3]);
   Vec axis = Vec(q[0]/sin(angle/2.0), -q[2]/sin(angle/2.0), q[1]/sin(angle/2.0));
 	camera_.setOrientation(Quaternion(axis, angle));
 }
 
 void Scene::updateTime() {
-	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
+	float newTime = (float)clock()/(float)CLOCKS_PER_SEC;
+	float dt = newTime - _oldTime; 
 	if(_file != NULL) {
 		_timeSinceLastNote += dt;
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			_listeTouches->addNotes(newNotes);
-		}
+			if (newNotes == -1) {
+				_file->seek(0);
+				_shouldPlay = false;
+			} else if (newNotes != 0) {
+				_listeTouches->addNotes(newNotes,liste_batterie_);
+			}
+		}	
 	}
+	_oldTime = newTime;
 }
 
 void Scene::setTimeBetweenNotes(float time) {
 	_timeBetweenNotes = time;
+}
+void Scene::isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1, int& i2,Color& c1,Color& c2){
+	drum1=false;
+	drum2=false;
+	bool d1=false;
+	bool d2=false;
+	qglviewer::Vec center1;
+	qglviewer::Vec center2;
+	Color color1;
+	Color color2;
+	if(nbdrum1!=0){
+		center1=liste_batterie_[nbdrum1-1]->getPositionCenterBat();
+		color1=liste_batterie_[nbdrum1-1]->material().diffuseColor();
+		d1=true;
+	}
+	if(nbdrum2!=0){
+		center2=liste_batterie_[nbdrum2-1]->getPositionCenterBat();
+		color2=liste_batterie_[nbdrum2-1]->material().diffuseColor();
+		d2=true;
+	}
+	
+	if(d1 | d2){
+	//Parcours de la liste des touches
+	float seuilPerfect=0.5;
+	float seuilMoyen=3.0;
+	float seuilBof=6.0;
+	Touche* touch;
+	//std::cout<<"nb de touches: "<<_listeTouches->size()<<std::endl;
+	int i=0;
+	foreach(touch, *_listeTouches){
+		qglviewer::Vec pos=touch->getPosition();
+		if(d1){
+		//std::cout<<"color1: "<<color1.r<<" "<<color1.g<<" "<<color1.b<<std::endl;
+		if(color1.r==touch->getColor().r && color1.g==touch->getColor().g && color1.b==touch->getColor().b ){
+			//std::cout<<"jaune"<<std::endl;
+			float dist1=sqrt(pow(pos.x-center1.x,2)+pow(pos.y-center1.y,2)+pow(pos.z-center1.z,2));
+		
+			if(dist1<=seuilPerfect){
+				c1.r=0.4; c1.g=0.2; c1.b=0.4;
+				i1=i;
+	   			drum1=true;
+			}
+			if(dist1<=seuilMoyen){
+				c1.r=1.0; c1.g=0.6; c1.b=1.0;
+				i1=i;
+	   			drum1=true;
+			}
+			if(dist1<=seuilBof){
+				c1.r=1.0; c1.g=1.0; c1.b=1.0;
+				i1=i;
+	   			drum1=true;
+			}
+		}
+		}
+		if(d2){
+		if(color2.r==touch->getColor().r && color2.g==touch->getColor().g && color2.b==touch->getColor().b){
+			float dist2=sqrt(pow(pos.x-center2.x,2)+pow(pos.y-center2.y,2)+pow(pos.z-center2.z,2));
+    			if(dist2<=seuilPerfect){
+				c2.r=0.4; c2.g=0.2; c2.b=0.4;
+				i2=i;
+	   			drum2=true;
+			}
+			if(dist2<=seuilMoyen){
+				c2.r=1.0; c2.g=0.6; c2.b=1.0;
+				i2=i;
+	   			drum2=true;
+			}
+			if(dist2<=seuilBof){
+				c2.r=1.0; c2.g=1.0; c2.b=1.0;
+				i2=i;
+	   			drum2=true;
+			}
+		}
+		}
+	i++;	
+  	}
+}	
+	
 }

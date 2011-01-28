@@ -64,7 +64,7 @@ void ElementBat::createElement(Vec centre, Vec posBat,
 	TX=0;TY=0;TZ=0;
 }
 
-void ElementBat::draw(bool validated) 
+void ElementBat::draw(bool validated,Color c) 
 {
 	const int slices = 100;
     const int stacks = 50 ;
@@ -79,6 +79,19 @@ void ElementBat::draw(bool validated)
 	//on se place au centre de l'élément = centre du pied
 	glMultMatrixd(frame().matrix());
 	glTranslated(TX,TY,TZ);
+
+//DEBUG
+/*
+	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
+		glColor3f(0.0,0.0,1.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
+	glEnd();
+*/
+
 	glColor3fv(material().diffuseColor());
 
 	// on commence par le bas: le trépied
@@ -134,10 +147,10 @@ void ElementBat::draw(bool validated)
 	  glColor3f(1.0,1.0,1.0);
 	}
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
-	if(validated){
+	/*if(validated){
 //retour à la couleur d'origine
 	  glColor3fv(material().diffuseColor());
-	}
+	}*/
 	gluCylinder(batterie_,rayonBat_,rayonBat_,heightBat_,slices,stacks);
 	glTranslated(0.0,0.0,heightBat_);
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
@@ -152,7 +165,6 @@ void ElementBat::draw(bool validated)
 							+ Vec(0.0,-1.0,0.0)*cos(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0)
 							+ Vec(1.0,0.0,0.0)*sin(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0);
 
-	//cout << positionCenterBat_.x << " " << positionCenterBat_.y << " " <<positionCenterBat_.z <<endl;
 //DEBUG
 /*	glPointSize(10.0);
 	glBegin(GL_POINTS);

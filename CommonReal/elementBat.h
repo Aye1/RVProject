@@ -46,7 +46,7 @@ public:
 					   float RBat = 0, float HBat = 0, float RPied = 0, float HPied = 0, float RBase = 0);
 
 	/* draw */
-	virtual void draw(bool validated) ;
+	virtual void draw(bool validated, Color c) ;
     virtual float boundingRadius() const { return radius(); }
 
 	// faire un scale général de l'élément

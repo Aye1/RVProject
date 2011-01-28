@@ -30,7 +30,6 @@ public:
 
 	~Touche(){gluDeleteQuadric(touche_);};
 	void setPosition(qglviewer::Vec pos){
-		cout << "creation touche" << endl;
 		position_=pos;
 	};
 	qglviewer::Vec getPosition() {
@@ -51,6 +50,7 @@ public:
 	};
 
 	qglviewer::Vec getDirection();
+	Color getColor(){return color_;};
 };
 
 

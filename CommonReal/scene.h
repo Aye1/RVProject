@@ -10,6 +10,7 @@
 #include "wiim.h"
 #include "AGHFile.h"
 #include "AGHListeTouches.h"
+#include <QSound>
 
 class ElementBat;
 class Baguette ;
@@ -22,6 +23,8 @@ using namespace qglviewer;
 class Scene
 {
 public :
+  bool _shouldPlay;
+  float _oldTime;
   void draw();
   void loadFromFile(const QString& filename);
 
@@ -36,12 +39,13 @@ public :
 
   void addElement(ElementBat* e);
   void addBaguette(Baguette* e);
-  void addTouches(Touche* c);
 
   void initTouches();
   void initSkybox();
+  void initSounds();
+  void playSoundFromIndex(int index);
   void setWii(Wiim* w){_wii=w;};
-  void updateWiimote();
+  void updateWiimote(int cpt1, int cpt2,float _pos1x,float _pos2x,float _pos1y,float _pos2y,double _acc1x,double _acc2x,double _acc1y,double _acc2y,double _acc1z,double _acc2z);
   void setFob(myFob* f){_fob=f;};
   void updateCamera();
 
@@ -49,19 +53,41 @@ public :
   void setTimeBetweenNotes(float time);
   //retourne l'indice du tambour validé
   void validate(int& drum1,int& drum2);
+  void isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1,int& i2,Color& c1,Color& c2);
+
+
+
+int cpt1;
+int cpt2;
+float _pos1x;
+float _pos1y;
+float _pos2x;
+float _pos2y;
+double _acc1x;
+double _acc2x;
+double _acc1y;
+double _acc2y;
+double _acc1z;
+double _acc2z;
+
 private:
   Camera camera_;
   Skybox * env_;
   Wiim* _wii;
   myFob* _fob;
   AGHFile * _file;
+
   
   AGHListeTouches * _listeTouches;
   float _timeSinceLastNote;
   float _timeBetweenNotes;
   QList<ElementBat *> liste_batterie_;
-  QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
-  // A FAIRE
+  QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent - en pratique aussi
+  QSound * _vert;
+  QSound * _rouge;
+  QSound * _jaune;
+  QSound * _bleu;
+
 
   void updateTime();
 };

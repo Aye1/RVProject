@@ -30,9 +30,6 @@ public slots:
 private:
 	void initSounds();
 	void playSoundFromNote(int note);
-
-
-
 	bool _isPlaying;
 	AGHFile * _currentFile;
 	QLabel * _fileLabel;

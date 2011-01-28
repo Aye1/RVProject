@@ -53,8 +53,10 @@ public:
 	
 	void init();
 
-	void getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double& acc1x, double& acc2x, double& acc1y, double& acc2y, double& acc1z, double& acc2z);
+	void getPos1(float& pos1x, float& pos1y, double& acc1x, double& acc1y, double& acc1z);
 
+	void getPos2(float& pos2x, float& pos2y, double& acc2x, double& acc2y, double& acc2z);
+	
 	void update();
 
 	void getVal();
