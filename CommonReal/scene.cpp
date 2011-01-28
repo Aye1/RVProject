@@ -18,7 +18,9 @@ void Scene::draw()
 {
 	//updateCamera();
 	//updateWiimote();
-	updateTime();
+	if (_shouldPlay) {
+		updateTime();
+	}
 	_listeTouches->updateNotesPos(liste_batterie_);
 	//retourne l'indice du tambour validé
 	int validDrum1=3;
@@ -217,9 +219,6 @@ void Scene::addElement(ElementBat* e)
 void Scene::addBaguette(Baguette* e)
 {
 	liste_baguette_.push_back(e);
-}
-void Scene::addTouches(Touche* c)
-{
 }
 
 void Scene::updateWiimote()
@@ -492,7 +491,11 @@ void Scene::updateTime() {
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			if (newNotes != -1) {
+			cout << "note : " << newNotes << endl;
+			if (newNotes == -1) {
+				_file->seek(0);
+				_shouldPlay = false;
+			} else if (newNotes != 0) {
 				_listeTouches->addNotes(newNotes,liste_batterie_);
 			}
 		}	

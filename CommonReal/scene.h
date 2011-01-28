@@ -23,6 +23,7 @@ using namespace qglviewer;
 class Scene
 {
 public :
+  bool _shouldPlay;
   void draw();
   void loadFromFile(const QString& filename);
 
@@ -37,7 +38,6 @@ public :
 
   void addElement(ElementBat* e);
   void addBaguette(Baguette* e);
-  void addTouches(Touche* c);
 
   void initTouches();
   void initSkybox();
@@ -59,6 +59,7 @@ private:
   Wiim* _wii;
   myFob* _fob;
   AGHFile * _file;
+
   
   AGHListeTouches * _listeTouches;
   float _timeSinceLastNote;
