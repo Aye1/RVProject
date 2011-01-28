@@ -241,6 +241,7 @@ void WidgetScene::keyPressEvent(QKeyEvent *e)
 		_viewerG->update();	
 		break;
 	case Qt::Key_P :
+		cout << "play" << endl;
 		_scene->_shouldPlay = true;
 		break;
 
