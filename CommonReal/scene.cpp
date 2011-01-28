@@ -41,7 +41,7 @@ void Scene::draw()
 		if(i==validDrum1 && drum1){
 		 //  std::cout<<"tralala"<<std::endl;
 		   ele->draw(true,c1);	   
-		  
+		   playSoundFromIndex(i);
 		}else if(i==validDrum2 && drum2){
 		   ele->draw(true,c2);	   
 		  
@@ -85,24 +85,18 @@ void Scene::initSounds() {
 	_bleu = new QSound("tome.wav");
 }
 
-void Scene::playSoundFromNote(int note) {
+void Scene::playSoundFromIndex(int index) {
 	QSound * soundToPlay;
-	if (note & 2) {
+	if (index == 1) {
 		soundToPlay = _vert;
-		soundToPlay->play();
-	}
-	if (note & 4) {
+	} else if (index == 2) {
 		soundToPlay = _rouge;
-		soundToPlay->play();
-	}
-	if (note & 8) {
+	} else if (index == 3) {
 		soundToPlay = _jaune;
-		soundToPlay->play();
-	}
-	if (note & 16) {
+	} else if (index == 4) {
 		soundToPlay = _bleu;
-		soundToPlay->play();
 	}
+	soundToPlay->play();
 }
 
 void Scene::loadFromFile(const QString& filename)

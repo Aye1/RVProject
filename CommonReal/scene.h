@@ -43,7 +43,7 @@ public :
   void initTouches();
   void initSkybox();
   void initSounds();
-  void playSoundFromNote(int note);
+  void playSoundFromIndex(int index);
   void setWii(Wiim* w){_wii=w;};
   void updateWiimote();
   void setFob(myFob* f){_fob=f;};
