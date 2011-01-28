@@ -68,7 +68,7 @@ void Scene::draw()
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
-<
+
 	foreach(ElementBat* ele,liste_batterie_){
 		
 		if(i==validDrum1 && drum1){
