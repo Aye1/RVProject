@@ -88,7 +88,7 @@ void AGHMainWindow::createDock() {
 	QLabel * speedLabel = new QLabel("Vitesse");
 	_speedBox = new QSpinBox();
 	_speedBox->setMaximum(400);
-	_speedBox->setValue(100);
+	_speedBox->setValue(50);
 	
 	QGridLayout * paramLayout = new QGridLayout;
 	paramLayout->addWidget(speedLabel, 0, 0, Qt::AlignTop);
