@@ -75,6 +75,33 @@ void Scene::initSkybox()
 	env_->SkyBox_CreateTexture();
 }
 
+void Scene::initSounds() {
+	_vert = new QSound("cymbale.wav");
+	_rouge = new QSound("claire.wav");
+	_jaune = new QSound("charleston.wav");
+	_bleu = new QSound("tome.wav");
+}
+
+void Scene::playSoundFromNote(int note) {
+	QSound * soundToPlay;
+	if (note & 2) {
+		soundToPlay = _vert;
+		soundToPlay->play();
+	}
+	if (note & 4) {
+		soundToPlay = _rouge;
+		soundToPlay->play();
+	}
+	if (note & 8) {
+		soundToPlay = _jaune;
+		soundToPlay->play();
+	}
+	if (note & 16) {
+		soundToPlay = _bleu;
+		soundToPlay->play();
+	}
+}
+
 void Scene::loadFromFile(const QString& filename)
 {
  

@@ -10,6 +10,7 @@
 #include "wiim.h"
 #include "AGHFile.h"
 #include "AGHListeTouches.h"
+#include <QSound>
 
 class ElementBat;
 class Baguette ;
@@ -40,6 +41,8 @@ public :
 
   void initTouches();
   void initSkybox();
+  void initSounds();
+  void playSoundFromNote(int note);
   void setWii(Wiim* w){_wii=w;};
   void updateWiimote();
   void setFob(myFob* f){_fob=f;};
@@ -61,8 +64,12 @@ private:
   float _timeSinceLastNote;
   float _timeBetweenNotes;
   QList<ElementBat *> liste_batterie_;
-  QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent
-  // A FAIRE
+  QList<Baguette *> liste_baguette_; //en theorie que 2 baguettes suffisent - en pratique aussi
+  QSound * _vert;
+  QSound * _rouge;
+  QSound * _jaune;
+  QSound * _bleu;
+
 
   void updateTime();
 };
