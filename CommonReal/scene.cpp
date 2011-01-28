@@ -86,6 +86,7 @@ void Scene::initSounds() {
 }
 
 void Scene::playSoundFromIndex(int index) {
+	cout << "play sound : " << index << endl;
 	QSound * soundToPlay;
 	if (index == 1) {
 		soundToPlay = _vert;
@@ -96,7 +97,10 @@ void Scene::playSoundFromIndex(int index) {
 	} else if (index == 4) {
 		soundToPlay = _bleu;
 	}
-	soundToPlay->play();
+	if (soundToPlay != NULL) {
+		cout << "real play" << endl;
+		soundToPlay->play();
+	}
 }
 
 void Scene::loadFromFile(const QString& filename)
