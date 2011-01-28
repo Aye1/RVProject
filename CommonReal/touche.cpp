@@ -7,6 +7,7 @@
 
 #include "touche.h"
 #include <iostream>
+#include <math.h>
 
 Touche::Touche() {
 	touche_=gluNewQuadric();
@@ -21,9 +22,19 @@ void Touche::draw(){
 
 	glPushMatrix();
 	glTranslated(position_.x,position_.y,position_.z);
+//DEBUG
+/*	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
+		glColor3f(0.0,0.0,1.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
+	glEnd();
+*/
 	glColor3f(color_.r,color_.g,color_.b);
 	glRotated(angleRotation_,0,0,1);
-	glRotated(-inclinaison_,0,1,0);
+	glRotated(-inclinaison_,-1,0,0);
 	gluDisk(touche_,0,rayon_,slices,stacks);
 	glPopMatrix();
 }

@@ -79,6 +79,19 @@ void ElementBat::draw(bool validated,Color c)
 	//on se place au centre de l'élément = centre du pied
 	glMultMatrixd(frame().matrix());
 	glTranslated(TX,TY,TZ);
+
+//DEBUG
+/*
+	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
+		glColor3f(0.0,0.0,1.0);
+		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
+	glEnd();
+*/
+
 	glColor3fv(material().diffuseColor());
 
 	// on commence par le bas: le trépied

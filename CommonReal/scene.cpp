@@ -48,11 +48,14 @@ void Scene::draw()
 	}
 	
 	//updateCamera();
+
 	updateWiimote(cpt1,cpt2,_pos1x,_pos2x,_pos1y,_pos2y,_acc1x,_acc2x,_acc1y,_acc2y,_acc1z,_acc2z);
-	updateTime();
+	if (_shouldPlay) {
+		updateTime();
+	}
 	_listeTouches->updateNotesPos(liste_batterie_);
 	//retourne l'indice du tambour validé
-	int validDrum1;
+	int validDrum1=3;
 	int validDrum2;
 	validate(validDrum1,validDrum2);
 	bool drum1;
@@ -65,14 +68,18 @@ void Scene::draw()
 	//env_->SkyBox_Draw(-50, -50, -50, 100, 100, 100);	
 	//parcours de la liste d'object
 	int i=1;
-	foreach (ElementBat* ele,liste_batterie_) {
-		if (i == validDrum1 && drum1){
-			   ele->draw(true,c1);	   
-		} else if(i==validDrum2 && drum2){
-			   ele->draw(true,c2);	   
+<
+	foreach(ElementBat* ele,liste_batterie_){
+		
+		if(i==validDrum1 && drum1){
+		 //  std::cout<<"tralala"<<std::endl;
+		   ele->draw(true,c1);	   
+		   playSoundFromIndex(i);
+		}else if(i==validDrum2 && drum2){
+		   ele->draw(true,c2);	   
 		  
-		} else {		
-			   ele->draw(false,ele->material().diffuseColor());
+		}else{		
+		   ele->draw(false,ele->material().diffuseColor());
 		}
 		i++;
 	}
@@ -94,13 +101,37 @@ void Scene::draw()
 
 void Scene::initTouches()
 {
-_listeTouches = new AGHListeTouches(liste_batterie_); 
+	_listeTouches = new AGHListeTouches(liste_batterie_); 
+	_oldTime = 0.0f;
 }
 
 void Scene::initSkybox()
 {
 	env_ = new Skybox();
 	env_->SkyBox_CreateTexture();
+}
+
+void Scene::initSounds() {
+	_vert = new QSound("WAV/cymbale.wav");
+	_rouge = new QSound("WAV/claire.wav");
+	_jaune = new QSound("WAV/charleston.wav");
+	_bleu = new QSound("WAV/tome.wav");
+}
+
+void Scene::playSoundFromIndex(int index) {
+	QSound * soundToPlay;
+	if (index == 1) {
+		soundToPlay = _vert;
+	} else if (index == 2) {
+		soundToPlay = _rouge;
+	} else if (index == 3) {
+		soundToPlay = _jaune;
+	} else if (index == 4) {
+		soundToPlay = _bleu;
+	}
+	if (soundToPlay != NULL) {
+		soundToPlay->play();
+	}
 }
 
 void Scene::loadFromFile(const QString& filename)
@@ -232,9 +263,6 @@ void Scene::addElement(ElementBat* e)
 void Scene::addBaguette(Baguette* e)
 {
 	liste_baguette_.push_back(e);
-}
-void Scene::addTouches(Touche* c)
-{
 }
 
 void Scene::updateWiimote(int cpt1,int cpt2,float _pos1x,float _pos2x,float _pos1y,float _pos2y,double _acc1x,double _acc2x,double _acc1y,double _acc2y,double _acc1z,double _acc2z)
@@ -534,17 +562,22 @@ void Scene::updateCamera(){
 }
 
 void Scene::updateTime() {
-	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
+	float newTime = (float)clock()/(float)CLOCKS_PER_SEC;
+	float dt = newTime - _oldTime; 
 	if(_file != NULL) {
 		_timeSinceLastNote += dt;
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			if (newNotes != -1) {
+			if (newNotes == -1) {
+				_file->seek(0);
+				_shouldPlay = false;
+			} else if (newNotes != 0) {
 				_listeTouches->addNotes(newNotes,liste_batterie_);
 			}
 		}	
 	}
+	_oldTime = newTime;
 }
 
 void Scene::setTimeBetweenNotes(float time) {
