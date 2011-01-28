@@ -79,14 +79,13 @@ void Scene::initSkybox()
 }
 
 void Scene::initSounds() {
-	_vert = new QSound("cymbale.wav");
-	_rouge = new QSound("claire.wav");
-	_jaune = new QSound("charleston.wav");
-	_bleu = new QSound("tome.wav");
+	_vert = new QSound("WAV/cymbale.wav");
+	_rouge = new QSound("WAV/claire.wav");
+	_jaune = new QSound("WAV/charleston.wav");
+	_bleu = new QSound("WAV/tome.wav");
 }
 
 void Scene::playSoundFromIndex(int index) {
-	cout << "play sound : " << index << endl;
 	QSound * soundToPlay;
 	if (index == 1) {
 		soundToPlay = _vert;
@@ -98,7 +97,6 @@ void Scene::playSoundFromIndex(int index) {
 		soundToPlay = _bleu;
 	}
 	if (soundToPlay != NULL) {
-		cout << "real play" << endl;
 		soundToPlay->play();
 	}
 }
