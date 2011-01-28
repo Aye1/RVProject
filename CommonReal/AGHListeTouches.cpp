@@ -109,9 +109,19 @@ void AGHListeTouches::setPosElems(Vec posV, Vec posR, Vec posJ, Vec posB) {
 Vec AGHListeTouches::calcPosition(Vec posBat){
 	float a=-((float)(posBat.y+30)/(float)posBat.x);
 	float b=30;
+	float a2=(1+pow(a,2));
+	float b2=2*(a*(b-posBat.y)-posBat.x);
+	float c2=pow(posBat.x,2)+pow(b-posBat.y,2)-10000;
+	float delta=pow(b2,2)-4*a2*c2;
+	float x;
+	x=(-b2+sqrt(delta))/(2*a2);	
 	qglviewer::Vec newPos;
-	newPos.y=-(posBat.y-200);
-	newPos.x=(float)(newPos.y-b)/(float)a;
-	newPos.z=posBat.z;
+	newPos.y=a*x+b;
+	if(newPos.y<=0){
+	  x=(-b2-sqrt(delta))/(2*a2);
+	  newPos.y=a*x+b;
+	}	
+	newPos.x=x;
+	newPos.z=posBat.z;	
 	return newPos;
 }
