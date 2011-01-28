@@ -64,7 +64,7 @@ void AGHMainWindow::createMenu() {
 	connect(actionQuitter, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	/*Ouvrir la fenetre OpenGL*/
-	QAction* actionOuvrirOpenGL = new QAction("ouvrir la fenetre de &jeu", this);
+	QAction* actionOuvrirOpenGL = new QAction("Ouvrir la fenetre de &jeu", this);
 	menuFichier->addAction(actionOuvrirOpenGL);
 	actionOuvrirOpenGL->setShortcut(QKeySequence("Ctrl+J"));
 	connect(actionOuvrirOpenGL, SIGNAL(triggered()),this, SLOT(openWindow()) );
