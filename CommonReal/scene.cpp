@@ -68,7 +68,8 @@ void Scene::draw()
 
 void Scene::initTouches()
 {
-_listeTouches = new AGHListeTouches(liste_batterie_); 
+	_listeTouches = new AGHListeTouches(liste_batterie_); 
+	_oldTime = 0.0f;
 }
 
 void Scene::initSkybox()
@@ -485,7 +486,8 @@ void Scene::updateCamera(){
 }
 
 void Scene::updateTime() {
-	float dt = (float)clock()/(float)CLOCKS_PER_SEC;
+	float newTime = (float)clock()/(float)CLOCKS_PER_SEC;
+	float dt = newTime - _oldTime; 
 	if(_file != NULL) {
 		_timeSinceLastNote += dt;
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
@@ -500,6 +502,7 @@ void Scene::updateTime() {
 			}
 		}	
 	}
+	_oldTime = newTime;
 }
 
 void Scene::setTimeBetweenNotes(float time) {

@@ -24,6 +24,7 @@ class Scene
 {
 public :
   bool _shouldPlay;
+  float _oldTime;
   void draw();
   void loadFromFile(const QString& filename);
 
