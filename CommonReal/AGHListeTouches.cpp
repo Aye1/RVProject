@@ -63,21 +63,25 @@ void AGHListeTouches::updateNotesPos(QList<ElementBat *> liste) {
 	Touche * t;
 	int i=0;	
 	foreach(t, *this) {
+		ElementBat* associated;
 		Vec pos = t->getPosition();
 		t->setPosition(pos + t->getDirection());
-		//suppression des touches passé une certaine limite
-		if(t->getPosition().y < _posElemVert.y - 30){
-		  this->removeAt(i);
-		}
 		//Adaptation des inclinaisons
 		ElementBat* bat;
 		foreach(bat, liste) {
 			Color color1=bat->material().diffuseColor();
 			if(color1.r==t->getColor().r && color1.g==t->getColor().g && color1.b==t->getColor().b){
+				associated=bat;
 				t->setInclinaison(bat->getInclinaison());
 				t->setAngleRotation(bat->getAngleRotationBat());
 			} 
 		}
+		//suppression des touches passé une certaine limite
+		if(t->getPosition().y < associated->getPositionCenterBat().y - 80){	  
+		   this->removeAt(i);
+		   i++;
+		}
+		
 		
 	i++;	
 	}
