@@ -79,7 +79,7 @@ void AGHListeTouches::updateNotesPos(QList<ElementBat *> liste) {
 		//suppression des touches passé une certaine limite
 		if(t->getPosition().y < associated->getPositionCenterBat().y - 80){	  
 		   this->removeAt(i);
-		   i++;
+		   i--;
 		}
 		
 		
