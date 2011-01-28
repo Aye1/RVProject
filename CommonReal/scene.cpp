@@ -493,7 +493,6 @@ void Scene::updateTime() {
 		if (_timeSinceLastNote >= _timeBetweenNotes) {
 			_timeSinceLastNote = 0.0f;
 			int newNotes = _file->nextNote();
-			cout << "note : " << newNotes << endl;
 			if (newNotes == -1) {
 				_file->seek(0);
 				_shouldPlay = false;
