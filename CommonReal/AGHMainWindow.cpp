@@ -72,10 +72,10 @@ void AGHMainWindow::createMenu() {
 }
 
 void AGHMainWindow::initSounds() {
-	_vert = new QSound("cymbale.wav");
-	_rouge = new QSound("claire.wav");
-	_jaune = new QSound("charleston.wav");
-	_bleu = new QSound("tome.wav");
+	_vert = new QSound("WAV/cymbale.wav");
+	_rouge = new QSound("WAV/claire.wav");
+	_jaune = new QSound("WAV/charleston.wav");
+	_bleu = new QSound("WAV/tome.wav");
 }
 
 void AGHMainWindow::createDock() {
