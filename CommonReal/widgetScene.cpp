@@ -14,6 +14,7 @@ WidgetScene::WidgetScene(){
 	_scene->initSkybox();
 	_scene->initTouches();
 	_scene->initSounds();
+	_scene->_shouldPlay = false;
 
 	_viewerG = new ViewerG();
 	_viewerD = new ViewerD();
@@ -238,6 +239,9 @@ void WidgetScene::keyPressEvent(QKeyEvent *e)
 		_viewerD->setParametersStereo(-dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
 		_viewerD->update();	
 		_viewerG->update();	
+		break;
+	case Qt::Key_P :
+		_scene->_shouldPlay = true;
 		break;
 
     default :
