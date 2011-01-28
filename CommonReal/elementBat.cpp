@@ -39,14 +39,13 @@ ElementBat::~ElementBat()
 	gluDeleteQuadric(base_);
 }
 
-void ElementBat::createElement(Vec centre, Vec posBat,
-							   float RBat, float HBat, float RPied, float HPied, float RBase)
+void ElementBat::createElement(Vec centre, Vec posBat, float RBat, float HBat, float RPied, float HPied, float RBase)
 {
 /*creer tout l'élément : la batterie -> un cylindre
-						 le pied   -> un autre cylindre
-				         la base   -> un rectangle        
+			 le pied   -> un autre cylindre
+		         la base   -> un rectangle        
 			
-	le centre de l'objet (center_) est au centre du cylindre pied.
+			 le centre de l'objet (center_) est au centre du cylindre pied.
 */	
 		
 	center_            = centre;
@@ -61,16 +60,15 @@ void ElementBat::createElement(Vec centre, Vec posBat,
 	angleRotationBat_ = 0.0;
 	inclinaison_ = 0.0;
 
-	TX=0;TY=0;TZ=0;
+	TX = 0; 
+	TY = 0;
+	TZ = 0;
 }
 
-void ElementBat::draw(bool validated,Color c) 
+void ElementBat::draw(bool validated, Color c) 
 {
 	const int slices = 100;
-    const int stacks = 50 ;
-//	gluQuadricDrawStyle(batterie_,GLU_LINE);
-//	gluQuadricDrawStyle(pied_,GLU_LINE);
-//	gluQuadricDrawStyle(base_,GLU_LINE);
+	const int stacks = 50 ;
 
 	float Htrepied = heightPied_/2		;
 	float angleTetra = 90 - acos(1/sqrt(3))*180/M_PI;
@@ -80,41 +78,20 @@ void ElementBat::draw(bool validated,Color c)
 	glMultMatrixd(frame().matrix());
 	glTranslated(TX,TY,TZ);
 
-//DEBUG
-/*
-	glBegin(GL_LINES);
-		glColor3f(1.0,0.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(100.0,0.0,0.0);
-		glColor3f(0.0,1.0,0.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,100.0,0.0);
-		glColor3f(0.0,0.0,1.0);
-		glVertex3f(0.0,0.0,0.0);glVertex3f(0.0,0.0,100.0);
-	glEnd();
-*/
-
 	glColor3fv(material().diffuseColor());
 
 	// on commence par le bas: le trépied
 	// on se place au point d'intersection de la base (trépied) et du pied
-	glTranslatef(0  ,
-				 0  ,
-				 -heightPied_/ 2.0   
-				);
+	glTranslatef(0, 0, -heightPied_/ 2.0);
 
 	//on fait les 3 pieds:
 	//pied 1:
-	glTranslated(Htrepied*sqrt(3.0)/3.0,
-				  0.0,
-				  -(sqrt(2.0)/sqrt(3.0))*Htrepied
-				 );
+	glTranslated(Htrepied*sqrt(3.0)/3.0, 0.0, -(sqrt(2.0)/sqrt(3.0))*Htrepied);
 	glRotated(-angleTetra,0,1,0);
 	gluDisk(base_,0,rayonPied_/1.8,slices,stacks);
 	gluCylinder(base_,rayonPied_/1.8,rayonPied_/1.8,Htrepied,slices,stacks);
 	glRotated(angleTetra,0,1,0);
-	glTranslated(-Htrepied*sqrt(3.0)/2.0,
-				Htrepied/2.0,
-				0.0
-				);	
+	glTranslated(-Htrepied*sqrt(3.0)/2.0, Htrepied/2.0, 0.0);	
 	glRotated(30.0,0,0,1);
 	glRotated(angleTetra,1,0,0);
 	//pied 2:
@@ -142,15 +119,11 @@ void ElementBat::draw(bool validated,Color c)
 	//glTranslated(0.0,0.0, -(heightBat_/2.0));
 	glRotated(angleRotationBat_,0,0,1);
 	glRotated(-inclinaison_,0,1,0);
-//On change la couleur du caisson si la touche est validée
-	if(validated){
+	//On change la couleur du caisson si la touche est validée
+	if (validated) {
 	  glColor3f(1.0,1.0,1.0);
 	}
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
-	/*if(validated){
-//retour à la couleur d'origine
-	  glColor3fv(material().diffuseColor());
-	}*/
 	gluCylinder(batterie_,rayonBat_,rayonBat_,heightBat_,slices,stacks);
 	glTranslated(0.0,0.0,heightBat_);
 	gluDisk(batterie_,0,rayonBat_,slices,stacks);
@@ -165,13 +138,6 @@ void ElementBat::draw(bool validated,Color c)
 							+ Vec(0.0,-1.0,0.0)*cos(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0)
 							+ Vec(1.0,0.0,0.0)*sin(angleRotationBat_*M_PI/180.0)*heightBat_*sin(inclinaison_*M_PI/180.0);
 
-//DEBUG
-/*	glPointSize(10.0);
-	glBegin(GL_POINTS);
-	glColor3f(1.0,1.0,1.0);
-	glVertex3f(positionCenterBat_.x,positionCenterBat_.y,positionCenterBat_.z);
-	glEnd();
-*/
 }
 
 void ElementBat::scaleBat(float s)
@@ -188,9 +154,9 @@ void ElementBat::translateBat(float x,float y, float z)
 {
 	center_            += Vec(x,y,z);
 	positionCenterBat_ += Vec(x,y,z);
-	TX=x;
-	TY=y;
-	TZ=z;
+	TX = x;
+	TY = y;
+	TZ = z;
 }
 void ElementBat::rotateBatInclinaison(float angle)
 {
@@ -204,44 +170,44 @@ void ElementBat::rotateBatAngleTambour(float angle)
 void ElementBat::initFromDOMElement(const QDomElement& e)
 {
 	QDomNode n = e.firstChild();
-    while (!n.isNull())
-    {      
-      QDomElement e = n.toElement();
-      if (!e.isNull())
-	{
-	  if (e.tagName() == "Material")
-	    material_.initFromDOMElement(e);
-	  else
-	    if (e.tagName() == "Frame")
-	      {
-		frame_.initFromDOMElement(e);
-
-		// Patch : Make sure the orientation is normalized.
-		// Absolutely needed to correctly rotate rays.
-		qglviewer::Quaternion o = frame_.orientation();
-		o.normalize();
-		frame_.setOrientation(o);
-	      }
+	while (!n.isNull())
+    	{      
+      		QDomElement e = n.toElement();
+      		if (!e.isNull())
+		{
+			if (e.tagName() == "Material")
+		    		material_.initFromDOMElement(e);
+		  	else
+		    		if (e.tagName() == "Frame")
+		      		{
+					frame_.initFromDOMElement(e);
+	
+					// Patch : Make sure the orientation is normalized.
+					// Absolutely needed to correctly rotate rays.
+					qglviewer::Quaternion o = frame_.orientation();
+					o.normalize();
+					frame_.setOrientation(o);
+		      		}
+		}
+		else
+			QMessageBox::warning(NULL, "Object XML error", "Error while parsing Object XML document");
+	      	
+		n = n.nextSibling();
 	}
-    else
-	QMessageBox::warning(NULL, "Object XML error", "Error while parsing Object XML document");
-      n = n.nextSibling();
-    }
 
-	//Object::initFromDOMElement(e);
-	if (e.hasAttribute(QString("rayBat"))){
+	if (e.hasAttribute(QString("rayBat"))) {
 		setRayonBat(e.attribute(QString("rayBat")).toFloat());
 	}
-	if (e.hasAttribute(QString("heiBat"))){
+	if (e.hasAttribute(QString("heiBat"))) {
 		setHeightBat(e.attribute(QString("heiBat")).toFloat());
 	}
-	if (e.hasAttribute(QString("rayPied"))){
+	if (e.hasAttribute(QString("rayPied"))) {
 		setRayonPied(e.attribute(QString("rayPied")).toFloat());
 	}
-	if (e.hasAttribute(QString("heiPied"))){
+	if (e.hasAttribute(QString("heiPied"))) {
 		setHeightPied(e.attribute(QString("heiPied")).toFloat());
 	}
-	if (e.hasAttribute(QString("rayBase"))){
+	if (e.hasAttribute(QString("rayBase"))) {
 		setRayonBase(e.attribute(QString("rayBase")).toFloat());
 	}
 }
@@ -294,7 +260,7 @@ void ElementBat::setCenter(Vec r)
 void ElementBat::setPositionCenterBat(Vec r)
 { 
 	positionCenterBat_ = r ;
-}
+ }
 void ElementBat::setRayonBat(float r)
 {
 	rayonBat_ = r ;

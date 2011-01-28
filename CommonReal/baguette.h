@@ -36,11 +36,11 @@ public:
 
 	/* draw */
 	virtual void draw() ;
-    virtual float boundingRadius() const { return radius(); }
+    	virtual float boundingRadius() const { return radius(); }
 
 	// faire un scale général de l'élément
 	virtual void scaleBaguette(float s);
-	virtual void translateBaguette(float x,float y, float z);
+	virtual void translateBaguette(float x, float y, float z);
 
 	/* getters */
 	Vec getCenter();
@@ -65,9 +65,9 @@ public:
 	const Material& material() const { return material_; }
 
 protected :
-  // Tous les objets ont un repere et un materiau.
-  qglviewer::Frame frame_;
-  Material material_;
+	// Tous les objets ont un repere et un materiau.
+  	qglviewer::Frame frame_;
+  	Material material_;
 };
 
 

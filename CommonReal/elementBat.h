@@ -13,7 +13,7 @@ class ElementBat
 
 private:
 
-	qglviewer::Vec center_; // a mettre a jour quand on creer l'objet
+	qglviewer::Vec center_; // a mettre a jour quand on cree l'objet
 
 	qglviewer::Vec positionCenterBat_; // a mettre a jour quand on dessine a chaque fois
 	
@@ -47,7 +47,7 @@ public:
 
 	/* draw */
 	virtual void draw(bool validated, Color c) ;
-    virtual float boundingRadius() const { return radius(); }
+	virtual float boundingRadius() const { return radius(); }
 
 	// faire un scale général de l'élément
 	virtual void scaleBat(float s);
@@ -86,9 +86,9 @@ public:
 	const Material& material() const { return material_; }
 
 protected :
-  // Tous les objets ont un repere et un materiau.
-  qglviewer::Frame frame_;
-  Material material_;
+	// Tous les objets ont un repere et un materiau.
+	qglviewer::Frame frame_;
+	Material material_;
 };
 
 

@@ -18,65 +18,65 @@ Viewer::~Viewer()
 void Viewer::draw()
 {
  
-  glViewport (0, 0, (GLsizei)(400), (GLsizei)(400));
+  	glViewport (0, 0, (GLsizei)(400), (GLsizei)(400));
 	
 		
   
-  if ( scene_ ) {
-	scene_->draw();
-  }
- /*
-  	  camera()->setPosition(camera()->position()+Vec(50,0,0));
-  camera()->setOrientation(camera()->orientation());
-  camera()->setFieldOfView(camera()->fieldOfView());
-*/
-glViewport (400, 0, (GLsizei)(400), (GLsizei)(400));
-if ( scene_ ) {
-	scene_->draw();
-  }
+  	if ( scene_ ) {
+		scene_->draw();
+  	}
+ 	/*
+  	camera()->setPosition(camera()->position()+Vec(50,0,0));
+  	camera()->setOrientation(camera()->orientation());
+  	camera()->setFieldOfView(camera()->fieldOfView());
+	*/
+	glViewport (400, 0, (GLsizei)(400), (GLsizei)(400));
+	if ( scene_ ) {
+		scene_->draw();
+	}
 
 }
 
 void Viewer::init()
 {
-		isSelected1 = false;
+	isSelected1 = false;
         isSelected2 = false;
-  		isSelected3 = false;
-  		isSelected4 = false;
+  	isSelected3 = false;
+  	isSelected4 = false;
 
-  // Key description for help window (press 'H')
-  setKeyDescription(Qt::Key_L, "Loads a new scene");
-  setKeyDescription(Qt::Key_S, "Shoot rays in the scene and saves the result");
-  setKeyDescription(Qt::SHIFT+Qt::Key_S, "Shoot rays from <i>current</i> view point");
-	
-  //setStereoDisplay(true);
+  	// Key description for help window (press 'H')
+  	setKeyDescription(Qt::Key_L, "Loads a new scene");
+  	setKeyDescription(Qt::Key_S, "Shoot rays in the scene and saves the result");
+  	setKeyDescription(Qt::SHIFT+Qt::Key_S, "Shoot rays from <i>current</i> view point");
+		
+ 	//setStereoDisplay(true);
 
-  setScene(new Scene());
+  	setScene(new Scene());
 
-  // So that transparent materials are correctly displayed.
-  // Disable if rendering is too slow.
-  glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  	// So that transparent materials are correctly displayed.
+  	// Disable if rendering is too slow.
+  	glEnable(GL_BLEND);
+  	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-  // Restore previous viewer state (camera, key frames...)
-  //restoreStateFromFile();
+  	// Restore previous viewer state (camera, key frames...)
+  	//restoreStateFromFile();
 
-  // Loads scene (prevents from pressing 'L' at each start).
-  loadScene("troisSpheres.scn");
+  	// Loads scene (prevents from pressing 'L' at each start).
+  	loadScene("troisSpheres.scn");
 
-  // Set Camera to scene Camera. Set scene center and radius.
-  initFromScene();
+  	// Set Camera to scene Camera. Set scene center and radius.
+  	initFromScene();
 
 }
 
 QString Viewer::helpString() const
 {
-  QString text("<h2>Simulation de batterie ARV</h2>");
-  text += "Ajoutez ici toute aide utile à l'utilisateur. ";
-  text += "N'oubliez pas de commenter vos raccourcis clavier avec setKeyDescription().<br>";
-  text += "Appuyez sur <b>Escape</b> pour quitter.";
-  return text;
+  	QString text("<h2>Simulation de batterie ARV</h2>");
+  	text += "Ajoutez ici toute aide utile à l'utilisateur. ";
+  	text += "N'oubliez pas de commenter vos raccourcis clavier avec setKeyDescription().<br>";
+  	text += "Appuyez sur <b>Escape</b> pour quitter.";
+  	return text;
 }
 
 void Viewer::keyPressEvent(QKeyEvent *e)

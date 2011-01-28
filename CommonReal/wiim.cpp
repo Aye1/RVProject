@@ -9,7 +9,7 @@ using namespace std;
 
 
 void Wiim::sigproc(int* i) {
-    _stop = true;
+	_stop = true;
 }
 
 Wiim::Wiim() {
@@ -151,12 +151,9 @@ void Wiim::getVal() {
 	_wiimote2 = _wii->getIRData(1);
 	_wii->getAcceleration(a1x, a1y, a1z, 0); 
 	_wii->getAcceleration(a2x, a2y, a2z, 1);
-	//val1 = (acc1 > seuil && a1y < acc1 && a1y > 0);
-	//val2 = (acc2 > seuil && a2y < acc2 && a2y > 0);
 	val1 = (a1y > _seuilVal && acc1 < _seuilVal && acc1 > 0);
 	val2 = (a2y > _seuilVal && acc2 < _seuilVal && acc2 > 0);
 	if (val1 || val2) {
-		//blabla validate touche
 		if (val1) {
 			valid1 = true;
 		}
@@ -190,15 +187,6 @@ void Wiim::getVal() {
 		acc1 = a1y;
 		acc2 = a2y;
 		
-		/*int buttons = _wii->getButtonPressed(0);
-		if (buttons & CWIID_BTN_A) {
-			if (!rumble) _wii->startRumble(0);
-			//else wii->stopRumble(0);
-			rumble = !rumble;
-		}else if (buttons & CWIID_BTN_B){
-			if (rumble) _wii->stopRumble(0);
-			rumble = !rumble;
-		}*/
 	}	
 }
 
