@@ -41,7 +41,7 @@ public :
   void initTouches();
   void initSkybox();
   void setWii(Wiim* w){_wii=w;};
-  void updateWiimote();
+  void updateWiimote(int cpt1, int cpt2,float _pos1x,float _pos2x,float _pos1y,float _pos2y,double _acc1x,double _acc2x,double _acc1y,double _acc2y,double _acc1z,double _acc2z);
   void setFob(myFob* f){_fob=f;};
   void updateCamera();
 
@@ -50,6 +50,22 @@ public :
   //retourne l'indice du tambour validé
   void validate(int& drum1,int& drum2);
   void isValid(int nbdrum1, int nbdrum2,bool& drum1,bool& drum2,int& i1,int& i2,Color& c1,Color& c2);
+
+
+
+int cpt1;
+int cpt2;
+float _pos1x;
+float _pos1y;
+float _pos2x;
+float _pos2y;
+double _acc1x;
+double _acc2x;
+double _acc1y;
+double _acc2y;
+double _acc1z;
+double _acc2z;
+
 private:
   Camera camera_;
   Skybox * env_;

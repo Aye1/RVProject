@@ -89,23 +89,15 @@ void Wiim::init() {
 	_pos2x = _wiimote2->pos[0];
 }
 
-void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double& acc1x, double& acc2x, double& acc1y, double& acc2y, double& acc1z, double& acc2z) {
+void Wiim::getPos1(float& pos1x, float& pos1y, double& acc1x, double& acc1y, double& acc1z) {
 	_wiimote1 = _wii->getIRData(0);
-	_wiimote2 = _wii->getIRData(1);
 	_wii->getAcceleration(acc1x, acc1y, acc1z, 0);
-	_wii->getAcceleration(acc2x, acc2y, acc2z, 1);
 	if (acc1y > _seuilPos) {
 		pos1x = _pos1x;
 	} else {
 		pos1x = _wiimote1->pos[0];
 	}
-	if (acc2y > _seuilPos) {
-		pos2x = _pos2x;
-	} else {
-		pos2x = _wiimote2->pos[0];
-	}
 	pos1y = _wiimote1->pos[1];
-	pos2y = _wiimote2->pos[1];
 	if (_wiimote1->size >= 3) {
 		if (_wiimote1->pos[0] < 225) {
 			wiiZone1 = 4;
@@ -117,6 +109,18 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double
 			wiiZone1 = 1;
 		}
 	}
+	_pos1x = pos1x;
+}	
+
+void Wiim::getPos2(float& pos2x, float& pos2y, double& acc2x, double& acc2y, double& acc2z) {
+	_wiimote2 = _wii->getIRData(1);
+	_wii->getAcceleration(acc2x, acc2y, acc2z, 1);
+	if (acc2y > _seuilPos) {
+		pos2x = _pos2x;
+	} else {
+		pos2x = _wiimote2->pos[0];
+	}
+	pos2y = _wiimote2->pos[1];
 	if (_wiimote2->size >= 3) {
 		if (_wiimote2->pos[1] < 225) {
 			wiiZone2 = 4;
@@ -127,7 +131,8 @@ void Wiim::getPos(float& pos1x, float& pos2x, float& pos1y, float& pos2y, double
 		} else if (_wiimote2->pos[1] > 775) {
 			wiiZone2 = 1;
 		}
-	} 
+	}
+	_pos2x = pos2x; 
 }	
 
 

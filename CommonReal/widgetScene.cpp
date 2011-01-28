@@ -86,9 +86,9 @@ void WidgetScene::init()
 {
 	//_fob->init();
 //On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
-	//_wii->init();
+	_wii->init();
 //Passage des wiimotes à la scène
-	//_scene->setWii(_wii);
+	_scene->setWii(_wii);
 //Passage du fob à la scène
 	//_scene->setFob(_fob);
 	isSelected1 = false;
