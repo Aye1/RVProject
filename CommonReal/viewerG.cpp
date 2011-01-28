@@ -17,7 +17,7 @@ ViewerG::~ViewerG()
 
 void ViewerG::draw()
 {
-	//updateCameraViewer();
+	updateCameraViewer();
 	float dx,dy,dz;
 	dx = dirRight_.x * ecart_;
 	dy = dirRight_.y * ecart_;
@@ -101,7 +101,7 @@ void ViewerG::keyPressEvent(QKeyEvent *e)
 // scene's camera position. Attention, camera() is moved to camera position.
 void ViewerG::initFromScene()
 {
-  camera()->setPosition(scene()->camera().position());
+  /*camera()->setPosition(scene()->camera().position());
   camera()->setOrientation(scene()->camera().orientation());
   camera()->setFieldOfView(scene()->camera().fieldOfView());
   
@@ -111,7 +111,7 @@ void ViewerG::initFromScene()
 
   // Add current (i.e. scene camera) position to F1.
   camera()->addKeyFrameToPath(1);
-
+*/
 }
 
 void ViewerG::select(const QPoint& point)
@@ -122,7 +122,7 @@ void ViewerG::select(const QPoint& point)
 }
 
 void ViewerG::updateCameraViewer(){
-	camera()->setPosition(scene()->camera().position());
+	  camera()->setPosition(scene()->camera().position());
   	camera()->setOrientation(scene()->camera().orientation());
   	camera()->setFieldOfView(scene()->camera().fieldOfView());
 }

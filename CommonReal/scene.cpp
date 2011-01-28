@@ -15,9 +15,9 @@ using namespace qglviewer;
 
 void Scene::draw() 
 {
-	//updateCamera();
+	updateCamera();
 	//updateWiimote();
-	updateTime();
+	//updateTime();
 	_listeTouches->updateNotesPos();
 	//retourne l'indice du tambour validé
 	int validDrum1;
@@ -339,8 +339,12 @@ void Scene::updateCamera(){
 	qglviewer::Vec pos;
 	qglviewer::Quaternion q;
 	_fob->getPosAndOri(pos,q);
-	camera_.setPosition(pos);
-	camera_.setOrientation(q);
+	//cout << "pos : " << pos << " quaternion : " << q << endl;
+  	//cout << "orientation " << camera_.orientation() << endl;
+	camera_.setPosition(Vec(pos.x, -pos.z-25.0, pos.y+20.0));
+  float angle = 2*acos(q[3]);
+  Vec axis = Vec(q[0]/sin(angle/2.0), -q[2]/sin(angle/2.0), q[1]/sin(angle/2.0));
+	camera_.setOrientation(Quaternion(axis, angle));
 }
 
 void Scene::updateTime() {

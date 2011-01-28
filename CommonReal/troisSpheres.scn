@@ -78,7 +78,7 @@
  <Camera fieldOfView="0.7854" xResolution="20" yResolution="20">
   <Frame>
    <position x="0.0" y="-10.0" z="8"/>
-   <orientation q0="0.0" q1="0.0" q2="0.0" q3="1.0"/>
+   <orientation q0="0.0" q1="1.0" q2="0.0" q3="0.0"/>
   </Frame>
  </Camera>
  

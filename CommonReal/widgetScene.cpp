@@ -20,12 +20,11 @@ WidgetScene::WidgetScene(){
 	_fob = new myFob();
 
 
-
 	/////////////////////CAMERA
 	_cameraCenter = new qglviewer::Camera();
-	_cameraCenter->setPosition(_scene->camera().position());
-  	_cameraCenter->setOrientation(_scene->camera().orientation());
-  	_cameraCenter->setFieldOfView(_scene->camera().fieldOfView());
+	_cameraCenter->setPosition(qglviewer::Vec(0.0, -20.0, 15.0));
+  _cameraCenter->setOrientation(0, -M_PI/2.0);
+  _cameraCenter->setFieldOfView(0.7854f);
   
   	// Remove previous keyFrames in path 1 (if any)
   	if (_cameraCenter->keyFrameInterpolator(1))
@@ -33,13 +32,15 @@ WidgetScene::WidgetScene(){
 
 	  // Add current (i.e. scene camera) position to F1.	
   	_cameraCenter->addKeyFrameToPath(1);
-	
+
+     //INIT DE LA SCENE
+  _scene->setCamera(*_cameraCenter);	
 
 	////////////////////INIT VIEWER ET SET CAMERA
-  	_viewerG->setSceneCenter(_scene->center());
-  	_viewerG->setSceneRadius(_scene->radius(_viewerG->sceneCenter()));
-  	_viewerD->setSceneCenter(_scene->center());
-  	_viewerD->setSceneRadius(_scene->radius(_viewerD->sceneCenter()));
+  _viewerG->setSceneCenter(_scene->center());
+  _viewerG->setSceneRadius(_scene->radius(_viewerG->sceneCenter()));
+  _viewerD->setSceneCenter(_scene->center());
+  _viewerD->setSceneRadius(_scene->radius(_viewerD->sceneCenter()));
 
 	_viewerG->setScene(_scene);
 	_viewerD->setScene(_scene);
@@ -55,7 +56,7 @@ WidgetScene::WidgetScene(){
 	//ecartementOeil
 
 	ecartementYeux = 0.0;
-    inclinaisonStrabisme = 5.0;
+  inclinaisonStrabisme = 5.0;
 
 	_viewerD->setCamera(_cameraCenter);
 	_viewerD->setParametersStereo(-dirRight,dirUp,ecartementYeux,inclinaisonStrabisme);
@@ -78,13 +79,13 @@ Scene * WidgetScene::getScene() {
 
 void WidgetScene::init()
 {
-	//_fob->init();
+	_fob->init();
 //On initialise les wiimotes EN COMMENCANT PAR LA GAUCHE!!
 	//_wii->init();
 //Passage des wiimotes à la scène
 	//_scene->setWii(_wii);
 //Passage du fob à la scène
-	//_scene->setFob(_fob);
+	_scene->setFob(_fob);
 	isSelected1 = false;
         isSelected2 = false;
   	isSelected3 = false;
